@@ -1,0 +1,18 @@
+<div class="box crm-card">
+    <div class="box-body">
+        <div class="">
+            <div class="flex justify-between mb-2">
+                <div class="p-2 border border-{{ iconBgClass }}/10 bg-{{ iconBgClass }}/10 rounded-full">
+                    <span class="avatar avatar-md avatar-rounded bg-{{ iconBgClass }} svg-white mb-0" [innerHTML]="svg">
+                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,200h-8V40a8,8,0,0,0-8-8H152a8,8,0,0,0-8,8V80H96a8,8,0,0,0-8,8v40H48a8,8,0,0,0-8,8v64H32a8,8,0,0,0,0,16H224a8,8,0,0,0,0-16ZM160,48h40V200H160ZM104,96h40V200H104ZM56,144H88v56H56Z"></path></svg> -->
+                    </span>
+                </div>
+            </div>
+            <p class="flex-auto text-textmuted dark:text-textmuted/50 text-[14px] mb-0">{{ title }}</p>
+        </div>
+        <div class="flex items-center justify-between mt-1">
+            <h4 class="mb-0 flex items-center">{{value}}</h4>
+            <span class="text-{{bg}} badge bg-{{bg}}/10 rounded-full flex items-center text-[11px] me-0 ms-2 mb-0"><i class="ri-arrow-left-{{arrow}}-line text-[11px]"></i>{{percentageChange}}</span>
+        </div>
+    </div>
+</div>

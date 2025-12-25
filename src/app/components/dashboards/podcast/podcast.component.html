@@ -1,0 +1,304 @@
+<app-page-header [title]="'Dashboards'" [title1]="['Podcast']" [activeitem]="'Podcast'"></app-page-header>
+ <!-- Start Row-1 -->
+ <div class="grid grid-cols-12 gap-x-6">
+    <div class="xxl:col-span-6 col-span-12">
+        <div class="box overflow-hidden podcast-banner !rounded-[0.75rem]">
+            <div class="box-body p-12">
+                <div class="grid grid-cols-12 sm:gap-x-6">
+                    <div class="xl:col-span-8 col-span-12 my-auto pe-3">
+                        <h5 class="font-semibold text-white mb-2 leading-[1.5rem]">
+                            Mastering Music Distribution for Your Podcast
+                        </h5>
+                        <span class="block text-white op-8 fw-meidum mb-4 pb-1">Unlock the potential of various music distribution channels to amplify your podcast’s sound. Embrace new possibilities.</span>
+                        <div class="ti-btn-list">
+                            <button type="button" class="ti-btn bg-primary text-white"><i class="ri-headphone-line me-2"></i> Listen Now</button>
+                            <button type="button" class="ti-btn bg-primarytint1color text-white"><i class="ri-headphone-line me-2"></i> 18.5k Playlist</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xxl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header justify-between">
+                <div class="box-title">
+                    Popular Artists
+                </div>
+                <button class="ti-btn bg-primary text-white ti-btn-sm" type="button">View All</button>
+            </div>
+            <div class="box-body">
+                <div class="list-none podcast-recently-played-list grid grid-cols-12 sm:gap-x-6">
+                    <div class="xl:col-span-3 sm:col-span-6 col-span-12 mb-3 xl:mb-0">
+                        <div class="bg-light items-center gap-2 p-4 text-center rounded-sm">
+                            <div class="leading-none mb-3">
+                                <span class="avatar avatar-xxl avatar-rounded">
+                                    <img src="./assets/images/podcast/1.jpg" alt="">
+                                </span>
+                            </div>
+                            <div>
+                                <a href="javascript:void(0);" class="font-semibold">Technos Talk</a>
+                                <span class="block text-[13px] text-textmuted dark:text-textmuted/50">John Samitrin</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xl:col-span-3 sm:col-span-6 col-span-12 mb-3 xl:mb-0">
+                        <div class="bg-light items-center gap-2 p-4 text-center rounded-sm">
+                            <div class="leading-none mb-3">
+                                <span class="avatar avatar-xxl avatar-rounded">
+                                    <img src="./assets/images/podcast/2.jpg" alt="">
+                                </span>
+                            </div>
+                            <div>
+                                <a href="javascript:void(0);" class="font-semibold">Science Explorers</a>
+                                <span class="block text-[13px] text-textmuted dark:text-textmuted/50">Emily Johnson</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xl:col-span-3 sm:col-span-6 col-span-12 mb-3 xl:mb-0">
+                        <div class="bg-light items-center gap-2 p-4 text-center rounded-sm">
+                            <div class="leading-none mb-3">
+                                <span class="avatar avatar-xxl avatar-rounded">
+                                    <img src="./assets/images/podcast/3.jpg" alt="">
+                                </span>
+                            </div>
+                            <div>
+                                <a href="javascript:void(0);" class="font-semibold">Business Insights</a>
+                                <span class="block text-[13px] text-textmuted dark:text-textmuted/50">David Williams</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xl:col-span-3 sm:col-span-6 col-span-12">
+                        <div class="bg-light items-center gap-2 p-4 text-center rounded-sm">
+                            <div class="leading-none mb-3">
+                                <span class="avatar avatar-xxl avatar-rounded">
+                                    <img src="./assets/images/podcast/4.jpg" alt="">
+                                </span>
+                            </div>
+                            <div>
+                                <a href="javascript:void(0);" class="font-semibold break-words">Entertainment</a>
+                                <span class="block text-[13px] text-textmuted dark:text-textmuted/50">Michael Brown</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End::Row-1 -->
+
+<!-- Start::Row-2 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-12 col-span-12">
+        <div class="box">
+            <div class="box-header justify-between">
+                <div class="box-title">
+                    Categories
+                </div>
+                <button class="ti-btn bg-primary text-white ti-btn-sm" type="button">View All</button>
+            </div>
+            <div class="box-body">
+                <div class="grid xxl:grid-cols-8 xl:grid-cols-4 lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-x-6 personal-favourite-contacts mb-0 gap-2">
+                    @for(contact of contacts;track $index){
+                    <spk-podcast-card
+                    [iconClass]="contact.iconClass" 
+                    [category]="contact.category" 
+                    [count]="contact.count" 
+                    [bgClass]="contact.bgClass">
+                  </spk-podcast-card>
+                }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End::Row-2 -->
+
+<!-- Start::Row-3 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xxl:col-span-9 col-span-12">
+        <div class="box">
+            <div class="box-header justify-between">
+                <div class="box-title">
+                    Most Popular 
+                </div>
+                <button class="ti-btn bg-light ti-btn-sm" type="button">View All</button>
+            </div>
+            <div class="box-body">
+                <div class="grid grid-cols-12 sm:gap-x-6 gap-y-4 mb-1">
+                    @for (podcast of podcasts; track $index) {
+                  <div class="xl:col-span-4 col-span-12">
+                    <div class="flex items-center p-4 bg-light rounded-sm flex-wrap gap-2 sm:flex-nowrap">
+                      <img [src]="podcast.image" [alt]="podcast.title" class="avatar avatar-xxl me-2">
+                      <div class="w-full">
+                        <div class="flex items-start justify-between mb-4 flex-wrap">
+                          <div>
+                            <a href="javascript:void(0);">
+                              <h6 class="font-semibold mb-0">{{ podcast.title }}</h6>
+                            </a>
+                            <span class="text-textmuted dark:text-textmuted/50 text-xs">By {{ podcast.host }}</span>
+                          </div>
+                          <spk-dropdowns [Customclass]="'dropdown'" [class]="'ti-btn bg-light ti-btn-sm ti-btn-icon'"
+                          [Menuclass]="'dropdown-menu dropdown-menu-end'"  [Icon]="true" [IconClass]="'ri-more-2-fill text-textmuted dark:text-textmuted/50'">
+                              <li><a class="ti-dropdown-item" href="javascript:void(0);">Week</a></li>
+                              <li><a class="ti-dropdown-item" href="javascript:void(0);">Day</a></li>
+                              <li><a class="ti-dropdown-item" href="javascript:void(0);">Year</a></li>
+                          </spk-dropdowns>
+                        </div>
+                        <div class="flex align-items-end justify-between gap-2 flex-wrap">
+                          <button aria-label="button" type="button" class="ti-btn bg-primary text-white ti-btn-sm">
+                            <i class="ri-play-fill me-1"></i> Listen Now
+                          </button>
+                          <div class="flex items-center gap-4 leading-none">
+                            <span
+                              class="flex items-center gap-2 text-textmuted dark:text-textmuted/50 font-medium leading-none"
+                            >
+                              <i class="ri-volume-up-line leading-none align-middle text-[14px]"></i>{{ podcast.listeners }}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                }
+                </div>
+              </div>
+              
+        </div>
+    </div>
+    <div class="xxl:col-span-3 col-span-12">
+        <div class="box overflow-hidden bg-playing-image">
+            <div class="box-body p-6">
+                <div class="text-center mb-6">
+                    <span class="mb-5 podcast-playing-now">
+                        <img src="./assets/images/podcast/1.jpg" alt="" class="w-full !rounded-full shadow-sm">
+                    </span>
+                    <a href="javascript:void(0);"><h6 class="font-semibold mb-1 text-white">Mindful Living</h6></a>
+                    <span class="text-white op-8 text-xs">By Wanderlost Explorers</span>
+                </div>
+                <div class="flex gap-4 items-center mb-6 pb-6">
+                    <div class="text-xs text-white">12.25</div>
+                    <div class="progress progress-xs progress-custom progress-animate podcast-playing-progress" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar bg-primary" style="width: 50%">
+                        </div>
+                    </div>
+                    <div class="text-xs text-white">23.45</div>
+                </div>
+                <div class="flex items-center justify-between flex-wrap gap-2 leading-none px-6 py-4 bg-black-transparent rounded-full">
+                    <a aria-label="anchor" href="javascript:void(0);">
+                        <i class="ri-repeat-2-line text-xl text-white"></i>
+                    </a>
+                    <a aria-label="anchor" href="javascript:void(0);">
+                        <i class="ri-skip-back-line text-xl text-white"></i>
+                    </a>
+                    <a aria-label="anchor" href="javascript:void(0);">
+                        <i class="ri-pause-line text-xl text-white"></i>
+                    </a>
+                    <a aria-label="anchor" href="javascript:void(0);">
+                        <i class="ri-skip-forward-line text-xl text-white"></i>
+                    </a>
+                    <a aria-label="anchor" href="javascript:void(0);">
+                        <i class="ri-shuffle-line text-xl text-white"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End::Row-3 -->
+
+<!-- Start::Row-4 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-12 col-span-12">
+        <div class="box">
+            <div class="box-header justify-between">
+                <div class="box-title">
+                    Recently Played
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <div>
+                        <input class="form-control form-control-sm" type="text" placeholder="Search Here" aria-label=".form-control-sm example">
+                    </div>
+                    <spk-dropdowns [Customclass]="'dropdown'" [title]="'Sort By'" [class]="'ti-btn bg-primary !m-0 text-white ti-btn-sm btn-wave waves-effect waves-light'" [Icon]="true" [IconClass]="'ri-arrow-down-s-line align-middle ms-1 inline-block'" 
+                    [Menuclass]="'dropdown-menu'"  >
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">New</a></li>
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Popular</a></li>
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Relevant</a></li>
+                    </spk-dropdowns>
+                </div>
+            </div>
+            <div class="box-body p-0">
+                <div class="table-responsive">
+                    <spk-reusable-tables [columns]="playedColumns" tableClass="ti-custom-table ti-custom-table-head"
+                    [showCheckbox]="false">
+                    @for(recent of recentslist;track $index){
+                            <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                <td>
+                                    <div class="flex gap-2">
+                                        <span class="avatar avatar-md"><img [src]="recent.src"  class="" alt="..."></span>
+                                        <div>
+                                            <a href="javascript:void(0);" class="font-semibold mb-0 flex items-center">{{recent.podcast}}</a>
+                                            <span class="text-xs block text-textmuted dark:text-textmuted/50">{{recent.name}}</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    {{recent.duration}}
+                                </td>
+                                <td>
+                                    <span class="badge bg-{{recent.bg1}}/10 text-{{recent.bg1}}">{{recent.type}}</span>
+                                </td>
+                                <td>
+                                    {{recent.episode}}
+                                </td>
+                                <td>
+                                    {{recent.avgduration}}
+                                </td>
+                                <td>
+                                    <a aria-label="anchor" href="javascript:void(0);">
+                                        <i class="ri-heart-fill text-[1rem] leading-none text-{{recent.bg}} me-2"></i>{{recent.status}}
+                                    </a>
+                                </td>
+                                <td>
+                                    <spk-dropdowns [Customclass]="'dropdown'" [class]="'ti-btn ti-btn-sm bg-light ti-btn-icon'"   [Icon]="true" [IconClass]="'fe fe-more-vertical !text-[0.813rem]'"
+                                [Menuclass]="'dropdown-menu'"  >
+                                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Download</a></li>
+                                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Import</a></li>
+                                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Export</a></li>
+                                    </spk-dropdowns>
+                                </td>
+                            </tr>
+                        }
+                        </spk-reusable-tables>
+                </div>
+            </div>
+            <div class="box-footer">
+                <div class="flex items-center flex-wrap">
+                    <div> Showing 5 Entries <i class="bi bi-arrow-right ms-2 font-semibold"></i> </div>
+                    <div class="ms-auto">
+                        <nav aria-label="Page navigation" class="pagination-style-4">
+                            <ul class="ti-pagination mb-0 flex-wrap">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="javascript:void(0);">
+                                        Prev
+                                    </a>
+                                </li>
+                                <li class="page-item "><a class="page-link active"
+                                        href="javascript:void(0);">1</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                                
+                                <li class="page-item">
+                                    <a class="page-link !text-primary" href="javascript:void(0);">
+                                        next
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End::Row-4 -->

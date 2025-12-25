@@ -1,0 +1,41 @@
+<div class="box">
+  <div *ngIf="FooterPosition === 'top' && footerText" class="box-footer">
+    <p class="card-text mb-0"><small>{{ footerText }}</small></p>
+  </div>
+    <!-- Image Before -->
+    <img
+      *ngIf="imgPosition === 'top' && imgSrc"
+      [src]="imgSrc"
+      class="card-img-top"
+      alt="Image"
+    />
+  
+    <!-- Header -->
+    <div *ngIf="hasHeader" class="box-header">
+      <div class="box-title">{{ headerText }}</div>
+    </div>
+  
+    <!-- Body -->
+    <div class="box-body">
+      <h6 *ngIf="title" class="box-title font-medium">{{ title }}</h6>
+      <p *ngIf="bodyText" class="card-text text-textmuted dark:text-textmuted/50">{{ bodyText }}</p>
+    </div>
+
+    <div *ngIf="FooterPosition === 'middle' && footerText" class="box-footer {{FoolterClass}} ">
+      <p class="card-text mb-0"><small>{{ footerText }}</small></p>
+    </div>
+  
+    <!-- Image After -->
+    <img
+      *ngIf="imgPosition === 'bottom' && imgSrc"
+      [src]="imgSrc"
+      class="card-img rounded-0"
+      alt="Image"
+    />
+
+     <!-- Footer -->
+     <div *ngIf="FooterPosition === 'bottom' && footerText" class="box-footer {{FoolterClass}}">
+      <p class="card-text mb-0"><small>{{ footerText }}</small></p>
+    </div>
+  </div>
+  

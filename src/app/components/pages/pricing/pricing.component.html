@@ -1,0 +1,345 @@
+<app-page-header [title]="'Pages'" [title1]="['Pricing']" [activeitem]="'Pricing'"></app-page-header>
+ 
+ <!-- Start:: row-1 -->
+ <div class="flex justify-center overflow-hidden">
+    <div class="max-w-[75%]" id="convertable-pricing">
+        <div class="p-4 pt-0">
+            <div class="text-center">
+                <h3 class="text-primarytint1color">Pricing</h3>
+                <h5 class="block mb-3">Plans that flex with your needs.</h5>
+                <p class="text-textmuted dark:text-textmuted/50 mb-4">Stay agile with plans that seamlessly adjust to your changing requirements, ensuring you always have the flexibility you need.</p>
+            </div>
+        </div>
+        <div class="flex justify-center mb-4">
+            <div class="switcher-box">
+                <span class="pricing-time-span">Monthly</span>
+                <div class="switcher-pricing text-center">
+                  <input type="checkbox" class="pricing-toggle" [(ngModel)]="isYearly" (change)="onToggle()">
+                </div>
+                <span class="pricing-time-span">Annually <span class="badge bg-primarytint2color ms-1 rounded-full leading-none">20% off</span></span>
+            </div>
+        </div>
+        <div class="tab-content show" id="monthly1" [ngClass]="{'show': !isYearly}">
+            <div class="grid grid-cols-12 gap-x-6 items-center justify-center mb-5">
+                @for(pricing of pricings;track $index){
+                <div class="lg:col-span-12 xl:col-span-12 xxl:col-span-4 md:col-span-12 sm:col-span-12 col-span-12">
+                    <spk-pricing-card
+                    [title]="pricing.title"
+                    [mainClass]="pricing.mainClass"
+                    [arrowClass]="pricing.arrowClass"
+                    [buttonClass]="pricing.buttonClass"
+                    [bodyClass]="pricing.bodyClass"
+                    [priceClass]="pricing.priceClass"
+                    [borderClass]="pricing.borderClass"
+                    [footerClass]="pricing.footerClass"
+                    [price]="pricing.price"
+                    [pricingPlan]="pricing.pricingPlan"
+                    [description]="pricing.description"
+                    [features]="pricing.features"
+                    [textColor]="pricing.textColor"
+                    [isPopular]="pricing.popular">
+                </spk-pricing-card>
+                </div>
+            }
+            </div>
+        </div>
+        <div class="tab-content" id="yearly1" [ngClass]="{'show': isYearly}">
+            <div class="grid grid-cols-12 gap-x-6 items-center justify-center mb-5">
+                @for(pricing of yearlyPricings;track $index){
+                <div class="lg:col-span-12 xl:col-span-12 xxl:col-span-4 md:col-span-12 sm:col-span-12 col-span-12">
+                    <spk-pricing-card
+                    [title]="pricing.title"
+                    [mainClass]="pricing.mainClass"
+                    [arrowClass]="pricing.arrowClass"
+                    [buttonClass]="pricing.buttonClass"
+                    [bodyClass]="pricing.bodyClass"
+                    [priceClass]="pricing.priceClass"
+                    [borderClass]="pricing.borderClass"
+                    [footerClass]="pricing.footerClass"
+                    [price]="pricing.price"
+                    [pricingPlan]="pricing.pricingPlan"
+                    [description]="pricing.description"
+                    [features]="pricing.features"
+                    [textColor]="pricing.textColor"
+                    [isPopular]="pricing.popular">
+                </spk-pricing-card>
+                </div>
+            }
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End:: row-1 -->
+
+<!-- Start:: row-2 -->
+<div class="flex justify-center overflow-hidden">
+    <div class="max-w-[75%]">
+        <div class="text-center mb-5 mt-4 flex justify-center">
+            <nav class="-mb-0.5 flex justify-center bg-white dark:bg-bodybg p-2 rounded-full !m-0 border border-defaultborder dark:border-defaultborder/10 shadow-sm space-x-6 rtl:space-x-reverse" aria-label="Tabs" role="tablist">
+                <button type="button" class="hs-tab-active:font-semibold hs-tab-active:bg-primary hs-tab-active:text-white py-1 px-4 !rounded-full inline-flex items-center gap-2 border-b-[3px] border-transparent text-sm whitespace-nowrap text-defaulttextcolor hover:text-primary dark:text-[#8c9097] dark:text-white/50 active" id="pills-monthly" data-hs-tab="#pills-monthly1" aria-controls="pills-monthly1">
+                    Monthly
+                </button>
+                <button type="button" class="hs-tab-active:font-semibold !m-0 hs-tab-active:bg-primary hs-tab-active:text-white py-1 px-4 !rounded-full inline-flex items-center gap-2 border-b-[3px] border-transparent text-sm whitespace-nowrap text-defaulttextcolor hover:text-primary dark:text-[#8c9097] dark:text-white/50" id="pills-yearly" data-hs-tab="#pills-yearly1" aria-controls="pills-yearly1">
+                    Annually <span class="badge bg-primarytint2color ms-1 rounded-full leading-none">Save 10%</span>
+                </button>
+              </nav>
+        </div>
+        <div class="tab-content mb-6">
+            <div class="tab-pane show active p-0 border-0" id="pills-monthly1" role="tabpanel" aria-labelledby="pills-monthly">
+                <div class="box shadow-none overflow-hidden border-0">
+                    <div class="box-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-bordered pricing-table mb-0">
+                                <thead>
+                                    <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                        <th scope="row" class="">
+                                            <div class="grow text-start">
+                                                <div class="mb-0 font-medium text-[1rem]">Plans with tailored features.</div>
+                                                <span class="opacity-80 text-[11px]">Unlock personalized features within your plans, designed specifically to suit your needs.</span>
+                                            </div>
+                                        </th>
+                                        <th scope="row" class="">
+                                            <div class="mb-0 font-medium text-[1rem]">Basic</div>
+                                            <div class="mb-4 text-[1.75rem] font-medium">$3<span class="text-[13px] opacity-50 ms-1">/ month</span></div>
+                                            <button type="button" class="ti-btn ti-btn-soft-primary3 grid w-full btn-wave waves-effect waves-light">
+                                                <span class="ms-4 me-4">Sign Up</span>
+                                            </button>
+                                        </th>
+                                        <th scope="row" class="">
+                                            <div class="mb-0 font-medium text-[1rem]">Growth</div>
+                                            <div class="mb-4 text-[1.75rem] font-medium">$19<span class="text-[13px] opacity-50 ms-1">/ month</span></div>
+                                            <button type="button" class="ti-btn ti-btn-soft-primary3 grid w-full btn-wave waves-effect waves-light">
+                                                <span class="ms-4 me-4">Sign Up</span>
+                                            </button>
+                                        </th>
+                                        <th scope="row" class="relative bg-primary/10 !text-primary">
+                                            <p class="badge badge-lg bg-primarytint1color rounded font-semibold absolute end-0 me-2 mb-0">Popular</p>
+                                            <div class="mb-0 font-medium text-[1rem]">Pro</div>
+                                            <div class="mb-4 text-[1.75rem] font-medium">$25<span class="text-[13px] opacity-50 ms-1">/ month</span></div>
+                                            <button type="button" class="ti-btn ti-btn-primary grid w-full btn-wave waves-effect waves-light">
+                                                <span class="ms-4 me-4">Sign Up</span>
+                                            </button>
+                                        </th>
+                                        <th scope="row" class="">
+                                            <div class="mb-0 font-medium text-[1rem]">Professional</div>
+                                            <div class="mb-4 text-[1.75rem] font-medium">$39<span class="text-[13px] opacity-50 ms-1">/ month</span></div>
+                                            <button type="button" class="ti-btn ti-btn-soft-primary3 grid w-full btn-wave waves-effect waves-light">
+                                                <span class="ms-4 me-4">Sign Up</span>
+                                            </button>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border !border-defaultborder dark:!border-defaultborder/10">
+                                        <td colspan="5" class="pricing-feature !font-semibold !text-primarytint2color">Offered Features :</td>
+                                    </tr>
+                                    <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                        <td class="pricing-feature font-semibold">Storage Space</td>
+                                        <td>5 GB</td>
+                                        <td>20 GB</td>
+                                        <td class="bg-primary/10 !text-primary">Unlimited</td>
+                                        <td>30GB</td>
+                                    </tr>
+                                    <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                        <td class="pricing-feature font-semibold">Number of Users</td>
+                                        <td>Up to 5</td>
+                                        <td>Up to 5</td>
+                                        <td class="bg-primary/10 !text-primary">Unlimited</td>
+                                        <td>Customizable</td>
+                                    </tr>
+                                    <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                        <td class="pricing-feature font-semibold">Customer Support</td>
+                                        <td>Email Support</td>
+                                        <td>Email and Phone Support</td>
+                                        <td class="bg-primary/10 !text-primary">Priority Email, Phone, and On-site Support</td>
+                                        <td>Email and Phone Support</td>
+                                    </tr>
+                                    <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                        <td class="pricing-feature font-semibold">Advanced Analytics</td>
+                                        <td>Basic Analytics</td>
+                                        <td>Enhanced Analytics</td>
+                                        <td class="bg-primary/10 !text-primary">Custom Analytics Solutions</td>
+                                        <td>Enhanced Analytics</td>
+                                    </tr>
+                                    <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                        <td class="pricing-feature font-semibold">Integrations</td>
+                                        <td>Limited Integrations</td>
+                                        <td>Custom Integrations</td>
+                                        <td class="bg-primary/10 !text-primary">More Integrations</td>
+                                        <td>None</td>
+                                    </tr>
+                                    <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                        <td class="pricing-feature font-semibold">Security Features</td>
+                                        <td>Basic Security Measures	</td>
+                                        <td>Enterprise-level Security Measures</td>
+                                        <td class="bg-primary/10 !text-primary">Advanced Security Features</td>
+                                        <td>Enterprise-level Security Measures</td>
+                                    </tr>
+                                    <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                        <td class="pricing-feature font-semibold">Customization</td>
+                                        <td>Limited Customization Options</td>
+                                        <td>Limited Customization Options</td>
+                                        <td class="bg-primary/10 !text-primary">More Customization Options</td>
+                                        <td>Tailored Solutions</td>
+                                    </tr>
+                                    <tr class="border !border-defaultborder dark:!border-defaultborder/10">
+                                        <td colspan="5" class="pricing-feature !font-semibold !text-primarytint2color">Functionality :</td>
+                                    </tr>
+                                    <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                        <td class="pricing-feature font-semibold">User Management</td>
+                                        <td>Basic User Management</td>
+                                        <td>Comprehensive User Management</td>
+                                        <td class="bg-primary/10 !text-primary">Advanced User Management</td>
+                                        <td>Comprehensive User Management</td>
+                                    </tr>
+                                    <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                        <td class="pricing-feature font-semibold">Reporting Tools</td>
+                                        <td>Standard Reporting Tools</td>
+                                        <td>-</td>
+                                        <td class="bg-primary/10 !text-primary">Advanced Reporting Tools</td>
+                                        <td>Customized Reporting Solutions</td>
+                                    </tr>
+                                    <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                        <td class="pricing-feature font-semibold">API Access/td>
+                                        <td>Limited API Access</td>
+                                        <td>Limited API Access</td>
+                                        <td class="bg-primary/10 !text-primary">Full API Access</td>
+                                        <td>Extended API Access</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane p-0 border-0 hidden" id="pills-yearly1"  role="tabpanel" aria-labelledby="pills-yearly">
+                <div class="card shadow-none border-0 reveal">
+                    <div class="box-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-bordered pricing-table mb-0">
+                                <thead>
+                                    <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                        <th scope="row" class="">
+                                            <div class="grow text-start">
+                                                <div class="mb-0 font-medium text-[1rem]">Plans with tailored features.</div>
+                                                <span class="opacity-80 text-[11px]">Unlock personalized features within your plans, designed specifically to suit your needs.</span>
+                                            </div>
+                                        </th>
+                                        <th scope="row" class="">
+                                            <div class="mb-0 font-medium text-[1rem]">Basic</div>
+                                            <div class="mb-4 text-[1.75rem] font-medium">$50<span class="text-[13px] opacity-50 ms-1">/ Annum</span></div>
+                                            <button type="button" class="ti-btn ti-btn-soft-primary3 grid w-full btn-wave waves-effect waves-light">
+                                                <span class="ms-4 me-4">Sign Up</span>
+                                            </button>
+                                        </th>
+                                        <th scope="row" class="">
+                                            <div class="mb-0 font-medium text-[1rem]">Growth</div>
+                                            <div class="mb-4 text-[1.75rem] font-medium">$239<span class="text-[13px] opacity-50 ms-1">/ Annum</span></div>
+                                            <button type="button" class="ti-btn ti-btn-soft-primary3 grid w-full btn-wave waves-effect waves-light">
+                                                <span class="ms-4 me-4">Sign Up</span>
+                                            </button>
+                                        </th>
+                                        <th scope="row" class="relative bg-primary/10 !text-primary">
+                                            <p class="badge badge-lg bg-primarytint1color rounded font-semibold absolute end-0 me-2 mb-0">Popular</p>
+                                            <div class="mb-0 font-medium text-[1rem]">Pro</div>
+                                            <div class="mb-4 text-[1.75rem] font-medium">$899<span class="text-[13px] opacity-50 ms-1">/ Annum</span></div>
+                                            <button type="button" class="ti-btn ti-btn-primary grid w-full btn-wave waves-effect waves-light">
+                                                <span class="ms-4 me-4">Sign Up</span>
+                                            </button>
+                                        </th>
+                                        <th scope="row" class="">
+                                            <div class="mb-0 font-medium text-[1rem]">Professional</div>
+                                            <div class="mb-4 text-[1.75rem] font-medium">$799<span class="text-[13px] opacity-50 ms-1">/ Annum</span></div>
+                                            <button type="button" class="ti-btn ti-btn-soft-primary3 grid w-full btn-wave waves-effect waves-light">
+                                                <span class="ms-4 me-4">Sign Up</span>
+                                            </button>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border !border-defaultborder dark:!border-defaultborder/10">
+                                        <td colspan="5" class="pricing-feature !font-semibold !text-primarytint2color">Offered Features :</td>
+                                    </tr>
+                                    <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                        <td class="pricing-feature font-semibold">Storage Space</td>
+                                        <td>15 GB</td>
+                                        <td>30 GB</td>
+                                        <td class="bg-primary/10 !text-primary">Unlimited</td>
+                                        <td>50GB</td>
+                                    </tr>
+                                    <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                        <td class="pricing-feature font-semibold">Number of Users</td>
+                                        <td>Up to 10</td>
+                                        <td>Up to 10</td>
+                                        <td class="bg-primary/10 !text-primary">Unlimited</td>
+                                        <td>Unlimited</td>
+                                    </tr>
+                                    <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                        <td class="pricing-feature font-semibold">Customer Support</td>
+                                        <td>Email Support</td>
+                                        <td>Email and Phone Support</td>
+                                        <td class="bg-primary/10 !text-primary">Priority Email, Phone, and On-site Support</td>
+                                        <td>Email and Phone Support</td>
+                                    </tr>
+                                    <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                        <td class="pricing-feature font-semibold">Advanced Analytics</td>
+                                        <td>Basic Analytics</td>
+                                        <td>Enhanced Analytics</td>
+                                        <td class="bg-primary/10 !text-primary">Custom Analytics Solutions</td>
+                                        <td>Enhanced Analytics</td>
+                                    </tr>
+                                    <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                        <td class="pricing-feature font-semibold">Integrations</td>
+                                        <td>Limited Integrations</td>
+                                        <td>-</td>
+                                        <td class="bg-primary/10 !text-primary">More Integrations</td>
+                                        <td>More Integrations</td>
+                                    </tr>
+                                    <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                        <td class="pricing-feature font-semibold">Security Features</td>
+                                        <td>Basic Security Measures	</td>
+                                        <td>Enterprise-level Security Measures</td>
+                                        <td class="bg-primary/10 !text-primary">Advanced Security Features</td>
+                                        <td>Enterprise-level Security Measures</td>
+                                    </tr>
+                                    <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                        <td class="pricing-feature font-semibold">Customization</td>
+                                        <td>Unlimited Customization Options</td>
+                                        <td>Unlimited Customization Options</td>
+                                        <td class="bg-primary/10 !text-primary">More Customization Options</td>
+                                        <td>Tailored Solutions</td>
+                                    </tr>
+                                    <tr class="border !border-defaultborder dark:!border-defaultborder/10">
+                                        <td colspan="5" class="pricing-feature !font-semibold !text-primarytint2color">Functionality :</td>
+                                    </tr>
+                                    <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                        <td class="pricing-feature font-semibold">User Management</td>
+                                        <td>Basic User Management</td>
+                                        <td>Comprehensive User Management</td>
+                                        <td class="bg-primary/10 !text-primary">Advanced User Management</td>
+                                        <td>Comprehensive User Management</td>
+                                    </tr>
+                                    <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                        <td class="pricing-feature font-semibold">Reporting Tools</td>
+                                        <td>Standard Reporting Tools</td>
+                                        <td>-</td>
+                                        <td class="bg-primary/10 !text-primary">Advanced Reporting Tools</td>
+                                        <td>Customized Reporting Solutions</td>
+                                    </tr>
+                                    <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                        <td class="pricing-feature font-semibold">API Access/td>
+                                        <td>Limited API Access</td>
+                                        <td>Limited API Access</td>
+                                        <td class="bg-primary/10 !text-primary">Full API Access</td>
+                                        <td>Extended API Access</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End:: row-2 -->

@@ -1,0 +1,139 @@
+<app-page-header [title]="'Apex Charts'" [title1]="['Apex Line Charts']" [activeitem]="'Apex Line Charts'"></app-page-header>
+
+                <!-- Start::row-1 -->
+                <div class="grid grid-cols-12 gap-x-6">
+                    <div class="xl:col-span-6 col-span-12">
+                        <div class="box">
+                            <div class="box-header">
+                                <div class="box-title">Basic Line Chart</div>
+                            </div>
+                            <div class="box-body">
+                                <div id="line-chart">
+                                    <spk-apexcharts [chartOptions]="chartOptions"></spk-apexcharts>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xl:col-span-6 col-span-12">
+                        <div class="box">
+                            <div class="box-header">
+                                <div class="box-title">Line Chart With Data Labels</div>
+                            </div>
+                            <div class="box-body">
+                                <div id="line-chart-datalabels">
+                                    <spk-apexcharts [chartOptions]="chartOptions1"></spk-apexcharts>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xl:col-span-6 col-span-12">
+                        <div class="box">
+                            <div class="box-header">
+                                <div class="box-title">Zoomable Time Series</div>
+                            </div>
+                            <div class="box-body">
+                                <div id="zoom-chart">
+                                    <spk-apexcharts [chartOptions]="chartOptions2"></spk-apexcharts>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xl:col-span-6 col-span-12">
+                        <div class="box">
+                            <div class="box-header">
+                                <div class="box-title">Line With Annotations</div>
+                            </div>
+                            <div class="box-body">
+                                <div id="annotation-chart">
+                                    <spk-apexcharts [chartOptions]="chartOptions3"></spk-apexcharts>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xl:col-span-6 col-span-12">
+                        <div class="box">
+                            <div class="box-header">
+                                <div class="box-title">Brush Chart</div>
+                            </div>
+                            <div class="box-body">
+                                <div id="brush-chart1">
+                                    <spk-apexcharts [chartOptions]="chartOptions4"></spk-apexcharts>
+                                </div>
+                                <div id="brush-chart">
+                                    <spk-apexcharts [chartOptions]="chartOptions5"></spk-apexcharts>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xl:col-span-6 col-span-12">
+                        <div class="box">
+                            <div class="box-header">
+                                <div class="box-title">StepLine Chart</div>
+                            </div>
+                            <div class="box-body">
+                                <div id="stepline-chart"></div>
+                                <spk-apexcharts [chartOptions]="chartOptions6"></spk-apexcharts>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xl:col-span-6 col-span-12">
+                        <div class="box">
+                            <div class="box-header">
+                                <div class="box-title">Gradient Line Chart</div>
+                            </div>
+                            <div class="box-body">
+                                <div id="gradient-chart"></div>
+                                <spk-apexcharts [chartOptions]="chartOptions7"></spk-apexcharts>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xl:col-span-6 col-span-12">
+                        <div class="box">
+                            <div class="box-header">
+                                <div class="box-title">Missing/Null Values Chart</div>
+                            </div>
+                            <div class="box-body">
+                                <div id="null-chart">
+                                    <spk-apexcharts [chartOptions]="chartOptions8"></spk-apexcharts>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xl:col-span-6 col-span-12">
+                        <div class="box">
+                            <div class="box-header">
+                                <div class="box-title">Real Time Chart</div>
+                            </div>
+                            <div class="box-body">
+                                <div id="dynamic-chart">
+                                    <spk-apexcharts [chartOptions]="chartOptions9"></spk-apexcharts>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xl:col-span-6 col-span-12">
+                        <div class="box">
+                            <div class="box-header">
+                                <div class="box-title">Dashed Line Chart</div>
+                            </div>
+                            <div class="box-body">
+                                <div id="dashed-chart">
+                                    <spk-apexcharts [chartOptions]="chartOptions10"></spk-apexcharts>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xl:col-span-6 col-span-12">
+                        <div class="box">
+                            <div class="box-header">
+                                <div class="box-title">Syncing Charts</div>
+                            </div>
+                            <div class="box-body">
+                                <div id="chart-line"><spk-apexcharts [chartOptions]="chart1options"></spk-apexcharts></div>
+                                <div id="chart-line2"><spk-apexcharts [chartOptions]="chart2options"></spk-apexcharts></div>
+                                <div id="chart-area"><spk-apexcharts [chartOptions]="chart3options"></spk-apexcharts></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End::row-1 -->

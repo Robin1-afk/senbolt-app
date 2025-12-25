@@ -1,0 +1,118 @@
+<app-page-header [title]="'Utilities'" [title1]="['Borders']" [activeitem]="'Borders'"></app-page-header>
+
+<!-- Start:: row-1 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="'Borders'"  [prism]="prismCode.bordersTS1">
+                <span class="border dark:border-defaultborder/10 border-defaultborder border-container"></span>
+                <span class="border-t dark:border-defaultborder/10 border-container"></span>
+                <span class="border-e dark:border-defaultborder/10 border-container"></span>
+                <span class="border-b dark:border-defaultborder/10 border-container"></span>
+                <span class="border-s dark:border-defaultborder/10 border-container"></span>
+        </app-showcode-card>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="'Remove borders'"  [prism]="prismCode.bordersTS2">
+                <span class="border-0 border-container"></span>
+                <span class="border dark:border-defaultborder/10 border-defaultborder border-t-0 border-container"></span>
+                <span class="border dark:border-defaultborder/10 border-defaultborder border-e-0 border-container"></span>
+                <span class="border dark:border-defaultborder/10 border-defaultborder border-b-0 border-container"></span>
+                <span class="border dark:border-defaultborder/10 border-defaultborder border-s-0 border-container"></span>
+        </app-showcode-card>
+    </div>
+</div>
+<!-- End:: row-1 -->
+
+<!-- Start:: row-2 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-12 col-span-12">
+        <app-showcode-card [title]="'Border colors'"  [prism]="prismCode.bordersTS4">
+                <span class="border border-container !border-primary"></span>
+                <span class="border border-container !border-secondary"></span>
+                <span class="border border-container !border-success"></span>
+                <span class="border border-container !border-danger"></span>
+                <span class="border border-container !border-warning"></span>
+                <span class="border border-container !border-info"></span>
+                <span class="border border-container !border-light"></span>
+                <span class="border border-container !border-black"></span>
+                <span class="border border-container !border-white"></span>
+        </app-showcode-card>
+    </div>
+    <div class="xl:col-span-12 col-span-12">
+        <app-showcode-card [title]="'Border Widths'"  [prism]="prismCode.bordersTS3">
+                <span class="border-1 dark:border-defaultborder/10 border-defaultborder border-container"></span>
+                <span class="border-container dark:border-defaultborder/10 border-defaultborder border-2"></span>
+                <span class="border-container dark:border-defaultborder/10 border-defaultborder border-4"></span>
+                <span class="border-container dark:border-defaultborder/10 border-defaultborder border-8"></span>
+        </app-showcode-card>
+    </div>
+</div>
+<!-- End:: row-2 -->
+
+<!-- Start:: row-3 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="'Border Radius'" [classbody]="'flex flex-wrap gap-2'"  [prism]="prismCode.bordersTS7">
+                <img src="./assets/images/media/media-58.jpg" class="bd-placeholder-img rounded-md" alt="...">
+                <img src="./assets/images/media/media-58.jpg" class="bd-placeholder-img rounded-t-md" alt="...">
+                <img src="./assets/images/media/media-58.jpg" class="bd-placeholder-img rounded-e-md" alt="...">
+                <img src="./assets/images/media/media-58.jpg" class="bd-placeholder-img rounded-b-md" alt="...">
+                <img src="./assets/images/media/media-58.jpg" class="bd-placeholder-img rounded-s-md" alt="...">
+                <img src="./assets/images/media/media-58.jpg" class="bd-placeholder-img rounded-full" alt="...">
+                <img src="./assets/images/media/media-58.jpg" class="bd-placeholder-img  rounded-full" alt="...">
+        </app-showcode-card>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="'Sizes'" [classbody]="'flex flex-wrap gap-2'"  [prism]="prismCode.bordersTS8">
+                <img src="./assets/images/media/media-58.jpg" class="bd-placeholder-img rounded-none" alt="...">
+                <img src="./assets/images/media/media-58.jpg" class="bd-placeholder-img rounded-sm" alt="...">
+                <img src="./assets/images/media/media-58.jpg" class="bd-placeholder-img rounded-md" alt="...">
+                <img src="./assets/images/media/media-58.jpg" class="bd-placeholder-img rounded-lg" alt="...">
+                <img src="./assets/images/media/media-58.jpg" class="bd-placeholder-img rounded-xl" alt="...">
+        </app-showcode-card>
+    </div>
+</div>
+<!-- End:: row-3 -->
+
+<!-- Start:: row-4 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-12 col-span-12">
+        <app-showcode-card [title]="'Border with opacity'"  [prism]="prismCode.bordersTS6">
+                <div class="border border-success p-2 mb-2">This is default success border</div>
+                <div class="border border-success/75 p-2 mb-2">This is 75%
+                    opacity
+                    success border
+                </div>
+                <div class="border border-success/50 p-2 mb-2">This is 50%
+                    opacity
+                    success border
+                </div>
+                <div class="border border-success/25 p-2 mb-2 ">This is 25%
+                    opacity
+                    success border
+                </div>
+                <div class="border border-success/10 p-2">This is 10% opacity
+                    success
+                    border
+                </div>
+        </app-showcode-card>
+    </div>
+    <div class="xl:col-span-12 col-span-12">
+        <app-showcode-card [title]="'Border color Styling'"  [prism]="prismCode.bordersTS5">
+                <div class="mb-4">
+                    <label for="exampleFormControlInput1" class="form-label">Email
+                        address</label>
+                    <input type="email" class="form-control w-full !rounded-md !border-success"
+                        id="exampleFormControlInput1" placeholder="name&#64;example.com">
+                </div>
+                <div class="h4 pb-4 mb-4 text-danger border-b !border-danger">
+                    Below Shows Danger Border
+                </div>
+                <div
+                    class="p-4 bg-info/10 border !border-info  !border-s-0 rounded-e-md mb-1">
+                    Customizing borders with background colors
+                </div>
+        </app-showcode-card>
+    </div>
+</div>
+<!-- End:: row-4 -->

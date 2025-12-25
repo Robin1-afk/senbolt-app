@@ -1,0 +1,427 @@
+<app-page-header [title]="'Dashboards'" [title1]="['HRM']" [activeitem]="'HRM'"></app-page-header>
+<!-- Start:: row-1 -->
+ <div class="grid grid-cols-12 gap-x-6">
+    @for(card of hrmData;track $index){
+    <div class="xxl:col-span-3 xl:col-span-6 col-span-12">
+        <spk-hrm-card
+        [title]="card.title"
+        [value]="card.value"
+        [percentage]="card.percentage"
+        [subtitle]="card.subtitle"
+        [badgeClass]="card.badgeClass"
+        [iconClass]="card.iconClass"
+        [chartId]="card.chartId"
+        [chartOptions]="card.chartOptions"
+        ></spk-hrm-card>
+    </div>
+}
+</div>
+<!-- End:: row-1 -->
+
+<!-- Start:: row-2 -->
+<div class="grid grid-cols-12 gap-x-6 col-span-12">
+    <div class="xxl:col-span-8 col-span-12">
+        <div class="box">
+            <div class="box-header justify-between">
+                <div class="box-title">Project Analysis</div>
+                <div class="flex gap-2">
+                    <div class="ti-btn ti-btn-sm ti-btn-outline-light">Today</div>
+                    <div class="ti-btn ti-btn-sm ti-btn-outline-light">Weakly</div>
+                    <div class="ti-btn ti-btn-sm ti-btn-light">Yearly</div>
+                </div>
+            </div>
+            <div class="box-body pb-1">
+                <ul class="flex flex-wrap mb-0 list-none gap-5 justify-around p-4 border rounded-sm border-dashed dark:border-defaultborder/10">
+                    <li>
+                        <div class="flex items-start justify-between gap-2">
+                            <div class="leading-none me-1">
+                                <span class="avatar avatar-lg avatar-rounded bg-primary/10 !text-primary">
+                                    <i class="ri-stack-line text-xl"></i>
+                                </span>
+                            </div>
+                            <div>
+                                <span class="block mb-0 font-medium text-textmuted dark:text-textmuted/50">New</span>
+                                <h4 class="font-medium mb-0">64,241</h4>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="flex items-start justify-between gap-2">
+                            <div class="leading-none me-1">
+                                <span class="avatar avatar-lg avatar-rounded bg-primarytint1color/10 !text-primarytint1color">
+                                    <i class="ri-rocket-line text-xl"></i>
+                                </span>
+                            </div>
+                            <div>
+                                <span class="block mb-0 font-medium text-textmuted dark:text-textmuted/50">Inprogress</span>
+                                <h4 class="font-medium mb-0">1,543</h4>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="flex items-start justify-between gap-2">
+                            <div class="leading-none me-1">
+                                <span class="avatar avatar-lg avatar-rounded bg-primarytint2color/10 !text-primarytint2color">
+                                    <i class="ri-check-line text-xl"></i>
+                                </span>
+                            </div>
+                            <div>
+                                <span class="block mb-0 font-medium text-textmuted dark:text-textmuted/50">Completed</span>
+                                <h4 class="font-medium mb-0">3,848</h4>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="flex items-start justify-between gap-2">
+                            <div class="leading-none me-1">
+                                <span class="avatar avatar-lg avatar-rounded bg-primarytint3color/10 !text-primarytint3color">
+                                    <i class="ri-time-line text-xl"></i>
+                                </span>
+                            </div>
+                            <div>
+                                <span class="block mb-0 font-medium text-textmuted dark:text-textmuted/50">Onhold</span>
+                                <h4 class="font-medium mb-0">938</h4>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div id="project-analysis">
+                    <spk-apexcharts [chartOptions]="chartOptions4"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xxl:col-span-4 col-span-12">
+        <div class="box">
+            <div class="box-header justify-between">
+                <div class="box-title">Upcoming Events</div>
+                <a aria-label="anchor" href="javascript:void(0);" class="ti-btn ti-btn-sm bg-primary/10 !text-primary">
+                    View All
+                </a>
+            </div>
+            <div class="box-body">
+                <ul class="list-none timeline-widget1 mb-0">
+                    @for(event of events;track $index){
+                    <li class="timeline-widget-list">
+                        <div class="flex items-center flex-wrap">
+                            <div class="avatar avatar-xl bg-{{event.avatarClass}}/10 !text-{{event.avatarClass}} me-2 flex-shrink-0"> 
+                                <div class="text-center">
+                                    <div class=" font-medium leading-none mb-1">{{ event.date }}</div>
+                                    <div class="text-xs text-defaulttextcolor font-medium leading-none">{{ event.day }}</div>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap flex-auto items-top justify-between flex-xl-nowrap gap-1">
+                                <div class="events-width">
+                                    <p class="mb-1 timeline-widget-content">{{event.description}}</p>
+                                    @if(event.time){
+                                    <p class="mb-0 text-xs leading-none text-textmuted dark:text-textmuted/50">{{event.time}}
+                                        <span class="badge bg-{{event.badgeClass}}/10 ms-2 text-{{event.badgeClass}}">{{ event.badge }}</span>
+                                    </p>
+                                    } @else {
+                                        <p class="mb-0 fs-12 lh-1 text-muted">
+                                            <span class="badge bg-{{event.badgeClass}}-transparent mb-sm-0 mb-2">{{ event.badge }}</span>
+                                          </p>
+                                    }
+                                </div>
+                                <spk-dropdowns [Customclass]="'dropdown'" [class]="'ti-btn ti-btn-light ti-btn-icon'" [Icon]="true" [IconClass]="'fe fe-more-vertical'" 
+                                [Menuclass]="'dropdown-menu'">
+                                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Action</a></li>
+                                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Another action</a></li>
+                                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Something else here</a></li>
+                                </spk-dropdowns>
+                            </div>
+                        </div>
+                    </li>
+                }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End:: row-2 -->
+
+<!-- Start:: row-3 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xxl:col-span-5 col-span-12">
+        <div class="box overflow-hidden">
+            <div class="box-header justify-between">
+                <div class="box-title">Employee's Leave</div>
+                <a href="javascript:void(0);" class="ti-btn ti-btn-sm ti-btn-light">View All</a>
+            </div>
+            <div class="box-body p-0">
+                <div class="table-responsive">
+                    <spk-reusable-tables [columns]="leaveColumns" tableClass="ti-custom-table ti-custom-table-head"  [showCheckbox]="false">
+                        @for(leave of leaves;track $index){
+                            <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                <td>
+                                    <div class="flex items-center">
+                                        <span class="avatar avatar-sm">
+                                            <img [src]="leave.src" class="" alt="">
+                                        </span>
+                                        <div class="flex-1 ms-2">
+                                            <p class="mb-0 text-xs font-medium">{{leave.employee}}</p>
+                                            <a href="javascript:void(0);" class="text-[11px] text-textmuted dark:text-textmuted/50">{{leave.role}}</a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="">{{leave.type}}</span>
+                                </td>
+                                <td>
+                                    <span class="">{{leave.days}}</span>
+                                </td>
+                                <td>
+                                    <span class="badge bg-{{leave.bg}}/10 text-{{leave.bg}}">{{leave.status}}</span>
+                                </td>
+                                <td>
+                                    <span class="text-xs">{{leave.date}}</span>
+                                </td>
+                                <td>
+                                    <div class="btn-list">
+                                        <div class="hs-tooltip ti-main-tooltip">
+                                            <a href="javascript:void(0);" class="ti-btn ti-btn-icon ti-btn-sm !rounded-full ti-btn-soft-info !mb-0">
+                                                <i class="ti ti-pencil"></i>
+                                                <span
+                                                    class="hs-tooltip-content  ti-main-tooltip-content py-1 px-2 !bg-black !text-xs !font-medium !text-white shadow-sm "
+                                                    role="tooltip">
+                                                   Edit
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <div (click)="click(leave.id)" class="hs-tooltip ti-main-tooltip">
+                                            <a href="javascript:void(0);" class="ti-btn ti-btn-icon ti-btn-sm !rounded-full ti-btn-soft-primary2  !m-0">
+                                                <i class="ti ti-trash"></i>
+                                                <span
+                                                    class="hs-tooltip-content  ti-main-tooltip-content py-1 px-2 !bg-black !text-xs !font-medium !text-white shadow-sm "
+                                                    role="tooltip">
+                                                   Delete
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                        </spk-reusable-tables>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xxl:col-span-4 col-span-12">
+        <div class="box">
+            <div class="box-header justify-between">
+                <div class="box-title">
+                   Today's Interviews 
+                </div>
+                <div>
+                    <a href="javascript:void(0);" class="ti-btn ti-btn-light ti-btn-sm">View All</a>
+                </div>
+            </div>
+            <div class="box-body py-3">
+                <ul class="list-none mb-0 schedule-list">
+                    @for(item of schedule;track $index){
+                    <li>
+                        <div class="flex items-center flex-wrap flex-xl-nowrap gap-1">
+                            <div class="leading-none">
+                                <span class="avatar avatar-md avatar-rounded p-1 {{ item.bgClass }}/10">
+                                    <img [src]="item.avatar" alt="">
+                                </span>
+                            </div>
+                            <div class="flex-auto ms-2">
+                                <p class="font-medium mb-0">{{ item.name }}</p>
+                                <p class="text-[11px] text-textmuted dark:text-textmuted/50 mb-0 text-nowrap truncate w-75"><i class="ri-time-line me-1"></i>{{ item.date }}({{ item.time }})</p>
+                            </div>
+                            <div class="ms-auto">
+                                <button type="button" class="ti-btn bg-primary ti-btn-sm text-nowrap text-white">Call Now</button>
+                            </div>
+                        </div>
+                    </li>
+                }
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="xxl:col-span-3 col-span-12">
+        <div class="box">
+            <div class="box-header justify-between">
+                <div class="box-title">
+                    Gender Distribution
+                </div>
+                <div>
+                    <a href="javascript:void(0);" class="ti-btn ti-btn-light ti-btn-sm">View All</a>
+                </div>
+            </div>
+            <div class="box-body text-center mx-auto">
+                <div id="gender-chart">
+                    <spk-apexcharts [chartOptions]="chartOptions5"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-body">
+                <ul class="flex flex-wrap mb-0 list-none justify-around text-center gap-2">
+                    <li>
+                        <div>
+                            <div class="leading-none me-1 mb-2">
+                                <span class="avatar avatar-md bg-primary/10 !text-primary border-primary/25 border-[3px] avatar-rounded">
+                                    <i class="ri-stack-line text-[17px] leading-none"></i>
+                                </span>
+                            </div>
+                            <div>
+                                <span class="block mb-0 text-textmuted dark:text-textmuted/50 text-xs">Attendance</span>
+                                <h5 class="font-medium mb-0">4,241</h5>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <div class="leading-none me-1 mb-2">
+                                <span class="avatar avatar-md bg-primarytint1color/10 !text-primarytint1color border-primarytint1color/25 border-[3px] avatar-rounded">
+                                    <i class="ri-calendar-todo-line text-[17px] leading-none"></i>
+                                </span>
+                            </div>
+                            <div>
+                                <span class="block mb-0 text-textmuted dark:text-textmuted/50 text-xs">Absent</span>
+                                <h5 class="font-medium mb-0">485</h5>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <div class="leading-none me-1 mb-2">
+                                <span class="avatar avatar-md bg-primarytint2color/10 !text-primarytint2color border-primarytint2color/25 border-[3px] avatar-rounded">
+                                    <i class="ri-time-line text-[17px] leading-none"></i>
+                                </span>
+                            </div>
+                            <div>
+                                <span class="block mb-0 text-textmuted dark:text-textmuted/50 text-xs">Late</span>
+                                <h5 class="font-medium mb-0">08</h5>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End:: row-3 -->
+
+<!-- Start:: row-4 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xxl:col-span-12 col-span-12">
+        <div class="box">
+            <div class="box-header justify-between">
+                <div class="box-title">
+                    Employee Directory
+                </div>
+                <div class="flex flex-wrap">
+                    <div class="me-3 my-1">
+                        <input class="form-control form-control-sm" type="text" placeholder="Search Here" aria-label=" example">
+                    </div>
+                    <spk-dropdowns [Customclass]="'dropdown my-1'" [title]="'Sort By'" [class]="'ti-btn ti-btn-sm ti-btn-primary ti-dropdown-toggle hs-dropdown-toggle !m-0'" [Icon]="true" [IconClass]="'ri-arrow-down-s-line align-middle ms-1'" 
+                    [Menuclass]="'dropdown-menu'"  >
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">New</a></li>
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Popular</a></li>
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Relevant</a></li>
+                    </spk-dropdowns>
+                </div>
+            </div>
+            <div class="box-body">
+                <div class="table-responsive overflow-auto table-bordered-default">
+                    <spk-reusable-tables  [columns]="employeeColumns" [tableHead]="'border-b'" tableClass="ti-custom-table text-nowrap ti-custom-table-hover"  [showCheckbox]="false">
+                        @for(employee of employees;track $index){
+                            <tr class="border-b border-defaultborder dark:border-defaultborder/10">
+                                <td class="text-center">
+                                    {{employee.number}}
+                                </td>
+                                <td>
+                                   <span class="text-primary text-[14px]"> {{employee.id}}</span>
+                                </td>
+                                <td>
+                                    <div class="flex items-center">
+                                        <img [src]="employee.src" class="avatar avatar-sm" alt="">
+                                        <div class="flex-1 flex-between pos-relative ms-2">
+                                            <div class="">
+                                                <a href="javascript:void(0);" class="text-[13px] font-medium"> {{employee.name}}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class=""> {{employee.position}}</span>
+                                </td>
+                                <td>
+                                    <span class="">{{employee.dept}}</span>
+                                </td>
+                                <td>
+                                    <a href="javascript:void(0);">{{employee.mail}}</a>
+                                </td>
+                                <td>
+                                    <span class="badge bg-{{employee.bg}}/10 text-{{employee.bg}} leading-none">{{employee.status}}</span>
+                                </td>
+                                <td>
+                                    <span class="">{{employee.contact}}</span>
+                                </td>
+                                <td>
+                                    <span class="font-medium">{{employee.salary}}</span>
+                                </td>
+                                <td>
+                                    <div class="btn-list">
+                                        <div class="hs-tooltip ti-main-tooltip [--placement:top]">
+                                        <a aria-label="anchor" href="javascript:void(0);" class="hs-tooltip-toggle ti-btn ti-btn-icon me-2 ti-btn-soft-primary !mb-0">
+                                            <span class="ri-pencil-line text-[14px]"></span>
+                                            <span
+                                                class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 !bg-black !text-xs !font-medium !text-white shadow-sm dark:bg-slate-700"
+                                                role="tooltip">
+                                             Edit
+                                            </span>
+                                        </a>
+                                       </div>
+                                       <div class="hs-tooltip ti-main-tooltip [--placement:top]">
+                                        <a (click)="remove(employee.id)" aria-label="anchor" href="javascript:void(0);" class="hs-tooltip-toggle ti-btn ti-btn-icon me-2 ti-btn-soft-danger !mb-0">
+                                            <span class="ri-delete-bin-7-line text-[14px]"></span>
+                                            <span
+                                                class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 !bg-black !text-xs !font-medium !text-white shadow-sm dark:bg-slate-700"
+                                                role="tooltip">
+                                              Delete
+                                            </span>
+                                        </a>
+                                       </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                        </spk-reusable-tables>
+                </div>
+            </div>
+            <div class="box-footer">
+                <div class="flex flex-wrap items-center">
+                    <div>
+                        Showing 6 Entries <i class="bi bi-arrow-right ms-2 font-medium"></i>
+                    </div>
+                    <div class="ms-auto">
+                        <nav aria-label="Page navigation" class="pagination-style-4">
+                            <ul class="ti-pagination mb-0 flex-wrap">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="javascript:void(0);">
+                                        Prev
+                                    </a>
+                                </li>
+                                <li class="page-item "><a class="page-link active"
+                                        href="javascript:void(0);">1</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                                
+                                <li class="page-item">
+                                    <a class="page-link !text-primary" href="javascript:void(0);">
+                                        next
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End:: row-4 -->

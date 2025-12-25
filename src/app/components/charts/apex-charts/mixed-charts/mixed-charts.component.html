@@ -1,0 +1,53 @@
+
+<app-page-header [title]="'Apex Charts'" [title1]="['Apex Mixed Charts']" [activeitem]="'Apex Mixed Charts'"></app-page-header>
+<!-- Start::row-1 -->
+ <div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Line & Column Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="mixed-linecolumn">
+                    <spk-apexcharts [chartOptions]="chartOptions"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Multiple Y-Axis Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="mixed-multiple-y"></div>
+                <spk-apexcharts [chartOptions]="chartOptions1"></spk-apexcharts>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Line & Area Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="mixed-linearea">
+                    <spk-apexcharts [chartOptions]="chartOptions2"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Line,Column & Area Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="mixed-all">
+                    <spk-apexcharts [chartOptions]="chartOptions3"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End::row-1 -->

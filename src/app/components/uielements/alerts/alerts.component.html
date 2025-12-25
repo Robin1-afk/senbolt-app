@@ -1,0 +1,309 @@
+<app-page-header [title]="'Ui Elements'" [title1]="['Alerts']" [activeitem]="'Alerts'"></app-page-header>
+ 
+ <!--ROW-START-->
+ <div class="grid grid-cols-12 gap-x-6">
+  <div class="xl:col-span-6 col-span-12">
+    <app-showcode-card [title]="'Default alerts'" [prism]="prsimCodeData.alertTS5">
+            @for (alert of alertData; track $index) {
+            <spk-alerts [alertClass]="alert.color"
+            [message]="alert.title"> 
+          </spk-alerts>
+        }
+    </app-showcode-card>
+  </div>
+  <div class="xl:col-span-6 col-span-12">
+    <app-showcode-card [title]="'Links in alerts'" [prism]="prsimCodeData.alertTS6">
+            @for (alert of LinkAlerts; track $index) {
+            <spk-alerts [alertClass]="alert.variant" 
+            [message]="alert.title">
+          </spk-alerts>
+        }
+    </app-showcode-card>
+  </div>
+  <div class="xl:col-span-12 col-span-12">
+    <app-showcode-card [title]="'Solid Colored alerts'" [prism]="prsimCodeData.alertTS7">
+            @for (alert of solidAlerts; track $index) {
+            <spk-alerts [alertClass]="alert.type"
+            [message]="alert.message" > 
+          </spk-alerts>
+        }
+    </app-showcode-card>
+  </div>
+  <div class="xl:col-span-12 col-span-12">
+    <app-showcode-card [title]="'Rounded Solid Alerts'" [prism]="prsimCodeData.alertTS16">
+            @for (alert of solidroundedAlerts; track $index) {
+              <spk-alerts [alertClass]="alert.type"
+              [message]="alert.message" > 
+            </spk-alerts>
+          }
+    </app-showcode-card>
+  </div>
+  <div class="xxl:col-span-6 col-span-12" >
+    <app-showcode-card [title]="'Basic Alert'" [prism]="prsimCodeData.alertTS">
+      <div class="alert alert-warning fade show flex" role="alert" *ngIf="isAlertVisible">
+        <div class="md:flex-shrink-0">
+          <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+        </div>
+        <div class="ms-auto">
+          <div>
+            <button
+              aria-label="button"
+              type="button"
+              class="inline-flex rounded-sm focus:outline-none focus:ring-0 focus:ring-offset-0"
+              (click)="closeAlert()"
+            >
+              <i class="bi bi-x text-xl leading-none"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </app-showcode-card>
+  </div>
+  
+  <div class="xxl:col-span-6 col-span-12">
+    <app-showcode-card [title]="' Default Alert'" [prism]="prsimCodeData.alertTS16">
+              <div class="bg-gray-50 border border-gray-200 dark:bg-light dark:border-defaultborder/10 alert mb-0"
+                  role="alert">
+                  <div class="flex">
+                      <div class="sm:flex-shrink-0">
+                          <svg class="h-4 w-4 text-gray-500 mt-0.5" xmlns="http://www.w3.org/2000/svg"
+                              width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                              <path
+                                  d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
+                          </svg>
+                      </div>
+                      <div class="flex-1 md:flex md:justify-between ms-2">
+                          <p class="text-sm dark:text-defaulttextcolor/80">
+                              A new software update is available. See what's new in version 3.0.7
+                          </p>
+                          <p class="text-sm mt-3 md:mt-0 md:ms-6">
+                              <a class="dark:text-defaulttextcolor/80 hover:text-gray-500 font-medium whitespace-nowrap"
+                                  href="javascript:void(0);">Details</a>
+                          </p>
+                      </div>
+                  </div>
+              </div>
+    </app-showcode-card>
+  </div>
+  <div class="xl:col-span-12 col-span-12">
+    <app-showcode-card [title]="'Outline Alerts'" [prism]="prsimCodeData.alertTS2">
+            @for (alert of outlineAlerts; track $index) {
+              <spk-alerts [alertClass]="alert.type"
+              [message]="alert.message" > 
+            </spk-alerts>
+          }
+    </app-showcode-card>
+  </div>
+  <div class="xxl:col-span-6 col-span-12">
+    <app-showcode-card [title]="'Solid Alerts With Different Shadows'" [prism]="prsimCodeData.alertTS3">
+            @for (alert of solidShadowsAlerts; track $index) {
+              <spk-alerts [alertClass]="alert.type"
+              [message]="alert.message" > 
+            </spk-alerts>
+          }
+    </app-showcode-card>
+  </div>
+  <div class="xxl:col-span-6 col-span-12">
+    <app-showcode-card [title]="'  Default Alerts With Different Shadows'" [prism]="prsimCodeData.alertTS4">
+            @for (alert of differentShadowsAlerts; track $index) {
+              <spk-alerts [alertClass]="alert.type"
+              [message]="alert.message" > 
+            </spk-alerts>
+          }
+    </app-showcode-card>
+  </div>
+  <div class="xxl:col-span-6 col-span-12">
+    <app-showcode-card [title]="' Rounded Outline Alerts'" [prism]="prsimCodeData.alertTS8">
+            @for (alert of roundedoutlineAlerts; track $index) {
+              <spk-alerts [alertClass]="alert.type"
+              [message]="alert.message" > 
+            </spk-alerts>
+          }
+    </app-showcode-card>
+  </div>
+  <div class="xxl:col-span-6 col-span-12">
+    <app-showcode-card [title]="' Rounded Default Alerts'" [prism]="prsimCodeData.alertTS11">
+            @for (alert of roundeDefaultAlerts; track $index) {
+              <spk-alerts [alertClass]="alert.type"
+              [message]="alert.message" > 
+            </spk-alerts>
+          }
+    </app-showcode-card>
+  </div>
+  <div class="xl:col-span-12 col-span-12">
+    <app-showcode-card [title]="'Rounded Alerts With Custom Close Button'" [prism]="prsimCodeData.alertTS12">
+            @for (alert of CustomeButtonAlerts; track $index) {
+              <spk-alerts [alertClass]="alert.type"
+              [message]="alert.message" > 
+            </spk-alerts>
+          }
+    </app-showcode-card>
+  </div>
+  <div class="xl:col-span-6 col-span-12">
+    <app-showcode-card [title]="' Customized Alerts With SVG\'s'" [prism]="prsimCodeData.alertTS13">
+            @for (alert of CustomizedButtonAlerts; track $index) {
+              <spk-alerts [alertClass]="alert.type"
+              [message]="alert.message" [icon]="getSanitizedSVG(alert.icon)" > 
+            </spk-alerts>
+          } 
+    </app-showcode-card>
+  </div>
+  <div class="xl:col-span-6 col-span-12">
+    <app-showcode-card [title]="'Alerts with icons'" [prism]="prsimCodeData.alertTS14">
+            @for (alert of CustomizedIconAlerts; track $index) {
+              <spk-alerts [alertClass]="alert.type"
+              [message]="alert.message" [icon]="getSanitizedSVG(alert.icon)" > 
+            </spk-alerts>
+          } 
+    </app-showcode-card>
+  </div>
+  <div class="xl:col-span-12 col-span-12">
+    <app-showcode-card [title]="'Alerts with Images'" [prism]="prsimCodeData.alertTS15">
+            @for (alert of imageAlerts; track $index) {
+              <spk-alerts [alertClass]="alert.type" [avatarClass]="alert.avatarClass"
+              [message]="alert.message" [image]="alert.image" > 
+            </spk-alerts>
+          } 
+    </app-showcode-card>
+  </div>
+  <div class="xl:col-span-12 col-span-12">
+    <app-showcode-card [title]="'Alerts With Different size Images'" [prism]="prsimCodeData.alertTS16">
+            @for (alert of imageSizeAlerts; track $index) {
+              <spk-alerts [alertClass]="alert.type" [avatarClass]="alert.avatarClass"
+              [message]="alert.message" [image]="alert.image" > 
+            </spk-alerts>
+          } 
+    </app-showcode-card>
+  </div>
+  <div class="xl:col-span-12 col-span-12">
+      <div class="grid grid-cols-12 gap-x-6">
+        @for(confirmAlerts of confirmAlerts;track $index;let i = $index){
+          <div class="xxl:col-span-3 xl:col-span-6 lg:col-span-6 md:col-span-6 sm:col-span-6 col-span-12">
+              <div class="box !bg-white dark:!bg-bodybg !border-0">
+                  <div class="alert {{confirmAlerts.type}} !bg-white dark:!bg-bodybg" id="dismiss-alert69">
+                      <button type="button" class="btn-close ms-auto" (click)="confirmAlertClose(i)"
+                          data-hs-remove-element="#dismiss-alert69" aria-label="Close"><i
+                              class="bi bi-x"></i></button>
+                      <div class="text-center px-[3rem] pb-0">
+                        <span class="custom-alert-icon inline-flex" [innerHTML]="getSanitizedSVG(confirmAlerts.icon)"></span>
+                          <h5 class="text-[1.25rem] !font-medium">{{confirmAlerts.title}}</h5>
+                          <p class="">{{confirmAlerts.message}}</p>
+                          @if(confirmAlerts.buttons.length > 0){
+                            <div class="">
+                              @for(button of confirmAlerts.buttons;track $index){
+                              <button class="ti-btn !py-1 !px-2 !text-[0.75rem] !font-medium ti-btn-{{ button.type }} m-1">{{ button.label }}</button>
+                              }
+                            </div>
+                            }
+                      </div>
+                  </div>
+                </div>
+              </div>
+            }
+      </div>
+  </div>
+  <div class="xl:col-span-12 col-span-12">
+      <div class="box">
+          <div class="box-header justify-between">
+              <div class="box-title">
+                  Additional content
+              </div>
+              <div class="prism-toggle">
+                  <button type="button" class="ti-btn !py-1 !px-2 ti-btn-soft-primary !text-[0.75rem] !font-medium btn-wave">Show
+                      Code<i class="ri-code-line ms-2 inline-block align-middle"></i></button>
+              </div>
+          </div>
+          <div class="box-body">
+              <div class="grid grid-cols-12 gap-4">
+                @for(alert of additionalInfoAlert; track alert; let i = $index){
+                  <div class="xxl:col-span-6 col-span-12">
+                      <div class="alert {{alert.variant}} !p-0" role="alert"
+                          id="dismiss-alert65">
+                          <div class="p-4 bg-{{alert.bgColor}} text-white flex justify-between">
+                              <h6 class="aletr-heading text-white mb-0 text-[1rem]">{{alert.title}}
+                              </h6>
+                              <button type="button" (click)="additionalInfoClose(i)"
+                                  class="inline-flex  rounded-sm  focus:outline-none focus:ring-0 focus:ring-offset-0 "
+                                  data-hs-remove-element="#dismiss-alert65">
+                                  <span class="sr-only">Dismiss</span>
+                                  <i class="bi bi-x text-xl leading-none"></i>
+                              </button>
+                          </div>
+                          <div class="p-3">
+                              <p class="mb-0">{{alert.message}}<a
+                                      href="javascript:void(0);"
+                                      class="font-semibold underline text-defaulttextcolor">{{alert.linkTitle}}</a></p>
+                          </div>
+                      </div>
+                    </div>
+                  }
+              </div>
+          </div>
+               </div>
+  </div>
+  <div class="xl:col-span-12 col-span-12">
+    <div class="grid grid-cols-12 gap-x-6">
+        @for (alert of InfoSolidAlertData; track $index;let i = $index) {
+            <!-- Loop through the alerts array -->
+            <div  class="xxl:col-span-3 xl:col-span-6 col-span-12">
+              <div class="box !border-0 !shadow-none inform-alerts">
+                <div [ngClass]="['alert', 'border', '!mb-0', '!p-2', 'alert-' + alert.type, '!border-' + alert.type]" [attr.id]="'dismiss-alert' + alert.id">
+                  <div class="flex items-start">
+                    <div class="me-2" [innerHTML]="getSanitizedSVG(alert.iconPath)">
+                    </div>
+                    <div [ngClass]="'text-' + alert.type" class="w-full">
+                      <div class="font-semibold flex justify-between">
+                        {{ alert.title }}
+                        <button type="button" (click)="InfoSolidAlertDataClose(i)" class="inline-flex rounded-sm focus:outline-none focus:ring-0 focus:ring-offset-0">
+                          <span class="sr-only">Dismiss</span>
+                          <i class="bi bi-x text-xl leading-none"></i>
+                        </button>
+                      </div>
+                      <div class="text-[0.75rem] opacity-[0.8] mb-1">{{ alert.message }}</div>
+                      <div class="text-[0.75rem]">
+                        <a href="javascript:void(0);" class="text-white font-semibold me-2 inline-block">cancel</a>
+                        <a href="javascript:void(0);" class="text-white font-semibold">open</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        }
+          
+    </div>
+    
+  </div>
+  <div class="xl:col-span-12 col-span-12">
+      <div class="grid grid-cols-12 gap-x-6">
+        @for (alert of InfoAlertData; track $index;let i = $index) {
+            <!-- Loop through the alerts array -->
+            <div  class="xxl:col-span-3 xl:col-span-6 col-span-12">
+              <div class="box !border-0 !shadow-none inform-alerts">
+                <div [ngClass]="['alert', 'border', 'mb-0', '!p-2', 'alert-' + alert.type, '!border-' + alert.type]" [attr.id]="'dismiss-alert' + alert.id">
+                  <div class="flex items-start">
+                    <div class="me-2" [innerHTML]="getSanitizedSVG(alert.iconPath)">
+                    </div>
+                    <div [ngClass]="'text-' + alert.type" class="w-full">
+                      <div class="font-semibold flex justify-between">
+                        {{ alert.title }}
+                        <button type="button" (click)="InfoAlertDataClose(i)" class="inline-flex rounded-sm focus:outline-none focus:ring-0 focus:ring-offset-0">
+                          <span class="sr-only">Dismiss</span>
+                          <i class="bi bi-x text-xl leading-none"></i>
+                        </button>
+                      </div>
+                      <div class="text-[0.75rem] opacity-[0.8] mb-1">{{ alert.message }}</div>
+                      <div class="text-[0.75rem]">
+                        <a href="javascript:void(0);" class="text-primary  font-semibold me-2 inline-block">cancel</a>
+                        <a href="javascript:void(0);" class="text-secondary  font-semibold">open</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        }
+      </div>
+  </div>
+</div>
+<!--ROW-END-->

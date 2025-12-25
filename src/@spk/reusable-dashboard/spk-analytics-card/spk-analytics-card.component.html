@@ -1,0 +1,28 @@
+<div class="box overflow-hidden">
+    <div class="box-body pb-0 pe-0">
+        <div class="mb-4">
+            <div class="flex justify-between flex-wrap">
+                <span class="avatar avatar-rounded {{ bgClass }}  svg-white">
+                    <i class="{{ iconClass }} text-[22px]"></i>
+                </span>
+                <span class="font-medium text-[13px] text-textmuted dark:text-textmuted/50 pe-3">{{ title }}</span>
+            </div>
+        </div>
+        <div class="flex items-end justify-between">
+            <div class="pb-3">
+                <span class="text-[20px] font-medium mb-0 flex items-center">{{ value }}
+                </span>
+                <div class="text-textmuted dark:text-textmuted/50 text-[13px]">{{percentageClass}} By</div>
+                @if(trend === 'up'){
+                <span class="text-success">{{ percentageChange }}<i class="ti ti-arrow-narrow-{{trend}} text-[16px]"></i></span>
+                }
+                @if(trend === 'down'){
+                    <span class="text-danger">{{ percentageChange }}<i class="ti ti-arrow-narrow-{{trend}} text-[16px]"></i></span>
+                }
+            </div>
+            <div id="chart-21">
+                <spk-apexcharts [chartOptions]="chartOptions"></spk-apexcharts>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,83 @@
+@if (!isClosed) {
+  <div class="box custom-box" [class.box-fullscreen]="isFullscreen">
+    <div class="box-header justify-between border-bottom-0">
+      <div class="box-title">{{ title }}</div>
+      <div>
+        <!-- Collapse Button -->
+        @if (isCollapsible) {
+          <a
+            aria-label="anchor"
+            (click)="toggleCollapse()"
+            class="hs-collapse-toggle inline-flex items-center gap-x-2"
+            href="javascript:void(0);"
+            [attr.id]="collapseId"
+            [attr.data-hs-collapse]="collapseTarget"
+          >
+            <svg
+              class="hs-collapse-open:rotate-180 w-2.5 h-2.5"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2 5L8.16086 10.6869C8.35239 10.8637 8.64761 10.8637 8.83914 10.6869L15 5"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </a>
+        }
+
+        <!-- Close Button -->
+        @if (isClosable) {
+          <a (click)="closeCard()" href="javascript:void(0);">
+            <i class="ri-close-line fs-18"></i>
+          </a>
+        }
+
+        <!-- Fullscreen Button -->
+        @if (isFullscreenable) {
+          <a (click)="toggleFullscreen()" href="javascript:void(0);">
+            <i
+              [class]="
+                isFullscreen
+                  ? 'ri-fullscreen-exit-line'
+                  : 'ri-fullscreen-line'
+              "
+            ></i>
+          </a>
+        }
+      </div>
+    </div>
+    @if(isFullscreenable){
+      <div class="box-body">
+        <h6 class="card-text font-semibold">{{ subtitle }}</h6>
+        <p class="box-text mb-0">{{ content }}</p>
+      </div>
+      <div class="box-footer">
+        <button class="ti-btn btn-wave ti-btn-primary">Read More</button>
+      </div>
+    }
+      @else{
+
+        @if (isCollapsible || !isCollapsed) {
+          <div
+            [attr.id]="collapseId"
+            class="hs-collapse w-full overflow-hidden transition-[height] duration-300"
+            [attr.aria-labelledby]="collapseId"
+          >
+            <div class="box-body">
+              <h6 class="card-text font-semibold">{{ subtitle }}</h6>
+              <p class="box-text mb-0">{{ content }}</p>
+            </div>
+            <div class="box-footer">
+              <button class="ti-btn btn-wave ti-btn-primary">Read More</button>
+            </div>
+          </div>
+        }
+      }
+  </div>
+}

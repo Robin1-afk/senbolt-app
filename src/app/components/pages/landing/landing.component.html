@@ -1,0 +1,1521 @@
+ <!-- ========== Switcher  ========== -->
+ <div id="hs-overlay-switcher" class="hs-overlay hidden ti-offcanvas ti-offcanvas-right" tabindex="-1">
+    <div class="ti-offcanvas-header border-defaultborder dark:border-defaultborder/10">
+        <h5 class="ti-offcanvas-title">
+            Switcher
+        </h5>
+        <button type="button"
+            class="ti-btn flex-shrink-0 p-0 transition-none text-defaulttextcolor dark:text-defaulttextcolor/70 hover:text-gray-700 focus:ring-gray-400 focus:ring-offset-white  dark:hover:text-white/80 dark:focus:ring-white/10 dark:focus:ring-offset-white/10"
+            data-hs-overlay="#hs-overlay-switcher">
+            <span class="sr-only">Close modal</span>
+            <i class="ri-close-circle-line leading-none text-lg"></i>
+        </button>
+    </div>
+    <div class="ti-offcanvas-body !p-0" id="switcher-body">
+        <div>
+            <div>
+                <p class="switcher-style-head">Theme Color Mode:</p>
+                <div class="grid grid-cols-3 gap-6 switcher-style">
+                    <div class="flex">
+                        <input (click)="themeChange('light', 'light')" type="radio" name="theme-style" class="ti-form-radio" id="switcher-light-theme"
+                            checked>
+                        <label for="switcher-light-theme"
+                            class="text-xs text-defaulttextcolor dark:text-defaulttextcolor/70 font-semibold ms-2 ">Light</label>
+                    </div>
+                    <div class="flex">
+                        <input (click)="themeChange('dark', 'dark')" type="radio" name="theme-style" class="ti-form-radio" id="switcher-dark-theme" [checked]="localdata['xintradarktheme'] == 'dark'">
+                        <label for="switcher-dark-theme"
+                            class="text-xs text-defaulttextcolor dark:text-defaulttextcolor/70 font-semibold ms-2 ">Dark</label>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p class="switcher-style-head">Directions:</p>
+                <div class="grid grid-cols-3 gap-6 switcher-style">
+                    <div class="flex">
+                        <input  (click)="DirectionsChange('ltr')" type="radio" name="direction" class="ti-form-radio" id="switcher-ltr" checked>
+                        <label for="switcher-ltr"
+                            class="text-xs font-semibold text-defaulttextcolor dark:text-defaulttextcolor/70 ms-2 ">LTR</label>
+                    </div>
+                    <div class="flex">
+                        <input (click)="DirectionsChange('rtl')" type="radio" name="direction" class="ti-form-radio" id="switcher-rtl" [checked]="localdata['dir'] == 'rtl'">
+                        <label for="switcher-rtl"
+                            class="text-xs font-semibold text-defaulttextcolor dark:text-defaulttextcolor/70 ms-2 ">RTL</label>
+                    </div>
+                </div>
+            </div>
+            <div class="theme-colors">
+                <p class="switcher-style-head">Theme Primary:</p>
+                <div class="flex switcher-style space-x-3 rtl:space-x-reverse">
+                    <div class="ti-form-radio switch-select">
+                        <input class="ti-form-radio color-input color-primary-1" (click)="primary('118 71 229')"  [checked]="localdata['themePrimary'] == '118 71 229'"  type="radio" name="theme-primary"
+                            id="switcher-primary">
+                    </div>
+                    <div class="ti-form-radio switch-select">
+                        <input class="ti-form-radio color-input color-primary-2" (click)="primary('63 75 236')"  [checked]="localdata['themePrimary'] == '63 75 236'" type="radio" name="theme-primary"
+                            id="switcher-primary1">
+                    </div>
+                    <div class="ti-form-radio switch-select">
+                        <input class="ti-form-radio color-input color-primary-3" (click)="primary('55 125 206')"  [checked]="localdata['themePrimary'] == '55 125 206'" type="radio" name="theme-primary"
+                            id="switcher-primarytint2color ">
+                    </div>
+                    <div class="ti-form-radio switch-select">
+                        <input class="ti-form-radio color-input color-primary-4" (click)="primary('1 159 162')"  [checked]="localdata['themePrimary'] == '1 159 162'" type="radio" name="theme-primary"
+                            id="switcher-primarytint3color ">
+                    </div>
+                    <div class="ti-form-radio switch-select">
+                        <input class="ti-form-radio color-input color-primary-5" (click)="primary('139 149 4')"  [checked]="localdata['themePrimary'] == '139 149 4'" type="radio" name="theme-primary"
+                            id="switcher-primary4">
+                    </div>
+                    <div class="ti-form-radio switch-select ps-0 mt-1 color-primary-light">
+                        <div class="pickr-container-primary">
+                        <div class="pickr">
+                            <button
+                              type="button"
+                              class="pcr-button"
+                              role="button"
+                              aria-label="toggle color picker dialog"
+                              id="lightPrimaryColorID"
+                              style="--pcr-color: rgba(132 90 223 1)"
+                              [style.background]="color1"
+                              [cpAlphaChannel]="'disabled'"
+                              [cpOutputFormat]="'hex'"
+                              [(colorPicker)]="color1"
+                              (cpSliderDragEnd)="dynamicLightPrimary($event)"
+                            ></button>
+                          </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ti-offcanvas-footer sm:flex justify-between">
+        <a href="javascript:void(0);" id="reset-all" (click)="reset()" class="w-full ti-btn ti-btn-danger m-1">Reset</a>
+    </div>
+</div>
+<!-- ========== END Switcher  ========== -->
+
+<div class="landing-page-wrapper relative">
+
+    <!-- Start::Header -->
+    <header class="app-header" id="header">
+
+        <!-- Start::main-header-container -->
+        <div class="main-header-container container-fluid">
+
+            <!-- Start::header-content-left -->
+            <div class="header-content-left">
+
+                <!-- Start::header-element -->
+                <div class="header-element">
+                    <div class="horizontal-logo">
+                        <a  routerLink="/dashboards/sales" class="header-logo">
+                            <img src="./assets/images/brand-logos/toggle-logo.png" alt="logo" class="toggle-logo">
+                            <img src="./assets/images/brand-logos/toggle-dark.png" alt="logo" class="toggle-dark">
+                        </a>
+                    </div>
+                </div>
+                <!-- End::header-element -->
+
+                <!-- Start::header-element -->
+                <div class="header-element">
+                    <!-- Start::header-link -->
+                    <a (click)="toggleSidebar()" aria-label="anchor" href="javascript:void(0);" class="sidemenu-toggle header-link">
+                        <span class="open-toggle">
+                            <i class="ri-menu-3-line text-xl"></i>
+                        </span>
+                    </a>
+                    <!-- End::header-link -->
+                </div>
+                <!-- End::header-element -->
+
+            </div>
+            <!-- End::header-content-left -->
+
+            <!-- Start::header-content-right -->
+            <div class="header-content-right">
+
+                <!-- Start::header-element -->
+                <div class="header-element items-center">
+                    <!-- Start::header-link|switcher-icon -->
+                    <div class="ti-btn-list lg:hidden flex">
+                        <a routerLink="/authentication/sign-up/basic" class="ti-btn ti-btn-soft-primary1">
+                            Sign Up
+                        </a>
+                        <a aria-label="anchor" href="javascript:void(0);"
+                            class="ti-btn m-0 p-2 px-3 ti-btn-primary ti-btn-icon  btn-wave"
+                            data-hs-overlay="#hs-overlay-switcher"><i
+                                class="ri-settings-3-line animate-spin-slow"></i></a>
+                    </div>
+                    <!-- End::header-link|switcher-icon -->
+                </div>
+                <!-- End::header-element -->
+
+            </div>
+            <!-- End::header-content-right -->
+
+        </div>
+        <!-- End::main-header-container -->
+
+    </header>
+    <!-- End::Header -->
+
+    <!-- Start::app-sidebar -->
+    <aside [ngClass]="{ 'data-toggled': isDataToggled , 'sticky-pin': scrolled  }" class="app-sidebar sticky" id="sidebar">
+
+        <div class="container-xl px-2">
+            <!-- Start::main-sidebar -->
+            <div class="main-sidebar shadow-none">
+
+                <!-- Start::nav -->
+                <nav class="main-menu-container nav nav-pills sub-open">
+                    <div class="landing-logo-container">
+                        <div class="horizontal-logo">
+                            <a  routerLink="/dashboards/sales" class="header-logo">
+                                <img src="./assets/images/brand-logos/desktop-logo.png" alt="logo"
+                                    class="desktop-logo">
+                                <img src="./assets/images/brand-logos/desktop-white.png" alt="logo"
+                                    class="desktop-white">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="slide-left" id="slide-left"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191"
+                            width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path>
+                        </svg></div>
+                    <ul class="main-menu">
+                        <!-- Start::slide -->
+                        <li class="slide">
+                            <a class="side-menu__item" value="home" (click)="scroll(home)">
+                                <span class="side-menu__label">Home</span>
+                            </a>
+                        </li>
+                        <!-- End::slide -->
+                        <!-- Start::slide -->
+                        <li class="slide">
+                            <a class="side-menu__item"  value="about" (click)="scroll(about)">
+                                <span class="side-menu__label">About</span>
+                            </a>
+                        </li>
+                        <!-- End::slide -->
+                        <!-- Start::slide -->
+                        <li class="slide has-sub"  [ngClass]="expande ? 'open' : ''">
+                            <a href="javascript:void(0);" class="side-menu__item" [class.active]="expande" (click)="toggleExpand()" >
+                                <span class="side-menu__label me-2">More</span>
+                                <i class="fe fe-chevron-right side-menu__angle opacity-80"></i>
+                            </a>
+                            <ul class="slide-menu child1" [class.active]="expande" 
+                            [ngStyle]="{ display: expande ? 'block' : 'none' }">
+                                <li class="slide">
+                                    <a (click)="scroll(services)" value="services" class="side-menu__item">Services</a>
+                                </li>
+                                <li class="slide">
+                                    <a (click)="scroll(expectations)" value="expectations" class="side-menu__item">Expectations</a>
+                                </li>
+                                <li class="slide">
+                                    <a (click)="scroll(features)" value="features" class="side-menu__item">Features</a>
+                                </li>
+                                <li class="slide has-sub" [class.open]="expande1">
+                                    <a href="javascript:void(0);" class="side-menu__item" (click)="expande1 = !expande1"
+                                    [class.open]="expande1">Level-2
+                                        <i class="fe fe-chevron-right side-menu__angle"></i></a>
+                                    <ul class="slide-menu child2" [class.active]="expande1"
+                                    [ngStyle]="{ 'display': expande1 ? 'block' : 'none' }">
+                                        <li class="slide">
+                                            <a href="javascript:void(0);" class="side-menu__item">Level-2-1</a>
+                                        </li>
+                                        <li class="slide has-sub" (click)="expande2 = !expande2"
+                                        [class.open]="expande2">
+                                            <a href="javascript:void(0);" class="side-menu__item">Level-2-2
+                                                <i class="fe fe-chevron-right side-menu__angle"></i></a>
+                                            <ul class="slide-menu child3" [class.active]="expande2"
+                                            [ngStyle]="{ 'display': expande2 ? 'block' : 'none' }">
+                                                <li class="slide">
+                                                    <a href="javascript:void(0);"
+                                                        class="side-menu__item">Level-2-2-1</a>
+                                                </li>
+                                                <li class="slide has-sub">
+                                                    <a href="javascript:void(0);"
+                                                        class="side-menu__item">Level-2-2-2</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- End::slide -->
+                        <!-- Start::slide -->
+                        <li class="slide">
+                            <a (click)="scroll(team)" value="team" class="side-menu__item">
+                                <span class="side-menu__label">Team</span>
+                            </a>
+                        </li>
+                        <!-- End::slide -->
+                        <!-- Start::slide -->
+                        <li class="slide">
+                            <a (click)="scroll(pricing)" value="pricing" class="side-menu__item">
+                                <span class="side-menu__label">Pricing</span>
+                            </a>
+                        </li>
+                        <!-- End::slide -->
+                        <!-- Start::slide -->
+                        <li class="slide">
+                            <a (click)="scroll(faqs)" value="faqs" class="side-menu__item">
+                                <span class="side-menu__label">FAQ's</span>
+                            </a>
+                        </li>
+                        <!-- End::slide -->
+                        <!-- Start::slide -->
+                        <li class="slide">
+                            <a (click)="scroll(testimonials)" value="testimonials" class="side-menu__item">
+                                <span class="side-menu__label">Testimonials</span>
+                            </a>
+                        </li>
+                        <!-- End::slide -->
+                        <!-- Start::slide -->
+                        <li class="slide">
+                            <a (click)="scroll(contact)" value="contact" class="side-menu__item">
+                                <span class="side-menu__label">Contact Us</span>
+                            </a>
+                        </li>
+                        <!-- End::slide -->
+
+                    </ul>
+                    <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191"
+                            width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z">
+                            </path>
+                        </svg></div>
+                    <div class="lg:flex hidden">
+                        <div class="ti-btn-list ti-btn-sm lg:flex hidden mt-lg-2 mt-xl-0 mt-0">
+                            <a routerLink="/authentication/sign-up/basic" class="ti-btn btn-wave bg-primarytint1color text-white">
+                                Sign Up
+                            </a>
+                            <a aria-label="anchor" href="javascript:void(0);"
+                                class="ti-btn m-0 p-2 px-3 ti-btn-primary ti-btn-icon btn-wave !font-medium"
+                                data-hs-overlay="#hs-overlay-switcher"><i
+                                    class="ri-settings-3-line animate-spin-slow"></i></a>
+                        </div>
+                    </div>
+                </nav>
+                <!-- End::nav -->
+
+            </div>
+            <!-- End::main-sidebar -->
+        </div>
+
+    </aside>
+    <!-- End::app-sidebar -->
+
+    <!-- Start::main-content -->
+    <div (click)="bodyclick()" class="main-content !p-0 landing-main dark:text-defaulttextcolor/70">
+        <!-- Start::Home Content -->
+        <div class="landing-banner" id="home" #home>
+            <section class="section">
+                <div class="container main-banner-container">
+                    <div class="grid grid-cols-12 gap-x-6 pt-3">
+                        <div class="xxl:col-span-7 xl:col-span-6 lg:col-span-6 md:col-span-8 col-span-12">
+                            <div class="pt-lg-5 pb-4">
+                                <div class="mb-3">
+                                    <h6 class="font-medium text-white opacity-90">Optimized and Accessible</h6>
+                                </div>
+                                <p class="landing-banner-heading mb-3 !text-white">Refined Design, Elevated User
+                                    Experience:
+                                    Explore <span class="font-semibold text-warning">Xintra</span> Template.</p>
+                                <div class="text-base mb-[3rem] text-white opacity-70">An intuitive admin template
+                                    designed for efficiency, featuring a clean and modern interface that simplifies
+                                    management tasks and enhances productivity.
+                                </div>
+                                <div class="flex items-center flex-wrap gap-2">
+                                    <a  routerLink="/dashboards/sales" class="m-1 ti-btn ti-btn-lg bg-white/10 text-white">
+                                        View Demos
+                                        <i class="ri-eye-line ms-2 align-middle"></i>
+                                    </a>
+                                    <a  routerLink="/dashboards/sales"
+                                        class="m-1 ti-btn ti-btn-lg bg-primarytint1color text-white btn-wave waves-effect waves-light">
+                                        Discover More
+                                        <i class="ri-arrow-right-line ms-2 align-middle"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="xxl:col-span-5 xl:col-span-6 lg:col-span-6 md:col-span-4 col-span-12 my-auto">
+                            <div
+                                class="text-end landing-main-image landing-heading-img flex justify-end mb-[2.5rem]">
+                                <img src="./assets/images/media/landing/1.png" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- End::Home Content -->
+
+        <!-- Start:: Section-2 -->
+        <section class="section" id="about" #about>
+            <div class="container relative">
+                <div class="text-center">
+                    <p class="text-xs font-medium text-success mb-1"><span
+                            class="landing-section-heading text-primary">GLANCE</span>
+                    </p>
+                    <h4 class="!font-semibold mb-1 mt-4">Why you choose us ?</h4>
+                    <div class="">
+                        <div class="xl:col-span-7 col-span-12">
+                            <p class="text-textmuted dark:text-textmuted/50 text-[14px] mb-[3rem] font-normal">Our
+                                mission is to support you in achieving
+                                your goals.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-12 gap-x-6">
+                    @for(data of glancecards;track $index){
+                    <div class="xl:col-span-4 col-span-12">
+                        <spk-glance-cards
+                        [title]="data.title"
+                        [description]="data.description"
+                        [svg]="sanitizeIcon(data.svg)"
+                        buttonText="Read More"
+                        [bgColorClass]="data.bgColorClass"
+                        [borderColorClass]="data.borderColorClass">
+                      </spk-glance-cards>
+                    </div>
+                }
+                </div>
+            </div>
+        </section>
+        <!-- End:: Section-2 -->
+
+        <!-- Start:: Section-3 -->
+        <section class="section section-bg" id="expectations" #expectations>
+            <div class="container">
+                <div class="grid grid-cols-12 gap-x-6 mx-0">
+                    <div class="xl:col-span-5 col-span-12">
+                        <div class="home-proving-image">
+                            <img src="./assets/images/media/landing/2.png" alt=""
+                                class="img-fluid] about-image hidden xl:block">
+                        </div>
+                        <div class="proving-pattern-1"></div>
+                    </div>
+                    <div class="xl:col-span-7 col-span-12 my-auto">
+                        <div class="heading-section text-start mb-4">
+                            <p class="text-xs font-medium text-start text-success mb-1"><span
+                                    class="landing-section-heading text-primary">ABOUT US</span>
+                            </p>
+                            <h4 class="mt-3 !font-semibold mb-2">Our Commitment!</h4>
+                            <div class="heading-description text-[14px]">Welcome to Xintra, our commitment is more
+                                than a statement; it's the cornerstone of everything we do.We are dedicated to
+                                design, ensuring that every interaction, project, and outcome reflects.</div>
+                        </div>
+                        <div class="grid grid-cols-12 gap-x-6 gap-y-3 mb-0">
+                            <div class="xl:col-span-12 col-span-12">
+                                <div class="flex items-top">
+                                    <div class="me-2 home-prove-svg">
+                                        <i class="ri-focus-2-fill align-middle text-primary inline-block"></i>
+                                    </div>
+                                    <div>
+                                        <span class="text-[14px]">
+                                            <strong>Years of Experience and Reputation:</strong> We bring 4+ years
+                                            of experience, backed by a solid reputation for excellence.
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="xl:col-span-12 col-span-12">
+                                <div class="flex items-top">
+                                    <div class="me-2 home-prove-svg">
+                                        <i
+                                            class="ri-focus-2-fill align-middle text-primarytint1color inline-block"></i>
+                                    </div>
+                                    <div>
+                                        <span class="text-[14px]">
+                                            <strong>Professional Team:</strong> Our team consists of experienced and
+                                            professional individuals dedicated to delivering top-notch service.
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="xl:col-span-12 col-span-12">
+                                <div class="flex items-top">
+                                    <div class="me-2 home-prove-svg">
+                                        <i
+                                            class="ri-focus-2-fill align-middle text-primarytint2color inline-block"></i>
+                                    </div>
+                                    <div>
+                                        <span class="text-[14px]">
+                                            <strong>Client-Centric Approach:</strong> We understand that every
+                                            client is unique, so we tailor our services to meet your specific needs
+                                            and preferences.
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="xl:col-span-12 col-span-12">
+                                <div class="flex items-top">
+                                    <div class="me-2 home-prove-svg">
+                                        <i class="ri-focus-2-fill align-middle text-primarytint3color inline-block"></i>
+                                    </div>
+                                    <div>
+                                        <span class="text-[14px]">
+                                            <strong>24/7 Support:</strong> We provide round-the-clock support, 365
+                                            days a year, ensuring that assistance is always available when you need
+                                            it most.
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End:: Section-3 -->
+
+        <!-- Start:: Section-4 -->
+        <section class="section" id="services" #services>
+            <div class="container">
+                <div class="text-center">
+                    <p class="text-xs font-medium text-success mb-1"><span
+                            class="landing-section-heading text-primary">SERVICES</span>
+                    </p>
+                    <h4 class="!font-semibold mt-3 mb-2">What You Get</h4>
+                    <div class="">
+                        <div class="">
+                            <p class="text-textmuted dark:text-textmuted/50 text-[14px] mb-5 font-normal">Nemo enim
+                                ipsam voluptatem quia voluptas sit
+                                aspernatur</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-12 gap-x-6">
+                    @for(data of servicecards;track $index){
+                    <div class="xl:col-span-3 col-span-12">
+                        <spk-services-card
+                                [bgColor]="data.bgColor"
+                                [title]="data.title"
+                                [svg]="sanitizeIcon(data.svg)"
+                                [description]="data.description"
+                            ></spk-services-card>
+                    </div>
+                }
+                </div>
+            </div>
+        </section>
+        <!-- End:: Section-4 -->
+
+        <!-- Start:: Section-5 -->
+        <section class="section landing-Features" id="features" #features>
+            <div class="container text-center">
+                <div class=" justify-center">
+                    <div class="">
+                        <div class="heading-section text-center mb-0">
+                            <p class="text-xs font-medium text-success mb-1"><span
+                                    class="landing-section-heading landing-section-heading-dark text-white">FEATURES</span>
+                            </p>
+                            <h4 class="text-white text-center mt-3 font-medium">Our Features</h4>
+                            <div class="text-[14px] text-white text-center opacity-80 mb-4">Ullamco ea commodo.Sed ut
+                                perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque<br>
+                                laudantium, totam rem aperiam.perspiciatis unde omnis.</div>
+                        </div>
+                    </div>
+                    <div class="my-auto">
+                        <div
+                            class="flex items-center justify-center trusted-companies sub-card-companies flex-wrap mb-3 mb-xl-0 gap-4">
+                            <div class="trust-img"><img src="./assets/images/media/landing/web/1.png" alt="img"
+                                    class="border-0 shadow-sm"></div>
+                            <div class="trust-img"><img src="./assets/images/media/landing/web/2.png" alt="img"
+                                    class="border-0 shadow-sm"></div>
+                            <div class="trust-img"><img src="./assets/images/media/landing/web/4.png" alt="img"
+                                    class="border-0 shadow-sm"></div>
+                            <div class="trust-img"><img src="./assets/images/media/landing/web/5.png" alt="img"
+                                    class="border-0 shadow-sm"></div>
+                            <div class="trust-img"><img src="./assets/images/media/landing/web/6.png" alt="img"
+                                    class="border-0 shadow-sm"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End:: Section-5 -->
+        <!-- Start:: Section-6 -->
+        <section class="section" id="team" #team>
+            <div class="container">
+                <div class="text-center">
+                    <p class="text-xs font-medium text-success mb-1"><span
+                            class="landing-section-heading text-primary">OUR TEAM</span>
+                    </p>
+                    <h4 class="!font-semibold mt-3 mb-2">The people who make our organization Successful</h4>
+                    <div class="">
+                        <div class="">
+                            <p class="text-textmuted dark:text-textmuted/50 text-[14px] mb-5 font-normal">Our team
+                                is made up of real people who are
+                                passionate about what they do.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-12 gap-x-6">
+                    @for(member of teamMembers;track $index){
+                    <div class="xl:col-span-3 lg:col-span-3 md:col-span-6 sm:col-span-6 col-span-12">
+                        <spk-team-card
+                        [name]="member.name"
+                        [role]="member.role"
+                        [teamClass]="member.teamClass"
+                        [class1]="member.class1"
+                        [description]="member.description"
+                        [image]="member.image"
+                        [backgroundColor]="member.backgroundColor"
+                        [badgeColor]="member.badgeColor">
+                      </spk-team-card>
+                     
+                    </div>
+                }
+                </div>
+            </div>
+        </section>
+        <!-- End:: Section-6 -->
+
+        <!-- Start:: Section-7 -->
+        <section class="section section-bg" id="pricing" #pricing>
+            <div class="container">
+                <div class="text-center">
+                    <p class="text-xs font-medium text-success mb-1"><span
+                            class="landing-section-heading text-primary">PRICING</span>
+                    </p>
+                    <h4 class="!font-semibold mt-3 mb-2">Plans that flex with your needs.</h4>
+                    <div class="">
+                        <div class="">
+                            <p class="text-textmuted dark:text-textmuted/50 text-[14px] mb-5 font-normal">Stay agile
+                                with plans that seamlessly adjust to your changing requirements, ensuring you always
+                                have the flexibility you need.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-12 gap-x-6 overflow-hidden">
+                    <div class="xl:col-span-12 col-span-12" id="convertable-pricing">
+                        <div class="flex justify-center mb-4">
+                            <div class="switcher-box">
+                                <span class="pricing-time-span">Monthly</span>
+                                <div class="switcher-pricing text-center">
+                                    <input type="checkbox" class="pricing-toggle" [(ngModel)]="isYearly" (change)="onToggle()" >
+                                </div>
+                                <span class="pricing-time-span">Annually <span
+                                        class="badge leading-none bg-primarytint2color">20% off</span></span>
+                            </div>
+                        </div>
+                        <div class="tab-content show" id="monthly1" [ngClass]="{'show': !isYearly}">
+                            <div class="grid grid-cols-12">
+                              <div class="xl:col-span-12 lg:col-span-8 col-span-12">
+                                <div class="grid grid-cols-12 gap-x-6 items-center justify-center mb-5">
+                                    @for(pricing of pricings;track $index){
+                                    <div class="lg:col-span-12 xl:col-span-4 xxl:col-span-4 md:col-span-12 sm:col-span-12 col-span-12">
+                                        <spk-pricing-card
+                                        [title]="pricing.title"
+                                        [mainClass]="pricing.mainClass"
+                                        [arrowClass]="pricing.arrowClass"
+                                        [buttonClass]="pricing.buttonClass"
+                                        [borderClass]="pricing.borderClass"
+                                        [bodyClass]="pricing.bodyClass"
+                                        [priceClass]="pricing.priceClass"
+                                        [footerClass]="pricing.footerClass"
+                                        [price]="pricing.price"
+                                        [pricingPlan]="pricing.pricingPlan"
+                                        [description]="pricing.description"
+                                        [features]="pricing.features"
+                                        [textColor]="pricing.textColor"
+                                        [isPopular]="pricing.popular">
+                                    </spk-pricing-card>
+                                    </div>
+                                }
+                                </div>
+                              </div>
+                              <div class="xl:col-span-12 lg:col-span-2 col-span-12"></div>
+                            </div>
+                        </div>
+                        <div class="tab-content" id="yearly1" [ngClass]="{'show': isYearly}">
+                            <div class="grid grid-cols-12">
+                                <div class="xl:col-span-12 lg:col-span-2 col-span-12"></div>
+                              <div class="xl:col-span-12 lg:col-span-8 col-span-12">
+                                <div class="grid grid-cols-12 gap-x-6 items-center justify-center mb-5">
+                                    @for(pricing of yearlyPricings;track $index){
+                                    <div
+                                        class="lg:col-span-12 xl:col-span-4 xxl:col-span-4 md:col-span-8 sm:col-span-12 col-span-12">
+                                        <spk-pricing-card
+                                        [title]="pricing.title"
+                                        [mainClass]="pricing.mainClass"
+                                        [arrowClass]="pricing.arrowClass"
+                                        [buttonClass]="pricing.buttonClass"
+                                        [borderClass]="pricing.borderClass"
+                                        [bodyClass]="pricing.bodyClass"
+                                        [priceClass]="pricing.priceClass"
+                                        [pricingPlan]="pricing.pricingPlan"
+                                        [footerClass]="pricing.footerClass"
+                                        [price]="pricing.price"
+                                        [description]="pricing.description"
+                                        [features]="pricing.features"
+                                        [textColor]="pricing.textColor"
+                                        [isPopular]="pricing.popular">
+                                    </spk-pricing-card>
+                                    </div>
+                                }
+                                </div>
+                              </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End:: Section-7 -->
+
+        <!-- Start:: Section-8 -->
+        <section class="section" id="faqs" #faqs>
+            <div class="container text-center">
+                <p class="text-xs font-medium text-success mb-1"><span
+                        class="landing-section-heading text-primary">F.A.Q 's</span>
+                </p>
+                <h4 class="!font-semibold mt-3 mb-2">Frequently asked questions ?</h4>
+                <div class="grid grid-cols-12 gap-x-6 justify-center">
+                    <div class="xl:col-span-7 col-span-12">
+                        <p class="text-textmuted dark:text-textmuted/50 text-[14px] mb-5 font-normal">We have shared
+                            some of the most frequently asked
+                            questions to help you out.</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-12 gap-6 text-start">
+                    <div class="xl:col-span-12 col-span-12">
+                        <div class="grid grid-cols-12 gap-6">
+                            <div class="xl:col-span-6 col-span-12">
+                                <div class="accordion accordion-customicon1 accordion-primary accordions-items-seperate"
+                                    id="accordionFAQ1">
+                                    <div class="hs-accordion-group">
+                                        <div class="hs-accordion active bg-white dark:bg-bodybg  border dark:border-defaultborder/10 mt-[0.5rem] border-defaultborder rounded-sm  dark:border dark:border-defaultborder/10-white/10"
+                                            id="faq-one">
+                                            <button type="button"
+                                                class="hs-accordion-toggle hs-accordion-active:!text-primary hs-accordion-active:border dark:border-defaultborder/10 hs-accordion-active:bg-primary/10    dark:hs-accordion-active:border hs-accordion-active:border-transparent dark:border-defaultborder/10-white/10 justify-between inline-flex items-center w-full font-semibold text-start text-[0.85rem] transition py-3 px-4 dark:hs-accordion-active:!text-primary dark:text-gray-200 dark:hover:text-white/80"
+                                                aria-controls="faq-collapse-one">
+                                                Where can I subscribe to your newsletter?
+                                                <svg class="hs-accordion-active:hidden hs-accordion-active:!text-primary hs-accordion-active:group-hover:!text-primary block w-3 h-3 text-gray-600 group-hover:text-defaulttextcolor dark:text-defaulttextcolor/70 "
+                                                    width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1.5 8.85999L14.5 8.85998" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                    <path d="M8 15.36L8 2.35999" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                </svg>
+                                                <svg class="hs-accordion-active:block hs-accordion-active:!text-primary hs-accordion-active:group-hover:!text-primary hidden w-3 h-3 text-gray-600 group-hover:text-defaulttextcolor dark:text-defaulttextcolor/70 "
+                                                    width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1.5 8.85999L14.5 8.85998" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                </svg>
+                                            </button>
+                                            <div id="faq-collapse-one"
+                                                class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300"
+                                                aria-labelledby="faq-one">
+                                                <div class="p-5">
+                                                    <p class="text-defaulttextcolor dark:text-defaulttextcolor/70 ">
+                                                        <strong>This is the first item's accordion body.</strong> It
+                                                        is shown by
+                                                        default, until the collapse plugin adds the appropriate
+                                                        classes that we
+                                                        use to style each element. These classes control the overall
+                                                        appearance,
+                                                        as well as the showing and hiding via CSS transitions. You
+                                                        can modify
+                                                        any of this with custom CSS or overriding our default
+                                                        variables. It's
+                                                        also worth noting that just about any HTML can go within the
+                                                        <code>.accordion-body</code>, though the transition does
+                                                        limit overflow.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="hs-accordion bg-white dark:bg-bodybg border dark:border-defaultborder/10 mt-[0.5rem] border-defaultborder rounded-sm dark:border-defaultborder/10-white/10"
+                                            id="faq-two">
+                                            <button type="button"
+                                                class="hs-accordion-toggle hs-accordion-active:!text-primary hs-accordion-active:border dark:border-defaultborder/10 hs-accordion-active:bg-primary/10    dark:hs-accordion-active:border hs-accordion-active:border-transparent dark:border-defaultborder/10-white/10 justify-between inline-flex items-center w-full font-semibold text-start text-[0.85rem] transition py-3 px-4 dark:hs-accordion-active:!text-primary dark:text-gray-200 dark:hover:text-white/80"
+                                                aria-controls="faq-collapse-two">
+                                                Where can in edit my address?
+                                                <svg class="hs-accordion-active:hidden hs-accordion-active:!text-primary hs-accordion-active:group-hover:!text-primary block w-3 h-3 text-gray-600 group-hover:text-defaulttextcolor dark:text-defaulttextcolor/70 "
+                                                    width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1.5 8.85999L14.5 8.85998" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                    <path d="M8 15.36L8 2.35999" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                </svg>
+                                                <svg class="hs-accordion-active:block hs-accordion-active:!text-primary hs-accordion-active:group-hover:!text-primary hidden w-3 h-3 text-gray-600 group-hover:text-defaulttextcolor dark:text-defaulttextcolor/70 "
+                                                    width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1.5 8.85999L14.5 8.85998" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                </svg>
+                                            </button>
+                                            <div id="faq-collapse-two"
+                                                class="hs-accordion-content w-full overflow-hidden hidden transition-[height] duration-300"
+                                                aria-labelledby="faq-two">
+                                                <div class="p-5">
+                                                    <p class="text-defaulttextcolor dark:text-defaulttextcolor/70 ">
+                                                        <strong>This is the first item's accordion body.</strong> It
+                                                        is shown by
+                                                        default, until the collapse plugin adds the appropriate
+                                                        classes that we
+                                                        use to style each element. These classes control the overall
+                                                        appearance,
+                                                        as well as the showing and hiding via CSS transitions. You
+                                                        can modify
+                                                        any of this with custom CSS or overriding our default
+                                                        variables. It's
+                                                        also worth noting that just about any HTML can go within the
+                                                        <code>.accordion-body</code>, though the transition does
+                                                        limit overflow.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="hs-accordion bg-white dark:bg-bodybg border dark:border-defaultborder/10 mt-[0.5rem] border-defaultborder rounded-sm dark:border-defaultborder/10-white/10"
+                                            id="faq-twenty">
+                                            <button type="button"
+                                                class="hs-accordion-toggle hs-accordion-active:!text-primary hs-accordion-active:border dark:border-defaultborder/10 hs-accordion-active:bg-primary/10    dark:hs-accordion-active:border hs-accordion-active:border-transparent dark:border-defaultborder/10-white/10 justify-between inline-flex items-center w-full font-semibold text-start text-[0.85rem] transition py-3 px-4 dark:hs-accordion-active:!text-primary dark:text-gray-200 dark:hover:text-white/80"
+                                                aria-controls="faq-collapse-three">
+                                                What are your opening hours?
+                                                <svg class="hs-accordion-active:hidden hs-accordion-active:!text-primary hs-accordion-active:group-hover:!text-primary block w-3 h-3 text-gray-600 group-hover:text-defaulttextcolor dark:text-defaulttextcolor/70 "
+                                                    width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1.5 8.85999L14.5 8.85998" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                    <path d="M8 15.36L8 2.35999" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                </svg>
+                                                <svg class="hs-accordion-active:block hs-accordion-active:!text-primary hs-accordion-active:group-hover:!text-primary hidden w-3 h-3 text-gray-600 group-hover:text-defaulttextcolor dark:text-defaulttextcolor/70 "
+                                                    width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1.5 8.85999L14.5 8.85998" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                </svg>
+                                            </button>
+                                            <div id="faq-collapse-three"
+                                                class="hs-accordion-content w-full overflow-hidden hidden transition-[height] duration-300"
+                                                aria-labelledby="faq-twenty">
+                                                <div class="p-5">
+                                                    <p class="text-defaulttextcolor dark:text-defaulttextcolor/70 ">
+                                                        <strong>This is the first item's accordion body.</strong> It
+                                                        is shown by
+                                                        default, until the collapse plugin adds the appropriate
+                                                        classes that we
+                                                        use to style each element. These classes control the overall
+                                                        appearance,
+                                                        as well as the showing and hiding via CSS transitions. You
+                                                        can modify
+                                                        any of this with custom CSS or overriding our default
+                                                        variables. It's
+                                                        also worth noting that just about any HTML can go within the
+                                                        <code>.accordion-body</code>, though the transition does
+                                                        limit overflow.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="hs-accordion bg-white dark:bg-bodybg border dark:border-defaultborder/10 mt-[0.5rem] border-defaultborder rounded-sm dark:border-defaultborder/10-white/10"
+                                            id="faq-thirty">
+                                            <button type="button"
+                                                class="hs-accordion-toggle hs-accordion-active:!text-primary hs-accordion-active:border dark:border-defaultborder/10 hs-accordion-active:bg-primary/10    dark:hs-accordion-active:border hs-accordion-active:border-transparent dark:border-defaultborder/10-white/10 justify-between inline-flex items-center w-full font-semibold text-start text-[0.85rem] transition py-3 px-4 dark:hs-accordion-active:!text-primary dark:text-gray-200 dark:hover:text-white/80"
+                                                aria-controls="faq-collapse-four">
+                                                Do I have the right to return an item?
+                                                <svg class="hs-accordion-active:hidden hs-accordion-active:!text-primary hs-accordion-active:group-hover:!text-primary block w-3 h-3 text-gray-600 group-hover:text-defaulttextcolor dark:text-defaulttextcolor/70 "
+                                                    width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1.5 8.85999L14.5 8.85998" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                    <path d="M8 15.36L8 2.35999" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                </svg>
+                                                <svg class="hs-accordion-active:block hs-accordion-active:!text-primary hs-accordion-active:group-hover:!text-primary hidden w-3 h-3 text-gray-600 group-hover:text-defaulttextcolor dark:text-defaulttextcolor/70 "
+                                                    width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1.5 8.85999L14.5 8.85998" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                </svg>
+                                            </button>
+                                            <div id="faq-collapse-four"
+                                                class="hs-accordion-content w-full overflow-hidden hidden transition-[height] duration-300">
+                                                <div class="p-5">
+                                                    <p class="text-defaulttextcolor dark:text-defaulttextcolor/70 ">
+                                                        <strong>This is the first item's accordion body.</strong> It
+                                                        is shown by
+                                                        default, until the collapse plugin adds the appropriate
+                                                        classes that we
+                                                        use to style each element. These classes control the overall
+                                                        appearance,
+                                                        as well as the showing and hiding via CSS transitions. You
+                                                        can modify
+                                                        any of this with custom CSS or overriding our default
+                                                        variables. It's
+                                                        also worth noting that just about any HTML can go within the
+                                                        <code>.accordion-body</code>, though the transition does
+                                                        limit overflow.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="hs-accordion bg-white dark:bg-bodybg border dark:border-defaultborder/10 mt-[0.5rem] border-defaultborder rounded-sm dark:border-defaultborder/10-white/10"
+                                            id="faq-three">
+                                            <button type="button"
+                                                class="hs-accordion-toggle hs-accordion-active:!text-primary hs-accordion-active:border dark:border-defaultborder/10 hs-accordion-active:bg-primary/10 dark:hs-accordion-active:border hs-accordion-active:border-transparent dark:border-defaultborder/10-white/10 justify-between inline-flex items-center w-full font-semibold text-start text-[0.85rem] transition py-3 px-4 dark:hs-accordion-active:!text-primary dark:text-gray-200 dark:hover:text-white/80"
+                                                aria-controls="faq-collapse-five">
+                                                General Terms &amp; Conditions (GTC)
+                                                <svg class="hs-accordion-active:hidden hs-accordion-active:!text-primary hs-accordion-active:group-hover:!text-primary block w-3 h-3 text-gray-600 group-hover:text-defaulttextcolor dark:text-defaulttextcolor/70 "
+                                                    width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1.5 8.85999L14.5 8.85998" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                    <path d="M8 15.36L8 2.35999" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                </svg>
+                                                <svg class="hs-accordion-active:block hs-accordion-active:!text-primary hs-accordion-active:group-hover:!text-primary hidden w-3 h-3 text-gray-600 group-hover:text-defaulttextcolor dark:text-defaulttextcolor/70 "
+                                                    width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1.5 8.85999L14.5 8.85998" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                </svg>
+                                            </button>
+                                            <div id="faq-collapse-five"
+                                                class="hs-accordion-content w-full overflow-hidden hidden transition-[height] duration-300"
+                                                aria-labelledby="faq-three">
+                                                <div class="p-5">
+                                                    <p class="text-defaulttextcolor dark:text-defaulttextcolor/70 ">
+                                                        <strong>This is the first item's accordion body.</strong> It
+                                                        is shown by
+                                                        default, until the collapse plugin adds the appropriate
+                                                        classes that we
+                                                        use to style each element. These classes control the overall
+                                                        appearance,
+                                                        as well as the showing and hiding via CSS transitions. You
+                                                        can modify
+                                                        any of this with custom CSS or overriding our default
+                                                        variables. It's
+                                                        also worth noting that just about any HTML can go within the
+                                                        <code>.accordion-body</code>, though the transition does
+                                                        limit overflow.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="hs-accordion bg-white dark:bg-bodybg border dark:border-defaultborder/10 mt-[0.5rem] border-defaultborder rounded-sm dark:border-defaultborder/10-white/10"
+                                            id="faq-four">
+                                            <button type="button"
+                                                class="hs-accordion-toggle hs-accordion-active:!text-primary hs-accordion-active:border dark:border-defaultborder/10 hs-accordion-active:bg-primary/10    dark:hs-accordion-active:border hs-accordion-active:border-transparent dark:border-defaultborder/10-white/10 justify-between inline-flex items-center w-full font-semibold text-start text-[0.85rem] transition py-3 px-4 dark:hs-accordion-active:!text-primary dark:text-gray-200 dark:hover:text-white/80"
+                                                aria-controls="faq-collapse-six">
+                                                Do I need to create an account to make an order?
+                                                <svg class="hs-accordion-active:hidden hs-accordion-active:!text-primary hs-accordion-active:group-hover:!text-primary block w-3 h-3 text-gray-600 group-hover:text-defaulttextcolor dark:text-defaulttextcolor/70 "
+                                                    width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1.5 8.85999L14.5 8.85998" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                    <path d="M8 15.36L8 2.35999" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                </svg>
+                                                <svg class="hs-accordion-active:block hs-accordion-active:!text-primary hs-accordion-active:group-hover:!text-primary hidden w-3 h-3 text-gray-600 group-hover:text-defaulttextcolor dark:text-defaulttextcolor/70 "
+                                                    width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1.5 8.85999L14.5 8.85998" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                </svg>
+                                            </button>
+                                            <div id="faq-collapse-six"
+                                                class="hs-accordion-content w-full overflow-hidden hidden transition-[height] duration-300"
+                                                aria-labelledby="faq-four">
+                                                <div class="p-5">
+                                                    <p class="text-defaulttextcolor dark:text-defaulttextcolor/70 ">
+                                                        <strong>This is the first item's accordion body.</strong> It
+                                                        is shown by
+                                                        default, until the collapse plugin adds the appropriate
+                                                        classes that we
+                                                        use to style each element. These classes control the overall
+                                                        appearance,
+                                                        as well as the showing and hiding via CSS transitions. You
+                                                        can modify
+                                                        any of this with custom CSS or overriding our default
+                                                        variables. It's
+                                                        also worth noting that just about any HTML can go within the
+                                                        <code>.accordion-body</code>, though the transition does
+                                                        limit overflow.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="xl:col-span-6 col-span-12">
+                                <div class="accordion accordion-customicon1 accordion-primary accordions-items-seperate"
+                                    id="accordionFAQ2">
+                                    <div class="hs-accordion-group">
+                                        <div class="hs-accordion active bg-white dark:bg-bodybg border dark:border-defaultborder/10 mt-[0.5rem] border-defaultborder rounded-sm dark:border dark:border-defaultborder/10-white/10"
+                                            id="faq-five">
+                                            <button type="button"
+                                                class="hs-accordion-toggle hs-accordion-active:!text-primary hs-accordion-active:border dark:border-defaultborder/10 hs-accordion-active:bg-primary/10    dark:hs-accordion-active:border hs-accordion-active:border-transparent dark:border-defaultborder/10-white/10 justify-between inline-flex items-center w-full font-semibold text-start text-[0.85rem] transition py-3 px-4 dark:hs-accordion-active:!text-primary dark:text-gray-200 dark:hover:text-white/80"
+                                                aria-controls="faq-collapse-seven">
+                                                General Terms &amp; Conditions (GTC)
+                                                <svg class="hs-accordion-active:hidden hs-accordion-active:!text-primary hs-accordion-active:group-hover:!text-primary block w-3 h-3 text-gray-600 group-hover:text-defaulttextcolor dark:text-defaulttextcolor/70 "
+                                                    width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1.5 8.85999L14.5 8.85998" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                    <path d="M8 15.36L8 2.35999" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                </svg>
+                                                <svg class="hs-accordion-active:block hs-accordion-active:!text-primary hs-accordion-active:group-hover:!text-primary hidden w-3 h-3 text-gray-600 group-hover:text-defaulttextcolor dark:text-defaulttextcolor/70 "
+                                                    width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1.5 8.85999L14.5 8.85998" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                </svg>
+                                            </button>
+                                            <div id="faq-collapse-seven"
+                                                class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300"
+                                                aria-labelledby="faq-five">
+                                                <div class="p-5">
+                                                    <p class="text-defaulttextcolor dark:text-defaulttextcolor/70 ">
+                                                        <strong>This is the first item's accordion body.</strong> It
+                                                        is shown by
+                                                        default, until the collapse plugin adds the appropriate
+                                                        classes that we
+                                                        use to style each element. These classes control the overall
+                                                        appearance,
+                                                        as well as the showing and hiding via CSS transitions. You
+                                                        can modify
+                                                        any of this with custom CSS or overriding our default
+                                                        variables. It's
+                                                        also worth noting that just about any HTML can go within the
+                                                        <code>.accordion-body</code>, though the transition does
+                                                        limit overflow.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="hs-accordion bg-white dark:bg-bodybg border dark:border-defaultborder/10 mt-[0.5rem] border-defaultborder rounded-sm dark:border dark:border-defaultborder/10-white/10"
+                                            id="faq-six">
+                                            <button type="button"
+                                                class="hs-accordion-toggle hs-accordion-active:!text-primary hs-accordion-active:border dark:border-defaultborder/10 hs-accordion-active:bg-primary/10    dark:hs-accordion-active:border hs-accordion-active:border-transparent dark:border-defaultborder/10-white/10 justify-between inline-flex items-center w-full font-semibold text-start text-[0.85rem] transition py-3 px-4 dark:hs-accordion-active:!text-primary dark:text-gray-200 dark:hover:text-white/80"
+                                                aria-controls="faq-collapse-eight">
+                                                Do I need to create an account to make an order?
+                                                <svg class="hs-accordion-active:hidden hs-accordion-active:!text-primary hs-accordion-active:group-hover:!text-primary block w-3 h-3 text-gray-600 group-hover:text-defaulttextcolor dark:text-defaulttextcolor/70 "
+                                                    width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1.5 8.85999L14.5 8.85998" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                    <path d="M8 15.36L8 2.35999" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                </svg>
+                                                <svg class="hs-accordion-active:block hs-accordion-active:!text-primary hs-accordion-active:group-hover:!text-primary hidden w-3 h-3 text-gray-600 group-hover:text-defaulttextcolor dark:text-defaulttextcolor/70 "
+                                                    width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1.5 8.85999L14.5 8.85998" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                </svg>
+                                            </button>
+                                            <div id="faq-collapse-eight"
+                                                class="hs-accordion-content w-full overflow-hidden hidden transition-[height] duration-300"
+                                                aria-labelledby="faq-six">
+                                                <div class="p-5">
+                                                    <p class="text-defaulttextcolor dark:text-defaulttextcolor/70 ">
+                                                        <strong>This is the first item's accordion body.</strong> It
+                                                        is shown by
+                                                        default, until the collapse plugin adds the appropriate
+                                                        classes that we
+                                                        use to style each element. These classes control the overall
+                                                        appearance,
+                                                        as well as the showing and hiding via CSS transitions. You
+                                                        can modify
+                                                        any of this with custom CSS or overriding our default
+                                                        variables. It's
+                                                        also worth noting that just about any HTML can go within the
+                                                        <code>.accordion-body</code>, though the transition does
+                                                        limit overflow.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="hs-accordion bg-white dark:bg-bodybg border dark:border-defaultborder/10 mt-[0.5rem] border-defaultborder rounded-sm dark:border dark:border-defaultborder/10-white/10"
+                                            id="faq-seven">
+                                            <button type="button"
+                                                class="hs-accordion-toggle hs-accordion-active:!text-primary hs-accordion-active:border dark:border-defaultborder/10 hs-accordion-active:bg-primary/10    dark:hs-accordion-active:border hs-accordion-active:border-transparent dark:border-defaultborder/10-white/10 justify-between inline-flex items-center w-full font-semibold text-start text-[0.85rem] transition py-3 px-4 dark:hs-accordion-active:!text-primary dark:text-gray-200 dark:hover:text-white/80"
+                                                aria-controls="faq-collapse-nine">
+                                                Where can I subscribe to your newsletter?
+                                                <svg class="hs-accordion-active:hidden hs-accordion-active:!text-primary hs-accordion-active:group-hover:!text-primary block w-3 h-3 text-gray-600 group-hover:text-defaulttextcolor dark:text-defaulttextcolor/70 "
+                                                    width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1.5 8.85999L14.5 8.85998" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                    <path d="M8 15.36L8 2.35999" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                </svg>
+                                                <svg class="hs-accordion-active:block hs-accordion-active:!text-primary hs-accordion-active:group-hover:!text-primary hidden w-3 h-3 text-gray-600 group-hover:text-defaulttextcolor dark:text-defaulttextcolor/70 "
+                                                    width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1.5 8.85999L14.5 8.85998" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                </svg>
+                                            </button>
+                                            <div id="faq-collapse-nine"
+                                                class="hs-accordion-content w-full overflow-hidden hidden transition-[height] duration-300"
+                                                aria-labelledby="faq-seven">
+                                                <div class="p-5">
+                                                    <p class="text-defaulttextcolor dark:text-defaulttextcolor/70 ">
+                                                        <strong>This is the first item's accordion body.</strong> It
+                                                        is shown by
+                                                        default, until the collapse plugin adds the appropriate
+                                                        classes that we
+                                                        use to style each element. These classes control the overall
+                                                        appearance,
+                                                        as well as the showing and hiding via CSS transitions. You
+                                                        can modify
+                                                        any of this with custom CSS or overriding our default
+                                                        variables. It's
+                                                        also worth noting that just about any HTML can go within the
+                                                        <code>.accordion-body</code>, though the transition does
+                                                        limit overflow.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="hs-accordion bg-white dark:bg-bodybg border dark:border-defaultborder/10 mt-[0.5rem] border-defaultborder rounded-sm dark:border dark:border-defaultborder/10-white/10"
+                                            id="faq-eight">
+                                            <button type="button"
+                                                class="hs-accordion-toggle hs-accordion-active:!text-primary hs-accordion-active:border dark:border-defaultborder/10 hs-accordion-active:bg-primary/10    dark:hs-accordion-active:border hs-accordion-active:border-transparent dark:border-defaultborder/10-white/10 justify-between inline-flex items-center w-full font-semibold text-start text-[0.85rem] transition py-3 px-4 dark:hs-accordion-active:!text-primary dark:text-gray-200 dark:hover:text-white/80"
+                                                aria-controls="faq-collapse-ten">
+                                                Where can in edit my address?
+                                                <svg class="hs-accordion-active:hidden hs-accordion-active:!text-primary hs-accordion-active:group-hover:!text-primary block w-3 h-3 text-gray-600 group-hover:text-defaulttextcolor dark:text-defaulttextcolor/70 "
+                                                    width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1.5 8.85999L14.5 8.85998" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                    <path d="M8 15.36L8 2.35999" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                </svg>
+                                                <svg class="hs-accordion-active:block hs-accordion-active:!text-primary hs-accordion-active:group-hover:!text-primary hidden w-3 h-3 text-gray-600 group-hover:text-defaulttextcolor dark:text-defaulttextcolor/70 "
+                                                    width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1.5 8.85999L14.5 8.85998" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                </svg>
+                                            </button>
+                                            <div id="faq-collapse-ten"
+                                                class="hs-accordion-content w-full overflow-hidden hidden transition-[height] duration-300"
+                                                aria-labelledby="faq-eight">
+                                                <div class="p-5">
+                                                    <p class="text-defaulttextcolor dark:text-defaulttextcolor/70 ">
+                                                        <strong>This is the first item's accordion body.</strong> It
+                                                        is shown by
+                                                        default, until the collapse plugin adds the appropriate
+                                                        classes that we
+                                                        use to style each element. These classes control the overall
+                                                        appearance,
+                                                        as well as the showing and hiding via CSS transitions. You
+                                                        can modify
+                                                        any of this with custom CSS or overriding our default
+                                                        variables. It's
+                                                        also worth noting that just about any HTML can go within the
+                                                        <code>.accordion-body</code>, though the transition does
+                                                        limit overflow.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="hs-accordion bg-white dark:bg-bodybg border dark:border-defaultborder/10 mt-[0.5rem] border-defaultborder rounded-sm dark:border dark:border-defaultborder/10-white/10"
+                                            id="faq-nine">
+                                            <button type="button"
+                                                class="hs-accordion-toggle hs-accordion-active:!text-primary hs-accordion-active:border dark:border-defaultborder/10 hs-accordion-active:bg-primary/10    dark:hs-accordion-active:border hs-accordion-active:border-transparent dark:border-defaultborder/10-white/10 justify-between inline-flex items-center w-full font-semibold text-start text-[0.85rem] transition py-3 px-4 dark:hs-accordion-active:!text-primary dark:text-gray-200 dark:hover:text-white/80"
+                                                aria-controls="faq-collapse-eleven">
+                                                What are your opening hours?
+                                                <svg class="hs-accordion-active:hidden hs-accordion-active:!text-primary hs-accordion-active:group-hover:!text-primary block w-3 h-3 text-gray-600 group-hover:text-defaulttextcolor dark:text-defaulttextcolor/70 "
+                                                    width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1.5 8.85999L14.5 8.85998" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                    <path d="M8 15.36L8 2.35999" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                </svg>
+                                                <svg class="hs-accordion-active:block hs-accordion-active:!text-primary hs-accordion-active:group-hover:!text-primary hidden w-3 h-3 text-gray-600 group-hover:text-defaulttextcolor dark:text-defaulttextcolor/70 "
+                                                    width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1.5 8.85999L14.5 8.85998" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                </svg>
+                                            </button>
+                                            <div id="faq-collapse-eleven"
+                                                class="hs-accordion-content w-full overflow-hidden hidden transition-[height] duration-300"
+                                                aria-labelledby="faq-nine">
+                                                <div class="p-5">
+                                                    <p class="text-defaulttextcolor dark:text-defaulttextcolor/70 ">
+                                                        <strong>This is the first item's accordion body.</strong> It
+                                                        is shown by
+                                                        default, until the collapse plugin adds the appropriate
+                                                        classes that we
+                                                        use to style each element. These classes control the overall
+                                                        appearance,
+                                                        as well as the showing and hiding via CSS transitions. You
+                                                        can modify
+                                                        any of this with custom CSS or overriding our default
+                                                        variables. It's
+                                                        also worth noting that just about any HTML can go within the
+                                                        <code>.accordion-body</code>, though the transition does
+                                                        limit overflow.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="hs-accordion bg-white dark:bg-bodybg border dark:border-defaultborder/10 mt-[0.5rem] border-defaultborder rounded-sm dark:border dark:border-defaultborder/10-white/10"
+                                            id="faq-ten">
+                                            <button type="button"
+                                                class="hs-accordion-toggle hs-accordion-active:!text-primary hs-accordion-active:border dark:border-defaultborder/10 hs-accordion-active:bg-primary/10    dark:hs-accordion-active:border hs-accordion-active:border-transparent dark:border-defaultborder/10-white/10 justify-between inline-flex items-center w-full font-semibold text-start text-[0.85rem] transition py-3 px-4 dark:hs-accordion-active:!text-primary dark:text-gray-200 dark:hover:text-white/80"
+                                                aria-controls="faq-collapse-twelve">
+                                                Do I have the right to return an item?
+                                                <svg class="hs-accordion-active:hidden hs-accordion-active:!text-primary hs-accordion-active:group-hover:!text-primary block w-3 h-3 text-gray-600 group-hover:text-defaulttextcolor dark:text-defaulttextcolor/70 "
+                                                    width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1.5 8.85999L14.5 8.85998" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                    <path d="M8 15.36L8 2.35999" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                </svg>
+                                                <svg class="hs-accordion-active:block hs-accordion-active:!text-primary hs-accordion-active:group-hover:!text-primary hidden w-3 h-3 text-gray-600 group-hover:text-defaulttextcolor dark:text-defaulttextcolor/70 "
+                                                    width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1.5 8.85999L14.5 8.85998" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                </svg>
+                                            </button>
+                                            <div id="faq-collapse-twelve"
+                                                class="hs-accordion-content w-full overflow-hidden hidden transition-[height] duration-300"
+                                                aria-labelledby="faq-ten">
+                                                <div class="p-5">
+                                                    <p class="text-defaulttextcolor dark:text-defaulttextcolor/70 ">
+                                                        <strong>This is the first item's accordion body.</strong> It
+                                                        is shown by
+                                                        default, until the collapse plugin adds the appropriate
+                                                        classes that we
+                                                        use to style each element. These classes control the overall
+                                                        appearance,
+                                                        as well as the showing and hiding via CSS transitions. You
+                                                        can modify
+                                                        any of this with custom CSS or overriding our default
+                                                        variables. It's
+                                                        also worth noting that just about any HTML can go within the
+                                                        <code>.accordion-body</code>, though the transition does
+                                                        limit overflow.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End:: Section-8 -->
+
+        <!-- Start:: Section-9 -->
+        <section class="section landing-Features py-4" id="testimonials" #testimonials>
+            <div class="container reviews-container">
+                <div class="grid grid-cols-12 gap-x-6 justify-center pb-3">
+                    <div class="xl:col-span-1 col-span-12"></div>
+                    <div class="xl:col-span-10 col-span-12">
+                        <div class="text-center mb-0 mt-4 heading-section">
+                            <p class="text-xs font-medium text-success mb-1"><span
+                                    class="landing-section-heading landing-section-heading-dark text-white">TESTIMONALS</span>
+                            </p>
+                            <h4 class="mt-3 text-white mb-1">Discover What People Are Saying About Us</h4>
+                            <div class="text-[14px] text-white mb-4 opacity-80"> Customer reviews, social media and
+                                testimonials to discover how is our products or services.</div>
+                        </div>
+                        <div class="swiper pagination-dynamic testimonialSwiperService !pb-0">
+                            <div class="swiper-wrapper">
+                                <swiper-container 
+                                #swiperContainer
+                                class="swiper mySwiper" 
+                                space-between="10"
+                                slides-per-view="2"
+                                slides-per-group="1"
+                                pagination="true"
+                                pagination-clickable="true"
+                                autoplay-delay="2000"  autoplay-disable-on-interaction="false"
+                              >
+                          @for(slide of slidesStore;track $index){
+                              <swiper-slide >
+                                    <div class="box overflow-hidden">
+                                        <div class="box-body">
+                                            <div class="">
+                                                <span class="text-white"><sup><i
+                                                            class="bi bi-quote text-[2.5rem] me-1 text-white"></i></sup>
+                                                    Customer service at this company is
+                                                    outstanding. They were quick to respond to my inquiry and
+                                                    resolved my issue within hours. --
+                                                    <a href="javascript:void(0);"
+                                                        class="font-semibold text-[11px] text-white"
+                                                        data-bs-toggle="tooltip" data-bs-custom-class="tooltip-dark"
+                                                        data-bs-placement="top"
+                                                        data-bs-title="customer service at this company is outstanding. They were quick to respond to my inquiry and resolved my issue within hours.">Read
+                                                        More
+                                                    </a>
+                                                </span>
+                                            </div>
+                                            <div class="flex items-center text-end  justify-end">
+                                                <div class="text-warning block me-1 text-[10px]">
+                                                    <i class="ri-star-fill me-1"></i>
+                                                    <i class="ri-star-fill me-1"></i>
+                                                    <i class="ri-star-fill me-1"></i>
+                                                    <i class="ri-star-fill me-1"></i>
+
+
+                                                    <i class="ri-star-half-line"></i>
+                                                </div>
+                                                <span class="text-white">4.3</span>
+                                            </div>
+                                        </div>
+                                        <div class="p-4 bg-white/10">
+                                            <div class="flex items-center">
+                                                <span class="avatar !rounded-full me-2">
+                                                    <img [src]="slide.img" alt=""
+                                                        class="img-fluid !rounded-full border-primarytint1color shadow-sm border-2">
+                                                </span>
+                                                <div>
+                                                    <p class="mb-0 font-semibold text-white">{{slide.name}}</p>
+                                                    <p class="mb-0 text-[11px] font-normal opacity-80 text-white">
+                                                        {{slide.mail}}</p>
+                                                </div>
+                                                <div class="ms-auto text-xs font-semibold opacity-80 text-end">
+                                                    <div
+                                                        class="ti-btn ti-btn-sm ti-btn-icon !rounded-full bg-white text-black">
+                                                        <i class="ri-twitter-x-line"></i>
+                                                    </div>
+                                                    <div
+                                                        class="ti-btn ti-btn-sm ti-btn-icon !rounded-full bg-primarytint1color text-white">
+                                                        <i class="ri-share-line"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                              </swiper-slide>
+                            }
+                            </swiper-container>
+                               </div>
+                            <div
+                                class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xl:col-span-1 col-span-12"></div>
+                </div>
+            </div>
+        </section>
+        <!-- End:: Section-9 -->
+
+        <!-- Start:: Section-10 -->
+        <section class="section" id="contact" #contact>
+            <div class="container text-center">
+                <p class="text-xs font-medium text-success mb-1"><span
+                        class="landing-section-heading text-primary">CONTACT US</span>
+                </p>
+                <h4 class="!font-semibold mt-3 mb-2">Need Help? Find Your Answers Here!</h4>
+                <div class="grid grid-cols-12 gap-x-6 justify-center">
+                    <div class="xl:col-span-12 col-span-12">
+                        <p class="text-textmuted dark:text-textmuted/50 text-[14px] mb-5 font-normal"> Explore Our
+                            Comprehensive Support Resources! Get answers to your queries and find solutions.</p>
+                    </div>
+                </div>
+                <div class="box-body p-0">
+                    <div class="box contactus-form contactus-form-left overflow-hidden">
+                        <div class="box-body text-start px-xl-5 px-4 py-5">
+                            <div class="grid grid-cols-12 gap-x-6 gap-y-3 pt-0">
+                                <div class="xxl:col-span-4 xl:col-span-6 lg:col-span-12 md:col-span-12 sm:col-span-12 col-span-12">
+                                    <div class="mb-3">
+                                        <i class="ri-map-pin-fill me-2 text-primary"></i> D.No: 1352/A-12, Street,
+                                        Hyderabad.
+                                    </div>
+                                    <div class="mb-3">
+                                        <i class="ri-phone-fill text-primary"></i> +122 1234 32422
+                                    </div>
+                                    <div class="mb-4">
+                                        <i class="ri-mail-fill text-primary"></i> carolinahanna424&#64;example.com
+                                    </div><iframe allowfullscreen height="190" class="w-full"
+                                        src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d30444.274596168965!2d78.54114692513858!3d17.48198883339408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d17.4886524!2d78.5495041!4m5!1s0x3bcb9c7ec139a15d%3A0x326d1c90786b2ab6!2sspruko%20technologies!3m2!1d17.474805099999998!2d78.570258!5e0!3m2!1sen!2sin!4v1670225507254!5m2!1sen!2sin"
+                                        style="border:0;"></iframe>
+                                </div>
+                                <div class="xxl:col-span-8 xl:col-span-6 lg:col-span-12 md:col-span-12 sm:col-span-12 col-span-12">
+                                    <div class="grid grid-cols-12 gap-x-6 gap-y-3 text-start">
+                                        <div class="xl:col-span-12 col-span-12">
+                                            <label class="form-label" for="contact-address-firstname">First Name
+                                                :</label> <input class="form-control !bg-light dark:!bg-light"
+                                                id="contact-address-firstname" placeholder="Enter Name" type="text">
+                                        </div>
+                                        <div class="xl:col-span-12 col-span-12">
+                                            <label class="form-label" for="contact-address-email">Email Id :</label>
+                                            <input class="form-control !bg-light dark:!bg-light" id="contact-address-email"
+                                                placeholder="Enter Email Id" type="email">
+                                        </div>
+                                        <div class="xl:col-span-12 col-span-12">
+                                            <label class="form-label" for="contact-mail-message">Message :</label>
+                                            <textarea class="form-control !bg-light dark:!bg-light" id="contact-mail-message"
+                                                rows="3"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class=" mt-4">
+                                        <button
+                                            class="ti-btn ti-btn-primary btn-wave btn-w-lg waves-effect waves-light">Send
+                                            Message</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End:: Section-10 -->
+
+        <!-- Start:: Section-11 -->
+        <section class="section landing-footer text-white">
+            <div class="container">
+                <div class="grid grid-cols-12 gap-x-6">
+                    <div class="md:col-span-4 sm:col-span-6 col-span-12 md:mb-0 mb-3">
+                        <div class="px-4">
+                            <p class="font-medium mb-3"><a  routerLink="/dashboards/sales"><img
+                                        src="./assets/images/brand-logos/desktop-dark.png" alt=""
+                                        class="landing-footer-logo"></a></p>
+                            <p class="mb-2 opacity-60 font-normal">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit et magnam,
+                                fuga est mollitia eius, quo illum illo inventore optio aut quas omnis rem. Dolores
+                                accusantium aspernatur minus ea incidunt.
+                            </p>
+                            <p class="mb-0 opacity-60 font-normal">Lorem ipsum dolor sit amet consectetur, adipisicing
+                                elit.
+                                Autem ea esse ad</p>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 sm:col-span-6 col-span-12">
+                        <div class="px-4">
+                            <h6 class="font-medium mb-3 text-white">PAGES</h6>
+                            <ul class="list-none opacity-60 font-normal landing-footer-list">
+                                <li>
+                                    <a href="javascript:void(0);" class="text-white">Email</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="text-white">Profile</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="text-white">Timeline</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="text-white">Projects</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="text-white">Contacts</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="text-white">Portfolio</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 sm:col-span-6 col-span-12">
+                        <div class="px-4">
+                            <h6 class="font-medium text-white">INFO</h6>
+                            <ul class="list-none opacity-60 font-normal landing-footer-list">
+                                <li>
+                                    <a href="javascript:void(0);" class="text-white">Our Team</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="text-white">Contact US</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="text-white">About</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="text-white">Services</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="text-white">Blog</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="text-white">Terms & Conditions</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="md:col-span-4 sm:col-span-6 col-span-12">
+                        <div class="px-4">
+                            <h6 class="font-medium text-white">CONTACT</h6>
+                            <ul class="list-none font-normal landing-footer-list">
+                                <li>
+                                    <a href="javascript:void(0);" class="text-white opacity-60"><i
+                                            class="ri-home-4-line me-1 align-middle"></i> New York, NY 10012, US</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="text-white opacity-60"><i
+                                            class="ri-mail-line me-1 align-middle"></i> info&#64;fmail.com</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="text-white opacity-60"><i
+                                            class="ri-phone-line me-1 align-middle"></i> +(555)-1920 1831</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="text-white opacity-60"><i
+                                            class="ri-printer-line me-1 align-middle"></i> +(123) 1293 123</a>
+                                </li>
+                                <li class="mt-3">
+                                    <p class="mb-2 font-medium opacity-80">FOLLOW US ON :</p>
+                                    <div class="mb-0">
+                                        <div class="ti-btn-list">
+                                            <button
+                                                class="ti-btn ti-btn-sm ti-btn-icon ti-btn-soft-primary  btn-wave waves-effect waves-light">
+                                                <i class="ri-facebook-line font-bold"></i>
+                                            </button>
+                                            <button
+                                                class="ti-btn ti-btn-sm ti-btn-icon ti-btn-soft-primary1 text-primarytint1color btn-wave waves-effect waves-light">
+                                                <i class="ri-twitter-x-line font-bold"></i>
+                                            </button>
+                                            <button
+                                                class="ti-btn ti-btn-sm ti-btn-icon ti-btn-soft-primary2 text-primarytint2color btn-wave waves-effect waves-light">
+                                                <i class="ri-instagram-line font-bold"></i>
+                                            </button>
+                                            <button
+                                                class="ti-btn ti-btn-sm ti-btn-icon ti-btn-soft-primary3 text-primarytint3color btn-wave waves-effect waves-light">
+                                                <i class="ri-github-line font-bold"></i>
+                                            </button>
+                                            <button
+                                                class="ti-btn ti-btn-sm ti-btn-icon ti-btn-soft-info btn-wave waves-effect waves-light">
+                                                <i class="ri-youtube-line font-bold"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End:: Section-11 -->
+        <div class="text-center landing-main-footer py-3">
+            <span class="text-textmuted dark:text-textmuted/50 text-[15px]"> Copyright © <span id="year"> 2025 </span> <a
+                    href="javascript:void(0);" class="text-primary font-medium"><u>Xintra</u></a>.
+                Designed with <span class="fa fa-heart text-danger"></span> by <a href="https://spruko.com/" target="_blank"
+                    class="text-primary font-medium"><u >
+                        Spruko</u>
+                </a> All
+                rights
+                reserved
+            </span>
+        </div>
+    </div>
+    <!-- End::main-content -->
+
+</div>

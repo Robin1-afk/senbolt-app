@@ -1,0 +1,25 @@
+<div class="box {{boxClass}}">
+    <div class="box-header justify-between {{boxHeader}}">
+        <div class="box-title" [innerHTML]="title">
+        </div>
+        <div class="prism-toggle">
+            <button type="button" class="ti-btn !py-1 !px-2 ti-btn-soft-primary !text-[0.75rem] !font-medium btn-wave" (click)="toggleShowCode()">Show
+                Code<i class="ri-code-{{toggleStatus  ? 's-slash-line' : 'line'}} ms-2 inline-block align-middle"></i></button>
+        </div>
+    </div>
+    @if(!toggleStatus){
+    <div class="box-body {{classbody}}">
+            <ng-content></ng-content>
+        </div>
+        }
+        @else{
+            <div class="box-footer  border-t-0">
+                <pre class="language-html"><code class="language-html" >
+                {{prism}}</code></pre>
+                <!-- Prism Code -->
+            </div>
+            }
+  
+</div>
+
+

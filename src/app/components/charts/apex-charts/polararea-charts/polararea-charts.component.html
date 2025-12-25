@@ -1,0 +1,26 @@
+ 
+ <app-page-header [title]="'Apex Charts'" [title1]="['Apex Polar Area Charts']" [activeitem]="'Apex Polar Area Charts'"></app-page-header>
+ <!-- Start::row-1 -->
+  <div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Basic Polar Area Chart</div>
+            </div>
+            <div class="box-body mx-auto">
+                <div id="polararea-basic"><spk-apexcharts [chartOptions]="chartOptions"></spk-apexcharts></div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Polar Area Monochrome Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="polararea-monochrome"><spk-apexcharts [chartOptions]="chartOptions1"></spk-apexcharts></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End::row-1 -->

@@ -1,0 +1,79 @@
+<app-page-header [title]="'Ui Elements'" [title1]="['Breadcrumb']" [activeitem]="'Breadcrumb'"></app-page-header>
+       
+       <!-- Start::row-1 -->
+        <div class="grid grid-cols-12 gap-x-6">
+          <div class="col-span-12">
+            <app-showcode-card [title]="'Example'" [prism]="prsimCodeData.breadcrumbTS1">
+                <spk-breadcrumb [items]="breadcrumbs1"></spk-breadcrumb>
+            </app-showcode-card>
+          </div>
+          <div class="col-span-12">
+            <app-showcode-card [title]="'Breadcrumb Style-1'" [prism]="prsimCodeData.breadcrumbTS4">
+                <spk-breadcrumb [items]="breadcrumbs2"></spk-breadcrumb>
+            </app-showcode-card>
+          </div>
+          <div class="col-span-12">
+            <app-showcode-card [title]="'Breadcrumb Style-2'" [prism]="prsimCodeData.breadcrumbTS5">
+                <spk-breadcrumb [items]="breadcrumbs3"></spk-breadcrumb>
+            </app-showcode-card>
+          </div>
+          <div class="col-span-12">
+                <app-showcode-card [title]="'Breadcrumb With Icons'" [prism]="prsimCodeData.breadcrumbTS6">
+                <spk-breadcrumb [items]="breadcrumbs4"></spk-breadcrumb>
+                </app-showcode-card>
+          </div>
+          <div class="col-span-12">
+            <app-showcode-card [title]="'Breadcrumb-style-3'" [prism]="prsimCodeData.breadcrumbTS7">
+                @for (breadcrumbList of breadcrumbLists; track $index) {
+                <div>
+                  <ol class="flex items-center whitespace-nowrap min-w-0 pb-2">
+                    <li
+                      *ngFor="let item of breadcrumbList; let last = last"
+                      [class]="last ? 'text-sm text-gray-500 dark:text-[#8c9097] dark:text-white/50 truncate' : 'text-sm'"
+                    >
+                      <a
+                        *ngIf="!item.isLast; else lastBreadcrumb"
+                        class="flex items-center text-primary hover:text-primary dark:text-primary"
+                      >
+                        <!-- Prefix Icon -->
+                        <svg
+                          *ngIf="item.prefixIconPath"
+                          [class]="item.prefixIconClass"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          viewBox="0 0 16 16"
+                        >
+                          <path [attr.d]="item.prefixIconPath" fill-rule="evenodd"></path>
+                          <path [attr.d]="item.prefixIconPath1" fill-rule="evenodd"></path>
+                        </svg>
+                        {{ item.label }}
+                        <!-- Separator Icon -->
+                        <svg
+                          *ngIf="item.separatorIconPath && !last"
+                          [class]="item.separatorIconClass"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            [attr.d]="item.separatorIconPath"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                          />
+                        </svg>
+                      </a>
+                      <ng-template #lastBreadcrumb>
+                        <span>{{ item.label }}</span>
+                      </ng-template>
+                    </li>
+                  </ol>
+                </div>
+              }
+              </app-showcode-card>
+          </div>
+        </div>
+        <!-- End::row-1 -->

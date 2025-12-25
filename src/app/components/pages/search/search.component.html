@@ -1,0 +1,467 @@
+<app-page-header [title]="'Pages'" [title1]="['Search']" [activeitem]="'Search'"></app-page-header>
+ 
+ <!-- Start::row-1 -->
+  <div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-12 col-span-12">
+        <div class="box overflow-hidden">
+            <div class="box-body p-0">
+                <div class="p-4 border-b border-defaultborder dark:border-defaultborder/10">
+                    <div class="flex mb-3 search-result-input gap-2">
+                        <input type="text"
+                            class="form-control form-control-lg !border-s !ps-[2rem] !bg-light dark:!bg-light !rounded-full"
+                            placeholder="Search Here ..." aria-label="Search Here ..."
+                            aria-describedby="button-addon1">
+                        <span
+                            class="absolute start-[28px] top-[31px] text-textmuted dark:text-textmuted/50 leading-none search-result-icon"><i
+                                class="ri-search-line"></i></span>
+                        <button
+                            class="ti-btn ti-btn-primary btn-wave min-w-[6.975rem] !m-0 !rounded-full"
+                            type="button" id="button-addon1"> Search</button>
+                    </div>
+                    <div class="flex gap-2 flex-wrap">
+                        <span
+                            class="badge bg-light border font-medium border-defaultborder dark:border-defaultborder/10 text-defaulttextcolor rounded-full">Designs
+                            <a href="javascript:void(0);"><i class="ri-close-line ms-1"></i></a></span>
+                        <span
+                            class="badge bg-light border font-medium border-defaultborder dark:border-defaultborder/10 text-defaulttextcolor rounded-full">Template
+                            <a href="javascript:void(0);"><i class="ri-close-line ms-1"></i></a></span>
+                        <span
+                            class="badge bg-light border font-medium border-defaultborder dark:border-defaultborder/10 text-defaulttextcolor rounded-full">Dashboard
+                            <a href="javascript:void(0);"><i class="ri-close-line ms-1"></i></a></span>
+                        <span
+                            class="badge bg-light border font-medium border-defaultborder dark:border-defaultborder/10 text-defaulttextcolor rounded-full">Admin
+                            Templates <a href="javascript:void(0);"><i
+                                    class="ri-close-line ms-1"></i></a></span>
+                        <span
+                            class="badge bg-light border font-medium border-defaultborder dark:border-defaultborder/10 text-defaulttextcolor rounded-full">
+                            Templates <a href="javascript:void(0);"><i
+                                    class="ri-close-line ms-1"></i></a></span>
+                        <span
+                            class="badge bg-light border font-medium border-defaultborder dark:border-defaultborder/10 text-defaulttextcolor rounded-full">Admin
+                            <a href="javascript:void(0);"><i class="ri-close-line ms-1"></i></a></span>
+                        <span
+                            class="badge bg-light border font-medium border-defaultborder dark:border-defaultborder/10 text-defaulttextcolor rounded-full">Hosting
+                            Templates <a href="javascript:void(0);"><i
+                                    class="ri-close-line ms-1"></i></a></span>
+                        <span
+                            class="badge bg-light border font-medium border-defaultborder dark:border-defaultborder/10 text-defaulttextcolor rounded-full">Hosting
+                            <a href="javascript:void(0);"><i class="ri-close-line ms-1"></i></a></span>
+                        <span
+                            class="badge bg-light border font-medium border-defaultborder dark:border-defaultborder/10 text-defaulttextcolor rounded-full">Bootstrap
+                            <a href="javascript:void(0);"><i class="ri-close-line ms-1"></i></a></span>
+                        <span
+                            class="badge bg-light border font-medium border-defaultborder dark:border-defaultborder/10 text-defaulttextcolor rounded-full">Sales
+                            <a href="javascript:void(0);"><i class="ri-close-line ms-1"></i></a></span>
+                        <div class="ms-auto">
+                            <a href="javascript:void(0);"
+                                class="text-primary underline font-medium mx-2"> Clear All </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 flex gap-2 justify-between flex-wrap items-center">
+                    <div class="text-textmuted dark:text-textmuted/50">Total of 55,142 results were
+                        found.</div>
+                    <div class="ms-auto flex gap-2 flex-wrap">
+                        <spk-dropdowns [Customclass]="'dropdown'" [title]="'Sort By'" [class]="'ti-btn ti-btn-sm min-w-[8.125rem] bg-light text-textmuted dark:text-textmuted/50 ti-dropdown-toggle hs-dropdown-toggle'"
+                            [Menuclass]="'dropdown-menu'" [Icon]="true" [IconClass]="'ri-arrow-down-s-line align-middle ms-1 inline-block'"  >
+                                <li><a class="ti-dropdown-item" href="javascript:void(0);">Alphabets</a>
+                                </li>
+                                <li><a class="ti-dropdown-item" href="javascript:void(0);">First
+                                        Word</a></li>
+                                <li><a class="ti-dropdown-item" href="javascript:void(0);">Numeric</a>
+                                </li>
+                        </spk-dropdowns>
+                        <spk-dropdowns [Customclass]="'dropdown'" [title]="'Filter By'" [class]="'ti-btn ti-btn-sm min-w-[8.125rem] ti-btn-primary ti-dropdown-toggle hs-dropdown-toggle'"
+                        [Menuclass]="'dropdown-menu'" [Icon]="true" [IconClass]="'ri-arrow-down-s-line align-middle ms-1 inline-block'">
+                                <li><a class="ti-dropdown-item" href="javascript:void(0);">Alphabets</a>
+                                </li>
+                                <li><a class="ti-dropdown-item" href="javascript:void(0);">First
+                                        Word</a></li>
+                                <li><a class="ti-dropdown-item" href="javascript:void(0);">Numeric</a>
+                                </li>
+                        </spk-dropdowns>
+                    </div>
+                </div>
+                <div class="nav nav-tabs tab-style-6 p-0 search-tab sm:gap-2 gap-5 flex bg-transparent flex-wrap pb-5 px-3"
+                    role="tablist">
+                    <!-- <li class="nav-item" role="presentation"> -->
+                        <a class="nav-link active font-medium rounded-md" role="tab"
+                            data-hs-tab="#search-all"><i class="ri-search-line me-2"></i>All</a>
+                    <!-- </li> -->
+                    <!-- <li class="nav-item" role="presentation"> -->
+                        <a class="nav-link font-medium rounded-md" role="tab"
+                            data-hs-tab="#search-images"><i class="ri-image-line me-2"></i>Images</a>
+                    <!-- </li> -->
+                    <!-- <li class="nav-item" role="presentation"> -->
+                        <a class="nav-link font-medium rounded-md" role="tab"
+                            data-hs-tab="#search-books"><i class="ri-book-line me-2"></i>Books</a>
+                    <!-- </li> -->
+                    <!-- <li class="nav-item" role="presentation"> -->
+                        <a class="nav-link font-medium rounded-md" role="tab"
+                            data-hs-tab="#search-news"><i class="ri-newspaper-line me-2"></i>News</a>
+                    <!-- </li> -->
+                    <!-- <li class="nav-item" role="presentation"> -->
+                        <a class="nav-link font-medium rounded-md" role="tab"
+                            data-hs-tab="#search-videos"><i class="ri-live-line me-2"></i>Videos</a>
+                    <!-- </li> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End::row-1 -->
+
+<!-- Start:: row-2 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-12 col-span-12">
+        <div class="tab-content">
+            <div class="tab-pane p-0 border-0 show active" id="search-all" role="tabpanel">
+                <div class="grid grid-cols-12 gap-x-6">
+                    @for (course of courses; track $index) {
+                    <div class="xl:col-span-6 col-span-12">
+                      <div class="box">
+                        <div class="box-body">
+                          <div class="flex items-start justify-between flex-wrap gap-1 mb-3">
+                            <div>
+                              <div>
+                                <span class="block font-medium">
+                                  <a href="javascript:void(0);">{{ course.category }}</a>
+                                </span>
+                                <a href="{{ course.url }}" class="text-primarytint1color">
+                                  {{ course.url }}
+                                </a>
+                              </div>
+                            </div>
+                            <div class="ti-dropdown hs-dropdown ms-auto">
+                              <a
+                                href="javascript:void(0);"
+                                class="ti-btn bg-light ti-btn-sm btn-wave waves-effect waves-light"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                              >
+                                View
+                                <i class="ri-arrow-down-s-line align-middle ms-1 inline-block"></i>
+                              </a>
+                              <ul class="ti-dropdown-menu hs-dropdown-menu hidden" role="menu">
+                                <li><a class="ti-dropdown-item" href="javascript:void(0);">Week</a></li>
+                                <li><a class="ti-dropdown-item" href="javascript:void(0);">Day</a></li>
+                                <li><a class="ti-dropdown-item" href="javascript:void(0);">Year</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="mb-3">
+                            <h6 class="font-semibold mb-1">
+                              <a href="javascript:void(0);" class="searched-item-main-link">{{ course.title }}</a>
+                            </h6>
+                            <span class="block text-textmuted dark:text-textmuted/50">
+                              {{ course.description }}
+                            </span>
+                          </div>
+                          <div class="flex items-center gap-2 flex-wrap">
+                            @for (badge of course.badges; track $index) {
+                            <a 
+                              href="javascript:void(0);"
+                              class="badge bg-primary/10 text-primary text-xs"
+                            >
+                              {{ badge }}
+                            </a>
+                        }
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                }
+                  </div>
+                  
+                <nav aria-label="Page navigation" class="pagination-style-4 mb-4">
+                    <ul class="ti-pagination mb-0 flex-wrap justify-center">
+                        <li class="page-item disabled">
+                            <a class="page-link bg-white dark:!bg-bodybg" href="javascript:void(0);">
+                                Prev
+                            </a>
+                        </li>
+                        <li class="page-item "><a class="page-link bg-white dark:!bg-bodybg active"
+                                href="javascript:void(0);">1</a></li>
+                        <li class="page-item"><a class="page-link bg-white dark:!bg-bodybg" href="javascript:void(0);">2</a></li>
+                        <li class="page-item">
+                            <a aria-label="anchor" class="page-link bg-white dark:!bg-bodybg" href="javascript:void(0);">
+                                <i class="bi bi-three-dots"></i>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link bg-white dark:!bg-bodybg" href="javascript:void(0);">16</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link bg-white dark:!bg-bodybg !text-primary" href="javascript:void(0);">
+                                next
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="tab-pane border-0 p-0 hidden" id="search-images" role="tabpanel">
+                <div class="box">
+                    <div class="box-body pb-0">
+                            <spk-gallery [mainClass]="'grid grid-cols-12 sm:gap-x-6 gap-y-6'" [colClass]="'lg:col-span-3 md:col-span-3 sm:col-span-6 col-span-12'" [imageData]="imageData"></spk-gallery>
+                            <div class="xl:col-span-12 col-span-12 mb-4 text-center">
+                                <button class="ti-btn bg-info/10 text-info ti-btn-loader mx-auto">
+                                    <span class="me-2">Loading</span>
+                                    <span class="loading"><i
+                                            class="ri-loader-4-line text-[1rem]"></i></span>
+                                </button>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane border-0 p-0 hidden" id="search-books" role="tabpanel">
+                <div class="grid grid-cols-12 gap-x-6">
+                    @for (book of books; track $index) {
+                    <div class="xl:col-span-6 col-span-12">
+                      <div class="box">
+                        <div class="box-body">
+                          <div class="flex items-start flex-wrap gap-4 justify-between">
+                            <div class="flex items-center">
+                              <div>
+                                <span class="avatar avatar-xl border border-defaultborder dark:border-defaultborder/10">
+                                  <img [src]="book.image" [alt]="book.title" />
+                                </span>
+                              </div>
+                              <div class="ms-2">
+                                <div>
+                                  <span class="text-textmuted dark:text-textmuted/50">Published On</span> -
+                                  <span class="font-medium mb-0">{{ book.publishedOn }}</span>
+                                </div>
+                                <h6 class="font-medium my-1 flex items-center">
+                                  <a href="javascript:void(0);">{{ book.title }}</a>
+                                </h6>
+                                <span class="block text-textmuted dark:text-textmuted/50">
+                                  {{ book.description }}
+                                </span>
+                              </div>
+                            </div>
+                            <div class="ti-btn-list">
+                              <div class="hs-tooltip inline-block !me-0">
+                                <a href="javascript:void(0);" class="hs-tooltip-toggle ti-btn ti-btn-sm ti-btn-icon bg-primarytint1color/10  !me-0 text-primarytint1color transition">
+                                  <i class="ri-heart-3-line align-middle"></i>
+                                  <span class="hs-tooltip-content ti-main-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 !bg-black !text-xs !font-medium !text-white shadow-sm" role="tooltip">
+                                    Add to favourite
+                                  </span>
+                                </a>
+                              </div>
+                              <div class="hs-tooltip inline-block !me-0">
+                                <a href="javascript:void(0);" class="hs-tooltip-toggle ti-btn ti-btn-sm ti-btn-icon bg-primarytint2color/10 text-primarytint2color me-0 transition">
+                                  <i class="ri-share-line"></i>
+                                  <span
+                                    class="hs-tooltip-content ti-main-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 !bg-black !text-xs !font-medium !text-white shadow-sm"
+                                    role="tooltip"
+                                  >
+                                    Featured Book
+                                  </span>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="flex gap-2 justify-between mt-3">
+                            <div class="popular-tags flex gap-1 flex-wrap">
+                                @for (tag of book.tags; track $index) {
+                              <a
+                                href="javascript:void(0);"
+                                class="badge rounded-full bg-primary/10 text-primary"
+                              >
+                                {{ tag }}
+                              </a>
+                            }
+                            </div>
+                            <a href="javascript:void(0);"><span class="font-semibold">Author:</span> <i>{{ book.author }}</i></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                }
+                    <div class="xl:col-span-12 col-span-12 mb-4 flex justify-center">
+                      <button type="button" class="ti-btn bg-info/10 text-info ti-btn-loader">
+                        <span class="me-2">Loading</span>
+                        <span class="loading"><i class="ri-loader-4-line text-[1rem] animate-spin"></i></span>
+                      </button>
+                    </div>
+                  </div>
+                  
+            </div>
+            <div class="tab-pane border-0 p-0 hidden" id="search-news" role="tabpanel">
+                <div class="grid grid-cols-12 gap-x-6">
+                    @for (news of newsItems; track $index) {
+                    <div class="xl:col-span-4 col-span-12">
+                      <div class="box">
+                        <div class="box-body">
+                          <a href="javascript:void(0);" class="stretched-link"></a>
+                          <div class="mb-2">
+                            <h6 class="mb-3">{{ news.title }}</h6>
+                            <div class="mb-1">
+                              <i class="ri-calendar-line p-1 bg-primary/10 text-primary !rounded-full leading-none mb-1"></i>
+                              {{ news.date }}
+                            </div>
+                            <div>
+                              <i class="ri-map-pin-line text-primarytint1color p-1 bg-primarytint1color/10 !rounded-full leading-none"></i>
+                              {{ news.location }}
+                            </div>
+                          </div>
+                          <span class="text-textmuted dark:text-textmuted/50">
+                            {{ news.description }}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                }
+                  </div>
+                  
+                <nav aria-label="Page navigation" class="pagination-style-4 mb-4">
+                    <ul class="ti-pagination mb-0 flex-wrap justify-center">
+                        <li class="page-item disabled">
+                            <a class="page-link bg-white dark:!bg-bodybg" href="javascript:void(0);">
+                                Prev
+                            </a>
+                        </li>
+                        <li class="page-item "><a class="page-link bg-white dark:!bg-bodybg active"
+                                href="javascript:void(0);">1</a></li>
+                        <li class="page-item"><a class="page-link bg-white dark:!bg-bodybg" href="javascript:void(0);">2</a></li>
+                        <li class="page-item">
+                            <a aria-label="anchor" class="page-link bg-white dark:!bg-bodybg" href="javascript:void(0);">
+                                <i class="bi bi-three-dots"></i>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link bg-white dark:!bg-bodybg" href="javascript:void(0);">16</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link bg-white dark:!bg-bodybg !text-primary" href="javascript:void(0);">
+                                next
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="tab-pane border-0 p-0 hidden" id="search-videos" role="tabpanel">
+                <div class="box">
+                    <div class="box-body pb-1">
+                        <div class="grid grid-cols-12 sm:gap-x-6 gap-y-4">
+                            <div class="lg:col-span-4 md:col-span-6 sm:col-span-6 col-span-12">
+                                <div class="ratio aspect-video">
+                                    <iframe
+                                        src="https://www.youtube.com/embed/HWvHA2FY8Ok?si=Bf-6pyMAcBG-_dR0"
+                                        title="YouTube video player"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen></iframe>
+                                </div>
+                                <div class="p-2">
+                                    <div class="flex items-center gap-1">
+                                        <div
+                                            class="figure-caption text-[13px] font-medium text-defaulttextcolor truncate">
+                                            Valex - Bootstrap 5 Admin & Dashboard HTML Template</div>
+                                    </div>
+                                    <a href="https://www.spruko.com/demo/valex/" target="_blank"
+                                        class="text-xs link-primary underline">https://www.spruko.com/demo/valex/</a>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-4 md:col-span-6 sm:col-span-6 col-span-12">
+                                <div class="ratio  aspect-video">
+                                    <iframe
+                                        src="https://www.youtube.com/embed/Zx1HjMhcQdE?si=Nhbu6XA2PoyAlYhy"
+                                        title="YouTube video player"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen></iframe>
+                                </div>
+                                <div class="p-2">
+                                    <div class="flex items-center gap-1">
+                                        <div
+                                            class="figure-caption text-[13px] font-medium text-defaulttextcolor truncate">
+                                            Azea - Admin & Dashboard Bootstrap 5 HTML5 Template</div>
+                                    </div>
+                                    <a href="https://spruko.com/demo/azea/" target="_blank"
+                                        class="text-xs link-primary underline">https://spruko.com/demo/azea/</a>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-4 md:col-span-6 sm:col-span-6 col-span-12">
+                                <div class="ratio  aspect-video">
+                                    <iframe
+                                        src="https://www.youtube.com/embed/JP_os1DC1MQ?si=qyUJRBl7ZJBhR_P5"
+                                        title="YouTube video player"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen></iframe>
+                                </div>
+                                <div class="p-2">
+                                    <div class="flex items-center gap-1">
+                                        <div
+                                            class="figure-caption text-[13px] font-medium text-defaulttextcolor truncate">
+                                            XYNTRA - HTML Installation & Usage process</div>
+                                    </div>
+                                    <a href="https://spruko.com/demo/xyntra/" target="_blank"
+                                        class="text-xs link-primary underline">https://spruko.com/demo/xyntra/</a>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-4 md:col-span-6 sm:col-span-6 col-span-12">
+                                <div class="ratio  aspect-video">
+                                    <iframe
+                                        src="https://www.youtube.com/embed/-lDlbQ7DiCI?si=-GRS_5Dco6Qc5ius"
+                                        title="YouTube video player"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen></iframe>
+                                </div>
+                                <div class="p-2">
+                                    <div class="flex items-center gap-1">
+                                        <div
+                                            class="figure-caption text-[13px] font-medium text-defaulttextcolor truncate">
+                                            Sash - Admin and Dashboard Multipurpose HTML Advanced
+                                            Template</div>
+                                    </div>
+                                    <a href="https://spruko.com/demo/sash/" target="_blank"
+                                        class="text-xs link-primary underline">https://spruko.com/demo/sash/</a>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-4 md:col-span-6 sm:col-span-6 col-span-12">
+                                <div class="ratio  aspect-video">
+                                    <iframe
+                                        src="https://www.youtube.com/embed/JP_os1DC1MQ?si=qyUJRBl7ZJBhR_P5"
+                                        title="YouTube video player"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen></iframe>
+                                </div>
+                                <div class="p-2">
+                                    <div class="flex items-center gap-1">
+                                        <div
+                                            class="figure-caption text-[13px] font-medium text-defaulttextcolor truncate">
+                                            Xyntra - Bootstrap 5 Admin & Dashboard HTML5 Template</div>
+                                    </div>
+                                    <a href="https://spruko.com/demo/xyntra/" target="_blank"
+                                        class="text-xs link-primary underline">https://spruko.com/demo/xyntra/</a>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-4 md:col-span-6 sm:col-span-6 col-span-12">
+                                <div class="ratio  aspect-video">
+                                    <iframe
+                                        src="https://www.youtube.com/embed/bVRW4Li8inE?si=pOpS9ep2Hn3cGL3y"
+                                        title="YouTube video player"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen></iframe>
+                                </div>
+                                <div class="p-2">
+                                    <div class="flex items-center gap-1">
+                                        <div
+                                            class="figure-caption text-[13px] font-medium text-defaulttextcolor truncate">
+                                            Zanex - Bootstrap 5 Admin & Dashboard HTML5 Template</div>
+                                    </div>
+                                    <a href="https://spruko.com/demo/zanex/" target="_blank"
+                                        class="text-xs link-primary underline">https://spruko.com/demo/zanex/</a>
+                                </div>
+                            </div>
+                            <div class="xl:col-span-12 col-span-12 flex justify-center my-3">
+                                <button type="button" class="ti-btn bg-info/10 text-info ti-btn-loader">
+                                    <span class="me-2">Loading</span> <span class="loading"><i
+                                            class="ri-loader-4-line text-[1rem] animate-spin"></i></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End:: row-2 -->

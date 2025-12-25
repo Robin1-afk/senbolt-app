@@ -1,0 +1,22 @@
+<div class="{{mainClass}} "  gallerize>
+    @for (image of imageData; track $index) {
+        <div class="{{colClass}}">
+            <a href="javascript:void(0);" class="glightbox box {{lightboxClass}}" data-gallery="gallery1">
+                <img  [src]="image.srcUrl" alt="image" >
+            </a>
+        </div>
+    }
+    @if(badge){
+        @for (image of imageData1; track $index) {
+            <a href="javascript:void(0);" class="glightbox box border-0 mb-0" data-gallery="gallery1" data-title="Compact Laptop (1/5)" data-type="image" data-draggable="true">
+                <div class="ecommerce-gallery flex text-center">
+                    <span class="badge bg-primarytint2color tag-badge">{{badge}}</span>
+                    <img [src]="image.srcUrl" alt="image" class="">
+                    <span class="p-4 py-2 rounded-md text-white view-lightbox ">View More Images</span>
+                </div>
+            </a>
+        }
+    }
+    <ng-content></ng-content>
+</div>
+

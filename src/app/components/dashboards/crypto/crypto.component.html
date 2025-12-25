@@ -1,0 +1,450 @@
+<app-page-header [title]="'Dashboards'" [title1]="['Crypto']" [activeitem]="'Crypto'"></app-page-header>
+    <!-- Start::row-1 -->
+    <div class="grid grid-cols-12 gap-x-6">
+        <div class="xl:col-span-12 col-span-12">
+            <swiper-container #swiperContainer
+            class="swiper crypto-swiper swiper-basic swiper-initialized swiper-horizontal swiper-backface-hidden"
+            space-between="10" slides-per-view="5" slides-per-group="1" autoplay-delay="2000"
+            autoplay-disable-on-interaction="false">
+            @for(crypto of cryptoList;track $index){
+            <swiper-slide>
+                <spk-crypto-dashboard [imgSrc]="crypto.imgSrc" [name]="crypto.name" [symbol]="crypto.symbol" [logoclass]="crypto.logoclass"
+                    [value]="crypto.value" [price]="crypto.price" [id]="crypto.id" [change]="crypto.change" [changeType]="crypto.changeType" [chartOptions]="crypto.chartOptions"></spk-crypto-dashboard>
+            </swiper-slide>
+            }
+        </swiper-container>
+        </div>
+    </div>
+    <!-- End::row-1 -->
+
+    <!-- Start:: row-2 -->
+    <div class="grid grid-cols-12 gap-x-6">
+        <div class="xxl:col-span-8 col-span-12">
+            <div class="box">
+                <div class="box-header justify-between">
+                    <div class="box-title flex-auto">
+                        Crypto Analysis
+                    </div>
+                    <div class="inline-flex rounded-sm"> <button type="button"
+                            class="ti-btn-group !border-0 !text-[0.8rem] !py-[0.45rem] !px-[0.75rem] bg-primary btn-wave text-white waves-effect waves-light">1D</button>
+                        <button type="button"
+                            class="ti-btn-group !border-0 !text-[0.8rem] !py-[0.45rem] !px-[0.75rem] btn-wave ti-btn-soft-primary waves-effect waves-light">1W</button>
+                        <button type="button"
+                            class="ti-btn-group !border-0 !text-[0.8rem] !py-[0.45rem] !px-[0.75rem] btn-wave ti-btn-soft-primary waves-effect waves-light">1M</button>
+                        <button type="button"
+                            class="ti-btn-group !border-0 !text-[0.8rem] !py-[0.45rem] !px-[0.75rem] btn-wave ti-btn-soft-primary !rounded-s-none waves-effect waves-light">1Y</button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div class="flex flex-wrap p-4 bg-light rounded-md mb-3 items-center">
+                        <div class="me-3">
+                            <div class="btn-group ms-2 ti-dropdown hs-dropdown">
+                                <button type="button" class="ti-btn bg-primary text-white dropdown-toggle !mb-0"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="avatar avatar-xs avatar-rounded me-2 align-middle"><img
+                                            src="./assets/images/crypto-currencies/crypto-icons/bitcoin-btc-logo.svg"
+                                            alt=""></span>Bitcoin <i class="ri-arrow-down-s-line align-middle d-inline-block"></i>
+                                </button>
+                                <ul class="ti-dropdown-menu hs-dropdown-menu hidden">
+                                    <li><a class="ti-dropdown-item" href="javascript:void(0);"><span
+                                                class="avatar avatar-xs avatar-rounded me-2 align-middle"><img
+                                                    src="./assets/images/crypto-currencies/crypto-icons/ethereum-eth-logo.svg"
+                                                    alt=""></span>Etherium</a></li>
+                                    <li><a class="ti-dropdown-item" href="javascript:void(0);"><span
+                                                class="avatar avatar-xs avatar-rounded me-2 align-middle"><img
+                                                    src="./assets/images/crypto-currencies/crypto-icons/tether-usdt-logo.svg"
+                                                    alt=""></span>Tether</a></li>
+                                    <li><a class="ti-dropdown-item" href="javascript:void(0);"><span
+                                                class="avatar avatar-xs avatar-rounded me-2 align-middle"><img
+                                                    src="./assets/images/crypto-currencies/crypto-icons/xrp-xrp-logo.svg"
+                                                    alt=""></span>XRP</a></li>
+                                    <li><a class="ti-dropdown-item" href="javascript:void(0);"><span
+                                                class="avatar avatar-xs avatar-rounded me-2 align-middle"><img
+                                                    src="./assets/images/crypto-currencies/crypto-icons/tron-trx-logo.svg"
+                                                    alt=""></span>TRON</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap sm:justify-evenly flex-auto">
+                            <div class="m-sm-0 m-2">
+                                <span>Symbol</span>
+                                <p class="mb-0">BTC</p>
+                            </div>
+                            <div class="m-sm-0 m-2">
+                                <span>Price Benchmark</span>
+                                <p class="mb-0">136.00%</p>
+                            </div>
+                            <div class="m-sm-0 m-2">
+                                <span>Price (USD)</span>
+                                <p class="text-success mb-0">$54,564.60</p>
+                            </div>
+                            <div class="m-sm-0 m-2">
+                                <span>Change (24H)</span>
+                                <p class="text-danger mb-0">-0.14%</p>
+                            </div>
+                            <div class="m-sm-0 m-2">
+                                <span>Market Cap</span>
+                                <p class="mb-0">$1.32T</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="crypto-analysis">
+                          <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart"
+                        [legend]="chartOptions.legend" [xaxis]="chartOptions.xaxis" [colors]="chartOptions.colors"
+                        [markers]="chartOptions.markers" [stroke]="chartOptions.stroke" [tooltip]="chartOptions.tooltip"
+                        [fill]="chartOptions.fill" [labels]="chartOptions.labels" [dataLabels]="chartOptions.dataLabels"
+                        [grid]="chartOptions.grid" [plotOptions]="chartOptions.plotOptions"
+                        [yaxis]="chartOptions.yaxis"></apx-chart>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="xxl:col-span-4 col-span-12">
+            <div class="box">
+                <div class="box-body p-0">
+                    <div class="p-4 m-2 rounded-sm bg-primary text-white bg-crypto-balance">
+                        <div class="flex items-center gap-2 justify-between">
+                            <div>
+                                <div class="mb-1 opacity-90">Total Balance</div>
+                                <h4 class="text-white mb-1 font-medium me-2">$262,933.05 USD</h4>
+                                <span class="opacity-70 text-xs">Increased by </span><span
+                                    class="badge bg-success mt-2 text-white p-1 text-end ms-1"><i
+                                        class="ti ti-trending-up me-2"></i>12.2%</span>
+                            </div>
+                            <div class="ms-auto text-end">
+                                <div class="avatar avatar-lg bg-primarytint1color shadow">
+                                    <i class="ri-bank-line !text-[1.5rem] leading-none"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="grid grid-cols-12 gap-x-6 border-t border-dashed border-defaultborder g-0 dark:border-defaultborder/10">
+                        <div class="xl:col-span-6 col-span-12 border-e border-dashed border-defaultborder dark:border-defaultborder/10">
+                            <div class="p-4">
+                                <div class="flex items-center justify-center gap-4">
+                                    <span class="avatar avatar-md bg-primarytint2color">
+                                        <i class="ri-arrow-left-down-fill text-xl"></i>
+                                    </span>
+                                    <div>
+                                        <div class="font-medium text-textmuted dark:text-textmuted/50">
+                                            Deposit</div>
+                                        <h5 class="mb-0">$1,654 USD</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="xl:col-span-6 col-span-12">
+                            <div class="p-4">
+                                <div class="flex items-center justify-center gap-4">
+                                    <span class="avatar avatar-md bg-primarytint3color">
+                                        <i class="ri-arrow-right-up-fill text-xl"></i>
+                                    </span>
+                                    <div>
+                                        <div class="font-medium text-textmuted dark:text-textmuted/50">
+                                            Withdraw</div>
+                                        <h5 class="mb-0">$654 USD</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-header justify-between">
+                    <div class="box-title">Currency Converter</div>
+                    <spk-dropdowns [Customclass]="'dropdown'" [title]="'View All'"
+                                [class]="'ti-btn ti-btn-sm ti-btn-light border flex items-center'" [Icon]="true" [IconClass]="'bx bx-caret-down text-[15px]'" [Menuclass]="'dropdown-menu'">
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Yearly</a></li>
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Monthly</a></li>
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Weakly</a></li>
+                    </spk-dropdowns>
+                </div>
+                <div class="box-body">
+                    <div class="sm:flex gap-2 items-center buy-crypto">
+                        <div class="input-group mb-4 flex flex-nowrap mt-2 crypto-input">
+                            <input type="text" class="form-control form-control-sm !border-s !border-e-0 crypto-buy-sell-input"
+                                aria-label="crypto buy select" placeholder="Enter">
+                                <spk-ng-select [options]="Crypto" [id]="'choices-single-default'" [selectClass]="''"
+                                [clearable]="true" [multi]="true" [searchable]="true" [placeholder]="'BTC'"
+                                [additionalProperties]="{}" (change)="handleSelectChange($event)">
+                            </spk-ng-select>
+                        </div>
+                        <div class="text-center">
+                            <a aria-label="anchor" href="javascript:void(0);"
+                                class="ti-btn bg-secondary text-white ti-btn-icon ti-btn-sm !my-0 !rounded-full"><i
+                                    class="ti ti-arrows-exchange text-[1.1875rem] align-middle"></i></a>
+                        </div>
+                        <div class="input-group mb-4 flex flex-nowrap mt-2 crypto-input">
+                            <input type="text" class="form-control form-control-sm !border-s !border-e-0 crypto-buy-sell-input"
+                                aria-label="crypto buy select" placeholder="25,784.00">
+                                <spk-ng-select [options]="Crypto1" [id]="'choices-single-default'" [selectClass]="''"
+                                [clearable]="true" [multi]="true" [searchable]="true" [placeholder]="'USD'"
+                                [additionalProperties]="{}" (change)="handleSelectChange($event)">
+                            </spk-ng-select>
+                        </div>
+                    </div>
+                    <div class="bg-light p-4 rounded-sm mt-2">
+                        <div class="pb-1"><span class="text-defaulttextcolor">Transaction Fee</span><span
+                                class="text-textmuted dark:text-textmuted/50 ms-2 text-[14px] inline-block float-end">$3.04</span>
+                        </div>
+                        <div class="text-[14px] py-1"><span class="text-defaulttextcolor">Other
+                                Charges</span><span
+                                class="text-textmuted dark:text-textmuted/50 ms-2 text-[14px] inline-block float-end">$6.55</span>
+                        </div>
+                        <div class="font-semibold text-[14px] pt-1">Total: <span
+                                class="text-[14px] inline-block float-end">$25,784.00</span></div>
+                    </div>
+                    <div class=" mt-2 pt-1 flex gap-1">
+                        <button type="button" class="ti-btn bg-primarytint1color/10 !text-primarytint1color me-1 flex-auto">History<i
+                                class="ms-2 ti ti-arrow-narrow-right align-middle"></i></button>
+                        <button type="button" class="ti-btn bg-primary text-white flex-auto">Convert<i
+                                class="ms-2 ti ti-arrow-narrow-right align-middle"></i></button>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+    <!-- End:: row-2 -->
+
+    <!-- Start:: row-3 -->
+    <div class="grid grid-cols-12 gap-x-6">
+        <div class="xxl:col-span-3 xl:col-span-6 col-span-12">
+            <div class="box">
+                <div class="box-header justify-between">
+                    <div class="box-title">
+                        Market Cap
+                    </div>
+                    <a href="javascript:void(0);"
+                        class="ti-btn ti-btn-light btn-wave ti-btn-sm text-textmuted dark:text-textmuted/50 waves-effect waves-light">View
+                        All<i class="ti ti-arrow-narrow-right align-middle"></i></a>
+                </div>
+                <div class="box-body">
+                    <ul class="list-none market-cap-list mb-1">
+                        @for(item of marketCapItems;track $index){
+                        <li>
+                            <div class="flex items-center gap-2">
+                                <div>
+                                    <span class="avatar bg-{{item.icon}}/10 avatar-rounded svg-{{item.icon}}"   [innerHTML]="sanitizeIcon(item.svg)">
+                                        {{item.svg}}
+                                    </span>
+                                </div>
+                                <div class="flex-auto">
+                                    <span class="font-semibold block mb-1">{{ item.name }}</span>
+                                    <div
+                                        class="flex items-center text-textmuted dark:text-textmuted/50 gap-2 leading-none text-[13px]">
+                                        <span class="block">{{ item.ticker }}</span>
+                                        <div class="vr"></div>
+                                        <span>{{ item.marketCap }}</span>
+                                    </div>
+                                </div>
+                                <div class="text-end ms-auto">
+                                    <span class="block h6 mb-1 font-semibold">{{ item.price }}</span>
+                                    <div
+                                        class="flex items-center text-{{ item.trend }} gap-2 leading-none text-[13px]">
+                                        <span class="block">{{ item.change }}</span>
+                                        <div class="vr"></div>
+                                        <span><i class="ti" [ngClass]="item.directionIcon"></i>{{ item.percentageChange}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    }
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="xxl:col-span-4 xl:col-span-6 col-span-12">
+            <div class="box overflow-hidden">
+                <div class="box-header justify-between">
+                    <div class="box-title">Assets Overview</div>
+                    <spk-dropdowns [Customclass]="'dropdown'" [class]="'ti-btn ti-btn-sm ti-btn-light'" [Icon]="true"
+                    [IconClass]="'fe fe-more-vertical'" [Menuclass]="'dropdown-menu'">
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Today </a></li>
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">This week</a></li>
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Last Week</a></li>
+                    </spk-dropdowns>
+                </div>
+                <div class="box-body p-0">
+                    <div id="balanceAnalysis" class="">
+                        <apx-chart [series]="chartOptions1.series" [chart]="chartOptions1.chart"
+                        [legend]="chartOptions1.legend" [xaxis]="chartOptions1.xaxis" [colors]="chartOptions1.colors"
+                        [markers]="chartOptions1.markers" [stroke]="chartOptions1.stroke"
+                        [tooltip]="chartOptions1.tooltip" [fill]="chartOptions1.fill" [labels]="chartOptions1.labels"
+                        [dataLabels]="chartOptions1.dataLabels" [grid]="chartOptions1.grid"
+                        [plotOptions]="chartOptions1.plotOptions" [yaxis]="chartOptions1.yaxis"></apx-chart>
+                    </div>
+                    <div class="border-t border-dashed p-4 border-defaultborder dark:border-defaultborder/10">
+                        <div class="flex items-center gap-4 mb-3">
+                            <span class="avatar avatar-md bg-primary">
+                                <i class="ri-wallet-3-line text-xl"></i>
+                            </span>
+                            <div>
+                                <div class="font-medium text-textmuted dark:text-textmuted/50 opacity-70">
+                                    Funding</div>
+                                <h5 class="mb-0">$54,784 USD</h5>
+                            </div>
+                            <div class="ms-auto">
+                                <div class="text-success font-medium"><i
+                                        class="ri-arrow-up-s-fill me-1 align-middle"></i>1.05%</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-center gap-4 pt-1 mb-1">
+                            <span class="avatar avatar-md bg-primarytint1color">
+                                <i class="ri-arrow-up-down-line text-xl"></i>
+                            </span>
+                            <div>
+                                <div class="font-medium text-textmuted dark:text-textmuted/50 opacity-70">
+                                    Trading</div>
+                                <h5 class="mb-0">$23,489 USD</h5>
+                            </div>
+                            <div class="ms-auto">
+                                <div class="text-danger font-medium"><i
+                                        class="ri-arrow-down-s-fill me-1 align-middle"></i>1.05%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="xxl:col-span-5 col-span-12">
+            <div class="box overflow-hidden">
+                <div class="box-header justify-between">
+                    <div class="box-title">Transaction History</div>
+                    <a href="javascript:void(0);"
+                        class="text-textmuted dark:text-textmuted/50 underline link-offset-2">View All</a>
+                </div>
+                <div class="box-body p-0 pt-2">
+                    <div class="table-responsive">
+                        <spk-reusable-tables [columns]="transactionColumns" trClass="border-b !border-defaultborder dark:!border-defaultborder/10" tableClass="ti-custom-table text-nowrap"
+                        [showCheckbox]="false">
+                        @for(transaction of transactions;track $index){
+                                <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                    <td>
+                                        <div class="flex items-center gap-2">
+                                            <div class="leading-none">
+                                                <span
+                                                    class="avatar avatar-rounded avatar-md p-2 bg-{{transaction.bg}} dark:bg-light">
+                                                    <img [src]="transaction.src"
+                                                        alt="">
+                                                </span>
+                                            </div>
+                                            <div class="flex-auto">
+                                                <span class="block font-medium">{{transaction.coin}}</span>
+                                                <span
+                                                    class="block text-textmuted dark:text-textmuted/50">{{transaction.crypto}}</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>{{transaction.action}}</td>
+                                    <td>{{transaction.date}}</td>
+                                    <td>
+                                        <span class="text-{{transaction.bg1}}">{{transaction.change}}<i
+                                                class="ri-arrow-{{transaction.arrow}}-line text-xs leading-none text-{{transaction.bg1}} ms-1"></i></span>
+                                    </td>
+                                </tr>
+                            }
+                            </spk-reusable-tables>    
+                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End:: row-3 -->
+
+    <!-- Start:: row-4 -->
+    <div class="grid grid-cols-12 gap-x-6">
+        <div class="xl:col-span-12 col-span-12">
+            <div class="box">
+                <div class="box-header justify-between">
+                    <div class="box-title">My Portfolio</div>
+                    <div class="inline-flex rounded-sm"> <button type="button" class="ti-btn-group !border-0 !text-[0.8rem] !py-[0.45rem] !px-[0.75rem] bg-primary btn-wave text-white waves-effect waves-light">1D</button>
+                        <button type="button" class="ti-btn-group !border-0 !text-[0.8rem] !py-[0.45rem] !px-[0.75rem] btn-wave ti-btn-soft-primary waves-effect waves-light">1W</button>
+                        <button type="button" class="ti-btn-group !border-0 !text-[0.8rem] !py-[0.45rem] !px-[0.75rem] btn-wave ti-btn-soft-primary waves-effect waves-light">1M</button>
+                        <button type="button" class="ti-btn-group !border-0 !text-[0.8rem] !py-[0.45rem] !px-[0.75rem] btn-wave ti-btn-soft-primary !rounded-s-none waves-effect waves-light">1Y</button>
+                    </div>
+                </div>
+                <div class="box-body p-0">
+                    <div class="table-responsive">
+                        <spk-reusable-tables [columns]="portfolio" tableClass="ti-custom-table text-nowrap ti-custom-table-hover"
+                        [showCheckbox]="false">
+                        @for(crypto of cryptos;track $index){
+                                <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                    <td>
+                                        {{ crypto.id }}
+                                    </td>
+                                    <td>
+                                        <div class="flex items-center gap-2">
+                                            <div class="leading-none">
+                                                <span class="avatar avatar-xs">
+                                                    <img [src]="crypto.image"
+                                                        alt="{{ crypto.name }}">
+                                                </span>
+                                            </div>
+                                            <div class="text-[14px]">{{ crypto.name }}</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        {{ crypto.price }}
+                                    </td>
+                                    <td>
+                                        <div id="bitcoin-change">
+                                            <spk-apexcharts [chartOptions]="crypto.chartOptions">
+                                            </spk-apexcharts></div>
+                                    </td>
+                                    <td>
+                                        {{ crypto.volume }}
+                                    </td>
+                                    <td>
+                                        <span [ngClass]="crypto.change.direction === 'up' ? 'text-success' : 'text-danger'">
+                                            <i [ngClass]="crypto.change.direction === 'up' ? 'ri-arrow-up-s-fill' : 'ri-arrow-down-s-fill'" class="me-1 text-[15px] align-middle"></i>{{ crypto.change.value }}%</span>
+                                    </td>
+                                    <td>
+                                        {{ crypto.marketCap }}
+                                    </td>
+                                    <td>
+                                        <div class="btn-grp">
+                                            <button type="button"
+                                                class="ti-btn ti-btn-sm ti-btn-soft-primary me-2 !mb-0">Buy</button>
+                                            <button type="button"
+                                                class="ti-btn ti-btn-sm ti-btn-soft-primary1 !mb-0">Trade</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                            </spk-reusable-tables>
+                    </div>
+                </div>
+                <div class="box-footer">
+                    <div class="flex items-center flex-wrap">
+                        <div>
+                            Showing 5 Entries <i class="bi bi-arrow-right ms-2"></i>
+                        </div>
+                        <div class="ms-auto">
+                            <nav aria-label="Page navigation" class="pagination-style-4">
+                                <ul class="ti-pagination mb-0 flex-wrap">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="javascript:void(0);">
+                                            Prev
+                                        </a>
+                                    </li>
+                                    <li class="page-item "><a class="page-link active"
+                                            href="javascript:void(0);">1</a></li>
+                                    <li class="page-item"><a class="page-link"
+                                            href="javascript:void(0);">2</a></li>
+
+                                    <li class="page-item">
+                                        <a class="page-link !text-primary" href="javascript:void(0);">
+                                            next
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End:: row-4 -->

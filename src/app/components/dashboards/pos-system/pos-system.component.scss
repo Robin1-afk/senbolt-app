@@ -1,0 +1,7 @@
+.btn-close {
+    --bs-btn-close-color: #000 !important;
+    opacity: var(--bs-btn-close-opacity) !important;
+}
+.btn-close:hover{
+    opacity: var(--bs-btn-close-hover-opacity) !important;
+}

@@ -1,0 +1,348 @@
+<app-page-header [title]="'Dashboards'" [title1]="['Stocks']" [activeitem]="'Stocks'"></app-page-header>
+<!-- Start:: row-1 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-12 col-span-12">
+        <div class="swiper swiper-basic swiper-initialized swiper-horizontal swiper-backface-hidden">
+            <div class="swiper-wrapper">
+                <swiper-container 
+                #swiperContainer
+                class="swiper mySwiper" 
+                space-between="10"
+                slides-per-view="5"
+                slides-per-group="1"
+                autoplay-delay="2000"  autoplay-disable-on-interaction="false"
+                >
+                @for (stock of stocks; track $index) {
+              
+                      <swiper-slide >
+                  <div class="box overflow-hidden">
+                    <div class="box-body">
+                      <div class="flex gap-2 flex-wrap items-start justify-between">
+                        <div class="flex flex-auto items-center">
+                          <div class="me-2">
+                            <span class="avatar avatar-rounded {{ stock.iconBg }} p-2 avatar-sm">
+                              <i [class]="stock.icon"></i>
+                            </span>
+                          </div>
+                          <div>
+                            <span class="block text-defaulttextcolor text-[14px]">{{ stock.name }}</span>
+                          </div>
+                        </div>
+                        <div class="text-xs text-end">
+                          <span class="block" [class]="stock.changeClass">{{ stock.change }}</span>
+                          <span class="block font-medium text-[14px]">{{ stock.ticker }}</span>
+                        </div>
+                      </div>
+                      <div class="flex flex-auto align-items-end gap-2 justify-between">
+                        <div>
+                          <span class="block text-textmuted dark:text-textmuted/50">Current Value:</span>
+                          <span class="block ms-auto text-[15px] font-medium">
+                            {{ stock.value }}
+                            <i [class]="stock.valueIcon" class="leading-none align-middle text-xl ms-1"></i>
+                          </span>
+                        </div>
+                        <div [id]="stock.chartId" class="stock-sparkline-charts">
+                            <spk-apexcharts [chartOptions]="stock.chartOptions"></spk-apexcharts>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </swiper-slide>
+            }
+            </swiper-container>
+              </div>
+        </div>
+    </div>
+    <div class="xxl:col-span-9 col-span-12">
+        <div class="box overflow-hidden">
+            <div class="box-header justify-between">
+                <div class="box-title">Stock Market Value</div>
+                <div class="flex gap-2">
+                    <div class="ti-btn ti-btn-outline-light border ti-btn-full ti-btn-sm">Today</div>
+                    <div class="ti-btn ti-btn-outline-light border ti-btn-full ti-btn-sm">Weakly</div>
+                    <div class="ti-btn bg-light border ti-btn-full ti-btn-sm">Yearly</div>
+                </div>
+            </div>
+            <div class="box-body !pb-2">
+                <div class="sm:flex align-items-end  p-4 bg-light gap-5 flex-wrap rounded-md">
+                    <div class="min-w-fit-content me-3">
+                        <p class="mb-1">Total Investment</p>
+                        <h4 class="font-medium mb-0">$15,874.50<span class="badge bg-success ms-2 text-[0.5625rem]"><i class="ti ti-trending-up me-1"></i>0.32%</span></h4>
+                    </div>
+                    <div class="min-w-fit-content">
+                        <p class="mb-1">Market Cap</p>
+                        <h4 class="font-medium mb-0">$124,784.23<span class="badge bg-danger ms-2 text-[0.5625rem]"><i class="ti ti-trending-down me-1"></i>0.12%</span></h4>
+                    </div>
+                    <div class="min-w-fit-content">
+                        <p class="mb-1 text-xs text-textmuted dark:text-textmuted/50">
+                            <span class="text-success"> +124.25 </span>
+                            <i class="mdi mdi-circle-small"></i>
+                            <span>Yesterday</span>
+                        </p>
+                        <p class="mb-0 text-[11px] text-textmuted dark:text-textmuted/50">
+                            <span>Jun 16, 2022 </span>
+                            <i class="mdi mdi-circle-small"></i>
+                            <span> 10:45 AM</span>
+                            <i class="mdi mdi-circle-small"></i>
+                            <span> UTC +5:30</span>
+                        </p>
+                    </div>
+                    <div class="flex-1 sm:text-end mt-2 mt-sm-0 ms-auto">
+                        <a href="javascript:void(0);" class="ti-btn ti-btn-w-lg ti-btn-soft-primary1"><i class="ti ti-plus me-1"></i>Compare</a>
+                    </div>
+                </div>
+                <div id="stockCap-area">
+                    <spk-apexcharts [chartOptions]="chartOptions2"></spk-apexcharts>
+                </div>
+                <div id="stockCap">
+                    <spk-apexcharts [chartOptions]="chartOptions3"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xxl:col-span-3 col-span-12">
+        <div class="box overflow-hidden">
+            <div class="box-header justify-between">
+                <div class="box-title">
+                    My Watchlist
+                </div>
+                <button type="button" class="ti-btn ti-btn-sm bg-light"> View All<i class="ti ti-arrow-narrow-right ms-1"></i></button>
+            </div>
+            <div class="box-body p-0">
+                <div class="table-responsive">
+                    <spk-reusable-tables  tableClass="ti-custom-table ti-custom-table-head"
+                    [showCheckbox]="false">
+                    @for(stock of stocksTable;track $index){
+                            <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <span class="avatar avatar-md p-2 avatar-rounded border border-{{stock.bg1}}/10 bg-{{stock.bg1}}/10">
+                                            <img [src]="stock.src"  alt="" class="invert-1">
+                                        </span>
+                                        <div>
+                                            <a href="javascript:void(0);" class="font-medium">{{stock.brand}}</a>
+                                            <span class="block text-textmuted dark:text-textmuted/50 text-xs">{{stock.code}}</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-end">
+                                    <div class="flex items-center gap-2">
+                                        <div class="flex-auto">
+                                            <div id="apple-change">
+                                                <spk-apexcharts [chartOptions]="stock.chartOptions"></spk-apexcharts>
+                                            </div>
+                                        </div>
+                                        <div class="flex-auto ms-auto">
+                                            <p class="mb-0"> {{stock.price}}</p>
+                                            <p class="text-{{stock.bg}} mb-0">{{stock.percent}}</p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                        </spk-reusable-tables>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End:: row-1 -->
+
+<!-- Start:: row-2 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xxl:col-span-3 lg:col-span-6 col-span-12">
+        <div class="box overflow-hidden">
+            <div class="box-header justify-between">
+                <h6 class="box-title">Statistics</h6>
+                <button type="button" class="ti-btn ti-btn-sm bg-light"> View All<i class="ti ti-arrow-narrow-right ms-1"></i></button>
+            </div>
+            <div class="box-body">
+                <div id="portfolio" class="">
+                    <spk-apexcharts [chartOptions]="chartOptions11"></spk-apexcharts>
+                </div>
+            </div>
+            <div class="box-footer p-4 my-2">
+                <div class="flex justify-between gap-x-6">
+                    <div class="p-0">
+                        <div class="text-center"> 
+                            <i class="ri-circle-fill p-1 leading-none text-[0.4375rem] rounded-md ti-btn-soft-primary"></i>
+                            <span class="text-textmuted dark:text-textmuted/50 text-xs mb-1 rounded-dot dot-primary inline-block ms-2">Stocks
+                            </span>
+                            <div><span class="text-[1rem] font-medium">1,624</span> </div>
+                        </div>
+                    </div>
+                    <div class="p-0">
+                        <div class="text-center"> 
+                            <i class="ri-circle-fill p-1 leading-none text-[0.4375rem] rounded-md ti-btn-soft-primary1"></i>
+                            <span class="text-textmuted dark:text-textmuted/50 text-xs mb-1 rounded-dot dot-secondary inline-block ms-2">Funds
+                            </span>
+                            <div><span class="text-[1rem] font-medium">1,267</span></div>
+                        </div>
+                    </div>
+                    <div class="p-0">
+                        <div class="text-center"> 
+                            <i class="ri-circle-fill p-1 leading-none text-[0.4375rem] rounded-md bg-primarytint2color/10 text-primarytint2color"></i>
+                            <span class="text-textmuted dark:text-textmuted/50 text-xs mb-1 rounded-dot dot-success inline-block ms-2">Bond
+                            </span>
+                            <div><span class="text-[1rem] font-medium">1,153</span> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xxl:col-span-6 lg:col-span-6 col-span-12">
+        <div class="box overflow-hidden">
+            <div class="box-header  justify-between">
+                <div class="box-title">My Stocks</div>
+                <spk-dropdowns [Customclass]="'dropdown'" 
+                [class]="'ti-btn bg-light ti-btn-sm text-textmuted dark:text-textmuted/50'" [title]="'All Stocks'" [Icon]="true"
+                [IconClass]="'ri-arrow-down-s-line align-middle ms-1 inline-block'" [Menuclass]="'dropdown-menu'">
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);"> All Stocks</a></li>
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Wishlist</a></li>
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Stocks</a></li>
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Crypto</a></li>
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">ETFs</a></li>
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Bonds</a></li>
+                </spk-dropdowns>
+            </div>
+            <div class="box-body p-0">
+                <div class="table-responsive">
+                    <spk-reusable-tables [columns]="stockColumns" tableClass="ti-custom-table ti-custom-table-head ti-custom-table-hover"
+                    [showCheckbox]="false">
+                    @for(stock of mystocks;track $index){
+                            <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                <td>
+                                    <div class="flex gap-2">
+                                        <span class="avatar !rounded-full avatar-sm bg-{{stock.bg}}/10 !text-{{stock.bg}}">
+                                            <i class="ri-{{stock.icon}}-fill text-[1rem]"></i>
+                                        </span>
+                                        <div class="flex-auto">
+                                            <div>{{stock.title}}</div>
+                                            <div class="text-textmuted dark:text-textmuted/50">{{stock.code}}</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>{{stock.quantity}}</td>
+                                <td class="font-medium">{{stock.price}}</td>
+                                <td><span class="text-{{stock.bg1}}">{{stock.change}}</span></td>
+                                <td>{{stock.value}}</td>
+                                <td class="ti-btn-list">
+                                    <a href="javascript:void(0);" class="ti-btn ti-btn-sm ti-btn-soft-primary">Buy</a>
+                                    <a href="javascript:void(0);" class="ti-btn ti-btn-sm ti-btn-soft-primary1">Sell</a>
+                                </td>
+                            </tr>
+                        }
+                        </spk-reusable-tables>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xxl:col-span-3 col-span-12">
+        <div class="box overflow-hidden">
+            <div class="box-header justify-between">
+                <h6 class="box-title">Growth Analysis</h6>
+                <button type="button" class="ti-btn ti-btn-sm bg-light"> View All<i class="ti ti-arrow-narrow-right ms-1"></i></button>
+            </div>
+            <div class="box-body pb-1">
+                <div class="p-4 bg-light rounded-md text-defaulttextcolor rounded border flex items-center justify-between border-dashed dark:border-defaultborder/10">
+                    <div>
+                        <span class="block mb-1">Tesla, Inc (TSLA)</span>
+                        <h5 class="font-semibold leading-none mb-0">$ 17,782.00</h5>
+                    </div>
+                    <span class="badge bg-success font-semibold float-end leading-none ms-2">0.64%<i class="ri-arrow-up-s-line ms-1"></i></span>
+                </div>
+                <div id="visitors-report">
+                    <spk-apexcharts [chartOptions]="chartOptions12"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End:: row-2 -->
+
+<!-- Start:: row-3 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box overflow-hidden">
+            <div class="box-header justify-between">
+                <div class="box-title">
+                    Transaction History
+                </div>
+                <spk-dropdowns [Customclass]="'dropdown'" 
+                  [class]="'ti-btn bg-light ti-btn-sm ti-dropdown-toggle hs-dropdown-toggle'" [title]="'All'" [Icon]="true"
+                  [IconClass]="'ri-arrow-down-s-line align-middle inline-block'" [Menuclass]="'dropdown-menu dropdown-menu-end'">
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Buy</a></li>
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Sell</a></li>
+                </spk-dropdowns>
+            </div>
+            <div class="box-body p-0">
+                <div class="table-responsive">
+                    <spk-reusable-tables [columns]="transactionColumns" tableClass="ti-custom-table ti-custom-table-head ti-custom-table-hover"
+                    [showCheckbox]="false">
+                    @for(transaction of transactions;track $index){
+                                <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                    <td>{{transaction.date}}</td>
+                                    <td>
+                                        <div class="flex items-center gap-2">
+                                            <span class="avatar avatar-sm p-1 avatar-rounded border border-{{transaction.bg}}/10 bg-{{transaction.bg}}/10 !text-danger">
+                                                @if(transaction.src){
+                                                <img  [src]="transaction.src" alt="" class="invert-1">
+                                                }
+                                                @else {
+                                                    <i class="ri-netflix-line"></i>
+                                                }
+                                            </span>
+                                            <div>
+                                                <a href="javascript:void(0);" class="font-medium">{{transaction.code}}</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>{{transaction.shares}}</td>
+                                    <td><span class="badge bg-{{transaction.typebg}}/10 !text-{{transaction.typebg}}">{{transaction.type}}</span></td>
+                                    <td>
+                                        <div class="font-medium">{{transaction.price}}</div>
+                                        <div class="text-textmuted dark:text-textmuted/50">Value: {{transaction.value}}</div>
+                                    </td>
+                                    <td><span class="text-{{transaction.bg1}}">{{transaction.change}}</span></td>
+                                </tr>
+                            }
+                            </spk-reusable-tables>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box overflow-hidden">
+            <div class="box-header justify-between">
+                <div class="box-title">
+                    Market Movers
+                </div>
+                <spk-dropdowns [Customclass]="'dropdown'" 
+                  [class]="'ti-btn bg-light ti-btn-sm'" [title]="'All'" [Icon]="true"
+                  [IconClass]="'ri-arrow-down-s-line align-middle inline-block'" [Menuclass]="'dropdown-menu dropdown-menu-end'">
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Buy</a></li>
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Sell</a></li>
+                </spk-dropdowns>
+            </div>
+            <div class="box-body p-0">
+                <div class="table-responsive">
+                    <spk-reusable-tables [columns]="marketColumns"   tableClass="ti-custom-table ti-custom-table-head"
+                    [showCheckbox]="false">
+                    @for(market of markets;track $index){
+                            <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                <td>{{market.symbol}}</td>
+                                <td>{{market.name}}</td>
+                                <td><span class="text-{{market.bg}}">{{market.change}}</span></td>
+                                <td class="font-medium text-[14px]">{{market.price}}</td>
+                                <td><span class="text-{{market.bg}}">{{market.change1}}</span></td>
+                                <td>{{market.volume}}</td>
+                            </tr>
+                        }
+                        </spk-reusable-tables>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End:: row-3 -->

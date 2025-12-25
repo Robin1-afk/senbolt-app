@@ -1,0 +1,148 @@
+      
+      <app-page-header [title]="'Ui Elements'" [title1]="['Toasts']" [activeitem]="'Toasts'"></app-page-header>
+      <!-- Start:: row-1 -->
+       <div class="grid grid-cols-12 gap-x-6">
+        <div class="xl:col-span-12 col-span-12">
+            <app-showcode-card [title]="'Basic Toasts'"  [prism]="prsimCodeData.ToastTS1" >
+                    <div class="lg:flex lg:space-x-3 rtl:space-x-reverse space-y-4 lg:space-y-0">
+                        @for (toast of BasicToast; track $index) {
+                            <spk-toast [classlist]="toast.type">
+                             <div class="flex p-4">
+                            <div class="flex-shrink-0" >
+                              <svg [class]="toast.iconColor + ' mt-0.5'" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path [attr.d]="toast.iconPath" />
+                              </svg>
+                            </div>
+                            <div class="ms-3">
+                              <p class="text-sm text-gray-700 text-textmuted dark:text-textmuted/50">
+                                {{ toast.message }}
+                              </p>
+                            </div>
+                          </div>
+                        </spk-toast>
+                    }
+                      </div>
+            </app-showcode-card>
+        </div>
+        <div class="xl:col-span-12 col-span-12">
+            <app-showcode-card [title]="'Condensed Toasts'"  [prism]="prsimCodeData.ToastTS2" >
+                    @for (toast of CondensedToast; track $index;let i = $index) {
+                        <spk-toast [id]="'dismiss-toast1'" [classlist]='toast.type'>
+                            <div class="flex p-4">
+                                <p class="text-sm text-gray-700 text-textmuted dark:text-textmuted/50">
+                                   {{toast.message}}
+                                </p>
+    
+                                <div
+                                    class="ms-auto flex items-center space-x-3 rtl:space-x-reverse">
+                                    <button type="button"
+                                        class="inline-flex justify-center items-center gap-2 rounded-sm border-transparent font-medium {{toast.iconColor}} hover:underline focus:outline-none focus:ring-0 focus:ring-primary focus:ring-offset-0 transition-all text-sm">
+                                        Undo
+                                    </button>
+                                    <button type="button"(click)="closeToast(toast.id, 'CondensedToast')"
+                                        class="inline-flex flex-shrink-0 justify-center items-center h-4 w-4 rounded-sm text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-0 focus:ring-gray-400 focus:ring-offset-0 focus:ring-offset-white transition-all text-sm dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
+                                        <span class="sr-only">Close</span>
+                                        <i class="bi bi-x text-xl leading-none"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            </spk-toast>
+                        }
+            </app-showcode-card>
+        </div>
+    </div>
+    <!-- End:: row-1 -->
+    <!-- Start:: row-2 -->
+    <div class="grid grid-cols-12 gap-6">
+        <div class="xl:col-span-6 col-span-12">
+            <app-showcode-card [title]="'Solid Colored Toasts'"  [prism]="prsimCodeData.ToastTS3" >
+                    <div class="space-y-3">
+                        <div>
+                            @for (toast of SolidColorToast; track $index;let i = $index) {
+                            <spk-toast [id]="'dismiss-toast2'" [classlist]="'mb-2 ti-toast text-sm text-white hs-removing:translate-x-5 hs-removing:opacity-0 transition duration-300 ' + toast.color">
+                                <div class="flex p-4">
+                                    Hello, world! This is a toast message.
+                                    <div class="ms-auto">
+                                        <button type="button" (click)="closeToast(toast.id, 'SolidColorToast')"
+                                            class="inline-flex flex-shrink-0 justify-center items-center h-4 w-4 rounded-sm text-white/[.5]  focus:outline-none 
+                                            focus:ring-0 focus:ring-offset-0 focus:ring-offset-white/10 focus:ring-gray-600 transition-all 
+                                            text-sm dark:focus:ring-offset-white/10 dark:focus:ring-white/10" data-hs-remove-element="#dismiss-toast1">
+                                            <span class="sr-only">Close</span>
+                                            <i class="bi bi-x text-xl leading-none"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </spk-toast>
+                        }
+                        </div>
+                    </div>
+            </app-showcode-card>
+        </div>
+        <div class="xl:col-span-6 col-span-12">
+            <app-showcode-card [title]="'Light Colored Toasts'"  [prism]="prsimCodeData.ToastTS4" >
+                    <div class="space-y-3">
+                        <div>
+                            @for (toast of ColorToast; track $index;let i = $index) {
+                                <spk-toast [id]="'dismiss-toast3'" [classlist]="toast.textColor + ' ti-toast text-sm text-primary hs-removing:translate-x-5 hs-removing:opacity-0 transition duration-300 mb-2 ' + toast.color ">
+                                    <div class="flex p-4">
+                                        Hello, world! This is a toast message.
+                                        <div class="ms-auto">
+                                            <button type="button" (click)="closeToast(toast.id, 'ColorToast')"
+                                                class="inline-flex flex-shrink-0 justify-center items-center h-4 w-4 rounded-sm text-white/[.5]  focus:outline-none 
+                                                focus:ring-0 focus:ring-offset-0 focus:ring-offset-white/10 focus:ring-gray-600 transition-all 
+                                                text-sm dark:focus:ring-offset-white/10 dark:focus:ring-white/10" data-hs-remove-element="#dismiss-toast1">
+                                                <span class="sr-only">Close</span>
+                                                <i class="bi bi-x text-xl leading-none {{toast.textColor}}"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </spk-toast>
+                            }
+                        </div>
+                    </div>
+            </app-showcode-card>
+        </div>
+    </div>
+    <!-- End:: row-2 -->
+<!-- Start:: row-3 -->
+<div class="grid grid-cols-12 gap-6">
+    <div class="xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="'Toast Message with loading indicator'"  [prism]="prsimCodeData.ToastTS5" >
+                @for (toast of loadingToast; track $index) {
+                    <spk-toast [classlist]='toast.type'>
+                    <div class="flex items-center p-4">
+                        <div class="ti-spinner w-4 h-4 {{toast.iconColor}}" role="status" aria-label="loading">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <p class="ms-3 text-sm text-gray-700 text-textmuted dark:text-textmuted/50">
+                           {{toast.message}}
+                        </p>
+                    </div>
+                    </spk-toast>
+                }
+        </app-showcode-card>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="'Toast with Dismiss button'"  [prism]="prsimCodeData.ToastTS6" >
+                @for (toast of DismissToast; track $index;let i = $index) {
+                    <spk-toast [id]="'dismiss-toast4'" [classlist]='toast.type'>
+                    <div class="flex p-4">
+                        <p class="text-sm text-gray-700 text-textmuted dark:text-textmuted/50">
+                            Your email has been sent
+                        </p>
+                        <div class="ms-auto">
+                            <button type="button" (click)="closeToast(toast.id, 'DismissToast')"
+                                class="inline-flex flex-shrink-0 justify-center items-center h-4 w-4 rounded-sm text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-0 focus:ring-gray-400 focus:ring-offset-0 focus:ring-offset-white text-sm dark:focus:ring-white/10 dark:focus:ring-offset-white/10"
+                                data-hs-remove-element="#dismiss-toast">
+                                <span class="sr-only">Close</span>
+                                <i class="bi bi-x text-xl leading-none"></i>
+                            </button>
+                        </div>
+                    </div>
+                    </spk-toast>
+                }
+               
+        </app-showcode-card>
+    </div>
+</div>
+<!-- End:: row-3 -->

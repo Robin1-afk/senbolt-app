@@ -1,0 +1,882 @@
+     
+     <app-page-header [title]="'Tables'" [title1]="['Tables']" [activeitem]="'Tables'"></app-page-header>
+
+     <!-- Start:: row-1 -->
+     <div class="grid grid-cols-12 gap-6">
+        <div class="xl:col-span-6 col-span-12">
+                    <app-showcode-card [title]="'Basic Tables'" [prism]="prismCode.basicTablesTS1">
+                    <div class="table-responsive">
+                        <spk-reusable-tables [columns]="basicColumn" tableClass="ti-custom-table ti-custom-table-head" [showCheckbox]="false">
+                            @for(table of basicTables;track $index){
+                            <tr class="border-b  border-defaultborder dark:border-defaultborder/10">
+                                <th scope="row">{{table.name}}</th>
+                                <td>{{table.date}}</td>
+                                <td>{{table.contact}}</td>
+                                <td><span class="badge bg-outline-{{table.bg}}">{{table.status}}</span></td>
+                            </tr>
+                            }
+                        </spk-reusable-tables>
+                      
+                    </div>
+                    </app-showcode-card>
+              
+            </div>
+        <div class="xl:col-span-6 col-span-12">
+        
+                    <app-showcode-card [title]="' Bordered Tables'" [prism]="prismCode.basicTablesTS2">
+                    <div class="table-responsive whitespace-nowrap">
+                        <spk-reusable-tables [columns]="borderColumn" tableClass="ti-custom-table ti-custom-table-head !border  border-defaultborder dark:border-defaultborder/10"
+                        [showCheckbox]="false">
+                        @for(table of borderTables;track $index){
+                            <tr class="border-b border-defaultborder dark:border-defaultborder/10">
+                                <th scope="row">
+                                    <div class="flex align-items-center">
+                                        <span class="avatar avatar-xs me-2 online avatar-rounded">
+                                            <img [src]="table.src" alt="img">
+                                        </span>{{table.name}}
+                                    </div>
+                                </th>
+                                <td><span class="badge {{table.bg}} ">{{table.status}}</span></td>
+                                <td>{{table.mail}}</td>
+                                <td>
+                                    <div class="hstack gap-2 flex-wrap">
+                                        <a href="javascript:void(0);" class="text-info text-[.875rem] leading-none me-2"><i
+                                                class="ri-edit-line"></i></a>
+                                        <a href="javascript:void(0);" class="text-danger text-[.875rem] leading-none me-2"><i
+                                                class="ri-delete-bin-5-line"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+        
+                        }
+                        </spk-reusable-tables>
+                     
+                    </div>
+                    </app-showcode-card>
+              
+    </div>
+    </div>
+    <!-- End:: row-1 -->
+
+    <!-- Start:: row-2 -->
+    <div class="grid grid-cols-12 gap-6">
+        <div class="xl:col-span-4 col-span-12">
+          
+                    <app-showcode-card [title]="' Bordered Primary'" [prism]="prismCode.basicTablesTS3">
+                    <div class="table-responsive overflow-auto table-bordered-primary">
+                        <spk-reusable-tables [columns]="borderprimaryColumn" trClass="border-b border-primary/30" thClass="text-start"
+                    tableClass="ti-custom-table ti-custom-table-head " [showCheckbox]="false">
+                    @for(table of borderprimaryTables;track $index){
+                    <tr>
+                        <th scope="row" class="text-start">
+                            {{table.id}}
+                        </th>
+                        <td>
+                            <span class="badge bg-light text-dark">{{table.date}}</span>
+                        </td>
+                        <td>
+                            <div class="flex items-center">
+                                <span class="avatar avatar-xs me-2 online avatar-rounded">
+                                    <img [src]="table.src" alt="img">
+                                </span>{{table.name}}
+                            </div>
+                        </td>
+                        <td><span class="badge bg-primary/10  text-primary">Booked</span></td>
+                    </tr>
+                    }
+                </spk-reusable-tables>
+                     
+                    </div>
+                    </app-showcode-card>
+           
+        </div>
+        <div class="xl:col-span-4 col-span-12">
+            <app-showcode-card [title]="'Bordered Success'" [prism]="prismCode.basicTablesTS4">
+                <div class="table-responsive overflow-auto table-bordered-success">
+                    <spk-reusable-tables [columns]="bordersuccessColumn"
+                        tableClass="ti-custom-table ti-custom-table-head" [showCheckbox]="false">
+                        @for(table of bordersuccessTables;track $index){
+                        <tr>
+                            <th scope="row">
+                                {{table.id}}
+                            </th>
+                            <td>
+                                <span class="badge bg-light text-dark">{{table.date}}</span>
+                            </td>
+                            <td>
+                                <div class="flex align-items-center">
+                                    <span class="avatar avatar-xs me-2 online avatar-rounded">
+                                        <img [src]="table.src" alt="img">
+                                    </span>{{table.name}}
+                                </div>
+                            </td>
+                            <td><span class="badge bg-success/10 text-success">Delivered</span></td>
+                        </tr>
+                        }
+                    </spk-reusable-tables>
+                </div>
+            </app-showcode-card>
+          
+        </div>
+        <div class="xl:col-span-4 col-span-12">
+            <app-showcode-card [title]="'Bordered warning'" [prism]="prismCode.basicTablesTS5">
+                <div class="table-responsive overflow-auto table-bordered-warning">
+                    <spk-reusable-tables [columns]="borderwarningColumn"
+                        tableClass="ti-custom-table ti-custom-table-head" [showCheckbox]="false">
+                        @for(table of borderwarningTables;track $index){
+                        <tr>
+                            <th scope="row">
+                                {{table.id}}
+                            </th>
+                            <td>
+                                <span class="badge bg-light text-dark">{{table.date}}</span>
+                            </td>
+                            <td>
+                                <div class="flex align-items-center">
+                                    <span class="avatar avatar-xs me-2 online avatar-rounded">
+                                        <img [src]="table.src" alt="img">
+                                    </span>{{table.name}}
+                                </div>
+                            </td>
+                            <td><span class="badge bg-warning/10 text-warning">Delivered</span></td>
+                        </tr>
+                        }
+                    </spk-reusable-tables>
+                </div>
+            </app-showcode-card>
+         
+        </div>
+    </div>
+    <!-- End:: row-2 -->
+
+    <!-- Start:: row-3 -->
+    <div class="grid grid-cols-12 gap-6">
+        <div class="xl:col-span-6 col-span-12">
+            <app-showcode-card [title]="'Table Without Borders'" [prism]="prismCode.basicTablesTS6">
+                <div class="table-responsive">
+                    <spk-reusable-tables [columns]="borderlessColumn" tableClass="ti-custom-table" trClass="text-start"
+                    [showCheckbox]="false">
+                    @for(table of borderlessTables;track $index){
+                    <tr>
+                        <th scope="row" class="text-start">{{table.name}}</th>
+                        <td>{{table.id}}</td>
+                        <td>{{table.date}}</td>
+                        <td><span class="badge bg-{{table.bg}}  text-white">{{table.status}}</span></td>
+                    </tr>
+                    }
+                </spk-reusable-tables>
+                </div>
+            </app-showcode-card>
+           
+        </div>
+        <div class="xl:col-span-6 col-span-12">
+            <app-showcode-card [title]="'Table Group Divideres'" [prism]="prismCode.basicTablesTS7">
+                <div class="table-responsive">
+                    <spk-reusable-tables [columns]="groupColumn" tableClass="ti-custom-table"
+                        tableBody="table-group-divider" [showCheckbox]="false">
+                        @for(table of groupTables;track $index){
+                        <tr>
+                            <th scope="row">{{table.product}}</th>
+                            <td>{{table.seller}}</td>
+                            <td><a href="javascript:void(0);" class="text-{{table.bg}}">{{table.percent}}<i
+                                        class="ri-arrow-{{table.arrow}}-fill ms-1"></i></a></td>
+                            <td>{{table.quantity}}</td>
+                        </tr>
+                        }
+                    </spk-reusable-tables>
+                </div>
+            </app-showcode-card>
+         
+        </div>
+    </div>
+    <!-- End:: row-3 -->
+
+    <!-- Start:: row-4 -->
+    <div class="grid grid-cols-12 gap-6">
+        <div class="xl:col-span-6 col-span-12">
+            <app-showcode-card [title]="'Striped rows'" [prism]="prismCode.basicTablesTS8">
+                <div class="table-responsive">
+                    <spk-reusable-tables [columns]="stripedrowColumn" tableClass="ti-custom-table ti-custom-table-head ti-striped-table" trClass="border-b border-defaultborder dark:border-defaultborder/10"
+                        [showCheckbox]="false">
+                        @for(table of stripedrowColumnTables;track $index){
+                        <tr>
+                            <th scope="row">{{table.id}}</th>
+                            <td>{{table.date}}</td>
+                            <td>{{table.customer}}</td>
+                            <td>
+                                <button class="ti-btn !py-1 !px-2 !text-[0.75rem] ti-btn-soft-success btn-wave">
+                                    <i class="ri-download-2-line align-middle me-2 inline-block"></i>Download
+                                </button>
+                            </td>
+                        </tr>
+                        }
+                    </spk-reusable-tables>
+                </div>
+            </app-showcode-card>
+         
+        </div>
+        <div class="xl:col-span-6 col-span-12">
+            <app-showcode-card [title]="'Striped columns'" [prism]="prismCode.basicTablesTS9">
+                <div class="table-responsive">
+                    <spk-reusable-tables [columns]="stripedColumn" thClass="text-start" tableClass="ti-custom-table ti-custom-table-head table-striped-columns min-w-full" trClass="border-b  border-defaultborder dark:border-defaultborder/10"
+                        [showCheckbox]="false">
+                        @for(table of stripedColumnTables;track $index){
+                        <tr>
+                            <th scope="row">{{table.id}}</th>
+                            <td>{{table.date}}</td>
+                            <td>{{table.customer}}</td>
+                            <td>
+                                <button class="ti-btn !py-1 !px-2 !text-[0.75rem] ti-btn-soft-danger btn-wave">
+                                    <i class="ri-delete-bin-line align-middle me-2 d-inline-block"></i>Delete
+                                </button>
+                            </td>
+                        </tr>
+                        }
+                    </spk-reusable-tables>
+                </div>
+            </app-showcode-card>
+         
+        </div>
+    </div>
+    <!-- End:: row-4 -->
+
+    <!-- Start:: row-5 -->
+    <div class="grid grid-cols-12 gap-6">
+        <div class="xl:col-span-4 col-span-12">
+            <app-showcode-card [title]="'Primary Table'" [prism]="prismCode.basicTablesTS10">
+                <div class="table-responsive overflow-auto table-primary">
+                    <spk-reusable-tables [columns]="bgColorColumn" tableClass="ti-custom-table ti-custom-table-head" trClass="border-b border-primary/10"
+                        [showCheckbox]="false">
+                        @for(table of bgColorTables;track $index){
+                        <tr >
+                            <th scope="row"  class="text-start" >{{table.id}}</th>
+                            <td>{{table.name}}</td>
+                            <td>{{table.lastname}}</td>
+                            <td>{{table.handle}}</td>
+                        </tr>
+                        }
+                    </spk-reusable-tables>
+                </div>
+            </app-showcode-card>
+        
+        </div>
+        <div class="xl:col-span-4 col-span-12">
+            <app-showcode-card [title]="'Secondary Table'" [prism]="prismCode.basicTablesTS11">
+                <div class="table-responsive overflow-auto table-secondary">
+                    <spk-reusable-tables [columns]="bgColorColumn" tableClass="ti-custom-table ti-custom-table-head" trClass="border-b border-secondary/10"
+                        [showCheckbox]="false">
+                        @for(table of bgColorTables;track $index){
+                        <tr>
+                            <th scope="row" class="text-start">{{table.id}}</th>
+                            <td>{{table.name}}</td>
+                            <td>{{table.lastname}}</td>
+                            <td>{{table.handle}}</td>
+                        </tr>
+                        }
+                    </spk-reusable-tables>
+    
+                </div>
+            </app-showcode-card>
+        </div>
+        <div class="xl:col-span-4 col-span-12">
+            <app-showcode-card [title]="'Warning Table'" [prism]="prismCode.basicTablesTS12">
+                <div class="table-responsive  overflow-auto table-warning">
+                    <spk-reusable-tables [columns]="bgColorColumn" tableClass="ti-custom-table ti-custom-table-head" trClass="border-b border-warning/10"
+                        [showCheckbox]="false">
+                        @for(table of bgColorTables;track $index){
+                        <tr>
+                            <th scope="row" class="text-start">{{table.id}}</th>
+                            <td>{{table.name}}</td>
+                            <td>{{table.lastname}}</td>
+                            <td>{{table.handle}}</td>
+                        </tr>
+                        }
+                    </spk-reusable-tables>
+    
+                </div>
+            </app-showcode-card>
+        </div>
+        <div class="xl:col-span-4 col-span-12">
+            <app-showcode-card [title]="'Danger Table'" [prism]="prismCode.basicTablesTS13">
+                <div class="table-responsive table-danger">
+                    <spk-reusable-tables [columns]="bgColorColumn" tableClass="ti-custom-table ti-custom-table-head" trClass="border-b border-danger/10"
+                        [showCheckbox]="false">
+                        @for(table of bgColorTables;track $index){
+                        <tr>
+                            <th scope="row" class="text-start">{{table.id}}</th>
+                            <td>{{table.name}}</td>
+                            <td>{{table.lastname}}</td>
+                            <td>{{table.handle}}</td>
+                        </tr>
+                        }
+                    </spk-reusable-tables>
+                </div>
+            </app-showcode-card>
+          
+        </div>
+        <div class="xl:col-span-4 col-span-12">
+            <app-showcode-card [title]="'Dark Table'" [prism]="prismCode.basicTablesTS14">
+                <div class="table-responsive table-info">
+                    <spk-reusable-tables [columns]="bgColorColumn" tableClass="ti-custom-table ti-custom-table-head" trClass="border-b border-info/10 dark:border-info/[0.025]"
+                        [showCheckbox]="false">
+                        @for(table of bgColorTables;track $index){
+                        <tr>
+                            <th scope="row">{{table.id}}</th>
+                            <td>{{table.name}}</td>
+                            <td>{{table.lastname}}</td>
+                            <td>{{table.handle}}</td>
+                        </tr>
+                        }
+                    </spk-reusable-tables>
+                </div>
+            </app-showcode-card>
+           
+        </div>
+        <div class="xl:col-span-4 col-span-12">
+            <app-showcode-card [title]="'Success Table'" [prism]="prismCode.basicTablesTS15">
+                <div class="table-responsive table-success">
+                    <spk-reusable-tables [columns]="bgColorColumn" tableClass="ti-custom-table ti-custom-table-head" trClass="border-b border-success/10"
+                        [showCheckbox]="false">
+                        @for(table of bgColorTables;track $index){
+                        <tr>
+                            <th scope="row"  class="text-start">{{table.id}}</th>
+                            <td>{{table.name}}</td>
+                            <td>{{table.lastname}}</td>
+                            <td>{{table.handle}}</td>
+                        </tr>
+                        }
+                    </spk-reusable-tables>
+                </div>
+            </app-showcode-card>
+         
+        </div>
+    </div>
+    <!-- End:: row-5 -->
+
+    <!-- Start:: row-6 -->
+    <div class="grid grid-cols-12 gap-6">
+        <div class="xl:col-span-6 col-span-12">
+            <app-showcode-card [title]="'Hoverable Rows'" [prism]="prismCode.basicTablesTS16">
+                <div class="table-responsive">
+                    <spk-reusable-tables [columns]="hoverRowColumn" trClass="border-b  border-defaultborder dark:border-defaultborder/10" tableClass="ti-custom-table ti-custom-table-head ti-custom-table-hover"
+                        [showCheckbox]="false">
+                        @for(table of hoverRowTables;track $index){
+                        <tr>
+                            <td>
+                                <div class="flex align-items-center">
+                                    <div class="avatar avatar-sm me-2 avatar-rounded">
+                                        <img [src]="table.src" alt="img">
+                                    </div>
+                                    <div>
+                                        <div class="leading-none">
+                                            <span>{{table.name}}</span>
+                                        </div>
+                                        <div class="leading-none">
+                                            <span class="text-[0.6875rem] text-[#8c9097] dark:text-white/50">{{table.mail}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="badge bg-{{table.bg}} text-{{table.bg1}}">{{table.status}}</span></td>
+                            <td>
+                                <div class="avatar-list-stacked">
+                                    @for(image of table.images;track $index){
+    
+                                    <span class="avatar avatar-sm avatar-rounded">
+                                        <img [src]="image" src="./assets/images/faces/2.jpg" alt="img">
+                                    </span>
+                                    }
+                                    <a class="avatar avatar-sm bg-primary text-white avatar-rounded"
+                                        href="javascript:void(0);">
+                                        +{{table.count}}
+                                    </a>
+    
+                                </div>
+                            </td>
+                            <td>
+                                <div class="progress progress-xs">
+                                    <div class="progress-bar bg-primary" role="progressbar" [style.width.%]="table.progress"
+                                        aria-valuenow="52" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        }
+                    </spk-reusable-tables>
+                </div>
+            </app-showcode-card>
+           
+        </div>
+        <div class="xl:col-span-6 col-span-12">
+            <app-showcode-card [title]="'Hoverable rows With striped rows'" [prism]="prismCode.basicTablesTS17">
+                <div class="table-responsive">
+                    <spk-reusable-tables [columns]="hoverstripedRowColumn" trClass="border-b  border-defaultborder dark:border-defaultborder/10 "
+                        tableClass="ti-custom-table ti-custom-table-head ti-striped-table ti-custom-table-hover" [showCheckbox]="false">
+                        @for(table of hoverstripedRowTables;track $index){
+                        <tr>
+                            <th scope="row">{{table.id}}</th>
+                            <td>
+                                <div class="flex items-center">
+                                    <div class="avatar avatar-sm me-2 avatar-rounded">
+                                        <img [src]="table.src" src="./assets/images/faces/15.jpg" alt="img">
+                                    </div>
+                                    <div>
+                                        <div class="leading-none">
+                                            <span>{{table.customer}}</span>
+                                        </div>
+                                        <div class="leading-none">
+                                            <span class="text-[0.6875rem] text-[#8c9097] dark:text-white/50">{{table.mail}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="badge bg-{{table.bg}} {{table.bg1}}"><i
+                                        class="ri-{{table.icon}} align-middle me-1"></i>{{table.status}}</span></td>
+                            <td>{{table.date}}</td>
+                        </tr>
+                        }
+                    </spk-reusable-tables>
+    
+                </div>
+            </app-showcode-card>
+            
+        </div>
+    </div>
+    <!-- End:: row-6 -->
+
+    <!-- Start:: row-7 -->
+    <div class="grid grid-cols-12 gap-6">
+        <div class="xl:col-span-6 col-span-12">
+            <app-showcode-card [title]="'Table Head Primary'" [prism]="prismCode.basicTablesTS18">
+                <div class="table-responsive">
+                    <spk-reusable-tables [columns]="headerColumn" tableHead="bg-primary/10" tableClass="ti-custom-table ti-custom-table-head ti-head-primary"
+                        [showCheckbox]="false" trClass="border-b border-primary/10">
+                        @for(table of headerTables;track $index){
+                        <tr>
+                            <td scope="row" class="text-start">{{table.name}}</td>
+                            <td>{{table.id}}</td>
+                            <td>{{table.date}}</td>
+                            <td>
+                                <div class="hstack flex gap-3 text-[.9375rem]">
+                                    <a href="javascript:void(0);"
+                                        class="ti-btn ti-btn-sm ti-btn-soft-success !rounded-full"><i
+                                            class="ri-download-2-line"></i></a>
+                                    <a href="javascript:void(0);"
+                                        class="ti-btn ti-btn-sm ti-btn-soft-info !rounded-full"><i
+                                            class="ri-edit-line"></i></a>
+                                    <a href="javascript:void(0);"
+                                        class="ti-btn ti-btn-sm ti-btn-soft-danger !rounded-full"><i
+                                            class="ri-delete-bin-line"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        }
+                    </spk-reusable-tables>
+                </div>
+            </app-showcode-card>
+           
+        </div>
+        <div class="xl:col-span-6 col-span-12">
+            <app-showcode-card [title]="'Table Head Secondary'" [prism]="prismCode.basicTablesTS19">
+                <div class="table-responsive">
+                    <spk-reusable-tables [columns]="headerColumn" tableHeadColumn="text-start" trClass="border-b  border-defaultborder dark:border-defaultborder/10" tableHead="bg-secondary/10" tableClass="ti-custom-table ti-custom-table-head ti-head-secondary"
+                        [showCheckbox]="false">
+                        @for(table of headerTables;track $index){
+                        <tr class="border-b  border-defaultborder dark:border-defaultborder/10">
+                            <td scope="row" class="text-start">{{table.name}}</td>
+                            <td>{{table.id}}</td>
+                            <td>{{table.date}}</td>
+                            <td>
+                                <button class="ti-btn !py-1 !px-2 !text-[0.75rem] ti-btn-soft-{{table.bg}}">{{table.status}}</button>
+                            </td>
+                        </tr>
+                        }
+                    </spk-reusable-tables>
+                </div>
+            </app-showcode-card>
+           
+        </div>
+        <div class="xl:col-span-6 col-span-12">
+            <app-showcode-card [title]="'Table Head Success'" [prism]="prismCode.basicTablesTS20">
+                <div class="table-responsive">
+                    <spk-reusable-tables [columns]="headerColumn" tableHeadColumn="text-start" tableHead="bg-success/10" tableClass="ti-custom-table ti-custom-table-head ti-head-success"
+                        [showCheckbox]="false" trClass="border-b  border-defaultborder dark:border-defaultborder/10">
+                        @for(table of headerTables;track $index){
+                        <tr>
+                            <td scope="row">{{table.name}}</td>
+                            <td>{{table.id}}</td>
+                            <td>{{table.date}}</td>
+                            <td>
+                                <button class="ti-btn !py-1 !px-2 !text-[0.75rem] ti-btn-soft-{{table.bg}}">{{table.status}}</button>
+                            </td>
+                        </tr>
+                        }
+                    </spk-reusable-tables>
+                </div>
+            </app-showcode-card>
+   
+        </div>
+        <div class="xl:col-span-6 col-span-12">
+            <app-showcode-card [title]="'Table Head Info'" [prism]="prismCode.basicTablesTS21">
+                <div class="table-responsive">
+                    <spk-reusable-tables [columns]="headerColumn" tableHead="bg-info/10" tableClass="ti-custom-table ti-custom-table-head ti-head-success"
+                        [showCheckbox]="false" trClass="border-b  border-defaultborder dark:border-defaultborder/10">
+                        @for(table of headerTables;track $index){
+                        <tr>
+                            <td scope="row">{{table.name}}</td>
+                            <td>{{table.id}}</td>
+                            <td>{{table.date}}</td>
+                            <td>
+                                <button class="ti-btn !py-1 !px-2 !text-[0.75rem] ti-btn-soft-{{table.bg}}">{{table.status}}</button>
+                            </td>
+                        </tr>
+                        }
+                    </spk-reusable-tables>
+                </div>
+            </app-showcode-card>
+        </div>
+        <div class="xl:col-span-6 col-span-12">
+            <app-showcode-card [title]="'Table Head warning'" [prism]="prismCode.basicTablesTS22">
+                <div class="table-responsive">
+                    <spk-reusable-tables [columns]="headerColumn" tableHeadColumn="text-start" trClass="border-b  border-defaultborder dark:border-defaultborder/10" tableHead="bg-warning/10" tableClass="ti-custom-table ti-custom-table-head ti-head-warning"
+                        [showCheckbox]="false">
+                        @for(table of headerTables;track $index){
+                        <tr>
+                            <td class="text-start" scope="row">{{table.name}}</td>
+                            <td>{{table.id}}</td>
+                            <td>{{table.date}}</td>
+                            <td>
+                                <button class="ti-btn !py-1 !px-2 !text-[0.75rem] ti-btn-soft-{{table.bg}}">{{table.status}}</button>
+                            </td>
+                        </tr>
+                        }
+                    </spk-reusable-tables>
+                </div>
+            </app-showcode-card>
+         
+        </div>
+        <div class="xl:col-span-6 col-span-12">
+            <app-showcode-card [title]="'Table Head Danger'" [prism]="prismCode.basicTablesTS23">
+                <div class="table-responsive">
+                    <spk-reusable-tables [columns]="headerColumn" tableHeadColumn="text-start" trClass="border-b  border-defaultborder dark:border-defaultborder/10" tableHead="bg-danger/10" tableClass="ti-custom-table ti-custom-table-head ti-head-danger"
+                        [showCheckbox]="false">
+                        @for(table of headerTables;track $index){
+                        <tr>
+                            <td class="text-start" scope="row">{{table.name}}</td>
+                            <td>{{table.id}}</td>
+                            <td>{{table.date}}</td>
+                            <td>
+                                <button class="ti-btn !py-1 !px-2 !text-[0.75rem] ti-btn-soft-{{table.bg}}">{{table.status}}</button>
+                            </td>
+                        </tr>
+                        }
+                    </spk-reusable-tables>
+                </div>
+            </app-showcode-card>
+           
+        </div>
+    </div>
+    <!-- End:: row-7 -->
+
+    <!-- Start:: row-8 -->  
+    <div class="grid grid-cols-12 gap-6">
+        <div class="xl:col-span-4 col-span-12">
+            <app-showcode-card [title]="'Table Foot'" [prism]="prismCode.basicTablesTS24">
+                <div class="table-responsive">
+                    <spk-reusable-tables [columns]="footerColumn"
+                        [footerData]="['Total', ' United States', '558', '56%']" [showFooter]="true" [tableFoot]="'Total'"
+                        tableHead="bg-primary/10" trClass="border-b  border-defaultborder dark:border-defaultborder/10" tableClass="ti-custom-table whitespace-nowrap min-w-full" tableFooter="bg-primary/10"
+                        [showCheckbox]="false">
+                        @for(table of footerTables;track $index){
+                        <tr>
+                            <th scope="row">
+                                {{table.sno}}
+                            </th>
+                            <td>
+                                {{table.team}}
+                            </td>
+                            <td>
+                                {{table.matches}}
+                            </td>
+                            <td>
+                                <span class="badge bg-primary text-white">{{table.ratio}}</span>
+                            </td>
+                        </tr>
+                        }
+                        
+    
+                    </spk-reusable-tables>
+                </div>
+            </app-showcode-card>
+           
+        </div>
+        <div class="xl:col-span-4 col-span-12">
+            <app-showcode-card [title]="'Table With Caption'" [prism]="prismCode.basicTablesTS25">
+                <div class="table-responsive">
+                    <spk-reusable-tables trClass="border-b  border-defaultborder dark:border-defaultborder/10"
+                     [columns]="captionColumn" tableHeadColumn="text-start" tableClass="ti-custom-table whitespace-nowrap min-w-full caption-bottom" [showCheckbox]="false">
+    
+                        @for(table of captionTables;track $index){
+                        <tr>
+                            <th scope="row" class="text-start">{{table.sno}}</th>
+                            <td>{{table.country}}</td>
+                            <td>{{table.medals}}<i class="ri-medal-line mx-2"></i></td>
+                            <td>{{table.athlets}}</td>
+                        </tr>
+                        }
+                        <caption>Top 3 Countries</caption>
+                    </spk-reusable-tables>
+                </div>
+            </app-showcode-card>
+          
+        </div>
+        <div class="xl:col-span-4 col-span-12">
+            <app-showcode-card [title]="'Table With Top Caption'" [prism]="prismCode.basicTablesTS26">
+                <caption class="px-2">Top IT Companies</caption>
+                <div class="table-responsive">
+                    <spk-reusable-tables [columns]="topcaptionColumn"  trClass="border-b  border-defaultborder dark:border-defaultborder/10"
+                     tableClass="ti-custom-table whitespace-nowrap caption-top w-full" [showCheckbox]="false">
+    
+                        @for(table of topcaptionTables;track $index){
+                        <tr>
+                            <th scope="row">{{table.sno}}</th>
+                            <td>{{table.name}}</td>
+                            <td>{{table.revenue}}</td>
+                            <td>{{table.country}}</td>
+                        </tr>
+                        }
+                    </spk-reusable-tables>
+                </div>
+            </app-showcode-card>
+        
+        </div>
+    </div>
+    <!-- End:: row-8 -->
+
+    <!-- Start:: row-9 -->
+    <div class="grid grid-cols-12 gap-6">
+        <div class="xl:col-span-6 col-span-12">
+            <app-showcode-card [title]="'Active Tables'" [prism]="prismCode.basicTablesTS27">
+                <div class="table-responsive">
+                    <spk-reusable-tables [columns]="activeColumn" trClass="border-b  border-defaultborder dark:border-defaultborder/10" 
+                    tableClass="ti-custom-table whitespace-nowrap min-w-full" tableHeadColumn="text-start" [showCheckbox]="false">
+    
+                        @for(table of activeTables;track $index){
+                        <tr class="{{table.trClass1}}">
+                            <th scope="row">{{table.name}}</th>
+                            <td>{{table.date}}</td>
+                            <td class={{table.active}}>{{table.contact}}</td>
+                            <td><span class="badge bg-{{table.bg}} text-white">{{table.status}}</span></td>
+                        </tr>
+                        }
+                    </spk-reusable-tables>
+                </div>
+            </app-showcode-card>
+          
+        </div>
+        <div class="xl:col-span-6 col-span-12">
+            <app-showcode-card [title]="'Small Tables'" [prism]="prismCode.basicTablesTS28">
+                <div class="table-responsive">
+                    <spk-reusable-tables trClass="text-start" trClass="border-b  border-defaultborder dark:border-defaultborder/10" [columns]="smallColumn" tableClass="table whitespace-nowrap table-sm min-w-full"
+                        [showCheckbox]="false">
+                        @for(table of smallTables;track $index;){
+                        <tr>
+                            <th scope="row">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" [checked]="table.name === 'Zelensky'" />
+                                    <label class="form-check-label" for="checkebox-sm">
+                                        {{table.name}}
+                                    </label>
+                                </div>
+                            </th>
+                            <td>{{table.date}}</td>
+                            <td><span class="badge {{table.bg}}">{{table.status}}</span></td>
+                            <td>
+                                <div class="hstack flex gap-3 text-[.9375rem]">
+                                    <a href="javascript:void(0);" class="ti-btn ti-btn-icon ti-btn-sm ti-btn-light"><i
+                                            class="ri-download-2-line"></i></a>
+                                    <a href="javascript:void(0);" class="ti-btn ti-btn-icon ti-btn-sm ti-btn-light"><i
+                                            class="ri-edit-line"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        }
+                    </spk-reusable-tables>
+                </div>
+            </app-showcode-card>
+           
+        </div>
+    </div>
+    <!-- End:: row-9 -->
+
+    <!-- Start:: row-10 -->
+    <div class="grid grid-cols-12 gap-6">
+        <div class="xl:col-span-6 col-span-12">
+            <app-showcode-card [title]="'Color variants tables'" [prism]="prismCode.basicTablesTS29">
+                <div class="table-responsive">
+                    <spk-reusable-tables [columns]="variantColumn"   trClass="border-b  border-defaultborder dark:border-defaultborder/10"
+                    tableClass="ti-custom-table whitespace-nowrap min-w-full" [showCheckbox]="false">
+    
+                        @for(table of variantTables;track $index){
+                        <tr class="table-{{table.trClass}}">
+                            <th scope="row">{{table.color}}</th>
+                            <td>{{table.client}}</td>
+                            <td><span class="badge {{table.bg}} ">{{table.status}}</span></td>
+                            <td>{{table.quantity}}</td>
+                            <td>{{table.price}}</td>
+                        </tr>
+                        }
+                    </spk-reusable-tables>
+                </div>
+            </app-showcode-card>
+          
+        </div>
+        <div class="xl:col-span-6 col-span-12">
+            <app-showcode-card [title]="'Nesting'" [prism]="prismCode.basicTablesTS30">
+                <div class="table-responsive">
+                    <spk-reusable-tables [columns]="nestingColumn" trClass="border-b  border-defaultborder dark:border-defaultborder/10"
+                        tableClass="ti-custom-table whitespace-nowrap table-striped table-bordered min-w-full" [showCheckbox]="false">
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>&#64;mdo</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" class="!p-0">
+                                <spk-reusable-tables [columns]="nestingsubColumn"
+                                tableClass="table whitespace-nowrap mb-0 min-w-full" [showCheckbox]="false">
+                                        <tr>
+                                            <th scope="row">A</th>
+                                            <td>Dino King</td>
+                                            <td>dinoking231&#64;gmail.com</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">B</th>
+                                            <td>Poppins sams</td>
+                                            <td>pops&#64;gmail.com</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">C</th>
+                                            <td>Brian Shaw</td>
+                                            <td>swanbrian&#64;gmail.com</td>
+                                        </tr>
+                                </spk-reusable-tables>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td> &#64;twitter</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Jimmy</td>
+                            <td>the Ostrich</td>
+                            <td>Dummy Text</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Cobra Kai</td>
+                            <td>the Snake</td>
+                            <td>Another Name</td>
+                        </tr>
+                    </spk-reusable-tables>
+    
+                </div>
+            </app-showcode-card>
+          
+        </div>
+    </div>
+    <!-- End:: row-10 -->
+
+    <!-- Start:: row-11 -->
+    <div class="grid grid-cols-12 gap-6">
+        <div class="xl:col-span-12 col-span-12">
+            <app-showcode-card [title]="'Always responsive'" [prism]="prismCode.basicTablesTS31">
+                <div class="table-responsive">
+                    <spk-reusable-tables [columns]="responsiveColumn"  tableHeadColumn="text-start"
+                    trClass="border-b  border-defaultborder dark:border-defaultborder/10"
+                    tableClass="ti-custom-table whitespace-nowrap min-w-full"  [showCheckbox]="true">
+    
+                        @for(table of responsiveTables;track $index){
+                        <tr>
+                            <th scope="row"><input class="form-check-input" type="checkbox" id="checkboxNoLabel1" value=""
+                                    aria-label="..."></th>
+                            <td>
+                                <div class="flex items-center">
+                                    <span class="avatar avatar-xs me-2 online avatar-rounded">
+                                        <img [src]="table.src" alt="img">
+                                    </span>{{table.name}}
+                                </div>
+                            </td>
+                            <td>{{table.category}}</td>
+                            <td><span class="badge bg-{{table.bg}}-transparent">{{table.role}}</span></td>
+                            <td>{{table.mail}}</td>
+                            <td>
+                                <div class="avatar-list-stacked">
+                                    @for(image of table.images;track $index){
+                                    <span class="avatar avatar-sm avatar-rounded">
+                                        <img [src]="image" alt="img">
+                                    </span>
+                                    }
+    
+                                    <a class="avatar avatar-sm bg-primary text-white avatar-rounded"
+                                        href="javascript:void(0);">
+                                        +{{table.count}}
+                                    </a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="progress progress-xs">
+                                    <div class="progress-bar bg-primary" role="progressbar" [style.width.%]="table.progress"
+                                        aria-valuenow="52" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                            </td>
+                            <td>{{table.revenue}}</td>
+                            <td>
+                                <div class="hstack flex gap-3 text-[.9375rem]">
+                                    <a href="javascript:void(0);" class="ti-btn ti-btn-icon ti-btn-sm ti-btn-soft-success"><i
+                                            class="ri-download-2-line"></i></a>
+                                    <a href="javascript:void(0);" class="ti-btn ti-btn-icon ti-btn-sm ti-btn-soft-info"><i
+                                            class="ri-edit-line"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        }
+                    </spk-reusable-tables>
+                </div>
+            </app-showcode-card>
+          
+        </div>
+    </div>
+    <!-- End:: row-11 -->
+
+    <!-- Start:: row-12 -->
+    <div class="grid grid-cols-12 gap-6">
+        <div class="xl:col-span-12 col-span-12">
+            <app-showcode-card [title]="'Vertical alignment'" [prism]="prismCode.basicTablesTS32">
+                <div class="table-responsive">
+                    <spk-reusable-tables tableHeadColumn="w-25" trClass="border-b  border-defaultborder dark:border-defaultborder/10"
+                     [columns]="verticalColumn" tableClass="ti-custom-table align-middle min-w-full !whitespace-normal"
+                        [showCheckbox]="false">
+                        @for(table of verticalTables;track $index){
+                        <tr class="align-bottom border-b  border-defaultborder dark:border-defaultborder/10">
+                            <td class="!whitespace-normal">{{table.heading1}} <code>{{table.code}}</code> {{table.heading2}}
+                            </td>
+                            <td class="!whitespace-normal">{{table.heading1}} <code>{{table.code}}</code>{{table.heading2}}
+                            </td>
+                            <td class="!whitespace-normal">{{table.heading1}} <code>{{table.code}}</code>{{table.heading2}}
+                            </td>
+                            <td class="!whitespace-normal">{{table.heading3}}</td>
+                        </tr>
+                        }
+                    </spk-reusable-tables>
+                </div>
+            </app-showcode-card>
+       
+        </div>
+    </div>
+    <!-- End:: row-12 -->

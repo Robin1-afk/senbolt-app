@@ -1,0 +1,88 @@
+
+<app-page-header [title]="'Tables'" [title1]="['Ngx Easy Tables']" [activeitem]="'Ngx Easy Tables'"></app-page-header>
+<!-- Start::row-1 -->
+<div class="grid grid-cols-12 gap-6">
+    <div class="xl:col-span-12 col-span-12">
+        <div class="box custom-box">
+            <div class="box-header">
+                <div class="box-title">
+                    Basic Table
+                </div>
+            </div>
+            <div class="box-body">
+                <div id="grid-example1" class="table-responsive">
+                    <spk-ngx-reusable-table tableId="responsivemodal-DataTable"
+                    tableTitle="table table-bordered text-nowrap w-100" [tableClass]="'table-bordered'" [paginationEnabled]="false"
+                    [showSearch]="false" [basicTable]="true">
+                </spk-ngx-reusable-table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End::row-1 -->
+
+<!-- Start:: row-2 -->
+<div class="grid grid-cols-12 gap-6">
+    <div class="xl:col-span-12 col-span-12">
+        <div class="box custom-box">
+            <div class="box-header">
+                <div class="box-title">
+                    Table With Pagination
+                </div>
+            </div>
+            <div class="box-body">
+                <div id="grid-pagination" class="table-responsive">
+                    <spk-ngx-reusable-table tableId="responsiveDataTable"
+                    tableTitle="ngx-tables table table-bordered text-nowrap w-100" [tableClass]="'table-bordered'" [paginationEnabled]="true"
+                    [showSearch]="false" [basicTable]="false">
+                </spk-ngx-reusable-table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End:: row-2 -->
+
+<!-- Start:: row-3 -->
+<div class="grid grid-cols-12 gap-6">
+    <div class="xl:col-span-12 col-span-12">
+        <div class="box custom-box">
+            <div class="box-header">
+                <div class="box-title">
+                    Table With Search
+                </div>
+            </div>
+            <div class="box-body">
+                <div id="grid-search" class="table-responsive">
+                    <spk-ngx-reusable-table tableId="responsivemodal-DataTable"
+                        tableTitle="table table-bordered text-nowrap w-100" [tableClass]="'table-bordered'" [paginationEnabled]="false"
+                        [showSearch]="true" [basicTable]="false">
+                    </spk-ngx-reusable-table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End:: row-3 -->
+
+<!-- Start:: row-5 -->
+<div class="grid grid-cols-12 gap-6">
+    <div class="xl:col-span-12 col-span-12">
+        <div class="box custom-box">
+            <div class="box-header">
+                <div class="box-title">
+                    Table Dragable Row and Columns 
+                </div>
+            </div>
+            <div class="box-body">
+                <div id="grid-loading" class="table-responsive">
+                    <spk-ngx-reusable-table tableId="file-export" [tableClass]="'table-bordered'" tableTitle="table table-bordered text-nowrap w-100"
+                       [showSearch]="false" [basicTable]="false">
+                    </spk-ngx-reusable-table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End:: row-5 -->

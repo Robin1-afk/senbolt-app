@@ -1,0 +1,128 @@
+ 
+<app-page-header [title]="'Apex Charts'" [title1]="['Apex Area Charts']" [activeitem]="'Apex Area Charts'"></app-page-header>
+<!-- Start::row-1 -->
+   <div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Basic Area Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="area-basic">
+                    <spk-apexcharts [chartOptions]="chartOptions1"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Spline Area Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="area-spline"></div>
+                <spk-apexcharts [chartOptions]="chartOptions2"></spk-apexcharts>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Area Chart With Negative Values</div>
+            </div>
+            <div class="box-body">
+                <div id="area-negative">
+                    <spk-apexcharts [chartOptions]="chartOptions3"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Selection-Github Style Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="chart-months">
+                    <apx-chart [series]="chartMonths.series" [chart]="chartMonths.chart"
+                    [colors]="chartMonths.colors" [yaxis]="chartMonths.yaxis"
+                    [dataLabels]="commonOptions.dataLabels" [fill]="commonOptions.fill"
+                    [stroke]="commonOptions.stroke" [xaxis]="commonOptions.xaxis"[colors]="chartMonths.colors"></apx-chart>
+                </div>
+                <div class="github-style flex items-center">
+                    <div class="me-2">
+                        <img class="userimg rounded" src="./assets/images/faces/1.jpg"
+                            data-hovercard-user-id="634573" alt="" width="38" height="38">
+                    </div>
+                    <div class="userdetails leading-none">
+                        <a class="username font-medium text-[14px]">coder</a>
+                        <span class="cmeta block mt-1">
+                            <span class="commits"></span> commits
+                        </span>
+                    </div>
+                </div>
+                <div id="chart-years">
+                    <apx-chart [series]="chartYears.series" [chart]="chartYears.chart" [colors]="chartYears.colors"
+                            [legend]="chartYears.legend" [dataLabels]="commonOptions.dataLabels"
+                            [fill]="commonOptions.fill" [stroke]="commonOptions.stroke"
+                            [xaxis]="commonOptions.xaxis" [colors]="chartYears.colors"></apx-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Stacked Area Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="area-stacked">
+                    <spk-apexcharts [chartOptions]="chartOptions5"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Irregular Time Series Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="area-irregular">
+                    <spk-apexcharts [chartOptions]="chartOptions6"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Area Chart With Null Values</div>
+            </div>
+            <div class="box-body">
+                <div id="area-null">
+                    <spk-apexcharts [chartOptions]="chartOptions8"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header flex custom-apexcharts">
+                <div class="box-title">Area Chart-Datetime X-Axis Chart</div>
+                <div class="btn-group ms-auto">
+                    <button class="btn btn-primary btn-sm" id="one_month"  [class.active]="activeOptionButton=='1m'">1M</button>
+                    <button class="btn btn-primary btn-sm" id="six_months"  [class.active]="activeOptionButton=='6m'">6M</button>
+                    <button class="btn btn-primary btn-sm" id="one_year"  [class.active]="activeOptionButton=='1y'">1Y</button>
+                    <button class="btn btn-primary btn-sm" id="all"  [class.active]="activeOptionButton=='all'">ALL</button>
+                </div>
+            </div>
+            <div class="box-body">
+                <div id="area-datetime">
+                    <spk-apexcharts [chartOptions]="chartOptions5"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End::row-1 -->

@@ -1,0 +1,2459 @@
+<app-page-header [title]="'Ui Elements'" [title1]="['Pagination']" [activeitem]="'Pagination'"></app-page-header>
+ <!-- Start:: row-1 -->
+ <div class="grid grid-cols-12 gap-x-6">
+    <div class="xxl:col-span-6 xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="'Basic Pagination'" [prism]="prsimCodeData.paginationTS1">
+                <nav aria-label="pagination2" class="overflow-auto">
+                    <ul class="ti-pagination">
+                        <li><a class="page-link disabled" href="javascript:void(0);"> Previous </a></li>
+                        <li><a class="page-link" href="javascript:void(0);" aria-current="page">1</a>
+                        </li>
+                        <li><a class="page-link" href="javascript:void(0);">2</a></li>
+                        <li><a class="page-link" href="javascript:void(0);">3</a></li>
+                        <li><a class="page-link" href="javascript:void(0);"> Next </a></li>
+                    </ul>
+                </nav>
+        </app-showcode-card>
+    </div>
+    <div class="xxl:col-span-6 xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="'Pagination With Icons'" [prism]="prsimCodeData.paginationTS2">
+                <nav aria-label="Page navigation1">
+                    <ul class="ti-pagination mb-0">
+                        <li class="page-item">
+                            <a class="page-link px-3 py-[0.375rem]" href="javascript:void(0);"
+                                aria-label="Previous">
+                                <span aria-hidden="true"><i
+                                        class="rtl:rotate-180 bx bx-chevron-left"></i></span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link px-3 py-[0.375rem]"
+                                href="javascript:void(0);">1</a></li>
+                        <li class="page-item"><a class="page-link px-3 py-[0.375rem]"
+                                href="javascript:void(0);">2</a></li>
+                        <li class="page-item"><a class="page-link px-3 py-[0.375rem]"
+                                href="javascript:void(0);">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link  px-3 py-[0.375rem]" href="javascript:void(0);"
+                                aria-label="Next">
+                                <span aria-hidden="true"><i
+                                        class="rtl:rotate-180 bx bx-chevron-right"></i></span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+        </app-showcode-card>
+    </div>
+    <div class="xxl:col-span-12 xl:col-span-12 col-span-12">
+        <app-showcode-card [title]="'Pagination Sizing'" [classbody]="'flex flex-wrap justify-between gap-2'" [prism]="prsimCodeData.paginationTS3">
+                <nav aria-label="...1">
+                    <ul class="ti-pagination pagination-sm mb-0">
+                        <li class="page-item " aria-current="page">
+                            <span class="page-link  active px-3 py-[0.375rem]">1</span>
+                        </li>
+                        <li class="page-item"><a class="page-link px-3 py-[0.375rem]"
+                                href="javascript:void(0);">2</a></li>
+                        <li class="page-item"><a class="page-link px-3 py-[0.375rem]"
+                                href="javascript:void(0);">3</a></li>
+                    </ul>
+                </nav>
+                <nav aria-label="...2">
+                    <ul class="ti-pagination mb-0">
+                        <li class="page-item " aria-current="page">
+                            <span class="page-link  active px-3 py-[0.375rem]">1</span>
+                        </li>
+                        <li class="page-item"><a class="page-link px-3 py-[0.375rem]"
+                                href="javascript:void(0);">2</a></li>
+                        <li class="page-item"><a class="page-link px-3 py-[0.375rem]"
+                                href="javascript:void(0);">3</a></li>
+                    </ul>
+                </nav>
+                <nav aria-label="...3">
+                    <ul class="ti-pagination pagination-lg mb-0">
+                        <li class="page-item " aria-current="page">
+                            <span class="page-link active px-3 py-[0.375rem]">1</span>
+                        </li>
+                        <li class="page-item"><a class="page-link px-3 py-[0.375rem]"
+                                href="javascript:void(0);">2</a></li>
+                        <li class="page-item"><a class="page-link px-3 py-[0.375rem]"
+                                href="javascript:void(0);">3</a></li>
+                    </ul>
+                </nav>
+        </app-showcode-card>
+    </div>
+</div>
+<!-- End:: row-1 -->
+
+<!-- Start:: row-2  -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-12 col-span-12">
+        <app-showcode-card [title]="'Center & Right Aligned Pagination'"  [prism]="prsimCodeData.paginationTS4">
+                <nav aria-label="Page navigation2" class="mb-4">
+                    <ul class="ti-pagination justify-center">
+                        <li class="page-item disabled">
+                            <a class="page-link px-3 py-[0.375rem]">Previous</a>
+                        </li>
+                        <li class="page-item"><a class="page-link px-3 py-[0.375rem]"
+                                href="javascript:void(0);">1</a></li>
+                        <li class="page-item"><a class="page-link px-3 py-[0.375rem]"
+                                href="javascript:void(0);">2</a></li>
+                        <li class="page-item"><a class="page-link px-3 py-[0.375rem]"
+                                href="javascript:void(0);">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link px-3 py-[0.375rem]" href="javascript:void(0);">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+                <nav aria-label="Page navigation3">
+                    <ul class="ti-pagination sm:justify-end justify-center mb-0">
+                        <li class="page-item disabled">
+                            <a class="page-link px-3 py-[0.375rem]">Previous</a>
+                        </li>
+                        <li class="page-item"><a class="page-link px-3 py-[0.375rem]"
+                                href="javascript:void(0);">1</a></li>
+                        <li class="page-item"><a class="page-link px-3 py-[0.375rem]"
+                                href="javascript:void(0);">2</a></li>
+                        <li class="page-item"><a class="page-link px-3 py-[0.375rem]"
+                                href="javascript:void(0);">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link px-3 py-[0.375rem]" href="javascript:void(0);">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+        </app-showcode-card>
+    </div>
+    <div class="xl:col-span-12 col-span-12">
+        <app-showcode-card [title]="'Active and disabled states'" [classbody]="'flex flex-wrap'"  [prism]="prsimCodeData.paginationTS5">
+                <nav aria-label="...4" class="me-4 sm:mb-0 mb-2">
+                    <ul class="ti-pagination">
+                        <li class="page-item disabled">
+                            <a class="page-link px-3 py-[0.375rem]">Previous</a>
+                        </li>
+                        <li class="page-item"><a class="page-link px-3 py-[0.375rem]"
+                                href="javascript:void(0);">1</a></li>
+                        <li class="page-item " aria-current="page">
+                            <a class="page-link active px-3 py-[0.375rem]"
+                                href="javascript:void(0);">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link px-3 py-[0.375rem]" href="javascript:void(0);">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+                <nav aria-label="...5">
+                    <ul class="ti-pagination">
+                        <li class="page-item disabled">
+                            <span class="page-link px-3 py-[0.375rem]">Previous</span>
+                        </li>
+                        <li class="page-item"><a class="page-link px-3 py-[0.375rem]"
+                                href="javascript:void(0);">1</a></li>
+                        <li class="page-item " aria-current="page">
+                            <span class="page-link px-3 active py-[0.375rem]">2</span>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link px-3 py-[0.375rem]" href="javascript:void(0);">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+        </app-showcode-card>
+    </div>
+</div>
+<!-- End:: row-2  -->
+
+<!-- Start:: row-3 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-12 col-span-12">
+        <app-showcode-card [title]="'Pagination Style-1'" [prism]="prsimCodeData.paginationTS6">
+                <nav aria-label="Page navigation7" class="pagination-style-1">
+                    <ul class="ti-pagination mb-0">
+                        <li class="page-item disabled rtl:rotate-180">
+                            <a aria-label="anchor" class="page-link" href="javascript:void(0);">
+                                <i class="ri-arrow-left-s-line align-middle"></i>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+                        <li class="page-item "><a class="page-link active"
+                                href="javascript:void(0);">2</a></li>
+                        <li class="page-item">
+                            <a aria-label="anchor" class="page-link" href="javascript:void(0);">
+                                <i class="bi bi-three-dots"></i>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="javascript:void(0);">21</a>
+                        </li>
+                        <li class="page-item rtl:rotate-180">
+                            <a aria-label="anchor" class="page-link" href="javascript:void(0);">
+                                <i class="ri-arrow-right-s-line align-middle"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+        </app-showcode-card>
+    </div>
+    <div class="xl:col-span-12 col-span-12">
+        <app-showcode-card [title]="'Pagination Style-2'" [prism]="prsimCodeData.paginationTS7">
+                <nav aria-label="Page navigation8" class="pagination-style-2">
+                    <ul class="ti-pagination mb-0 flex-wrap">
+                        <li class="page-item disabled">
+                            <a class="page-link px-3 py-[0.375rem] !border-0"
+                                href="javascript:void(0);">
+                                Prev
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link active px-3 py-[0.375rem] !border-0"
+                                href="javascript:void(0);">1</a></li>
+                        <li class="page-item"><a class="page-link px-3 py-[0.375rem] !border-0"
+                                href="javascript:void(0);">2</a></li>
+                        <li class="page-item">
+                            <a aria-label="anchor" class="page-link px-3 py-[0.375rem] !border-0"
+                                href="javascript:void(0);">
+                                <i class="bi bi-three-dots"></i>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link px-3 py-[0.375rem] !border-0"
+                                href="javascript:void(0);">17</a></li>
+                        <li class="page-item">
+                            <a class="page-link px-3 py-[0.375rem] !text-primary !border-0"
+                                href="javascript:void(0);">
+                                next
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+        </app-showcode-card>
+    </div>
+    <div class="xl:col-span-12 col-span-12">
+        <app-showcode-card [title]="'Pagination Style-3'" [prism]="prsimCodeData.paginationTS8">
+                <nav aria-label="Page navigation5" class="pagination-style-3">
+                    <ul class="ti-pagination mb-0 flex-wrap">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="javascript:void(0);">
+                                Prev
+                            </a>
+                        </li>
+                        <li class="page-item "><a class="page-link active"
+                                href="javascript:void(0);">1</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                        <li class="page-item">
+                            <a aria-label="anchor" class="page-link" href="javascript:void(0);">
+                                <i class="bi bi-three-dots"></i>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="javascript:void(0);">16</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link !text-primary" href="javascript:void(0);">
+                                next
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+        </app-showcode-card>
+    </div>
+    <div class="xl:col-span-12 col-span-12">
+        <app-showcode-card [title]="'Pagination Style-4'" [prism]="prsimCodeData.paginationTS9">
+                <nav aria-label="Page navigation6" class="pagination-style-4">
+                    <ul class="ti-pagination mb-0 flex-wrap">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="javascript:void(0);">
+                                Prev
+                            </a>
+                        </li>
+                        <li class="page-item "><a class="page-link active"
+                                href="javascript:void(0);">1</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                        <li class="page-item">
+                            <a aria-label="anchor" class="page-link" href="javascript:void(0);">
+                                <i class="bi bi-three-dots"></i>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="javascript:void(0);">16</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link !text-primary" href="javascript:void(0);">
+                                next
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+        </app-showcode-card>
+    </div>
+</div>
+<!-- End:: row-3 -->
+
+<!-- Start:: row-4 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xxl:!col-span-6 md:col-span-12 col-span-12">
+        <app-showcode-card [title]="'Pagination Style-5'" [classbody]="'space-y-5'" [prism]="prsimCodeData.paginationTS10">
+                <!-- Pagination -->
+                <nav aria-label="pagination6" class="flex items-center gap-x-1">
+                    <button  aria-label="button" type="button"
+                        class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-md text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                        <i class="ri-arrow-left-s-line align-middle rtl:rotate-180"></i>
+                        <span aria-hidden="true" class="sr-only">Previous</span>
+                    </button>
+                    <div class="flex items-center gap-x-1">
+                        <button type="button"
+                            class="min-h-[38px] min-w-[38px] flex justify-center items-center bg-primary text-white py-2 px-3 text-sm rounded-md focus:outline-none focus:bg-gray-300 disabled:opacity-50 disabled:pointer-events-none dark:bg-primary dark:text-white dark:focus:bg-gray-500"
+                            aria-current="page">1</button>
+                        <div class="hs-tooltip ti-main-tooltip">
+                            <button type="button"
+                                class="hs-tooltip-toggle group min-h-[38px] min-w-[38px] flex justify-center items-center text-gray-400 hover:text-primary p-2 text-sm rounded-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:text-primary dark:focus:bg-white/10">
+                                <span class="group-hover:hidden text-xs">•••</span>
+                                <svg class="group-hover:block hidden flex-shrink-0 size-5"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m6 17 5-5-5-5" />
+                                    <path d="m13 17 5-5-5-5" />
+                                </svg>
+                                <span
+                                    class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 bg-gray-900 text-xs font-medium text-white shadow-sm dark:bg-bodybg"
+                                    role="tooltip">
+                                    Next 4 pages
+                                </span>
+                            </button>
+                        </div>
+                        <button type="button"
+                            class="min-h-[38px] min-w-[38px] flex justify-center items-center text-gray-800 hover:bg-gray-100 py-2 px-3 text-sm rounded-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">8</button>
+                    </div>
+                    <button  aria-label="button" type="button"
+                        class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-md text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                        <span aria-hidden="true" class="sr-only">Next</span>
+                        <i class="ri-arrow-right-s-line align-middle rtl:rotate-180"></i>
+                    </button>
+                </nav>
+                <!-- End Pagination -->
+
+                <!-- Pagination -->
+                <nav aria-label="pagination9" class="flex items-center gap-x-1">
+                    <button  aria-label="button" type="button"
+                        class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-md border border-transparent text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-transparent dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                        <i class="ri-arrow-left-s-line align-middle rtl:rotate-180"></i>
+                        <span aria-hidden="true" class="sr-only">Previous</span>
+                    </button>
+                    <div class="flex items-center gap-x-1">
+                        <button type="button"
+                            class="min-h-[38px] min-w-[38px] flex justify-center items-center border border-primary text-primary py-2 px-3 text-sm rounded-md focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:border-primary dark:text-primary dark:focus:bg-white/10"
+                            aria-current="page">1</button>
+                        <div class="hs-tooltip ti-main-tooltip">
+                            <button type="button"
+                                class="hs-tooltip-toggle group min-h-[38px] min-w-[38px] flex justify-center items-center text-gray-400 hover:text-primary p-2 text-sm rounded-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:text-primary dark:focus:bg-white/10">
+                                <span class="group-hover:hidden text-xs">•••</span>
+                                <svg class="group-hover:block hidden flex-shrink-0 size-5"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m6 17 5-5-5-5" />
+                                    <path d="m13 17 5-5-5-5" />
+                                </svg>
+                                <span
+                                    class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 bg-gray-900 text-xs font-medium text-white shadow-sm dark:bg-bodybg"
+                                    role="tooltip">
+                                    Next 4 pages
+                                </span>
+                            </button>
+                        </div>
+                        <button type="button"
+                            class="min-h-[38px] min-w-[38px] flex justify-center items-center border border-transparent text-gray-800 hover:bg-gray-100 py-2 px-3 text-sm rounded-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-transparent dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">8</button>
+                    </div>
+                    <button  aria-label="button" type="button"
+                        class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-md border border-transparent text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-transparent dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                        <span aria-hidden="true" class="sr-only">Next</span>
+                        <i class="ri-arrow-right-s-line align-middle rtl:rotate-180"></i>
+                    </button>
+                </nav>
+                <!-- End Pagination -->
+
+                <!-- Pagination -->
+                <nav aria-label="pagination10" class="flex items-center -space-x-px">
+                    <button  aria-label="button" type="button"
+                        class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm first:rounded-s-md last:rounded-e-md border border-gray-200 text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-white/10 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                        <i class="ri-arrow-left-s-line align-middle rtl:rotate-180"></i>
+                        <span aria-hidden="true" class="sr-only">Previous</span>
+                    </button>
+                    <button type="button"
+                        class="min-h-[38px] min-w-[38px] flex justify-center items-center bg-primary text-white border border-gray-200 py-2 px-3 text-sm first:rounded-s-md last:rounded-e-md focus:outline-none focus:bg-gray-300 disabled:opacity-50 disabled:pointer-events-none dark:bg-primary dark:border-white/10 dark:text-white dark:focus:bg-gray-500"
+                        aria-current="page">1</button>
+                    <div class="hs-tooltip ti-main-tooltip border border-gray-200 dark:border-white/10">
+                        <button type="button"
+                            class="hs-tooltip-toggle group min-h-[36px] min-w-[36px] flex justify-center items-center text-gray-400 hover:text-primary p-2 text-sm focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:text-primary dark:focus:bg-white/10">
+                            <span class="group-hover:hidden text-xs">•••</span>
+                            <svg class="group-hover:block hidden flex-shrink-0 size-5"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m6 17 5-5-5-5" />
+                                <path d="m13 17 5-5-5-5" />
+                            </svg>
+                            <span
+                                class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 bg-gray-900 text-xs font-medium text-white shadow-sm dark:bg-bodybg"
+                                role="tooltip">
+                                Next 4 pages
+                            </span>
+                        </button>
+                    </div>
+                    <button type="button"
+                        class="min-h-[38px] min-w-[38px] flex justify-center items-center border border-gray-200 text-gray-800 hover:bg-gray-100 py-2 px-3 text-sm first:rounded-s-md last:rounded-e-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-white/10 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">8</button>
+                    <button  aria-label="button" type="button"
+                        class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm first:rounded-s-md last:rounded-e-md border border-gray-200 text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-white/10 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                        <span aria-hidden="true" class="sr-only">Next</span>
+                        <i class="ri-arrow-right-s-line align-middle rtl:rotate-180"></i>
+                    </button>
+                </nav>
+                <!-- End Pagination -->
+        </app-showcode-card>
+    </div>
+    <div class="xxl:!col-span-6 md:col-span-12 col-span-12">
+        <app-showcode-card [title]="'Pagination Style-6'" [classbody]="'space-y-5'" [prism]="prsimCodeData.paginationTS11">
+                <!-- Pagination Wrapper -->
+                <div class="grid justify-center sm:flex sm:justify-between sm:items-center gap-1">
+                    <!-- Pagination Wrapper -->
+                    <nav aria-label="pagination11" class="flex items-center gap-x-1">
+                        <button  aria-label="button" type="button"
+                            class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-md text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <i class="ri-arrow-left-s-line align-middle rtl:rotate-180"></i>
+                            <span aria-hidden="true" class="sr-only">Previous</span>
+                        </button>
+                        <div class="flex items-center gap-x-1">
+                            <button type="button"
+                                class="min-h-[38px] min-w-[38px] flex justify-center items-center bg-primary text-white py-2 px-3 text-sm rounded-md focus:outline-none focus:bg-gray-300 disabled:opacity-50 disabled:pointer-events-none dark:bg-primary dark:text-white dark:focus:bg-gray-500"
+                                aria-current="page">1</button>
+                            <div class="hs-tooltip ti-main-tooltip">
+                                <button type="button"
+                                    class="hs-tooltip-toggle group min-h-[38px] min-w-[38px] flex justify-center items-center text-gray-400 hover:text-primary p-2 text-sm rounded-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:text-primary dark:focus:bg-white/10">
+                                    <span class="group-hover:hidden text-xs">•••</span>
+                                    <svg class="group-hover:block hidden flex-shrink-0 size-5"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m6 17 5-5-5-5" />
+                                        <path d="m13 17 5-5-5-5" />
+                                    </svg>
+                                    <span
+                                        class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 bg-gray-900 text-xs font-medium text-white shadow-sm dark:bg-bodybg"
+                                        role="tooltip">
+                                        Next 4 pages
+                                    </span>
+                                </button>
+                            </div>
+                            <button type="button"
+                                class="min-h-[38px] min-w-[38px] flex justify-center items-center text-gray-800 hover:bg-gray-100 py-2 px-3 text-sm rounded-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">8</button>
+                        </div>
+                        <button  aria-label="button" type="button"
+                            class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-md text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <span aria-hidden="true" class="sr-only">Next</span>
+                            <i class="ri-arrow-right-s-line align-middle rtl:rotate-180"></i>
+                        </button>
+                    </nav>
+                    <!-- End Pagination -->
+
+                    <!-- Go To Page -->
+                    <div class="flex justify-center sm:justify-start items-center gap-x-2">
+                        <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                            Go to
+                        </span>
+                        <input type="number"
+                            class="min-h-[38px] py-2 px-2.5 block w-12 border-gray-200 rounded-md text-sm text-center focus:border-primary focus:ring-primary [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none disabled:opacity-50 disabled:pointer-events-none dark:bg-bodybg dark:border-white/10 dark:text-gray-400 dark:focus:ring-gray-600">
+                        <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                            page
+                        </span>
+                    </div>
+                    <!-- End Go To Page -->
+                </div>
+                <!-- End Pagination Wrapper -->
+
+                <!-- Pagination Wrapper -->
+                <div class="grid justify-center sm:flex sm:justify-between sm:items-center gap-1">
+                    <!-- Pagination -->
+                    <nav aria-label="pagination12" class="flex items-center gap-x-1">
+                        <button  aria-label="button" type="button"
+                            class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-md border border-transparent text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-transparent dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <i class="ri-arrow-left-s-line align-middle rtl:rotate-180"></i>
+                            <span aria-hidden="true" class="sr-only">Previous</span>
+                        </button>
+                        <div class="flex items-center gap-x-1">
+                            <button type="button"
+                                class="min-h-[38px] min-w-[38px] flex justify-center items-center border border-primary text-primary py-2 px-3 text-sm rounded-md focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:border-primary dark:text-primary dark:focus:bg-white/10"
+                                aria-current="page">1</button>
+                            <div class="hs-tooltip ti-main-tooltip">
+                                <button type="button"
+                                    class="hs-tooltip-toggle group min-h-[38px] min-w-[38px] flex justify-center items-center text-gray-400 hover:text-primary p-2 text-sm rounded-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:text-primary dark:focus:bg-white/10">
+                                    <span class="group-hover:hidden text-xs">•••</span>
+                                    <svg class="group-hover:block hidden flex-shrink-0 size-5"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m6 17 5-5-5-5" />
+                                        <path d="m13 17 5-5-5-5" />
+                                    </svg>
+                                    <span
+                                        class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 bg-gray-900 text-xs font-medium text-white shadow-sm dark:bg-bodybg"
+                                        role="tooltip">
+                                        Next 4 pages
+                                    </span>
+                                </button>
+                            </div>
+                            <button type="button"
+                                class="min-h-[38px] min-w-[38px] flex justify-center items-center border border-transparent text-gray-800 hover:bg-gray-100 py-2 px-3 text-sm rounded-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-transparent dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">8</button>
+                        </div>
+                        <button  aria-label="button" type="button"
+                            class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-md border border-transparent text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-transparent dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <span aria-hidden="true" class="sr-only">Next</span>
+                            <i class="ri-arrow-right-s-line align-middle rtl:rotate-180"></i>
+                        </button>
+                    </nav>
+                    <!-- End Pagination -->
+
+                    <!-- Go To Page -->
+                    <div class="flex justify-center sm:justify-start items-center gap-x-2">
+                        <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                            Go to
+                        </span>
+                        <input type="number"
+                            class="min-h-[38px] py-2 px-2.5 block w-12 border-gray-200 rounded-md text-sm text-center focus:border-primary focus:ring-primary [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none disabled:opacity-50 disabled:pointer-events-none dark:bg-bodybg dark:border-white/10 dark:text-gray-400 dark:focus:ring-gray-600">
+                        <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                            page
+                        </span>
+                    </div>
+                    <!-- End Go To Page -->
+                </div>
+                <!-- End Pagination Wrapper -->
+
+                <!-- Pagination Wrapper -->
+                <div class="grid justify-center sm:flex sm:justify-between sm:items-center gap-1">
+                    <!-- Pagination -->
+                    <nav aria-label="pagination13" class="flex items-center -space-x-px">
+                        <button  aria-label="button" type="button"
+                            class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm first:rounded-s-md last:rounded-e-md border border-gray-200 text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-white/10 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <i class="ri-arrow-left-s-line align-middle rtl:rotate-180"></i>
+                            <span aria-hidden="true" class="sr-only">Previous</span>
+                        </button>
+                        <button type="button"
+                            class="min-h-[38px] min-w-[38px] flex justify-center items-center bg-primary text-white border border-gray-200 py-2 px-3 text-sm first:rounded-s-md last:rounded-e-md focus:outline-none focus:bg-gray-300 disabled:opacity-50 disabled:pointer-events-none dark:bg-primary dark:border-white/10 dark:text-white dark:focus:bg-gray-500"
+                            aria-current="page">1</button>
+                        <div
+                            class="hs-tooltip ti-main-tooltip border border-gray-200 dark:border-white/10">
+                            <button type="button"
+                                class="hs-tooltip-toggle group min-h-[36px] min-w-[36px] flex justify-center items-center text-gray-400 hover:text-primary p-2 text-sm focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:text-primary dark:focus:bg-white/10">
+                                <span class="group-hover:hidden text-xs">•••</span>
+                                <svg class="group-hover:block hidden flex-shrink-0 size-5"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m6 17 5-5-5-5" />
+                                    <path d="m13 17 5-5-5-5" />
+                                </svg>
+                                <span
+                                    class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 bg-gray-900 text-xs font-medium text-white shadow-sm dark:bg-bodybg"
+                                    role="tooltip">
+                                    Next 4 pages
+                                </span>
+                            </button>
+                        </div>
+                        <button type="button"
+                            class="min-h-[38px] min-w-[38px] flex justify-center items-center border border-gray-200 text-gray-800 hover:bg-gray-100 py-2 px-3 text-sm first:rounded-s-md last:rounded-e-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-white/10 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">8</button>
+                        <button  aria-label="button" type="button"
+                            class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm first:rounded-s-md last:rounded-e-md border border-gray-200 text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-white/10 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <span aria-hidden="true" class="sr-only">Next</span>
+                            <i class="ri-arrow-right-s-line align-middle rtl:rotate-180"></i>
+                        </button>
+                    </nav>
+                    <!-- End Pagination -->
+
+                    <!-- Go To Page -->
+                    <div class="flex justify-center sm:justify-start items-center gap-x-2">
+                        <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                            Go to
+                        </span>
+                        <input type="number"
+                            class="min-h-[38px] py-2 px-2.5 block w-12 border-gray-200 rounded-md text-sm text-center focus:border-primary focus:ring-primary [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none disabled:opacity-50 disabled:pointer-events-none dark:bg-bodybg dark:border-white/10 dark:text-gray-400 dark:focus:ring-gray-600">
+                        <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                            page
+                        </span>
+                    </div>
+                    <!-- End Go To Page -->
+                </div>
+                <!-- End Pagination Wrapper -->
+        </app-showcode-card>
+    </div>
+    <div class="xxl:!col-span-6 md:col-span-12 col-span-12">
+        <app-showcode-card [title]="'Pagination Style-7'" [classbody]="'space-y-5'" [prism]="prsimCodeData.paginationTS12">
+                <!-- Pagination Wrapper -->
+                <div class="grid justify-center sm:flex sm:justify-between sm:items-center gap-1">
+                    <!-- Pagination Wrapper -->
+                    <nav aria-label="pagination14" class="flex items-center gap-x-1">
+                        <button  aria-label="button" type="button"
+                            class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-md text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <i class="ri-arrow-left-s-line align-middle rtl:rotate-180"></i>
+                            <span aria-hidden="true" class="sr-only">Previous</span>
+                        </button>
+                        <div class="flex items-center gap-x-1">
+                            <button type="button"
+                                class="min-h-[38px] min-w-[38px] flex justify-center items-center bg-primary text-white py-2 px-3 text-sm rounded-md focus:outline-none focus:bg-gray-300 disabled:opacity-50 disabled:pointer-events-none dark:bg-primary dark:text-white dark:focus:bg-gray-500"
+                                aria-current="page">1</button>
+                            <div class="hs-tooltip ti-main-tooltip">
+                                <button type="button"
+                                    class="hs-tooltip-toggle group min-h-[38px] min-w-[38px] flex justify-center items-center text-gray-400 hover:text-primary p-2 text-sm rounded-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:text-primary dark:focus:bg-white/10">
+                                    <span class="group-hover:hidden text-xs">•••</span>
+                                    <svg class="group-hover:block hidden flex-shrink-0 size-5"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m6 17 5-5-5-5" />
+                                        <path d="m13 17 5-5-5-5" />
+                                    </svg>
+                                    <span
+                                        class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 bg-gray-900 text-xs font-medium text-white shadow-sm dark:bg-bodybg"
+                                        role="tooltip">
+                                        Next 4 pages
+                                    </span>
+                                </button>
+                            </div>
+                            <button type="button"
+                                class="min-h-[38px] min-w-[38px] flex justify-center items-center text-gray-800 hover:bg-gray-100 py-2 px-3 text-sm rounded-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">8</button>
+                        </div>
+                        <button aria-label="button" type="button"
+                            class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-md text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <span aria-hidden="true" class="sr-only">Next</span>
+                            <i class="ri-arrow-right-s-line align-middle rtl:rotate-180"></i>
+                        </button>
+                    </nav>
+                    <!-- End Pagination -->
+
+                    <!-- Dropdown -->
+                    <div class="hs-dropdown ti-dropdown [--placement:top-left]">
+                        <button id="hs-pagination-dropdown" type="button"
+                            class="hs-dropdown-toggle !py-1.5 !px-2 ti-dropdown-toggle">
+                            5 page
+                            <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="m6 9 6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="hs-dropdown-menu ti-dropdown-menu hidden"
+                            aria-labelledby="hs-pagination-dropdown">
+                            <button type="button" class="ti-dropdown-item w-full justify-between">
+                                5 page
+                                <i class="ri-check-line text-primary flex-shrink-0 size-4"></i>
+                            </button>
+                            <button type="button" class="ti-dropdown-item w-full">
+                                8 page
+                            </button>
+                            <button type="button" class="ti-dropdown-item w-full">
+                                10 page
+                            </button>
+                        </div>
+                    </div>
+                    <!-- End Dropdown -->
+                </div>
+                <!-- End Pagination Wrapper -->
+
+                <!-- Pagination Wrapper -->
+                <div class="grid justify-center sm:flex sm:justify-between sm:items-center gap-1">
+                    <!-- Pagination -->
+                    <nav aria-label="pagination15" class="flex items-center gap-x-1">
+                        <button  aria-label="button" type="button"
+                            class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-md border border-transparent text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-transparent dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <i class="ri-arrow-left-s-line align-middle rtl:rotate-180"></i>
+                            <span aria-hidden="true" class="sr-only">Previous</span>
+                        </button>
+                        <div class="flex items-center gap-x-1">
+                            <button type="button"
+                                class="min-h-[38px] min-w-[38px] flex justify-center items-center border border-primary text-primary py-2 px-3 text-sm rounded-md focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:border-primary dark:text-primary dark:focus:bg-white/10"
+                                aria-current="page">1</button>
+                            <div class="hs-tooltip ti-main-tooltip">
+                                <button type="button"
+                                    class="hs-tooltip-toggle group min-h-[38px] min-w-[38px] flex justify-center items-center text-gray-400 hover:text-primary p-2 text-sm rounded-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:text-primary dark:focus:bg-white/10">
+                                    <span class="group-hover:hidden text-xs">•••</span>
+                                    <svg class="group-hover:block hidden flex-shrink-0 size-5"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m6 17 5-5-5-5" />
+                                        <path d="m13 17 5-5-5-5" />
+                                    </svg>
+                                    <span
+                                        class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 bg-gray-900 text-xs font-medium text-white shadow-sm dark:bg-bodybg"
+                                        role="tooltip">
+                                        Next 4 pages
+                                    </span>
+                                </button>
+                            </div>
+                            <button type="button"
+                                class="min-h-[38px] min-w-[38px] flex justify-center items-center border border-transparent text-gray-800 hover:bg-gray-100 py-2 px-3 text-sm rounded-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-transparent dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">8</button>
+                        </div>
+                        <button  aria-label="button" type="button"
+                            class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-md border border-transparent text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-transparent dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <span aria-hidden="true" class="sr-only">Next</span>
+                            <i class="ri-arrow-right-s-line align-middle rtl:rotate-180"></i>
+                        </button>
+                    </nav>
+                    <!-- End Pagination -->
+
+                    <!-- Dropdown -->
+                    <div class="hs-dropdown ti-dropdown [--placement:top-left]">
+                        <button id="hs-pagination-dropdown2" type="button"
+                            class="hs-dropdown-toggle !py-1.5 !px-2 ti-dropdown-toggle">
+                            5 page
+                            <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="m6 9 6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="hs-dropdown-menu ti-dropdown-menu hidden"
+                            aria-labelledby="hs-pagination-dropdown2">
+                            <button type="button" class="ti-dropdown-item w-full justify-between">
+                                5 page
+                                <i class="ri-check-line text-primary flex-shrink-0 size-4"></i>
+                            </button>
+                            <button type="button" class="ti-dropdown-item w-full">
+                                8 page
+                            </button>
+                            <button type="button" class="ti-dropdown-item w-full">
+                                10 page
+                            </button>
+                        </div>
+                    </div>
+                    <!-- End Dropdown -->
+                </div>
+                <!-- End Pagination Wrapper -->
+
+                <!-- Pagination Wrapper -->
+                <div class="grid justify-center sm:flex sm:justify-between sm:items-center gap-1">
+                    <!-- Pagination -->
+                    <nav aria-label="pagination16" class="flex items-center -space-x-px">
+                        <button  aria-label="button" type="button"
+                            class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm first:rounded-s-md last:rounded-e-md border border-gray-200 text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-white/10 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <i class="ri-arrow-left-s-line align-middle rtl:rotate-180"></i>
+                            <span aria-hidden="true" class="sr-only">Previous</span>
+                        </button>
+                        <button type="button"
+                            class="min-h-[38px] min-w-[38px] flex justify-center items-center bg-primary text-white border border-gray-200 py-2 px-3 text-sm first:rounded-s-md last:rounded-e-md focus:outline-none focus:bg-gray-300 disabled:opacity-50 disabled:pointer-events-none dark:bg-primary dark:border-white/10 dark:text-white dark:focus:bg-gray-500"
+                            aria-current="page">1</button>
+                        <div
+                            class="hs-tooltip ti-main-tooltip border border-gray-200 dark:border-white/10">
+                            <button type="button"
+                                class="hs-tooltip-toggle group min-h-[36px] min-w-[36px] flex justify-center items-center text-gray-400 hover:text-primary p-2 text-sm focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:text-primary dark:focus:bg-white/10">
+                                <span class="group-hover:hidden text-xs">•••</span>
+                                <svg class="group-hover:block hidden flex-shrink-0 size-5"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m6 17 5-5-5-5" />
+                                    <path d="m13 17 5-5-5-5" />
+                                </svg>
+                                <span
+                                    class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 bg-gray-900 text-xs font-medium text-white shadow-sm dark:bg-bodybg"
+                                    role="tooltip">
+                                    Next 4 pages
+                                </span>
+                            </button>
+                        </div>
+                        <button type="button"
+                            class="min-h-[38px] min-w-[38px] flex justify-center items-center border border-gray-200 text-gray-800 hover:bg-gray-100 py-2 px-3 text-sm first:rounded-s-md last:rounded-e-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-white/10 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">8</button>
+                        <button aria-label="button" type="button"
+                            class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm first:rounded-s-md last:rounded-e-md border border-gray-200 text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-white/10 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <span aria-hidden="true" class="sr-only">Next</span>
+                            <i class="ri-arrow-right-s-line align-middle rtl:rotate-180"></i>
+                        </button>
+                    </nav>
+                    <!-- End Pagination -->
+
+                    <!-- Dropdown -->
+                    <div class="hs-dropdown ti-dropdown [--placement:top-left]">
+                        <button id="hs-pagination-dropdown3" type="button"
+                            class="hs-dropdown-toggle !py-1.5 !px-2 ti-dropdown-toggle">
+                            5 page
+                            <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="m6 9 6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="hs-dropdown-menu ti-dropdown-menu hidden"
+                            aria-labelledby="hs-pagination-dropdown3">
+                            <button type="button" class="ti-dropdown-item w-full justify-between">
+                                5 page
+                                <i class="ri-check-line text-primary flex-shrink-0 size-4"></i>
+                            </button>
+                            <button type="button" class="ti-dropdown-item w-full">
+                                8 page
+                            </button>
+                            <button type="button" class="ti-dropdown-item w-full">
+                                10 page
+                            </button>
+                        </div>
+                    </div>
+                    <!-- End Dropdown -->
+                </div>
+                <!-- End Pagination Wrapper -->
+        </app-showcode-card>
+    </div>
+    <div class="xxl:!col-span-6 md:col-span-12 col-span-12">
+        <app-showcode-card [title]="'Pagination Style-8'" [classbody]="'space-y-5'" [prism]="prsimCodeData.paginationTS13">
+                <!-- Pagination -->
+                <nav aria-label="pagination17" class="flex justify-between items-center gap-x-1">
+                    <button  aria-label="button" type="button"
+                        class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-md text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                        <i class="ri-arrow-left-s-line align-middle rtl:rotate-180"></i>
+                        <span aria-hidden="true" class="hidden sm:block">Previous</span>
+                    </button>
+                    <div class="flex items-center gap-x-1">
+                        <button type="button"
+                            class="min-h-[38px] min-w-[38px] flex justify-center items-center bg-primary text-white py-2 px-3 text-sm rounded-md focus:outline-none focus:bg-gray-300 disabled:opacity-50 disabled:pointer-events-none dark:bg-primary dark:text-white dark:focus:bg-gray-500"
+                            aria-current="page">1</button>
+                        <button type="button"
+                            class="min-h-[38px] min-w-[38px] flex justify-center items-center text-gray-800 hover:bg-gray-100 py-2 px-3 text-sm rounded-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">2</button>
+                        <button type="button"
+                            class="min-h-[38px] min-w-[38px] flex justify-center items-center text-gray-800 hover:bg-gray-100 py-2 px-3 text-sm rounded-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">3</button>
+                    </div>
+                    <button  aria-label="button" type="button"
+                        class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-md text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                        <span aria-hidden="true" class="hidden sm:block">Next</span>
+                        <i class="ri-arrow-right-s-line align-middle rtl:rotate-180"></i>
+                    </button>
+                </nav>
+                <!-- End Pagination -->
+
+                <!-- Pagination -->
+                <nav aria-label="pagination18" class="flex justify-between items-center gap-x-1">
+                    <button  aria-label="button" type="button"
+                        class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-md border border-transparent text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-transparent dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                        <i class="ri-arrow-left-s-line align-middle rtl:rotate-180"></i>
+                        <span aria-hidden="true" class="hidden sm:block">Previous</span>
+                    </button>
+                    <div class="flex items-center gap-x-1">
+                        <button type="button"
+                            class="min-h-[38px] min-w-[38px] flex justify-center items-center border border-primary text-primary py-2 px-3 text-sm rounded-md focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:border-primary dark:text-primary dark:focus:bg-white/10"
+                            aria-current="page">1</button>
+                        <button type="button"
+                            class="min-h-[38px] min-w-[38px] flex justify-center items-center border border-transparent text-gray-800 hover:bg-gray-100 py-2 px-3 text-sm rounded-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-transparent dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">2</button>
+                        <button type="button"
+                            class="min-h-[38px] min-w-[38px] flex justify-center items-center border border-transparent text-gray-800 hover:bg-gray-100 py-2 px-3 text-sm rounded-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-transparent dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">3</button>
+                    </div>
+                    <button  aria-label="button" type="button"
+                        class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-md border border-transparent text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-transparent dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                        <span aria-hidden="true" class="hidden sm:block">Next</span>
+                        <i class="ri-arrow-right-s-line align-middle rtl:rotate-180"></i>
+                    </button>
+                </nav>
+                <!-- End Pagination -->
+
+                <!-- Pagination -->
+                <nav aria-label="pagination19" class="flex justify-between items-center gap-x-1">
+                    <button  aria-label="button" type="button"
+                        class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-md text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                        <i class="ri-arrow-left-s-line align-middle rtl:rotate-180"></i>
+                        <span aria-hidden="true" class="hidden sm:block">Previous</span>
+                    </button>
+                    <div class="flex items-center gap-x-1">
+                        <span
+                            class="min-h-[38px] min-w-[38px] flex justify-center items-center border border-primary text-primary py-2 px-3 text-sm rounded-md focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:border-primary dark:text-primary dark:focus:bg-white/10">1</span>
+                        <span
+                            class="min-h-[38px] flex justify-center items-center text-gray-500 py-2 px-1.5 text-sm dark:text-white">of</span>
+                        <span
+                            class="min-h-[38px] flex justify-center items-center text-gray-500 py-2 px-1.5 text-sm dark:text-white">3</span>
+                    </div>
+                    <button  aria-label="button" type="button"
+                        class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-md text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                        <span aria-hidden="true" class="hidden sm:block">Next</span>
+                        <i class="ri-arrow-right-s-line align-middle rtl:rotate-180"></i>
+                    </button>
+                </nav>
+                <!-- End Pagination -->
+        </app-showcode-card>
+    </div>
+    <div class="xxl:!col-span-6 col-span-12">
+        <app-showcode-card [title]="'Pagination Style 9'" [classbody]="'space-y-5'" [prism]="prsimCodeData.paginationTS14">
+                <!-- Pagination Wrapper -->
+                <div
+                    class="grid justify-center sm:flex sm:justify-start sm:items-center gap-2 flex-wrap">
+                    <!-- Pagination Wrapper -->
+                    <nav aria-label="pagination20" class="flex items-center gap-x-1">
+                        <button  aria-label="button" type="button"
+                            class="min-h-[32px] min-w-8 py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-md text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <i class="ri-arrow-left-s-line align-middle rtl:rotate-180"></i>
+                            <span aria-hidden="true" class="sr-only">Previous</span>
+                        </button>
+                        <div class="flex items-center gap-x-1">
+                            <button type="button"
+                                class="min-h-[32px] min-w-8 flex justify-center items-center bg-primary text-white py-1 px-2.5 text-sm rounded-md focus:outline-none focus:bg-gray-300 disabled:opacity-50 disabled:pointer-events-none dark:bg-primary dark:text-white dark:focus:bg-gray-500"
+                                aria-current="page">1</button>
+                            <div class="hs-tooltip ti-main-tooltip">
+                                <button type="button"
+                                    class="hs-tooltip-toggle group min-h-[32px] min-w-8 flex justify-center items-center text-gray-400 hover:text-primary p-2 text-sm rounded-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:text-primary dark:focus:bg-white/10">
+                                    <span class="group-hover:hidden text-xs">•••</span>
+                                    <svg class="group-hover:block hidden flex-shrink-0 size-5"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m6 17 5-5-5-5" />
+                                        <path d="m13 17 5-5-5-5" />
+                                    </svg>
+                                    <span
+                                        class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 bg-gray-900 text-xs font-medium text-white shadow-sm dark:bg-bodybg"
+                                        role="tooltip">
+                                        Next 4 pages
+                                    </span>
+                                </button>
+                            </div>
+                            <button type="button"
+                                class="min-h-[32px] min-w-8 flex justify-center items-center text-gray-800 hover:bg-gray-100 py-1 px-2.5 text-sm rounded-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">8</button>
+                        </div>
+                        <button  aria-label="button" type="button"
+                            class="min-h-[32px] min-w-8 py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-md text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <span aria-hidden="true" class="sr-only">Next</span>
+                            <i class="ri-arrow-right-s-line align-middle rtl:rotate-180"></i>
+                        </button>
+                    </nav>
+                    <!-- End Pagination -->
+                    <div class="flex justify-center items-center gap-x-5">
+                        <!-- Dropdown -->
+                        <div class="hs-dropdown ti-dropdown [--placement:top-left]">
+                            <button id="hs-pagination-dropdown-basic" type="button"
+                                class="hs-dropdown-toggle !py-1 !px-2.5 ti-dropdown-toggle">
+                                5 page
+                                <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </button>
+                            <div class="hs-dropdown-menu ti-dropdown-menu hidden"
+                                aria-labelledby="hs-pagination-dropdown-basic">
+                                <button type="button" class="ti-dropdown-item w-full justify-between">
+                                    5 page
+                                    <i class="ri-check-line text-primary flex-shrink-0 size-4"></i>
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    8 page
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    10 page
+                                </button>
+                            </div>
+                        </div>
+                        <!-- End Dropdown -->
+
+                        <!-- Go To Page -->
+                        <div class="flex justify-center sm:justify-start items-center gap-x-2">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                Go to
+                            </span>
+                            <input type="number"
+                                class="min-h-[32px] py-1 px-2.5  block w-12 border-gray-200 rounded-md text-sm text-center focus:border-primary focus:ring-primary [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none disabled:opacity-50 disabled:pointer-events-none dark:bg-bodybg dark:border-white/10 dark:text-gray-400 dark:focus:ring-gray-600">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                page
+                            </span>
+                        </div>
+                        <!-- End Go To Page -->
+                    </div>
+
+                </div>
+                <!-- End Pagination Wrapper -->
+
+                <!-- Pagination Wrapper -->
+                <div
+                    class="grid justify-center sm:flex sm:justify-start sm:items-center gap-2 flex-wrap">
+                    <!-- Pagination Wrapper -->
+                    <nav aria-label="pagination21" class="flex items-center gap-x-1">
+                        <button  aria-label="button" type="button"
+                            class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-md text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <i class="ri-arrow-left-s-line align-middle rtl:rotate-180"></i>
+                            <span aria-hidden="true" class="sr-only">Previous</span>
+                        </button>
+                        <div class="flex items-center gap-x-1">
+                            <button type="button"
+                                class="min-h-[38px] min-w-[38px] flex justify-center items-center bg-primary text-white py-1 px-2.5 text-sm rounded-md focus:outline-none focus:bg-gray-300 disabled:opacity-50 disabled:pointer-events-none dark:bg-primary dark:text-white dark:focus:bg-gray-500"
+                                aria-current="page">1</button>
+                            <div class="hs-tooltip ti-main-tooltip">
+                                <button type="button"
+                                    class="hs-tooltip-toggle group min-h-[38px] min-w-[38px] flex justify-center items-center text-gray-400 hover:text-primary p-2 text-sm rounded-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:text-primary dark:focus:bg-white/10">
+                                    <span class="group-hover:hidden text-xs">•••</span>
+                                    <svg class="group-hover:block hidden flex-shrink-0 size-5"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m6 17 5-5-5-5" />
+                                        <path d="m13 17 5-5-5-5" />
+                                    </svg>
+                                    <span
+                                        class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 bg-gray-900 text-xs font-medium text-white shadow-sm dark:bg-bodybg"
+                                        role="tooltip">
+                                        Next 4 pages
+                                    </span>
+                                </button>
+                            </div>
+                            <button type="button"
+                                class="min-h-[38px] min-w-[38px] flex justify-center items-center text-gray-800 hover:bg-gray-100 py-1 px-2.5 text-sm rounded-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">8</button>
+                        </div>
+                        <button aria-label="button" type="button"
+                            class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-md text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <span aria-hidden="true" class="sr-only">Next</span>
+                            <i class="ri-arrow-right-s-line align-middle rtl:rotate-180"></i>
+                        </button>
+                    </nav>
+                    <!-- End Pagination -->
+                    <div class="flex justify-center items-center gap-x-5">
+                        <!-- Dropdown -->
+                        <div class="hs-dropdown ti-dropdown [--placement:top-left]">
+                            <button id="hs-pagination-dropdown-basic1" type="button"
+                                class="hs-dropdown-toggle !py-2 !px-2.5 ti-dropdown-toggle">
+                                5 page
+                                <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </button>
+                            <div class="hs-dropdown-menu ti-dropdown-menu hidden"
+                                aria-labelledby="hs-pagination-dropdown-basic1">
+                                <button type="button" class="ti-dropdown-item w-full justify-between">
+                                    5 page
+                                    <i class="ri-check-line text-primary flex-shrink-0 size-4"></i>
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    8 page
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    10 page
+                                </button>
+                            </div>
+                        </div>
+                        <!-- End Dropdown -->
+
+                        <!-- Go To Page -->
+                        <div class="flex justify-center sm:justify-start items-center gap-x-2">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                Go to
+                            </span>
+                            <input type="number"
+                                class="min-h-[38px] py-2 px-2.5 block w-12 border-gray-200 rounded-md text-sm text-center focus:border-primary focus:ring-primary [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none disabled:opacity-50 disabled:pointer-events-none dark:bg-bodybg dark:border-white/10 dark:text-gray-400 dark:focus:ring-gray-600">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                page
+                            </span>
+                        </div>
+                        <!-- End Go To Page -->
+                    </div>
+
+                </div>
+                <!-- End Pagination Wrapper -->
+
+                <!-- Pagination Wrapper -->
+                <div
+                    class="grid justify-center sm:flex sm:justify-start sm:items-center gap-2 flex-wrap">
+                    <!-- Pagination Wrapper -->
+                    <nav aria-label="pagination22" class="flex items-center gap-x-1">
+                        <button  aria-label="button" type="button"
+                            class="min-h-[46px] min-w-[46px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-md text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <i class="ri-arrow-left-s-line align-middle rtl:rotate-180"></i>
+                            <span aria-hidden="true" class="sr-only">Previous</span>
+                        </button>
+                        <div class="flex items-center gap-x-1">
+                            <button type="button"
+                                class="min-h-[46px] min-w-[46px] flex justify-center items-center bg-primary text-white py-1 px-2.5 text-sm rounded-md focus:outline-none focus:bg-gray-300 disabled:opacity-50 disabled:pointer-events-none dark:bg-primary dark:text-white dark:focus:bg-gray-500"
+                                aria-current="page">1</button>
+
+                            <div class="hs-tooltip ti-main-tooltip">
+                                <button type="button"
+                                    class="hs-tooltip-toggle group min-h-[46px] min-w-[46px] flex justify-center items-center text-gray-400 hover:text-primary p-2 text-sm rounded-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:text-primary dark:focus:bg-white/10">
+                                    <span class="group-hover:hidden text-xs">•••</span>
+                                    <svg class="group-hover:block hidden flex-shrink-0 size-5"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m6 17 5-5-5-5" />
+                                        <path d="m13 17 5-5-5-5" />
+                                    </svg>
+                                    <span
+                                        class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 bg-gray-900 text-xs font-medium text-white shadow-sm dark:bg-bodybg"
+                                        role="tooltip">
+                                        Next 4 pages
+                                    </span>
+                                </button>
+                            </div>
+                            <button type="button"
+                                class="min-h-[46px] min-w-[46px] flex justify-center items-center text-gray-800 hover:bg-gray-100 py-1 px-2.5 text-sm rounded-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">8</button>
+                        </div>
+                        <button  aria-label="button" type="button"
+                            class="min-h-[46px] min-w-[46px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-md text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <span aria-hidden="true" class="sr-only">Next</span>
+                            <i class="ri-arrow-right-s-line align-middle rtl:rotate-180"></i>
+                        </button>
+                    </nav>
+                    <!-- End Pagination -->
+                    <div class="flex justify-center items-center gap-x-5">
+                        <!-- Dropdown -->
+                        <div class="hs-dropdown ti-dropdown [--placement:top-left]">
+                            <button id="hs-pagination-dropdown-basic2" type="button"
+                                class="hs-dropdown-toggle !py-3 !px-3.5 ti-dropdown-toggle">
+                                5 page
+                                <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </button>
+                            <div class="hs-dropdown-menu ti-dropdown-menu hidden"
+                                aria-labelledby="hs-pagination-dropdown-basic2">
+                                <button type="button" class="ti-dropdown-item w-full justify-between">
+                                    5 page
+                                    <i class="ri-check-line text-primary flex-shrink-0 size-4"></i>
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    8 page
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    10 page
+                                </button>
+                            </div>
+                        </div>
+                        <!-- End Dropdown -->
+
+                        <!-- Go To Page -->
+                        <div class="flex justify-center sm:justify-start items-center gap-x-2">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                Go to
+                            </span>
+                            <input type="number"
+                                class="min-h-[46px] p-3 block w-12 border-gray-200 rounded-md text-sm text-center focus:border-primary focus:ring-primary [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none disabled:opacity-50 disabled:pointer-events-none dark:bg-bodybg dark:border-white/10 dark:text-gray-400 dark:focus:ring-gray-600">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                page
+                            </span>
+                        </div>
+                        <!-- End Go To Page -->
+                    </div>
+
+                </div>
+                <!-- End Pagination Wrapper -->
+        </app-showcode-card>
+    </div>
+    <div class="xxl:!col-span-6 col-span-12">
+        <app-showcode-card [title]="'Pagination Style 10'" [classbody]="'space-y-5'" [prism]="prsimCodeData.paginationTS15">
+                <!-- Pagination Wrapper -->
+                <div
+                    class="grid justify-center sm:flex sm:justify-start sm:items-center gap-2 flex-wrap">
+                    <!-- Pagination Wrapper -->
+                    <nav aria-label="pagination23" class="flex items-center gap-x-1">
+                        <button aria-label="button" type="button"
+                            class="min-h-[32px] min-w-8 py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-full text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <i class="ri-arrow-left-s-line align-middle rtl:rotate-180"></i>
+                            <span aria-hidden="true" class="sr-only">Previous</span>
+                        </button>
+                        <div class="flex items-center gap-x-1">
+                            <button type="button"
+                                class="min-h-[32px] min-w-8 flex justify-center items-center bg-primary text-white py-1 px-2.5 text-sm rounded-full focus:outline-none focus:bg-gray-300 disabled:opacity-50 disabled:pointer-events-none dark:bg-primary dark:text-white dark:focus:bg-gray-500"
+                                aria-current="page">1</button>
+                            <div class="hs-tooltip ti-main-tooltip">
+                                <button type="button"
+                                    class="hs-tooltip-toggle group min-h-[32px] min-w-8 flex justify-center items-center text-gray-400 hover:text-primary p-2 text-sm rounded-full focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:text-primary dark:focus:bg-white/10">
+                                    <span class="group-hover:hidden text-xs">•••</span>
+                                    <svg class="group-hover:block hidden flex-shrink-0 size-5"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m6 17 5-5-5-5" />
+                                        <path d="m13 17 5-5-5-5" />
+                                    </svg>
+                                    <span
+                                        class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 bg-gray-900 text-xs font-medium text-white shadow-sm dark:bg-bodybg"
+                                        role="tooltip">
+                                        Next 4 pages
+                                    </span>
+                                </button>
+                            </div>
+                            <button type="button"
+                                class="min-h-[32px] min-w-8 flex justify-center items-center text-gray-800 hover:bg-gray-100 py-1 px-2.5 text-sm rounded-full focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">8</button>
+                        </div>
+                        <button  aria-label="button" type="button"
+                            class="min-h-[32px] min-w-8 py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-full text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <span aria-hidden="true" class="sr-only">Next</span>
+                            <i class="ri-arrow-right-s-line align-middle rtl:rotate-180"></i>
+                        </button>
+                    </nav>
+                    <!-- End Pagination -->
+                    <div class="flex justify-center items-center gap-x-5">
+                        <!-- Dropdown -->
+                        <div class="hs-dropdown ti-dropdown [--placement:top-left]">
+                            <button id="hs-pagination-dropdown-rounded" type="button"
+                                class="hs-dropdown-toggle !py-1 !px-2.5 ti-dropdown-toggle">
+                                5 page
+                                <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </button>
+                            <div class="hs-dropdown-menu ti-dropdown-menu hidden"
+                                aria-labelledby="hs-pagination-dropdown-rounded">
+                                <button type="button" class="ti-dropdown-item w-full justify-between">
+                                    5 page
+                                    <i class="ri-check-line text-primary flex-shrink-0 size-4"></i>
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    8 page
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    10 page
+                                </button>
+                            </div>
+                        </div>
+                        <!-- End Dropdown -->
+
+                        <!-- Go To Page -->
+                        <div class="flex justify-center sm:justify-start items-center gap-x-2">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                Go to
+                            </span>
+                            <input type="number"
+                                class="min-h-[32px] py-1 px-2.5  block w-12 border-gray-200 rounded-md text-sm text-center focus:border-primary focus:ring-primary [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none disabled:opacity-50 disabled:pointer-events-none dark:bg-bodybg dark:border-white/10 dark:text-gray-400 dark:focus:ring-gray-600">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                page
+                            </span>
+                        </div>
+                        <!-- End Go To Page -->
+                    </div>
+                </div>
+                <!-- End Pagination Wrapper -->
+
+                <!-- Pagination Wrapper -->
+                <div
+                    class="grid justify-center sm:flex sm:justify-start sm:items-center gap-2 flex-wrap">
+                    <!-- Pagination Wrapper -->
+                    <nav aria-label="pagination24" class="flex items-center gap-x-1">
+                        <button  aria-label="button" type="button"
+                            class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-full text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <i class="ri-arrow-left-s-line align-middle rtl:rotate-180"></i>
+                            <span aria-hidden="true" class="sr-only">Previous</span>
+                        </button>
+                        <div class="flex items-center gap-x-1">
+                            <button type="button"
+                                class="min-h-[38px] min-w-[38px] flex justify-center items-center bg-primary text-white py-1 px-2.5 text-sm rounded-full focus:outline-none focus:bg-gray-300 disabled:opacity-50 disabled:pointer-events-none dark:bg-primary dark:text-white dark:focus:bg-gray-500"
+                                aria-current="page">1</button>
+                            <div class="hs-tooltip ti-main-tooltip">
+                                <button type="button"
+                                    class="hs-tooltip-toggle group min-h-[38px] min-w-[38px] flex justify-center items-center text-gray-400 hover:text-primary p-2 text-sm rounded-full focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:text-primary dark:focus:bg-white/10">
+                                    <span class="group-hover:hidden text-xs">•••</span>
+                                    <svg class="group-hover:block hidden flex-shrink-0 size-5"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m6 17 5-5-5-5" />
+                                        <path d="m13 17 5-5-5-5" />
+                                    </svg>
+                                    <span
+                                        class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 bg-gray-900 text-xs font-medium text-white shadow-sm dark:bg-bodybg"
+                                        role="tooltip">
+                                        Next 4 pages
+                                    </span>
+                                </button>
+                            </div>
+                            <button type="button"
+                                class="min-h-[38px] min-w-[38px] flex justify-center items-center text-gray-800 hover:bg-gray-100 py-1 px-2.5 text-sm rounded-full focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">8</button>
+                        </div>
+                        <button aria-label="button" type="button"
+                            class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-full text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <span aria-hidden="true" class="sr-only">Next</span>
+                            <i class="ri-arrow-right-s-line align-middle rtl:rotate-180"></i>
+                        </button>
+                    </nav>
+                    <!-- End Pagination -->
+                    <div class="flex justify-center items-center gap-x-5">
+                        <!-- Dropdown -->
+                        <div class="hs-dropdown ti-dropdown [--placement:top-left]">
+                            <button id="hs-pagination-dropdown-rounded1" type="button"
+                                class="hs-dropdown-toggle !py-2 !px-2.5 ti-dropdown-toggle">
+                                5 page
+                                <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </button>
+                            <div class="hs-dropdown-menu ti-dropdown-menu hidden"
+                                aria-labelledby="hs-pagination-dropdown-rounded1">
+                                <button type="button" class="ti-dropdown-item w-full justify-between">
+                                    5 page
+                                    <i class="ri-check-line text-primary flex-shrink-0 size-4"></i>
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    8 page
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    10 page
+                                </button>
+                            </div>
+                        </div>
+                        <!-- End Dropdown -->
+
+                        <!-- Go To Page -->
+                        <div class="flex justify-center sm:justify-start items-center gap-x-2">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                Go to
+                            </span>
+                            <input type="number"
+                                class="min-h-[38px] py-2 px-2.5 block w-12 border-gray-200 rounded-md text-sm text-center focus:border-primary focus:ring-primary [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none disabled:opacity-50 disabled:pointer-events-none dark:bg-bodybg dark:border-white/10 dark:text-gray-400 dark:focus:ring-gray-600">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                page
+                            </span>
+                        </div>
+                        <!-- End Go To Page -->
+                    </div>
+                </div>
+                <!-- End Pagination Wrapper -->
+
+                <!-- Pagination Wrapper -->
+                <div
+                    class="grid justify-center sm:flex sm:justify-start sm:items-center gap-2 flex-wrap">
+                    <!-- Pagination Wrapper -->
+                    <nav aria-label="pagination25" class="flex items-center gap-x-1">
+                        <button aria-label="button" type="button"
+                            class="min-h-[46px] min-w-[46px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-full text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <i class="ri-arrow-left-s-line align-middle rtl:rotate-180"></i>
+                            <span aria-hidden="true" class="sr-only">Previous</span>
+                        </button>
+                        <div class="flex items-center gap-x-1">
+                            <button type="button"
+                                class="min-h-[46px] min-w-[46px] flex justify-center items-center bg-primary text-white py-1 px-2.5 text-sm rounded-full focus:outline-none focus:bg-gray-300 disabled:opacity-50 disabled:pointer-events-none dark:bg-primary dark:text-white dark:focus:bg-gray-500"
+                                aria-current="page">1</button>
+                            <div class="hs-tooltip ti-main-tooltip">
+                                <button type="button"
+                                    class="hs-tooltip-toggle group min-h-[46px] min-w-[46px] flex justify-center items-center text-gray-400 hover:text-primary p-2 text-sm rounded-full focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:text-primary dark:focus:bg-white/10">
+                                    <span class="group-hover:hidden text-xs">•••</span>
+                                    <svg class="group-hover:block hidden flex-shrink-0 size-5"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m6 17 5-5-5-5" />
+                                        <path d="m13 17 5-5-5-5" />
+                                    </svg>
+                                    <span
+                                        class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 bg-gray-900 text-xs font-medium text-white shadow-sm dark:bg-bodybg"
+                                        role="tooltip">
+                                        Next 4 pages
+                                    </span>
+                                </button>
+                            </div>
+                            <button type="button"
+                                class="min-h-[46px] min-w-[46px] flex justify-center items-center text-gray-800 hover:bg-gray-100 py-1 px-2.5 text-sm rounded-full focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">8</button>
+                        </div>
+                        <button aria-label="button" type="button"
+                            class="min-h-[46px] min-w-[46px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-full text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <span aria-hidden="true" class="sr-only">Next</span>
+                            <i class="ri-arrow-right-s-line align-middle rtl:rotate-180"></i>
+                        </button>
+                    </nav>
+                    <!-- End Pagination -->
+                    <div class="flex justify-center items-center gap-x-5">
+                        <!-- Dropdown -->
+                        <div class="hs-dropdown ti-dropdown [--placement:top-left]">
+                            <button id="hs-pagination-dropdown-rounded2" type="button"
+                                class="hs-dropdown-toggle !py-3 !px-3.5 ti-dropdown-toggle">
+                                5 page
+                                <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </button>
+                            <div class="hs-dropdown-menu ti-dropdown-menu hidden"
+                                aria-labelledby="hs-pagination-dropdown-rounded2">
+                                <button type="button" class="ti-dropdown-item w-full justify-between">
+                                    5 page
+                                    <i class="ri-check-line text-primary flex-shrink-0 size-4"></i>
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    8 page
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    10 page
+                                </button>
+                            </div>
+                        </div>
+                        <!-- End Dropdown -->
+
+                        <!-- Go To Page -->
+                        <div class="flex justify-center sm:justify-start items-center gap-x-2">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                Go to
+                            </span>
+                            <input type="number"
+                                class="min-h-[46px] p-3 block w-12 border-gray-200 rounded-md text-sm text-center focus:border-primary focus:ring-primary [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none disabled:opacity-50 disabled:pointer-events-none dark:bg-bodybg dark:border-white/10 dark:text-gray-400 dark:focus:ring-gray-600">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                page
+                            </span>
+                        </div>
+                        <!-- End Go To Page -->
+                    </div>
+                </div>
+                <!-- End Pagination Wrapper -->
+        </app-showcode-card>
+    </div>
+    <div class="xxl:!col-span-6 col-span-12">
+        <app-showcode-card [title]="'Pagination Style 11'" [classbody]="'space-y-5'" [prism]="prsimCodeData.paginationTS16">
+            <!-- Pagination Wrapper -->
+                <!-- Pagination Wrapper -->
+                <div
+                    class="grid justify-center sm:flex sm:justify-start sm:items-center gap-2 flex-wrap">
+                    <!-- Pagination Wrapper -->
+                    <nav aria-label="pagination26" class="flex items-center gap-x-1">
+                        <button aria-label="button" type="button"
+                            class="min-h-[32px] min-w-8 py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-md text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <i class="ri-arrow-left-s-line align-middle rtl:rotate-180"></i>
+                            <span aria-hidden="true" class="sr-only">Previous</span>
+                        </button>
+                        <div class="flex items-center gap-x-1">
+                            <button type="button"
+                                class="min-h-[32px] min-w-8 flex justify-center items-center border border-primary text-primary py-1 px-2.5 text-sm rounded-md focus:outline-none focus:bg-gray-300 disabled:opacity-50 disabled:pointer-events-none dark:border-primary dark:text-primary dark:focus:bg-gray-500"
+                                aria-current="page">1</button>
+                            <div class="hs-tooltip ti-main-tooltip">
+                                <button type="button"
+                                    class="hs-tooltip-toggle group min-h-[32px] min-w-8 flex justify-center items-center text-gray-400 hover:text-primary p-2 text-sm rounded-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:text-primary dark:focus:bg-white/10">
+                                    <span class="group-hover:hidden text-xs">•••</span>
+                                    <svg class="group-hover:block hidden flex-shrink-0 size-5"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m6 17 5-5-5-5" />
+                                        <path d="m13 17 5-5-5-5" />
+                                    </svg>
+                                    <span
+                                        class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 bg-gray-900 text-xs font-medium text-white shadow-sm dark:bg-bodybg"
+                                        role="tooltip">
+                                        Next 4 pages
+                                    </span>
+                                </button>
+                            </div>
+                            <button type="button"
+                                class="min-h-[32px] min-w-8 flex justify-center items-center text-gray-800 hover:bg-gray-100 py-1 px-2.5 text-sm rounded-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">8</button>
+                        </div>
+                        <button aria-label="button" type="button"
+                            class="min-h-[32px] min-w-8 py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-md text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <span aria-hidden="true" class="sr-only">Next</span>
+                            <i class="ri-arrow-right-s-line align-middle rtl:rotate-180"></i>
+                        </button>
+                    </nav>
+                    <!-- End Pagination -->
+                    <div class="flex justify-center items-center gap-x-5">
+                        <!-- Dropdown -->
+                        <div class="hs-dropdown ti-dropdown [--placement:top-left]">
+                            <button id="hs-pagination-dropdown-bordered" type="button"
+                                class="hs-dropdown-toggle !py-1 !px-2.5 ti-dropdown-toggle">
+                                5 page
+                                <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </button>
+                            <div class="hs-dropdown-menu ti-dropdown-menu hidden"
+                                aria-labelledby="hs-pagination-dropdown-bordered">
+                                <button type="button" class="ti-dropdown-item w-full justify-between">
+                                    5 page
+                                    <i class="ri-check-line text-primary flex-shrink-0 size-4"></i>
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    8 page
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    10 page
+                                </button>
+                            </div>
+                        </div>
+                        <!-- End Dropdown -->
+
+                        <!-- Go To Page -->
+                        <div class="flex justify-center sm:justify-start items-center gap-x-2">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                Go to
+                            </span>
+                            <input type="number"
+                                class="min-h-[32px] py-1 px-2.5  block w-12 border-gray-200 rounded-md text-sm text-center focus:border-primary focus:ring-primary [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none disabled:opacity-50 disabled:pointer-events-none dark:bg-bodybg dark:border-white/10 dark:text-gray-400 dark:focus:ring-gray-600">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                page
+                            </span>
+                        </div>
+                        <!-- End Go To Page -->
+                    </div>
+                </div>
+                <!-- End Pagination Wrapper -->
+
+                <!-- Pagination Wrapper -->
+                <div
+                    class="grid justify-center sm:flex sm:justify-start sm:items-center gap-2 flex-wrap">
+                    <!-- Pagination Wrapper -->
+                    <nav aria-label="pagination27" class="flex items-center gap-x-1">
+                        <button aria-label="button" type="button"
+                            class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-md text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <i class="ri-arrow-left-s-line align-middle rtl:rotate-180"></i>
+                            <span aria-hidden="true" class="sr-only">Previous</span>
+                        </button>
+                        <div class="flex items-center gap-x-1">
+                            <button type="button"
+                                class="min-h-[38px] min-w-[38px] flex justify-center items-center border border-primary text-primary py-1 px-2.5 text-sm rounded-md focus:outline-none focus:bg-gray-300 disabled:opacity-50 disabled:pointer-events-none dark:border-primary dark:text-primary dark:focus:bg-gray-500"
+                                aria-current="page">1</button>
+                            <div class="hs-tooltip ti-main-tooltip">
+                                <button type="button"
+                                    class="hs-tooltip-toggle group min-h-[38px] min-w-[38px] flex justify-center items-center text-gray-400 hover:text-primary p-2 text-sm rounded-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:text-primary dark:focus:bg-white/10">
+                                    <span class="group-hover:hidden text-xs">•••</span>
+                                    <svg class="group-hover:block hidden flex-shrink-0 size-5"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m6 17 5-5-5-5" />
+                                        <path d="m13 17 5-5-5-5" />
+                                    </svg>
+                                    <span
+                                        class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 bg-gray-900 text-xs font-medium text-white shadow-sm dark:bg-bodybg"
+                                        role="tooltip">
+                                        Next 4 pages
+                                    </span>
+                                </button>
+                            </div>
+                            <button type="button"
+                                class="min-h-[38px] min-w-[38px] flex justify-center items-center text-gray-800 hover:bg-gray-100 py-1 px-2.5 text-sm rounded-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">8</button>
+                        </div>
+                        <button aria-label="button" type="button"
+                            class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-md text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <span aria-hidden="true" class="sr-only">Next</span>
+                            <i class="ri-arrow-right-s-line align-middle rtl:rotate-180"></i>
+                        </button>
+                    </nav>
+                    <!-- End Pagination -->
+                    <div class="flex justify-center items-center gap-x-5">
+                        <!-- Dropdown -->
+                        <div class="hs-dropdown ti-dropdown [--placement:top-left]">
+                            <button id="hs-pagination-dropdown-bordered1" type="button"
+                                class="hs-dropdown-toggle !py-2 !px-2.5 ti-dropdown-toggle">
+                                5 page
+                                <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </button>
+                            <div class="hs-dropdown-menu ti-dropdown-menu hidden"
+                                aria-labelledby="hs-pagination-dropdown-bordered1">
+                                <button type="button" class="ti-dropdown-item w-full justify-between">
+                                    5 page
+                                    <i class="ri-check-line text-primary flex-shrink-0 size-4"></i>
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    8 page
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    10 page
+                                </button>
+                            </div>
+                        </div>
+                        <!-- End Dropdown -->
+
+                        <!-- Go To Page -->
+                        <div class="flex justify-center sm:justify-start items-center gap-x-2">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                Go to
+                            </span>
+                            <input type="number"
+                                class="min-h-[38px] py-2 px-2.5 block w-12 border-gray-200 rounded-md text-sm text-center focus:border-primary focus:ring-primary [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none disabled:opacity-50 disabled:pointer-events-none dark:bg-bodybg dark:border-white/10 dark:text-gray-400 dark:focus:ring-gray-600">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                page
+                            </span>
+                        </div>
+                        <!-- End Go To Page -->
+                    </div>
+                </div>
+                <!-- End Pagination Wrapper -->
+
+                <!-- Pagination Wrapper -->
+                <div
+                    class="grid justify-center sm:flex sm:justify-start sm:items-center gap-2 flex-wrap">
+                    <!-- Pagination Wrapper -->
+                    <nav aria-label="pagination28" class="flex items-center gap-x-1">
+                        <button aria-label="button" type="button"
+                            class="min-h-[46px] min-w-[46px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-md text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <i class="ri-arrow-left-s-line align-middle rtl:rotate-180"></i>
+                            <span aria-hidden="true" class="sr-only">Previous</span>
+                        </button>
+                        <div class="flex items-center gap-x-1">
+                            <button type="button"
+                                class="min-h-[46px] min-w-[46px] flex justify-center items-center border border-primary text-primary py-1 px-2.5 text-sm rounded-md focus:outline-none focus:bg-gray-300 disabled:opacity-50 disabled:pointer-events-none dark:border-primary dark:text-primary dark:focus:bg-gray-500"
+                                aria-current="page">1</button>
+                            <div class="hs-tooltip ti-main-tooltip">
+                                <button type="button"
+                                    class="hs-tooltip-toggle group min-h-[46px] min-w-[46px] flex justify-center items-center text-gray-400 hover:text-primary p-2 text-sm rounded-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:text-primary dark:focus:bg-white/10">
+                                    <span class="group-hover:hidden text-xs">•••</span>
+                                    <svg class="group-hover:block hidden flex-shrink-0 size-5"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m6 17 5-5-5-5" />
+                                        <path d="m13 17 5-5-5-5" />
+                                    </svg>
+                                    <span
+                                        class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 bg-gray-900 text-xs font-medium text-white shadow-sm dark:bg-bodybg"
+                                        role="tooltip">
+                                        Next 4 pages
+                                    </span>
+                                </button>
+                            </div>
+                            <button type="button"
+                                class="min-h-[46px] min-w-[46px] flex justify-center items-center text-gray-800 hover:bg-gray-100 py-1 px-2.5 text-sm rounded-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">8</button>
+                        </div>
+                        <button aria-label="button" type="button"
+                            class="min-h-[46px] min-w-[46px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-md text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <span aria-hidden="true" class="sr-only">Next</span>
+                            <i class="ri-arrow-right-s-line align-middle rtl:rotate-180"></i>
+                        </button>
+                    </nav>
+                    <!-- End Pagination -->
+                    <div class="flex justify-center items-center gap-x-5">
+                        <!-- Dropdown -->
+                        <div class="hs-dropdown ti-dropdown [--placement:top-left]">
+                            <button id="hs-pagination-dropdown-bordered2" type="button"
+                                class="hs-dropdown-toggle !py-3 !px-3.5 ti-dropdown-toggle">
+                                5 page
+                                <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </button>
+                            <div class="hs-dropdown-menu ti-dropdown-menu hidden"
+                                aria-labelledby="hs-pagination-dropdown-bordered2">
+                                <button type="button" class="ti-dropdown-item w-full justify-between">
+                                    5 page
+                                    <i class="ri-check-line text-primary flex-shrink-0 size-4"></i>
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    8 page
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    10 page
+                                </button>
+                            </div>
+                        </div>
+                        <!-- End Dropdown -->
+
+                        <!-- Go To Page -->
+                        <div class="flex justify-center sm:justify-start items-center gap-x-2">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                Go to
+                            </span>
+                            <input type="number"
+                                class="min-h-[46px] p-3 block w-12 border-gray-200 rounded-md text-sm text-center focus:border-primary focus:ring-primary [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none disabled:opacity-50 disabled:pointer-events-none dark:bg-bodybg dark:border-white/10 dark:text-gray-400 dark:focus:ring-gray-600">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                page
+                            </span>
+                        </div>
+                        <!-- End Go To Page -->
+                    </div>
+                </div>
+                <!-- End Pagination Wrapper -->
+        </app-showcode-card>
+    </div>
+    <div class="xxl:!col-span-6 col-span-12">
+        <app-showcode-card [title]="'Pagination Style 12'" [classbody]="'space-y-5'" [prism]="prsimCodeData.paginationTS17">
+                <!-- Pagination Wrapper -->
+                <div
+                    class="grid justify-center sm:flex sm:justify-start sm:items-center gap-2 flex-wrap">
+                    <!-- Pagination Wrapper -->
+                    <nav aria-label="pagination29" class="flex items-center gap-x-1">
+                        <button aria-label="button" type="button"
+                            class="min-h-[32px] min-w-8 py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-full text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <i class="ri-arrow-left-s-line align-middle rtl:rotate-180"></i>
+                            <span aria-hidden="true" class="sr-only">Previous</span>
+                        </button>
+                        <div class="flex items-center gap-x-1">
+                            <button type="button"
+                                class="min-h-[32px] min-w-8 flex justify-center items-center border border-primary text-primary py-1 px-2.5 text-sm rounded-full focus:outline-none focus:bg-gray-300 disabled:opacity-50 disabled:pointer-events-none dark:border-primary dark:text-primary dark:focus:bg-gray-500"
+                                aria-current="page">1</button>
+                            <div class="hs-tooltip ti-main-tooltip">
+                                <button type="button"
+                                    class="hs-tooltip-toggle group min-h-[32px] min-w-8 flex justify-center items-center text-gray-400 hover:text-primary p-2 text-sm rounded-full focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:text-primary dark:focus:bg-white/10">
+                                    <span class="group-hover:hidden text-xs">•••</span>
+                                    <svg class="group-hover:block hidden flex-shrink-0 size-5"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m6 17 5-5-5-5" />
+                                        <path d="m13 17 5-5-5-5" />
+                                    </svg>
+                                    <span
+                                        class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 bg-gray-900 text-xs font-medium text-white shadow-sm dark:bg-bodybg"
+                                        role="tooltip">
+                                        Next 4 pages
+                                    </span>
+                                </button>
+                            </div>
+                            <button type="button"
+                                class="min-h-[32px] min-w-8 flex justify-center items-center text-gray-800 hover:bg-gray-100 py-1 px-2.5 text-sm rounded-full focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">8</button>
+                        </div>
+                        <button aria-label="button" type="button"
+                            class="min-h-[32px] min-w-8 py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-full text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <span aria-hidden="true" class="sr-only">Next</span>
+                            <i class="ri-arrow-right-s-line align-middle rtl:rotate-180"></i>
+                        </button>
+                    </nav>
+                    <!-- End Pagination -->
+                    <div class="flex justify-center items-center gap-x-5">
+                        <!-- Dropdown -->
+                        <div class="hs-dropdown ti-dropdown [--placement:top-left]">
+                            <button id="hs-pagination-dropdown-bordered-round" type="button"
+                                class="hs-dropdown-toggle !py-1 !px-2.5 ti-dropdown-toggle">
+                                5 page
+                                <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </button>
+                            <div class="hs-dropdown-menu ti-dropdown-menu hidden"
+                                aria-labelledby="hs-pagination-dropdown-bordered-round">
+                                <button type="button" class="ti-dropdown-item w-full justify-between">
+                                    5 page
+                                    <i class="ri-check-line text-primary flex-shrink-0 size-4"></i>
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    8 page
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    10 page
+                                </button>
+                            </div>
+                        </div>
+                        <!-- End Dropdown -->
+
+                        <!-- Go To Page -->
+                        <div class="flex justify-center sm:justify-start items-center gap-x-2">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                Go to
+                            </span>
+                            <input type="number"
+                                class="min-h-[32px] py-1 px-2.5  block w-12 border-gray-200 rounded-md text-sm text-center focus:border-primary focus:ring-primary [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none disabled:opacity-50 disabled:pointer-events-none dark:bg-bodybg dark:border-white/10 dark:text-gray-400 dark:focus:ring-gray-600">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                page
+                            </span>
+                        </div>
+                        <!-- End Go To Page -->
+                    </div>
+                </div>
+                <!-- End Pagination Wrapper -->
+
+                <!-- Pagination Wrapper -->
+                <div
+                    class="grid justify-center sm:flex sm:justify-start sm:items-center gap-2 flex-wrap">
+                    <!-- Pagination Wrapper -->
+                    <nav aria-label="pagination30" class="flex items-center gap-x-1">
+                        <button aria-label="button" type="button"
+                            class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-full text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <i class="ri-arrow-left-s-line align-middle rtl:rotate-180"></i>
+                            <span aria-hidden="true" class="sr-only">Previous</span>
+                        </button>
+                        <div class="flex items-center gap-x-1">
+                            <button type="button"
+                                class="min-h-[38px] min-w-[38px] flex justify-center items-center border border-primary text-primary py-1 px-2.5 text-sm rounded-full focus:outline-none focus:bg-gray-300 disabled:opacity-50 disabled:pointer-events-none dark:border-primary dark:text-primary dark:focus:bg-gray-500"
+                                aria-current="page">1</button>
+                            <div class="hs-tooltip ti-main-tooltip">
+                                <button type="button"
+                                    class="hs-tooltip-toggle group min-h-[38px] min-w-[38px] flex justify-center items-center text-gray-400 hover:text-primary p-2 text-sm rounded-full focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:text-primary dark:focus:bg-white/10">
+                                    <span class="group-hover:hidden text-xs">•••</span>
+                                    <svg class="group-hover:block hidden flex-shrink-0 size-5"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m6 17 5-5-5-5" />
+                                        <path d="m13 17 5-5-5-5" />
+                                    </svg>
+                                    <span
+                                        class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 bg-gray-900 text-xs font-medium text-white shadow-sm dark:bg-bodybg"
+                                        role="tooltip">
+                                        Next 4 pages
+                                    </span>
+                                </button>
+                            </div>
+                            <button type="button"
+                                class="min-h-[38px] min-w-[38px] flex justify-center items-center text-gray-800 hover:bg-gray-100 py-1 px-2.5 text-sm rounded-full focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">8</button>
+                        </div>
+                        <button aria-label="button" type="button"
+                            class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-full text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <span aria-hidden="true" class="sr-only">Next</span>
+                            <i class="ri-arrow-right-s-line align-middle rtl:rotate-180"></i>
+                        </button>
+                    </nav>
+                    <!-- End Pagination -->
+                    <div class="flex justify-center items-center gap-x-5">
+                        <!-- Dropdown -->
+                        <div class="hs-dropdown ti-dropdown [--placement:top-left]">
+                            <button id="hs-pagination-dropdown-bordered-round1" type="button"
+                                class="hs-dropdown-toggle !py-2 !px-2.5 ti-dropdown-toggle">
+                                5 page
+                                <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </button>
+                            <div class="hs-dropdown-menu ti-dropdown-menu hidden"
+                                aria-labelledby="hs-pagination-dropdown-bordered-round1">
+                                <button type="button" class="ti-dropdown-item w-full justify-between">
+                                    5 page
+                                    <i class="ri-check-line text-primary flex-shrink-0 size-4"></i>
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    8 page
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    10 page
+                                </button>
+                            </div>
+                        </div>
+                        <!-- End Dropdown -->
+
+                        <!-- Go To Page -->
+                        <div class="flex justify-center sm:justify-start items-center gap-x-2">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                Go to
+                            </span>
+                            <input type="number"
+                                class="min-h-[38px] py-2 px-2.5 block w-12 border-gray-200 rounded-md text-sm text-center focus:border-primary focus:ring-primary [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none disabled:opacity-50 disabled:pointer-events-none dark:bg-bodybg dark:border-white/10 dark:text-gray-400 dark:focus:ring-gray-600">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                page
+                            </span>
+                        </div>
+                        <!-- End Go To Page -->
+                    </div>
+                </div>
+                <!-- End Pagination Wrapper -->
+
+                <!-- Pagination Wrapper -->
+                <div
+                    class="grid justify-center sm:flex sm:justify-start sm:items-center gap-2 flex-wrap">
+                    <!-- Pagination Wrapper -->
+                    <nav aria-label="pagination31" class="flex items-center gap-x-1">
+                        <button aria-label="button" type="button"
+                            class="min-h-[46px] min-w-[46px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-full text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <i class="ri-arrow-left-s-line align-middle rtl:rotate-180"></i>
+                            <span aria-hidden="true" class="sr-only">Previous</span>
+                        </button>
+                        <div class="flex items-center gap-x-1">
+                            <button type="button"
+                                class="min-h-[46px] min-w-[46px] flex justify-center items-center border border-primary text-primary py-1 px-2.5 text-sm rounded-full focus:outline-none focus:bg-gray-300 disabled:opacity-50 disabled:pointer-events-none dark:border-primary dark:text-primary dark:focus:bg-gray-500"
+                                aria-current="page">1</button>
+                            <div class="hs-tooltip ti-main-tooltip">
+                                <button type="button"
+                                    class="hs-tooltip-toggle group min-h-[46px] min-w-[46px] flex justify-center items-center text-gray-400 hover:text-primary p-2 text-sm rounded-full focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:text-primary dark:focus:bg-white/10">
+                                    <span class="group-hover:hidden text-xs">•••</span>
+                                    <svg class="group-hover:block hidden flex-shrink-0 size-5"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m6 17 5-5-5-5" />
+                                        <path d="m13 17 5-5-5-5" />
+                                    </svg>
+                                    <span
+                                        class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 bg-gray-900 text-xs font-medium text-white shadow-sm dark:bg-bodybg"
+                                        role="tooltip">
+                                        Next 4 pages
+                                    </span>
+                                </button>
+                            </div>
+                            <button type="button"
+                                class="min-h-[46px] min-w-[46px] flex justify-center items-center text-gray-800 hover:bg-gray-100 py-1 px-2.5 text-sm rounded-full focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">8</button>
+                        </div>
+                        <button aria-label="button" type="button"
+                            class="min-h-[46px] min-w-[46px] py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm rounded-full text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <span aria-hidden="true" class="sr-only">Next</span>
+                            <i class="ri-arrow-right-s-line align-middle rtl:rotate-180"></i>
+                        </button>
+                    </nav>
+                    <!-- End Pagination -->
+                    <div class="flex justify-center items-center gap-x-5">
+                        <!-- Dropdown -->
+                        <div class="hs-dropdown ti-dropdown [--placement:top-left]">
+                            <button id="hs-pagination-dropdown-bordered-round2" type="button"
+                                class="hs-dropdown-toggle !py-3 !px-3.5 ti-dropdown-toggle">
+                                5 page
+                                <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </button>
+                            <div class="hs-dropdown-menu ti-dropdown-menu hidden"
+                                aria-labelledby="hs-pagination-dropdown-bordered-round2">
+                                <button type="button" class="ti-dropdown-item w-full justify-between">
+                                    5 page
+                                    <i class="ri-check-line text-primary flex-shrink-0 size-4"></i>
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    8 page
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    10 page
+                                </button>
+                            </div>
+                        </div>
+                        <!-- End Dropdown -->
+
+                        <!-- Go To Page -->
+                        <div class="flex justify-center sm:justify-start items-center gap-x-2">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                Go to
+                            </span>
+                            <input type="number"
+                                class="min-h-[46px] p-3 block w-12 border-gray-200 rounded-md text-sm text-center focus:border-primary focus:ring-primary [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none disabled:opacity-50 disabled:pointer-events-none dark:bg-bodybg dark:border-white/10 dark:text-gray-400 dark:focus:ring-gray-600">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                page
+                            </span>
+                        </div>
+                        <!-- End Go To Page -->
+                    </div>
+                </div>
+                <!-- End Pagination Wrapper -->
+        </app-showcode-card>
+    </div>
+    <div class="xxl:!col-span-6 col-span-12">
+        <app-showcode-card [title]="'Pagination Style 13'" [classbody]="'space-y-5'" [prism]="prsimCodeData.paginationTS18">
+                <!-- Pagination Wrapper -->
+                <div
+                    class="grid justify-center sm:flex sm:justify-start sm:items-center gap-2 flex-wrap">
+                    <!-- Pagination Wrapper -->
+                    <nav aria-label="pagination32" class="flex items-center -space-x-px">
+                        <button  aria-label="button" type="button"
+                            class="min-h-[32px] min-w-8 py-1 px-2 inline-flex justify-center items-center gap-x-1.5 text-sm first:rounded-s-md last:rounded-e-md border border-gray-200 text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-white/10 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <i class="ri-arrow-left-s-line align-middle rtl:rotate-180"></i>
+                            <span aria-hidden="true" class="sr-only">Previous</span>
+                        </button>
+                        <button type="button"
+                            class="min-h-[32px] min-w-8 flex justify-center items-center bg-primary text-white border border-gray-200 py-1 px-2.5 text-sm first:rounded-s-md last:rounded-e-md focus:outline-none focus:bg-gray-300 disabled:opacity-50 disabled:pointer-events-none dark:bg-primary dark:border-white/10 dark:text-white dark:focus:bg-gray-500"
+                            aria-current="page">1</button>
+                        <div
+                            class="hs-tooltip ti-main-tooltip border border-gray-200 dark:border-white/10">
+                            <button type="button"
+                                class="hs-tooltip-toggle group min-h-[30px] min-w-8 flex justify-center items-center text-gray-400 hover:text-primary py-1 px-2.5 text-sm focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:text-primary dark:focus:bg-white/10">
+                                <span class="group-hover:hidden text-xs">•••</span>
+                                <svg class="group-hover:block hidden flex-shrink-0 size-5"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m6 17 5-5-5-5" />
+                                    <path d="m13 17 5-5-5-5" />
+                                </svg>
+                                <span
+                                    class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 bg-gray-900 text-xs font-medium text-white shadow-sm dark:bg-bodybg"
+                                    role="tooltip">
+                                    Next 4 pages
+                                </span>
+                            </button>
+                        </div>
+                        <button type="button"
+                            class="min-h-[32px] min-w-8 flex justify-center items-center border border-gray-200 text-gray-800 hover:bg-gray-100 py-1 px-2.5 text-sm first:rounded-s-md last:rounded-e-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-white/10 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">8</button>
+                        <button  aria-label="button" type="button"
+                            class="min-h-[32px] min-w-8 py-1 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm first:rounded-s-md last:rounded-e-md border border-gray-200 text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-white/10 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <span aria-hidden="true" class="sr-only">Next</span>
+                            <i class="ri-arrow-right-s-line align-middle rtl:rotate-180"></i>
+                        </button>
+                    </nav>
+                    <!-- End Pagination -->
+                    <div class="flex justify-center items-center gap-x-5">
+                        <!-- Dropdown -->
+                        <div class="hs-dropdown ti-dropdown [--placement:top-left]">
+                            <button id="hs-pagination-dropdown-bordered-group" type="button"
+                                class="hs-dropdown-toggle !py-1 !px-2.5 ti-dropdown-toggle">
+                                5 page
+                                <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </button>
+                            <div class="hs-dropdown-menu ti-dropdown-menu hidden"
+                                aria-labelledby="hs-pagination-dropdown-bordered-group">
+                                <button type="button" class="ti-dropdown-item w-full justify-between">
+                                    5 page
+                                    <i class="ri-check-line text-primary flex-shrink-0 size-4"></i>
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    8 page
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    10 page
+                                </button>
+                            </div>
+                        </div>
+                        <!-- End Dropdown -->
+
+                        <!-- Go To Page -->
+                        <div class="flex justify-center sm:justify-start items-center gap-x-2">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                Go to
+                            </span>
+                            <input type="number"
+                                class="min-h-[32px] py-1 px-2.5  block w-12 border-gray-200 rounded-md text-sm text-center focus:border-primary focus:ring-primary [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none disabled:opacity-50 disabled:pointer-events-none dark:bg-bodybg dark:border-white/10 dark:text-gray-400 dark:focus:ring-gray-600">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                page
+                            </span>
+                        </div>
+                        <!-- End Go To Page -->
+                    </div>
+                </div>
+                <!-- End Pagination Wrapper -->
+
+                <!-- Pagination Wrapper -->
+                <div
+                    class="grid justify-center sm:flex sm:justify-start sm:items-center gap-2 flex-wrap">
+                    <!-- Pagination Wrapper -->
+                    <nav aria-label="pagination33" class="flex items-center -space-x-px">
+                        <button  aria-label="button" type="button"
+                            class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm first:rounded-s-md last:rounded-e-md border border-gray-200 text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-white/10 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <i class="ri-arrow-left-s-line align-middle rtl:rotate-180"></i>
+                            <span aria-hidden="true" class="sr-only">Previous</span>
+                        </button>
+                        <button type="button"
+                            class="min-h-[38px] min-w-[38px] flex justify-center items-center bg-primary text-white border border-gray-200 py-2 px-3 text-sm first:rounded-s-md last:rounded-e-md focus:outline-none focus:bg-gray-300 disabled:opacity-50 disabled:pointer-events-none dark:bg-primary dark:border-white/10 dark:text-white dark:focus:bg-gray-500"
+                            aria-current="page">1</button>
+                        <div
+                            class="hs-tooltip ti-main-tooltip border border-gray-200 dark:border-white/10">
+                            <button type="button"
+                                class="hs-tooltip-toggle group min-h-[36px] min-w-[36px] flex justify-center items-center text-gray-400 hover:text-primary p-2 text-sm focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:text-primary dark:focus:bg-white/10">
+                                <span class="group-hover:hidden text-xs">•••</span>
+                                <svg class="group-hover:block hidden flex-shrink-0 size-5"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m6 17 5-5-5-5" />
+                                    <path d="m13 17 5-5-5-5" />
+                                </svg>
+                                <span
+                                    class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 bg-gray-900 text-xs font-medium text-white shadow-sm dark:bg-bodybg"
+                                    role="tooltip">
+                                    Next 4 pages
+                                </span>
+                            </button>
+                        </div>
+                        <button type="button"
+                            class="min-h-[38px] min-w-[38px] flex justify-center items-center border border-gray-200 text-gray-800 hover:bg-gray-100 py-2 px-3 text-sm first:rounded-s-md last:rounded-e-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-white/10 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">8</button>
+                        <button  aria-label="button" type="button"
+                            class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm first:rounded-s-md last:rounded-e-md border border-gray-200 text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-white/10 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <span aria-hidden="true" class="sr-only">Next</span>
+                            <i class="ri-arrow-right-s-line align-middle rtl:rotate-180"></i>
+                        </button>
+                    </nav>
+                    <!-- End Pagination -->
+                    <div class="flex justify-center items-center gap-x-5">
+                        <!-- Dropdown -->
+                        <div class="hs-dropdown ti-dropdown [--placement:top-left]">
+                            <button id="hs-pagination-dropdown-bordered-group1" type="button"
+                                class="hs-dropdown-toggle !py-2 !px-2.5 ti-dropdown-toggle">
+                                5 page
+                                <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </button>
+                            <div class="hs-dropdown-menu ti-dropdown-menu hidden"
+                                aria-labelledby="hs-pagination-dropdown-bordered-group1">
+                                <button type="button" class="ti-dropdown-item w-full justify-between">
+                                    5 page
+                                    <i class="ri-check-line text-primary flex-shrink-0 size-4"></i>
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    8 page
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    10 page
+                                </button>
+                            </div>
+                        </div>
+                        <!-- End Dropdown -->
+
+                        <!-- Go To Page -->
+                        <div class="flex justify-center sm:justify-start items-center gap-x-2">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                Go to
+                            </span>
+                            <input type="number"
+                                class="min-h-[32px] py-2 px-2.5 block w-12 border-gray-200 rounded-md text-sm text-center focus:border-primary focus:ring-primary [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none disabled:opacity-50 disabled:pointer-events-none dark:bg-bodybg dark:border-white/10 dark:text-gray-400 dark:focus:ring-gray-600">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                page
+                            </span>
+                        </div>
+                        <!-- End Go To Page -->
+                    </div>
+
+                </div>
+                <!-- End Pagination Wrapper -->
+
+                <!-- Pagination Wrapper -->
+                <div
+                    class="grid justify-center sm:flex sm:justify-start sm:items-center gap-2 flex-wrap">
+                    <!-- Pagination Wrapper -->
+                    <nav aria-label="pagination34" class="flex items-center -space-x-px">
+                        <button  aria-label="button" type="button"
+                            class="min-h-[46px] min-w-[46px] py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm first:rounded-s-md last:rounded-e-md border border-gray-200 text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-white/10 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <i class="ri-arrow-left-s-line align-middle rtl:rotate-180"></i>
+                            <span aria-hidden="true" class="sr-only">Previous</span>
+                        </button>
+                        <button type="button"
+                            class="min-h-[46px] min-w-[46px] flex justify-center items-center bg-primary text-white border border-gray-200 py-2 px-3 text-sm first:rounded-s-md last:rounded-e-md focus:outline-none focus:bg-gray-300 disabled:opacity-50 disabled:pointer-events-none dark:bg-primary dark:border-white/10 dark:text-white dark:focus:bg-gray-500"
+                            aria-current="page">1</button>
+                        <div
+                            class="hs-tooltip ti-main-tooltip border border-gray-200 dark:border-white/10">
+                            <button type="button"
+                                class="hs-tooltip-toggle group min-h-[44px] min-w-[46px] flex justify-center items-center text-gray-400 hover:text-primary p-2 text-sm focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:text-primary dark:focus:bg-white/10">
+                                <span class="group-hover:hidden text-xs">•••</span>
+                                <svg class="group-hover:block hidden flex-shrink-0 size-5"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m6 17 5-5-5-5" />
+                                    <path d="m13 17 5-5-5-5" />
+                                </svg>
+                                <span
+                                    class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 bg-gray-900 text-xs font-medium text-white shadow-sm dark:bg-bodybg"
+                                    role="tooltip">
+                                    Next 4 pages
+                                </span>
+                            </button>
+                        </div>
+                        <button type="button"
+                            class="min-h-[46px] min-w-[46px] flex justify-center items-center border border-gray-200 text-gray-800 hover:bg-gray-100 py-2 px-3 text-sm first:rounded-s-md last:rounded-e-md focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-white/10 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">8</button>
+                        <button  aria-label="button" type="button"
+                            class="min-h-[46px] min-w-[46px]py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm first:rounded-s-md last:rounded-e-md border border-gray-200 text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-white/10 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <span aria-hidden="true" class="sr-only">Next</span>
+                            <i class="ri-arrow-right-s-line align-middle rtl:rotate-180"></i>
+                        </button>
+                    </nav>
+                    <!-- End Pagination -->
+                    <div class="flex justify-center items-center gap-x-5">
+                        <!-- Dropdown -->
+                        <div class="hs-dropdown ti-dropdown [--placement:top-left]">
+                            <button id="hs-pagination-dropdown-bordered-group2" type="button"
+                                class="hs-dropdown-toggle !py-3 !px-3.5 ti-dropdown-toggle">
+                                5 page
+                                <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </button>
+                            <div class="hs-dropdown-menu ti-dropdown-menu hidden"
+                                aria-labelledby="hs-pagination-dropdown-bordered-group2">
+                                <button type="button" class="ti-dropdown-item w-full justify-between">
+                                    5 page
+                                    <i class="ri-check-line text-primary flex-shrink-0 size-4"></i>
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    8 page
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    10 page
+                                </button>
+                            </div>
+                        </div>
+                        <!-- End Dropdown -->
+
+                        <!-- Go To Page -->
+                        <div class="flex justify-center sm:justify-start items-center gap-x-2">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                Go to
+                            </span>
+                            <input type="number"
+                                class="min-h-[46px] p-3 block w-12 border-gray-200 rounded-md text-sm text-center focus:border-primary focus:ring-primary [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none disabled:opacity-50 disabled:pointer-events-none dark:bg-bodybg dark:border-white/10 dark:text-gray-400 dark:focus:ring-gray-600">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                page
+                            </span>
+                        </div>
+                        <!-- End Go To Page -->
+                    </div>
+
+                </div>
+                <!-- End Pagination Wrapper -->
+        </app-showcode-card>
+    </div>
+    <div class="xxl:!col-span-6 col-span-12">
+        <app-showcode-card [title]="'Pagination Style 14'" [classbody]="'space-y-5'" [prism]="prsimCodeData.paginationTS19">
+
+                <!-- Pagination Wrapper -->
+                <div
+                    class="grid justify-center sm:flex sm:justify-start sm:items-center gap-2 flex-wrap">
+                    <!-- Pagination Wrapper -->
+                    <nav aria-label="pagination35" class="flex items-center -space-x-px">
+                        <button  aria-label="button" type="button"
+                            class="min-h-[32px] min-w-8 py-1 px-2 inline-flex justify-center items-center gap-x-1.5 text-sm first:rounded-s-full last:rounded-e-full border border-gray-200 text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-white/10 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <i class="ri-arrow-left-s-line align-middle rtl:rotate-180"></i>
+                            <span aria-hidden="true" class="sr-only">Previous</span>
+                        </button>
+                        <button type="button"
+                            class="min-h-[32px] min-w-8 flex justify-center items-center bg-primary text-white border border-gray-200 py-1 px-2.5 text-sm first:rounded-s-full last:rounded-e-full focus:outline-none focus:bg-gray-300 disabled:opacity-50 disabled:pointer-events-none dark:bg-primary dark:border-white/10 dark:text-white dark:focus:bg-gray-500"
+                            aria-current="page">1</button>
+                        <div
+                            class="hs-tooltip ti-main-tooltip border border-gray-200 dark:border-white/10">
+                            <button type="button"
+                                class="hs-tooltip-toggle group min-h-[30px] min-w-8 flex justify-center items-center text-gray-400 hover:text-primary py-1 px-2.5 text-sm focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:text-primary dark:focus:bg-white/10">
+                                <span class="group-hover:hidden text-xs">•••</span>
+                                <svg class="group-hover:block hidden flex-shrink-0 size-5"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m6 17 5-5-5-5" />
+                                    <path d="m13 17 5-5-5-5" />
+                                </svg>
+                                <span
+                                    class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 bg-gray-900 text-xs font-medium text-white shadow-sm dark:bg-bodybg"
+                                    role="tooltip">
+                                    Next 4 pages
+                                </span>
+                            </button>
+                        </div>
+                        <button type="button"
+                            class="min-h-[32px] min-w-8 flex justify-center items-center border border-gray-200 text-gray-800 hover:bg-gray-100 py-1 px-2.5 text-sm first:rounded-s-full last:rounded-e-full focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-white/10 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">8</button>
+                        <button  aria-label="button" type="button"
+                            class="min-h-[32px] min-w-8 py-1 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm first:rounded-s-full last:rounded-e-full border border-gray-200 text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-white/10 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <span aria-hidden="true" class="sr-only">Next</span>
+                            <i class="ri-arrow-right-s-line align-middle rtl:rotate-180"></i>
+                        </button>
+                    </nav>
+                    <!-- End Pagination -->
+                    <div class="flex justify-center items-center gap-x-5">
+                        <!-- Dropdown -->
+                        <div class="hs-dropdown ti-dropdown [--placement:top-left]">
+                            <button id="hs-pagination-dropdown-bordered-group-round" type="button"
+                                class="hs-dropdown-toggle !py-1 !px-2.5 ti-dropdown-toggle">
+                                5 page
+                                <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </button>
+                            <div class="hs-dropdown-menu ti-dropdown-menu hidden"
+                                aria-labelledby="hs-pagination-dropdown-bordered-group-round">
+                                <button type="button" class="ti-dropdown-item w-full justify-between">
+                                    5 page
+                                    <i class="ri-check-line text-primary flex-shrink-0 size-4"></i>
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    8 page
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    10 page
+                                </button>
+                            </div>
+                        </div>
+                        <!-- End Dropdown -->
+
+                        <!-- Go To Page -->
+                        <div class="flex justify-center sm:justify-start items-center gap-x-2">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                Go to
+                            </span>
+                            <input type="number"
+                                class="min-h-[32px] py-1 px-2.5  block w-12 border-gray-200 rounded-md text-sm text-center focus:border-primary focus:ring-primary [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none disabled:opacity-50 disabled:pointer-events-none dark:bg-bodybg dark:border-white/10 dark:text-gray-400 dark:focus:ring-gray-600">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                page
+                            </span>
+                        </div>
+                        <!-- End Go To Page -->
+                    </div>
+                </div>
+                <!-- End Pagination Wrapper -->
+
+                <!-- Pagination Wrapper -->
+                <div
+                    class="grid justify-center sm:flex sm:justify-start sm:items-center gap-2 flex-wrap">
+                    <!-- Pagination Wrapper -->
+                    <nav aria-label="pagination36" class="flex items-center -space-x-px">
+                        <button  aria-label="button" type="button"
+                            class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm first:rounded-s-full last:rounded-e-full border border-gray-200 text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-white/10 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <i class="ri-arrow-left-s-line align-middle rtl:rotate-180"></i>
+                            <span aria-hidden="true" class="sr-only">Previous</span>
+                        </button>
+                        <button type="button"
+                            class="min-h-[38px] min-w-[38px] flex justify-center items-center bg-primary text-white border border-gray-200 py-2 px-3 text-sm first:rounded-s-full last:rounded-e-full focus:outline-none focus:bg-gray-300 disabled:opacity-50 disabled:pointer-events-none dark:bg-primary dark:border-white/10 dark:text-white dark:focus:bg-gray-500"
+                            aria-current="page">1</button>
+                        <div
+                            class="hs-tooltip ti-main-tooltip border border-gray-200 dark:border-white/10">
+                            <button type="button"
+                                class="hs-tooltip-toggle group min-h-[36px] min-w-[36px] flex justify-center items-center text-gray-400 hover:text-primary p-2 text-sm focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:text-primary dark:focus:bg-white/10">
+                                <span class="group-hover:hidden text-xs">•••</span>
+                                <svg class="group-hover:block hidden flex-shrink-0 size-5"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m6 17 5-5-5-5" />
+                                    <path d="m13 17 5-5-5-5" />
+                                </svg>
+                                <span
+                                    class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 bg-gray-900 text-xs font-medium text-white shadow-sm dark:bg-bodybg"
+                                    role="tooltip">
+                                    Next 4 pages
+                                </span>
+                            </button>
+                        </div>
+                        <button type="button"
+                            class="min-h-[38px] min-w-[38px] flex justify-center items-center border border-gray-200 text-gray-800 hover:bg-gray-100 py-2 px-3 text-sm first:rounded-s-full last:rounded-e-full focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-white/10 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">8</button>
+                        <button  aria-label="button" type="button"
+                            class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm first:rounded-s-full last:rounded-e-full border border-gray-200 text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-white/10 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <span aria-hidden="true" class="sr-only">Next</span>
+                            <i class="ri-arrow-right-s-line align-middle rtl:rotate-180"></i>
+                        </button>
+                    </nav>
+                    <!-- End Pagination -->
+                    <div class="flex justify-center items-center gap-x-5">
+                        <!-- Dropdown -->
+                        <div class="hs-dropdown ti-dropdown [--placement:top-left]">
+                            <button id="hs-pagination-dropdown-bordered-group-round1" type="button"
+                                class="hs-dropdown-toggle !py-2 !px-2.5 ti-dropdown-toggle">
+                                5 page
+                                <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </button>
+                            <div class="hs-dropdown-menu ti-dropdown-menu hidden"
+                                aria-labelledby="hs-pagination-dropdown-bordered-group-round1">
+                                <button type="button" class="ti-dropdown-item w-full justify-between">
+                                    5 page
+                                    <i class="ri-check-line text-primary flex-shrink-0 size-4"></i>
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    8 page
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    10 page
+                                </button>
+                            </div>
+                        </div>
+                        <!-- End Dropdown -->
+
+                        <!-- Go To Page -->
+                        <div class="flex justify-center sm:justify-start items-center gap-x-2">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                Go to
+                            </span>
+                            <input type="number"
+                                class="min-h-[32px] py-2 px-2.5 block w-12 border-gray-200 rounded-md text-sm text-center focus:border-primary focus:ring-primary [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none disabled:opacity-50 disabled:pointer-events-none dark:bg-bodybg dark:border-white/10 dark:text-gray-400 dark:focus:ring-gray-600">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                page
+                            </span>
+                        </div>
+                        <!-- End Go To Page -->
+                    </div>
+
+                </div>
+                <!-- End Pagination Wrapper -->
+
+                <!-- Pagination Wrapper -->
+                <div
+                    class="grid justify-center sm:flex sm:justify-start sm:items-center gap-2 flex-wrap">
+                    <!-- Pagination Wrapper -->
+                    <nav aria-label="pagination37" class="flex items-center -space-x-px">
+                        <button  aria-label="button" type="button"
+                            class="min-h-[46px] min-w-[46px] py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm first:rounded-s-full last:rounded-e-full border border-gray-200 text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-white/10 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <i class="ri-arrow-left-s-line align-middle rtl:rotate-180"></i>
+                            <span aria-hidden="true" class="sr-only">Previous</span>
+                        </button>
+                        <button type="button"
+                            class="min-h-[46px] min-w-[46px] flex justify-center items-center bg-primary text-white border border-gray-200 py-2 px-3 text-sm first:rounded-s-full last:rounded-e-full focus:outline-none focus:bg-gray-300 disabled:opacity-50 disabled:pointer-events-none dark:bg-primary dark:border-white/10 dark:text-white dark:focus:bg-gray-500"
+                            aria-current="page">1</button>
+                        <div
+                            class="hs-tooltip ti-main-tooltip border border-gray-200 dark:border-white/10">
+                            <button type="button"
+                                class="hs-tooltip-toggle group min-h-[44px] min-w-[46px] flex justify-center items-center text-gray-400 hover:text-primary p-2 text-sm focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:text-primary dark:focus:bg-white/10">
+                                <span class="group-hover:hidden text-xs">•••</span>
+                                <svg class="group-hover:block hidden flex-shrink-0 size-5"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m6 17 5-5-5-5" />
+                                    <path d="m13 17 5-5-5-5" />
+                                </svg>
+                                <span
+                                    class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 bg-gray-900 text-xs font-medium text-white shadow-sm dark:bg-bodybg"
+                                    role="tooltip">
+                                    Next 4 pages
+                                </span>
+                            </button>
+                        </div>
+                        <button  aria-label="button" type="button"
+                            class="min-h-[46px] min-w-[46px] flex justify-center items-center border border-gray-200 text-gray-800 hover:bg-gray-100 py-2 px-3 text-sm first:rounded-s-full last:rounded-e-full focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-white/10 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">8</button>
+                        <button aria-label="button" type="button"
+                            class="min-h-[46px] min-w-[46px]py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm first:rounded-s-full last:rounded-e-full border border-gray-200 text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-white/10 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                            <span aria-hidden="true" class="sr-only">Next</span>
+                            <i class="ri-arrow-right-s-line align-middle rtl:rotate-180"></i>
+                        </button>
+                    </nav>
+                    <!-- End Pagination -->
+                    <div class="flex justify-center items-center gap-x-5">
+                        <!-- Dropdown -->
+                        <div class="hs-dropdown ti-dropdown [--placement:top-left]">
+                            <button id="hs-pagination-dropdown-bordered-group-round2" type="button"
+                                class="hs-dropdown-toggle !py-3 !px-3.5 ti-dropdown-toggle">
+                                5 page
+                                <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </button>
+                            <div class="hs-dropdown-menu ti-dropdown-menu hidden"
+                                aria-labelledby="hs-pagination-dropdown-bordered-group-round2">
+                                <button type="button" class="ti-dropdown-item w-full justify-between">
+                                    5 page
+                                    <i class="ri-check-line text-primary flex-shrink-0 size-4"></i>
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    8 page
+                                </button>
+                                <button type="button" class="ti-dropdown-item w-full">
+                                    10 page
+                                </button>
+                            </div>
+                        </div>
+                        <!-- End Dropdown -->
+
+                        <!-- Go To Page -->
+                        <div class="flex justify-center sm:justify-start items-center gap-x-2">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                Go to
+                            </span>
+                            <input type="number"
+                                class="min-h-[46px] p-3 block w-12 border-gray-200 rounded-md text-sm text-center focus:border-primary focus:ring-primary [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none disabled:opacity-50 disabled:pointer-events-none dark:bg-bodybg dark:border-white/10 dark:text-gray-400 dark:focus:ring-gray-600">
+                            <span class="text-sm text-gray-800 whitespace-nowrap dark:text-white">
+                                page
+                            </span>
+                        </div>
+                        <!-- End Go To Page -->
+                    </div>
+                </div>
+                <!-- End Pagination Wrapper -->
+        </app-showcode-card>
+    </div>
+</div>
+<!-- End:: row-4 -->

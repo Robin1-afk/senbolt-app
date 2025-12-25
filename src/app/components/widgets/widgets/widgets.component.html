@@ -1,0 +1,410 @@
+<app-page-header [title]="'Widgets'" [title1]="['Widgets']" [activeitem]="'Widgets'"></app-page-header>
+
+ <!-- Start:: row-1 -->
+  <div class="grid grid-cols-12 gap-x-6">
+    @for(data of cardData;track $index){
+    <div class="xxl:col-span-3 xl:col-span-6 col-span-12">
+        <app-spk-widget-top-reusablecard [avatarClass]="data.avatarClass" [title]="data.title" [value]="data.value"
+        [percentage]="data.percentage" [percentageIcon]="data.percentageIcon"
+        [percentageClass]="data.percentageClass" [chartOptions]="data.chartOptions" [svg]="sanitizeIcon(data.svg)">
+    </app-spk-widget-top-reusablecard>
+    </div>
+}
+</div>
+<!-- End:: row-1 -->
+
+<!-- Start::row-2 -->
+<div class="grid grid-cols-12 gap-x-6">
+    @for(sale of widgetsData;track $index){
+    <div class="xxl:col-span-3 xl:col-span-6 col-span-12">
+        <app-spk-widget-sales-reusablecards [borderClass]="sale.borderClass" [avatarClass]="sale.avatarClass"
+            [badgeIcon]="'fe fe-arrow-up'" [percentageChange]="'+0.5%'" [value]="sale.value"
+            [description]="sale.description" [svg]="sanitizeIcon(sale.svg)"></app-spk-widget-sales-reusablecards>
+    </div>
+}
+</div>
+<!-- End::row-2 -->
+
+<!-- Start:: row-3 -->
+<!-- End:: row-3 -->
+
+<!-- Start:: row-4 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xxl:col-span-6 xl:col-span-12 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">
+                    Sales Revenue
+                </div>
+            </div>
+            <div class="box-body">
+                <div id="salerevenue">
+                    <spk-apexcharts [chartOptions]="chartOptions4"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xxl:col-span-3 xl:col-span-6 lg:col-span-6 md:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header pb-0">
+                <div class="box-title">
+                    Total Sales
+                </div>
+            </div>
+            <div class="box-body p-0 widget-circle-chart">
+                <div id="circlechart">
+                    <spk-apexcharts [chartOptions]="chartOptions5"></spk-apexcharts>
+                </div>
+            </div>
+            <div class="box-footer p-0 border-t border-block-start-dashed">
+                <div class="grid grid-cols-12 gap-x-6">
+                    <div class="col-span-12">
+                        <div class="p-4 ps-[3rem] flex gap-2 pb-0">
+                            <div>
+                                <span class="text-[14px] visit-gender male ms-1">Average Sales</span>
+                                <div class="mt-1">
+                                    <span class="text-xl font-medium">8,777</span>
+                                </div>
+                            </div>
+                            <div
+                                class="text-textmuted dark:text-textmuted/50 text-[13px] text-end ms-auto">
+                                Increased By
+                                <span class="text-success">1.5%<i
+                                        class="ti ti-arrow-narrow-up text-[1rem]"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-12">
+                        <div class="p-4 ps-[3rem] flex gap-2">
+                            <div>
+                                <span class="text-[14px] visit-gender female">Average Profit</span>
+                                <div class="mt-1">
+                                    <span class="text-xl font-medium">$12,234</span>
+                                </div>
+                            </div>
+                            <div
+                                class="text-textmuted dark:text-textmuted/50 text-[13px] text-end ms-auto">
+                                Decreased By
+                                <span class="text-danger">0.6%<i
+                                        class="ti ti-arrow-narrow-down text-[1rem]"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xxl:col-span-3 xl:col-span-6 lg:col-span-6 md:col-span-6 col-span-12">
+        <app-spk-widget-total-revenue-card 
+    [cardTitle]="'Total Revenue'" 
+    [totalRevenue]="'$5,874.28'"
+    [mainIncreasePercentage]="'0.5%'"
+    [progressBars]="[
+        { width: 30, colorClass: 'progress-bar progress-bar-striped bg-primary !rounded ' },
+        { width: 20, colorClass: 'progress-bar progress-bar-striped bg-primarytint1color !rounded-none ' },
+        { width: 23, colorClass: 'progress-bar progress-bar-striped bg-primarytint2color !rounded-none ' },
+        { width: 27, colorClass: 'progress-bar progress-bar-striped bg-primarytint3color !rounded-s-none !rounded-md ' }
+    ]"
+    [revenueItems]="[
+        { title: 'Today Revenue', amount: '$789', statusText: 'Increased By', statusPercentage: '0.5%', statusClass: 'text-success', statusIcon: 'ti ti-arrow-narrow-up fs-16', iconClass: 'ti ti-point-filled text-primary', type: '' },
+        { title: 'This Week Revenue', amount: '$1,887', statusText: 'Decreased By', statusPercentage: '2.8%', statusClass: 'text-danger', statusIcon: 'ti ti-arrow-narrow-down fs-16', iconClass: 'ti ti-point-filled text-primarytint1color', type: 'success' },
+        { title: 'This Month Revenue', amount: '$55,666', statusText: 'Increased By', statusPercentage: '0.5%', statusClass: 'text-success', statusIcon: 'ti ti-arrow-narrow-up fs-16', iconClass: 'ti ti-point-filled text-primarytint2color', type: 'warning' },
+        { title: 'This Month Revenue', amount: '$3,41,173', statusText: 'Decreased By', statusPercentage: '1.2%', statusClass: 'text-danger', statusIcon: 'ti ti-arrow-narrow-down fs-16', iconClass: 'ti ti-point-filled text-primarytint3color', type: 'success' }
+    ]">
+</app-spk-widget-total-revenue-card>
+    </div>
+</div>
+<!-- End:: row-4 -->
+
+<!-- Start:: row-5 -->
+<div class="grid grid-cols-12 gap-x-6">
+    @for(widget of widgetchart;track $index){
+    <div class="xl:col-span-3 col-span-12">
+        <app-spk-widget-stackedchart-reusablecard [title]="widget.title" [value]="widget.value"
+        [percentageChange]="widget.percentageChange" [percentage]="widget.percentage" [textClass]="widget.textClass"
+        [changeIcon]="widget.changeIcon" [chartOptions]="widget.chartOptions" [avatarClass]="widget.avatarClass"
+        [svg]="sanitizeIcon(widget.svg)">
+    </app-spk-widget-stackedchart-reusablecard>
+    </div>
+}
+</div>
+<!-- End:: row-5 -->
+
+<!-- Start:: row-6 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xxl:col-span-4 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">
+                    Sales Revenue
+                </div>
+            </div>
+            <div class="box-body">
+                <div id="salerevenue1">
+                    <spk-apexcharts [chartOptions]="chartOptions10"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xxl:col-span-4 xl:col-span-6 lg:col-span-6 md:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">
+                    Recent Activity
+                </div>
+            </div>
+            <div class="box-body">
+                <ul class="widgets-task-list mb-0 ps-[2rem]">
+                    <li class="">
+                        <div class=""> <i class="task-icon bg-primary"></i>
+                            <h6 class="text-[14px] mb-0">Template Review</h6>
+                            <div class="grow flex items-center justify-between">
+                                <div> <span
+                                        class="text-xs text-textmuted dark:text-textmuted/50">Reviewing
+                                        the new template <a href="javascript:void(0)"
+                                            class="text-primary">
+                                            HTML template</a></span> </div>
+                                <div class="min-w-fit-content ms-2 text-end">
+                                    <p class="mb-0 text-textmuted dark:text-textmuted/50 text-[11px]">15
+                                        May 2024</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class=""> <i class="task-icon bg-primarytint1color"></i>
+                            <h6 class="text-[14px] mb-0">Update Documentation</h6>
+                            <div class="grow flex items-center justify-between">
+                                <div> <span
+                                        class="text-xs text-textmuted dark:text-textmuted/50">Documentation
+                                        is updated <a href="javascript:void(0)" class="text-primary">
+                                            Available here</a></span> </div>
+                                <div class="min-w-fit-content ms-2 text-end">
+                                    <p class="mb-0 text-textmuted dark:text-textmuted/50 text-[11px]">18
+                                        Jun 2024</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class=""> <i class="task-icon bg-primarytint2color"></i>
+                            <h6 class="text-[14px] mb-0">Meeting for Managers</h6>
+                            <div class="grow flex items-center justify-between">
+                                <div> <span
+                                        class="text-xs text-textmuted dark:text-textmuted/50">Meeting is
+                                        going to be held on</span> <a href="javascript:void(0)"
+                                        class="text-secondary">
+                                        Today Evening 5:30PM</a></div>
+                                <div class="min-w-fit-content ms-2 text-end">
+                                    <p class="mb-0 text-textmuted dark:text-textmuted/50 text-[11px]">05
+                                        Jul 2024</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class=""> <i class="task-icon bg-primarytint3color"></i>
+                            <h6 class="text-[14px] mb-0">Monitoring progress</h6>
+                            <div class="grow flex items-center justify-between">
+                                <div> <span class="text-xs text-textmuted dark:text-textmuted/50">Work
+                                        Progess of each and every template is </span>
+                                    <a href="javascript:void(0)" class="text-success">
+                                        taken as consider</a>
+                                </div>
+                                <div class="min-w-fit-content ms-2 text-end">
+                                    <p class="mb-0 text-textmuted dark:text-textmuted/50 text-[11px]">13
+                                        July 2024</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class=""> <i class="task-icon bg-secondary"></i>
+                            <h6 class="text-[14px] mb-0">Quality Testing</h6>
+                            <div class="grow flex items-center justify-between">
+                                <div> <span class="text-xs text-textmuted dark:text-textmuted/50"><a
+                                            href="javascript:void(0)" class="text-warning"> Pending </a>
+                                        Quality Aussrance</span>
+                                </div>
+                                <div class="min-w-fit-content ms-2 text-end">
+                                    <p class="mb-0 text-textmuted dark:text-textmuted/50 text-[11px]">15
+                                        Aug 2024</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mb-2">
+                        <div class=""> <i class="task-icon bg-success"></i>
+                            <h6 class="text-[14px] mb-0">Remainder for submission</h6>
+                            <div class="grow flex items-center justify-between">
+                                <div> <span class="text-xs text-textmuted dark:text-textmuted/50">The
+                                        deadline for template submission is </span> 10-08-2024
+                                </div>
+                                <div class="min-w-fit-content ms-2 text-end">
+                                    <p class="mb-0 text-textmuted dark:text-textmuted/50 text-[11px]">21
+                                        Aug 2024</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="xxl:col-span-4 xl:col-span-6 lg:col-span-6 md:col-span-6 col-span-12">
+        <app-spk-widget-total-budget-card 
+        [budgetTitle]="'Today Budget'"
+        [budgetAmount]="'$2,78,411'"
+        [increasePercentage]="'0.5'"
+        [incomeItems]="[
+            { title: 'Total-Income',liClass:'border-top', subtitle: 'Average Income Per Hour', value: '$17.03', iconClass: 'ti ti-hourglass text-[22px]', iconBgClass: 'primarytint1color', valueClass: 'primarytint1color' },
+            { title: 'Total-Income', subtitle: 'Average Income Per Hour', value: '$17.03', iconClass: 'ti ti-clock text-[22px]', iconBgClass: 'primarytint2color', valueClass: 'primarytint2color' },
+            { title: 'Total-Income', subtitle: 'Average Income Per Hour', value: '$77.93', iconClass: 'ti ti-bolt text-[22px]', iconBgClass: 'primarytint3color', valueClass: 'primarytint3color' },
+            { title: 'Total-Income', subtitle: 'Average Income Per Hour', value: '$970.63', iconClass: 'ti ti-activity-heartbeat text-[22px]', iconBgClass: 'secondary', valueClass: 'secondary' }
+        ]">
+    </app-spk-widget-total-budget-card>
+    </div>
+</div>
+<!-- End:: row-6 -->
+   
+<!-- Start:: row-7 -->
+<div class="grid grid-cols-12 gap-x-6">
+    @for(card of revenueData;track $index){
+    <div class="xl:col-span-3 col-span-12">
+        <app-spk-widget-revenue-reusable [title]="card.title" [value]="card.value" [bg]="card.bg" [change]="card.change" [arrow]="card.arrow"
+            [changeType]="card.changeType" [iconClass]="card.iconClass" [chartOptions]="card.chartOptions">
+        </app-spk-widget-revenue-reusable>
+    </div>
+}
+</div>
+<!-- End:: row-7 -->
+
+<!-- End:: row-8 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xxl:col-span-3 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">
+                    Total Visitors
+                </div>
+            </div>
+            <div class="box-body">
+
+                <div id="activecustomers">
+                    <spk-apexcharts [chartOptions]="chartOptions15"></spk-apexcharts>
+                </div>
+            </div>
+            <div class="box-footer">
+                <div class="grid grid-cols-12 gap-x-6 mt-0">
+                    <div class="col-span-4">
+                        <h6 class="text-primary mb-1 font-medium">45K</h6>
+                        <p class="text-textmuted dark:text-textmuted/50 mb-0 text-xs">Apps</p>
+                    </div>
+                    <div class="col-span-4">
+                        <h6 class="text-primarytint1color mb-1 font-medium">35K</h6>
+                        <p class="text-textmuted dark:text-textmuted/50 mb-0 text-xs">Offline</p>
+                    </div>
+                    <div class="col-span-4">
+                        <h6 class="text-primarytint2color mb-1 font-medium">10K</h6>
+                        <p class="text-textmuted dark:text-textmuted/50 mb-0 text-xs">Website</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xxl:col-span-6 xl:col-span-12 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">
+                    Sales Revenue
+                </div>
+            </div>
+            <div class="box-body">
+                <div id="salerevenue2">
+                    <spk-apexcharts [chartOptions]="chartOptions16"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xxl:col-span-3 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">
+                    Top Sales
+                </div>
+            </div>
+            <div class="box-body">
+                <div id="top-sales">
+                    <spk-apexcharts [chartOptions]="chartOptions17"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End:: row-8 -->
+
+<!-- End:: row-9 -->
+<div class="grid grid-cols-12 gap-x-6">
+
+    <div class="xxl:col-span-3 lg:col-span-6 col-span-12">
+        <app-spk-widget-webdesigner-reusablecard [image]="'./assets/images/faces/9.jpg'" [name]="'Daniel David'"
+            [title]="'Web Designer'" [description]="'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudan accusant. '"
+            [socialLinks]="[
+    { icon: 'ri-facebook-line text-primary border rounded-full align-middle leading-none p-2 border-primary/25 me-1 inline-block text-[17px] bg-primary/10' },
+    { icon: 'ri-twitter-x-line text-primarytint1color border rounded-full align-middle leading-none p-2 border-primarytint1color/25 me-1 inline-block text-[17px] bg-primarytint1color/10' },
+    { icon: 'ri-linkedin-line text-primarytint2color border rounded-full align-middle leading-none p-2 border-primarytint2color/25 me-1 inline-block text-[17px] bg-primarytint2color/10'},
+    { icon: 'ri-github-line text-primarytint3color border rounded-full align-middle leading-none p-2 border-primarytint3color/25 me-1 inline-block text-[17px] bg-primarytint3color/10'},
+  ]">
+        </app-spk-widget-webdesigner-reusablecard>
+    </div>
+    <div class="xxl:col-span-3 lg:col-span-6 col-span-12">
+        <app-spk-widget-transaction-card [transactions]="[
+  { title: 'Shopping', date: '22 August 2024', iconClass: 'fe fe-shopping-bag', avatarClass: 'primary border', percentage: '0.27%', isPositive: true },
+  { title: 'Traveling', date: '05 September 2024', iconClass: 'fe fe-shopping-bag', avatarClass: 'primarytint1color border', percentage: '0.3%', isPositive: false },
+  { title: 'Credit card Bill', date: '18 September 2024', iconClass: 'fe fe-shopping-bag', avatarClass: 'primarytint2color border', percentage: '1.2%', isPositive: false },
+  { title: 'Shop Rent', date: '13 October 2024', iconClass: 'fe fe-shopping-bag', avatarClass: 'primarytint3color border', percentage: '1.7%', isPositive: true }
+]"></app-spk-widget-transaction-card>
+    </div>
+    <div class="xxl:col-span-3 lg:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header pb-0">
+                <div class="box-title">
+                    Orders Overview
+                </div>
+            </div>
+            <div class="box-body px-0">
+                <div id="recent-orders">
+                    <spk-apexcharts [chartOptions]="chartOptions18"></spk-apexcharts>
+                </div>
+                <div class="p-4 pt-0 pb-1">
+                    <div class="flex-auto flex gap-1 flex-wrap items-start justify-between">
+                        <div>
+                            <span class="text-xs mb-1 block font-medium">TOTAL ORDERS</span>
+                            <div class="flex items-center justify-between">
+                                <h5 class="mb-0 flex items-end">3,736<span
+                                        class="text-success text-xs ms-2 inline-flex items-center"><i
+                                            class="ti ti-trending-up align-middle me-1"></i>0.57%</span>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="ms-auto">
+                            <div class="avatar avatar-md bg-primary/10 !text-primary">
+                                <i class="ti ti-box text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xxl:col-span-3 lg:col-span-6 col-span-12">
+        <app-spk-widget-budget-card 
+        [title]="'Monthly Budget'" 
+        [subtitle]="''"
+        [mainValue]="'$78,985'"
+        [increasedAmount]="'$35,800'"
+        [increasedPercentage]="'0.27%'">
+    </app-spk-widget-budget-card>
+    </div>
+</div>
+<!-- End:: row-9 -->

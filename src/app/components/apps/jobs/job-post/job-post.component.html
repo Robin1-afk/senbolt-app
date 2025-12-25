@@ -1,0 +1,223 @@
+<app-page-header [title]="'Jobs'" [title1]="['Job Post']" [activeitem]="'Job Post'"></app-page-header>
+
+ <!-- Start::row-1 -->
+ <div class="grid grid-cols-12 gap-x-6">
+    <div class="xxl:col-span-9 xl:col-span-8 col-span-12">
+        <div class="box">
+            <div class="box-header justify-between">
+                <div class="box-title">
+                    Post New Job
+                </div>                       
+            </div>
+            <div class="box-body">
+                <div class="grid grid-cols-12 sm:gap-x-6 gap-y-4"> 
+                    <div class="xl:col-span-6 col-span-12">
+                        <label for="job-title" class="form-label">Job Title</label>
+                        <input type="text" class="form-control" id="job-title" placeholder="Job Title" value="UI/UX Developer">
+                    </div>
+                    <div class="xl:col-span-6 col-span-12">
+                        <label class="form-label">Job Category</label> 
+                        <spk-ng-select 
+                        [options]="Category"
+                        [mainClass]="''"
+                        [clearable]="true"
+                        [searchable]="true"
+                        [hideSelected]="true"
+                        [placeholder]="'Development'"
+                        [additionalProperties]="{}">
+                        </spk-ng-select>
+                    </div> 
+                    <div class="xl:col-span-6 col-span-12">
+                        <label class="form-label">Working Experience</label> 
+                        <spk-ng-select 
+                        [options]="Experience"
+                        [mainClass]="''"
+                        [clearable]="true"
+                        [searchable]="true"
+                        [hideSelected]="true"
+                        [placeholder]="'0 - 1 Years'"
+                        [additionalProperties]="{}">
+                        </spk-ng-select>
+                    </div> 
+                    <div class="xl:col-span-6 col-span-12">
+                        <label class="form-label">Job Type</label> 
+                        <spk-ng-select 
+                        [options]="Type"
+                        [mainClass]="''"
+                        [clearable]="true"
+                        [searchable]="true"
+                        [hideSelected]="true"
+                        [placeholder]="'Contract'"
+                        [additionalProperties]="{}">
+                        </spk-ng-select>
+                    </div> 
+                    <div class="xl:col-span-6 col-span-12">
+                        <label class="form-label">Priority</label> 
+                      <spk-ng-select 
+                        [options]="Priority"
+                        [mainClass]="''"
+                        [clearable]="true"
+                        [searchable]="true"
+                        [hideSelected]="true"
+                        [placeholder]="'Normal'"
+                        [additionalProperties]="{}">
+                        </spk-ng-select>
+                    </div>  
+                    <div class="xl:col-span-6 col-span-12"> 
+                        <label class="form-label">Vacancies</label> 
+                        <spk-ng-select 
+                        [options]="Vacancies"
+                        [mainClass]="''"
+                        [clearable]="true"
+                        [searchable]="true"
+                        [hideSelected]="true"
+                        [placeholder]="'10'"
+                        [additionalProperties]="{}">
+                        </spk-ng-select>
+                    </div> 
+                    <div class="xl:col-span-6 col-span-12"> 
+                        <label class="form-label">Salary</label> 
+                        <spk-ng-select 
+                        [options]="Salary"
+                        [mainClass]="''"
+                        [clearable]="true"
+                        [searchable]="true"
+                        [hideSelected]="true"
+                        [placeholder]="'0 - $2,00,000 / Year'"
+                        [additionalProperties]="{}">
+                        </spk-ng-select>
+                    </div> 
+                    <div class="xl:col-span-6 col-span-12">
+                        <label for="skills" class="form-label">Skills :</label>
+                        <spk-ng-select 
+                        [id]="'assigned-team-members'"
+                        [options]="Skills"
+                        [mainClass]="''"
+                        [clearable]="true"
+                        [searchable]="true"
+                        [multiple]="true"
+                        [defaultValue]="selectedSkills"
+                        [hideSelected]="true"
+                        [additionalProperties]="{}">
+                        </spk-ng-select>
+                    </div>      
+                    <div class="xl:col-span-6 col-span-12">
+                        <label for="job-deadline" class="form-label">Job Deadline</label>
+                        <spk-flatpickr placeholder="Job Deadline" class="form-control custom-datepickr"
+                        [mode]="'range'" [altInput]="false" [convertModelValue]="true" [enableTime]="false"
+                        [dateFormat]="'Y-m-d'"></spk-flatpickr>
+                    </div>  
+                    <div class="xl:col-span-6 col-span-12"> 
+                        <label class="form-label">Gender Requirement</label> 
+                        <spk-ng-select 
+                        [id]="'assigned-team-members'"
+                        [options]="Preferences"
+                        [mainClass]="''"
+                        [clearable]="true"
+                        [searchable]="true"
+                        [hideSelected]="true"
+                        [placeholder]="'No Preferences'"
+                        [additionalProperties]="{}">
+                        </spk-ng-select>
+                    </div>                                      
+                    <div class="xl:col-span-6 col-span-12">
+                        <label for="language" class="form-label">Languages :</label>
+                        <spk-ng-select 
+                        [id]="'assigned-team-members'"
+                        [options]="languages"
+                        [defaultValue]="selectedLanguages"
+                        [mainClass]="''"
+                        [multiple]="true"
+                        [clearable]="true"
+                        [searchable]="true"
+                        [hideSelected]="true"
+                        [placeholder]="'No Preferences'"
+                        [additionalProperties]="{}">
+                        </spk-ng-select>
+                    </div>
+                    <div class="xl:col-span-6 col-span-12">
+                        <label for="qualification" class="form-label">Qualification :</label>
+                        <spk-ng-select 
+                        [id]="'assigned-team-members'"
+                        [options]="Qualifications"
+                        [defaultValue]="selectedQualifications"
+                        [mainClass]="''"
+                        [multiple]="true"
+                        [clearable]="true"
+                        [searchable]="true"
+                        [hideSelected]="true"
+                        [placeholder]="'No Preferences'"
+                        [additionalProperties]="{}">
+                        </spk-ng-select>
+                    </div>
+                    <div class="xl:col-span-12 col-span-12">
+                        <label for="job-description" class="form-label">Job Description :</label>
+                        <textarea class="form-control" id="job-description" rows="4">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="box-footer text-end">
+                <a href="javascript:void(0);" class="ti-btn ti-btn-primary btn-wave waves-effect waves-light">
+                    <i class="bi bi-plus-circle"></i> Post Job
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="xxl:col-span-3 xl:col-span-4 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Assign To Employer</div>
+            </div>
+            <div class="box-body">
+                <div class="xl:col-span-12 col-span-12">
+                    <label class="form-label">Employer Name</label> 
+                    <spk-ng-select 
+                    [id]="'assigned-team-members'"
+                    [options]="Employer"
+                    [mainClass]="'text-muted'"
+                    [clearable]="true"
+                    [searchable]="true"
+                    [hideSelected]="true"
+                    [placeholder]="'Alice Angel'"
+                    [additionalProperties]="{}">
+                    </spk-ng-select>
+                </div>                                 
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Company Details</div>
+            </div>
+            <div class="box-body">
+                <div class="grid grid-cols-12  gap-y-3">
+                    <div class="xl:col-span-12 col-span-12">
+                        <label for="Company-Name" class="form-label">Company Name</label> 
+                        <input type="text" class="form-control" id="Company-Name" placeholder="Company Name" value="Tech Innovators Ltd.">
+                    </div>                                 
+                    <div class="xl:col-span-12 col-span-12">
+                        <label for="Company-Website" class="form-label">Company Website</label> 
+                        <input type="text" class="form-control" id="Company-Website" placeholder="Company Website" value="http//www.techinnovatorltd.com">
+                    </div>  
+                    <div class="xl:col-span-12 col-span-12"> 
+                        <label class="form-label">Country</label> 
+                        <spk-ng-select 
+                    [id]="'assigned-team-members'"
+                    [options]="Country"
+                    [mainClass]="''"
+                    [clearable]="true"
+                    [searchable]="true"
+                    [hideSelected]="true"
+                    [placeholder]="'India'"
+                    [additionalProperties]="{}">
+                    </spk-ng-select>
+                    </div> 
+                    <div class="xl:col-span-12 col-span-12">
+                        <label for="Company-Address" class="form-label">Address</label> 
+                        <input type="text" class="form-control" id="Company-Address" placeholder="Company Address" value="USA">
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End::row-1 -->

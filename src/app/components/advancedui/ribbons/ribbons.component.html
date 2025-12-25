@@ -1,0 +1,235 @@
+  
+  <app-page-header [title]="'Advanced Ui'" [title1]="['Ribbons']" [activeitem]="'Ribbons'"></app-page-header>
+  <!-- Start::row-1 -->
+  <div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-12 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">
+                    RIBBON STYLE 1
+                </div>
+            </div>
+            <div class="box-body">
+                <div class="grid grid-cols-12 sm:gap-x-6 gap-y-4">
+                    <div class="xl:col-span-6 col-span-12">
+                        <spk-ribbons 
+                        [mainClass]="'box shadow-none mb-0 ribbon-card border border-defaultborder dark:border-defaultborder/10'"
+                         [bodyClass]="'!p-6'"
+                         [ribbonClass]="'ribbon ribbon-primary ribbon-top-left'"
+                         [title]="'ribbon'"
+                         [textAlignment]="'mb-2 text-end'"
+                         [topTitle]="'Top Left Ribbon'"
+                         [description]="'Join us in congratulating [Employee Name] for their outstanding contributions and dedication. Their hard work and commitment have truly set a standard for excellence. Let\'s celebrate their achievements together!'"
+                             >
+                         <span>ribbon</span>
+                        </spk-ribbons>
+                       
+                    </div>
+                    <div class="xl:col-span-6 col-span-12">
+                        <spk-ribbons 
+                        [mainClass]="'box shadow-none mb-0 ribbon-card border border-defaultborder dark:border-defaultborder/10'"
+                         [bodyClass]="'!p-6'"
+                         [ribbonClass]="'ribbon ribbon-secondary ribbon-top-right'"
+                         [textAlignment]="'mb-2 text-start'"
+                         [description]="'Join us in congratulating [Employee Name] for their outstanding contributions and dedication. Their hard work and commitment have truly set a standard for excellence. Let\'s celebrate their achievements together!'"
+                         [topTitle]="'Top Right Ribbon'">
+                         <span>ribbon</span>
+                        </spk-ribbons>
+                      
+                    </div>
+                    <div class="xl:col-span-6 col-span-12">
+                        <spk-ribbons 
+                        [mainClass]="'box shadow-none mb-0 ribbon-card border border-defaultborder dark:border-defaultborder/10'"
+                         [bodyClass]="'!p-6'"
+                         [ribbonClass]="'ribbon ribbon-success ribbon-bottom-left'"
+                         [textAlignment]="'mt-2 text-end'"
+                         [description]="'Join us in congratulating [Employee Name] for their outstanding contributions and dedication. Their hard work and commitment have truly set a standard for excellence. Let\'s celebrate their achievements together!'"
+                         [bottomTitle]="'Bottom Left Ribbon'">
+                         <span>ribbon</span>
+                        </spk-ribbons>
+                     
+                    </div>
+                    <div class="xl:col-span-6 col-span-12">
+                        <spk-ribbons 
+                        [mainClass]="'box shadow-none mb-0 ribbon-card border border-defaultborder dark:border-defaultborder/10'"
+                         [bodyClass]="'!p-6'"
+                         [ribbonClass]="'ribbon ribbon-orange ribbon-bottom-right'"
+                         [textAlignment]="'mt-2 text-start'"
+                         [description]="'Join us in congratulating [Employee Name] for their outstanding contributions and dedication. Their hard work and commitment have truly set a standard for excellence. Let\'s celebrate their achievements together!'"
+                         [bottomTitle]="'Bottom Right Ribbon'">
+                         <span>ribbon</span>
+                        </spk-ribbons>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End::row-1 -->
+
+<!-- Start:: row-2 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-12 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">
+                    RIBBON STYLE 2
+                </div>
+            </div>
+            <div class="box-body !p-6">
+                <div class="grid grid-cols-12 sm:gap-x-6 gap-y-4">
+                    @for(card of ribbonCards2;track $index){
+                        <div  class="xl:col-span-6 col-span-12">
+                            <spk-ribbons
+                              [mainClass]="card.mainClass"
+                              [bodyClass]="card.bodyClass"
+                              [ribbonClass]="card.ribbonClass"
+                              [descriptionClass]="card.descriptionClass"
+                              [textAlignment]="card.textAlignment"
+                              [description]="card.description"
+                              [bottomTitle]="card.bottomTitle"
+                            >
+                              <span>{{ card.ribbonText }}</span>
+                            </spk-ribbons>
+                            </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End:: row-2 -->
+
+<!-- Start:: row-3 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-12 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">
+                    RIBBON STYLE 3
+                </div>
+            </div>
+            <div class="box-body !p-6">
+                <div class="grid grid-cols-12 sm:gap-x-6 gap-y-4">
+                    @for(card of ribbonCards3;track $index){
+                        <div  class="xl:col-span-3 col-span-12">
+                            <spk-ribbons
+                            [mainClass]="card.mainClass"
+                            [bodyClass]="card.bodyClass"
+                            [ribbonClass]="card.ribbonClass"
+                            [descriptionClass]="card.descriptionClass"
+                            [textAlignment]="card.textAlignment"
+                            [description]="card.description"
+                            [topTitle]="card.topTitle"
+                            >
+                            <span><i class="{{card.ribbonIcon}}"></i></span>
+                            </spk-ribbons>
+                            </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End:: row-3 -->
+
+<!-- Start:: row-4 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-12 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">RIBBON STYLE 4</div>
+            </div>
+            <div class="box-body">
+                <div class="grid grid-cols-12 sm:gap-x-6 gap-y-4">
+                    @for(card of ribbonCards4;track $index){
+
+                        <div  class="xl:col-span-6 col-span-12">
+                            <spk-ribbons
+                            [mainClass]="card.mainClass"
+                            [bodyClass]="card.bodyClass"
+                            [ribbonClass]="card.ribbonClass"
+                            [descriptionClass]="card.descriptionClass"
+                            [textAlignment]="card.textAlignment"
+                            [description]="card.description"
+                            [topTitle]="card.topTitle"
+                            >
+                            <span>{{ card.ribbonContent }}</span>
+                            </spk-ribbons>
+                            </div>
+                    }
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End:: row-4 -->
+
+<!-- Start:: row-5 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-12 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">
+                    RIBBON STYLE 5
+                </div>
+            </div>
+            <div class="box-body">
+                <div class="grid grid-cols-12 sm:gap-x-6 gap-y-4">
+                    @for(card of ribbonCards5;track $index){
+                        <div  class="xl:col-span-3 col-span-12">
+                            <spk-ribbons
+                            [mainClass]="card.mainClass"
+                            [bodyClass]="card.bodyClass"
+                            [ribbonClass]="card.ribbonClass"
+                            [descriptionClass]="card.descriptionClass"
+                            [textAlignment]="card.textAlignment"
+                            [description]="card.description"
+                            [topTitle]="card.topTitle"
+                            [bottomTitle]="card.bottomTitle"
+                            >
+                            {{ card.content }}
+                            </spk-ribbons>
+                            </div>
+                    }
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End:: row-5 -->
+
+<!-- Start:: row-6 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-12 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">RIBBON STYLE 6</div>
+            </div>
+            <div class="box-body">
+                <div class="grid grid-cols-12 sm:gap-x-6 gap-y-4">
+                    @for(card of ribbonCards6;track $index){
+                        <div  class="xl:col-span-6 col-span-12">
+                            <spk-ribbons
+                            [mainClass]="card.mainClass"
+                            [bodyClass]="card.bodyClass"
+                            [ribbonClass]="card.ribbonClass"
+                            [descriptionClass]="card.descriptionClass"
+                            [textAlignment]="card.textAlignment"
+                            [description]="card.description"
+                            [topTitle]="card.topTitle"
+                            >
+                            {{ card.content }}
+                            </spk-ribbons>
+                            </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End:: row-6 -->
+ 

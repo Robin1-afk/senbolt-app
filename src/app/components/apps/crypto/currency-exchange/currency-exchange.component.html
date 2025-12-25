@@ -1,0 +1,73 @@
+<app-page-header [title]="'Crypto'" [title1]="['Currency Exchange']" [activeitem]="'Currency Exchange'"></app-page-header>
+ 
+ <!-- Start::row-1 -->
+ <div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-12 col-span-12">
+        <div class="box currency-exchange-card">
+            <div class="box-body p-5 flex items-center justify-center z-[1]">
+                <div class="container">
+                    <h3 class="text-white text-center">Buy and Sell Coins without additional fees</h3>
+                    <span class="block text-[1rem] text-white text-center op-8 mb-4">
+                        Buy now and get +50% extra bonus Minimum pre-sale amount 100 Crypto Coin. We accept BTC crypto-currency..
+                    </span>
+                    <div class="p-4 mb-4 rounded currency-exchange-area">
+                        <div class="grid grid-cols-12 sm:gap-x-6 gap-y-3">
+                            <div class="xxl:col-span-3 col-span-12">
+                                <input type="text" class="form-control" value="0.0453" placeholder="Enter Amount">
+                            </div>
+                            <div class="xxl:col-span-2 col-span-12">
+                                <div>
+                                    <spk-ng-select 
+                                [options]="SellCoins"
+                                [selectClass]="''"
+                                [clearable]="true"
+                                [multi]="true"
+                                [searchable]="true"
+                                [placeholder]="'Bitcoin'"
+                                [additionalProperties]="{}"
+                                (change)="handleSelectChange($event)">
+                                </spk-ng-select>
+                                </div>
+                            </div>
+                            <div class="xxl:col-span-2 col-span-12 text-center">
+                                <a aria-label="anchor" href="javascript:void(0);" class="ti-btn bg-primarytint1color !text-white ti-btn-icon ti-btn-sm my-2 !rounded-full"><i class="ti ti-arrows-exchange text-[1.1875rem] align-middle"></i></a>
+                            </div>
+                            <div class="xxl:col-span-3 col-span-12">
+                                <input type="text" class="form-control" value="1350.93" placeholder="Exchange Amount">
+                            </div>
+                            <div class="xxl:col-span-2 col-span-12">
+                                <spk-ng-select 
+                                [options]="Currency"
+                                [selectClass]="''"
+                                [clearable]="true"
+                                [multi]="true"
+                                [searchable]="true"
+                                [placeholder]="'USD'"
+                                [additionalProperties]="{}"
+                                (change)="handleSelectChange($event)">
+                                </spk-ng-select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button class="ti-btn ti-btn-success btn-wave">Exchange Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End::row-1 -->
+
+<!-- Start:: row-2 -->
+<div class="grid grid-cols-12 gap-x-6 justify-center">
+    @for(crypto of cryptoCards;track $index){
+    <div class="xxl:col-span-4 col-span-12">
+        <spk-currency-exchange [crypto]="crypto" ></spk-currency-exchange>
+    </div>
+}
+    <div class="xl:col-span-12 col-span-12">
+        <div class="text-center my-4"> <button class="ti-btn ti-btn-soft-primary !border !border-primary opacity-60" type="button" disabled=""> <span class="ti-spinner  !w-[1rem] !h-[1rem] align-middle" role="status" aria-hidden="true"></span> Loading... </button> </div>
+    </div>
+</div>
+<!-- End:: row-2 -->

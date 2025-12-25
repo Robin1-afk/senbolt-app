@@ -1,0 +1,55 @@
+<app-page-header [title]="'Form Elements'" [title1]="['Color Pickers']" [activeitem]="'Color Pickers'"></app-page-header>
+
+<!-- Start::row-1 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="'Color Picker'" [prism]="prismCode.colopicker1">
+                <input type="color" class="form-control form-control-color !border-0"
+                    id="exampleColorInput" value="#136ad0" title="Choose your color">
+        </app-showcode-card>
+    </div>
+    <div class="col-span-12 xl:col-span-6">
+        <app-showcode-card [title]="'Tailwind colorpicker'" [prism]="prismCode.colopicker2">
+                <input type="color"
+                    class="p-1 h-10 w-10 block bg-white dark:bg-bodybg border border-gray-200 cursor-pointer rounded-sm 
+                    disabled:opacity-50 disabled:pointer-events-none dark:bg-bgdark dark:border-white/10"
+                    id="hs-color-input" value="#5a66f1" title="Choose your color">
+        </app-showcode-card>
+    </div>
+</div>
+<!--End::row-1 -->
+
+<!--Start::row-2 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-12 col-span-12">
+        <app-showcode-card [title]="'Classic'" [classbody]="'sm:flex justify-between flex-wrap'" [prism]="prismCode.colopicker3">
+                <div class="mb-3 sm:mb-0">
+                    <div class="theme-container hidden"></div>
+                    <div class="pickr-container example-picker">
+                        <input [value]="color" [style.background]="color" [cpCancelButton]="true"
+                                    [cpCancelButtonClass]="'btn btn-primary btn-xs'" [cpEyeDropper]="true"
+                                    [(colorPicker)]="color" [cpOKButton]="true" [cpSaveClickOutside]="false"
+                                    [cpOKButtonClass]="'btn btn-primary btn-xs'" class="text-fixed-white text-white" />
+                    </div>
+                </div>
+                <div class="mb-3 sm:mb-0">
+                    <div class="theme-container1 hidden"></div>
+                    <div class="pickr-container1 example-picker">
+                        <ngx-colors ngx-colors-trigger [(ngModel)]="color3" acceptLabel="Select" cancelLabel="Cancel">
+                        </ngx-colors>
+                    </div>
+                </div>
+                <div>
+                    <div class="theme-container2 hidden"></div>
+                    <div class="pickr-container2 example-picker">
+                        <div class="example-palette-button" ngx-colors-trigger [(ngModel)]="input1"
+                        [style.color]="input1">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="palette">
+                        </mat-icon>
+                    </div>
+                    </div>
+                </div>
+        </app-showcode-card>
+    </div>
+</div>
+<!--End::row-2 -->

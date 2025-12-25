@@ -1,0 +1,449 @@
+  
+  <app-page-header [title]="'Ui Elements'" [title1]="['Popovers']" [activeitem]="'Popovers'"></app-page-header>
+  <!-- Start:: row-1 -->
+  <div class="grid grid-cols-12 gap-6">
+    <div class="xl:col-span-12 col-span-12">
+      <app-showcode-card [title]="'Default Popovers'" [boxClass]="'custom-box'" [prism]="prsimCodeData.popoverTS1">
+              <div class="ti-btn-list">
+                @for (popover of popovers; track $index) {
+                  <spk-tooltip [classList]="popover.customClass + ' hs-tooltip inline-block'">
+                  <a class="hs-tooltip-toggle ti-btn btn-wave ti-btn-outline-primary" href="javascript:void(0);">
+                    {{ popover.label }}
+                    <div class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 rounded-[.25rem] border border-defaultborder dark:border-defaultborder/10 dark:bg-bodybg bg-white !p-0 !max-w-[276px]" role="tooltip">
+                      <div class="!border-b !m-0 !border-solid dark:border-defaultborder/10 !rounded-t-md !py-2 !px-4 text-defaulttextcolor border-defaultborder text-start w-full text-[1rem]">
+                        <h6>{{ popover.label }}</h6>
+                      </div>
+                      <p class="!text-defaulttextcolor !text-[0.8rem] !py-4 !px-4 text-start">{{ popover.content }}</p>
+                    </div>
+                  </a>
+                </spk-tooltip>
+              }
+              </div>
+              
+      </app-showcode-card>
+    </div>
+    <div class="xl:col-span-12 col-span-12">
+      <app-showcode-card [title]="'Colored Headers'" [boxClass]="'custom-box'" [prism]="prsimCodeData.popoverTS2">
+              <div class="ti-btn-list">
+                @for (popover of ColorPopovers; track $index) {
+              <spk-tooltip [classList]="popover.customClass + ' hs-tooltip ti-main-tooltip'">
+                  <a class="hs-tooltip-toggle ti-main-tooltip-toggle ti-btn btn-wave ti-btn-outline-{{popover.buttonClass}}" href="javascript:void(0);">
+                    {{ popover.label }}
+                    <div class="hs-tooltip-content ti-main-tooltip-content border border-defaultborder dark:border-defaultborder/10 dark:bg-bodybg bg-white !p-0 !max-w-[276px]" role="tooltip">
+                      <div class="!border-b !border-solid dark:border-defaultborder/10" [ngClass]="'bg-' + popover.headerColor + ' !rounded-t-sm !py-2 !px-4 text-white border-defaultborder text-start w-full text-[1rem]'">
+                        <h6 class="!text-white">Color Header</h6>
+                      </div>
+                      <p class="!text-defaulttextcolor !text-[0.8rem] !py-4 !px-4 text-start">{{ popover.content }}</p>
+                    </div>
+                  </a>
+              </spk-tooltip>
+              }
+              </div>
+              
+      </app-showcode-card>
+    </div>
+</div>
+<!-- End:: row-1 -->
+
+<!-- Start:: row-2 -->
+ <div class="grid grid-cols-12 gap-6">
+    <div class="xl:col-span-12 col-span-12">
+      <app-showcode-card [title]="'Colored Popovers'" [boxClass]="'custom-box'" [prism]="prsimCodeData.popoverTS3">
+              @for (popover of SolidColorPopovers; track $index) {
+                <spk-tooltip [classList]="popover.customClass + ' hs-tooltip ti-main-tooltip'">
+                    <a class="hs-tooltip-toggle ti-main-tooltip-toggle ti-btn btn-wave ti-btn-{{popover.buttonClass}}" href="javascript:void(0);">
+                      {{ popover.label }}
+                      <div class="hs-tooltip-content ti-main-tooltip-content !bg-{{popover.buttonClass}} !z-[1000] !p-0 !max-w-[276px] !border-white/10" role="tooltip">
+                        <div class="!border-b !border-solid dark:border-defaultborder/10" [ngClass]="'bg-' + popover.headerColor + ' !rounded-t-sm !py-2 !px-4 text-white border-defaultborder/10 text-start w-full text-[1rem]'">
+                          <h6 class="!text-white">{{popover.headerColor}}</h6>
+                        </div>
+                        <p class="!text-white !text-[0.8rem] !py-4 !px-4 text-start">{{ popover.content }}</p>
+                      </div>
+                    </a>
+                </spk-tooltip>
+                }
+      </app-showcode-card>
+    </div>
+</div>
+<!-- End:: row-2 -->
+
+<!-- Start:: row-3 -->
+ <div class="grid grid-cols-12 gap-6">
+    <div class="xl:col-span-12 col-span-12">
+      <app-showcode-card [title]="'Light Popovers'" [boxClass]="'custom-box'" [prism]="prsimCodeData.popoverTS4">
+                <div class="ti-btn-list">
+                  @for (popover of lightColorPopovers; track $index) {
+                    <spk-tooltip [classList]="popover.customClass + ' hs-tooltip ti-main-tooltip'">
+                        <a class="hs-tooltip-toggle ti-main-tooltip-toggle ti-btn btn-wave  ti-btn-soft-{{popover.buttonClass}}" href="javascript:void(0);">{{popover.label}}
+                            <div class="hs-tooltip-content ti-main-tooltip-content border border-defaultborder dark:border-defaultborder/10 dark:bg-bodybg bg-white !z-[1000] !p-0 !max-w-[276px] overflow-hidden" role="tooltip">
+                                <div class="!bg-{{popover.buttonClass}}/10 !m-0">
+                                    <div  class="!border-b !border-solid !py-2 !px-4  text-{{popover.buttonClass}} !border-{{popover.buttonClass}}/20 !rounded-t-md text-start w-full text-[1rem]">
+                                    <h6 class="text-{{popover.buttonClass}} dark:!text-{{popover.buttonClass}}">{{popover.headerColor}}</h6>
+                                    </div>
+                                    <p class="!text-{{popover.buttonClass}} !text-[0.8rem] !py-4 !px-4 text-start">{{popover.content}}</p>
+
+                                </div>
+                            </div>
+                        </a>
+                    </spk-tooltip>
+                  }
+                </div>
+      </app-showcode-card>
+    </div>
+</div>
+<!-- End:: row-3 -->
+
+<!-- Start:: row-4 -->
+ <div class="grid grid-cols-12 gap-6">
+    <div class="xl:col-span-6 col-span-12">
+      <app-showcode-card [title]="'Disabled Popovers'" [boxClass]="'custom-box'" [prism]="prsimCodeData.popoverTS5">
+              @for (popover of DisabledPopover; track $index) {
+                <spk-tooltip [classList]="popover.customClass + ' hs-tooltip ti-main-tooltip'">
+                    <a class="hs-tooltip-toggle ti-main-tooltip-toggle ti-btn btn-wave  ti-btn-{{popover.color}} opacity-60" href="javascript:void(0);">
+                        {{popover.button}}
+                      <div class="hs-tooltip-content ti-main-tooltip-content border border-defaultborder dark:border-defaultborder/10 dark:bg-bodybg bg-white " role="tooltip">
+                      {{popover.content}}
+                      </div>
+                    </a>
+                </spk-tooltip>
+              }
+      </app-showcode-card>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+      <app-showcode-card [title]="'Icon Popovers'" [boxClass]="'custom-box'" [prism]="prsimCodeData.popoverTS6">
+             
+              @for ( popover of SvgPopover; track $index) {
+                <spk-tooltip [classList]="popover.customClass + ' hs-tooltip ti-main-tooltip me-6 !max-w-[276px]'">
+                <a class="hs-tooltip-toggle ti-main-tooltip-toggle" href="javascript:void(0);">
+                  <svg xmlns="http://www.w3.org/2000/svg" [ngClass]="popover.icon" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                    <path d="M0 0h24v24H0V0z" fill="none"/>
+                    <path [attr.d]="popover.iconPath"/>
+                  </svg>
+                  <div class="hs-tooltip-content ti-main-tooltip-content border border-defaultborder dark:border-defaultborder/10 !py-4 !px-4 !bg-{{popover.popBg}} !text-white" role="tooltip">
+                    <p>{{ popover.content }}</p>
+                  </div>
+                </a>
+              </spk-tooltip>
+            }
+      </app-showcode-card>
+    </div>
+</div>
+<!-- End:: row-4 -->
+
+<!-- Start:: row-5 --> 
+<div class="grid grid-cols-12 gap-6">
+  <div class="col-span-12 lg:col-span-6 xxl:col-span-6">
+      <app-showcode-card [title]="'Popover With Four Directions'" [prism]="prsimCodeData.popoverTS7">
+          <div class="flex justify-center gap-4">
+              <div class="hs-tooltip ti-main-tooltip [--trigger:click]">
+                <a class="hs-tooltip-toggle ti-main-tooltip-toggle" href="javascript:;">
+                  <span class="w-10 h-10 ti-btn btn-wave  p-0 transition-none focus:outline-none bg-gray-50 border-gray-200 text-gray-600 hover:bg-primary/30 hover:border-primary hover:text-primary dark:bg-bodybg dark:border-white/10 dark:text-white/70 dark:hover:bg-white/[.05] dark:hover:border-white/[.1] dark:hover:text-white">
+                    <i class="ri-arrow-up-s-line"></i>
+                  </span>
+                  <div class="hs-tooltip-content ti-main-tooltip-content" role="tooltip" data-popper-placement="top" style="position: fixed; inset: auto auto 0px 0px; margin: 0px; transform: translate(327px, -338px);">
+                    Top popover
+                  </div>
+                </a>
+              </div>
+
+              <div class="hs-tooltip ti-main-tooltip [--trigger:click] [--placement:left]">
+                <a class="hs-tooltip-toggle ti-main-tooltip-toggle" href="javascript:;">
+                  <span class="w-10 h-10 ti-btn btn-wave  p-0 transition-none focus:outline-none bg-gray-50 border-gray-200 text-gray-600 hover:bg-primary/30 hover:border-primary hover:text-primary dark:bg-bodybg dark:border-white/10 dark:text-white/70 dark:hover:bg-white/[.05] dark:hover:border-white/[.1] dark:hover:text-white">
+                    <i class="ri-arrow-left-s-line"></i>
+                  </span>
+                  <div class="hs-tooltip-content ti-main-tooltip-content hidden" role="tooltip" style="position: fixed; inset: 0px 0px auto auto; margin: 0px; transform: translate(-1501px, 469px);" data-popper-placement="left">
+                    Left popover
+                  </div>
+                </a>
+              </div>
+
+              <div class="hs-tooltip ti-main-tooltip [--trigger:click] [--placement:right]">
+                <a class="hs-tooltip-toggle ti-main-tooltip-toggle" href="javascript:;">
+                  <span class="w-10 h-10 ti-btn btn-wave  p-0 transition-none focus:outline-none bg-gray-50 border-gray-200 text-gray-600 hover:bg-primary/30 hover:border-primary hover:text-primary dark:bg-bodybg dark:border-white/10 dark:text-white/70 dark:hover:bg-white/[.05] dark:hover:border-white/[.1] dark:hover:text-white">
+                    <i class="ri-arrow-right-s-line"></i>
+                  </span>
+                  <div class="hs-tooltip-content ti-main-tooltip-content hidden" role="tooltip" style="position: fixed; inset: 0px auto auto 0px; margin: 0px; transform: translate(533px, 469px);" data-popper-placement="right">
+                    Right popover
+                  </div>
+                </a>
+              </div>
+
+              <div class="hs-tooltip ti-main-tooltip [--trigger:click] [--placement:bottom]">
+                <a class="hs-tooltip-toggle ti-main-tooltip-toggle" href="javascript:;">
+                  <span class="w-10 h-10 ti-btn btn-wave  p-0 transition-none focus:outline-none bg-gray-50 border-gray-200 text-gray-600 hover:bg-primary/30 hover:border-primary hover:text-primary dark:bg-bodybg dark:border-white/10 dark:text-white/70 dark:hover:bg-white/[.05] dark:hover:border-white/[.1] dark:hover:text-white">
+                    <i class="ri-arrow-down-s-line"></i>
+                  </span>
+                  <div class="hs-tooltip-content ti-main-tooltip-content hidden" role="tooltip" style="position: fixed; inset: 0px auto auto 0px; margin: 0px; transform: translate(496px, 521px);" data-popper-placement="bottom">
+                    Bottom popover
+                  </div>
+                </a>
+              </div>
+
+            </div>
+          </app-showcode-card>
+   
+  </div>
+  <div class="col-span-12 lg:col-span-6 xxl:col-span-6">
+      <app-showcode-card [title]="'Popover With Focus event'" [prism]="prsimCodeData.popoverTS8">
+          <div class="flex justify-center">
+              <div class="hs-tooltip ti-main-tooltip [--trigger:focus]">
+                <a class="hs-tooltip-toggle ti-main-tooltip-toggle" href="javascript:;">
+                  <span class="w-10 h-10 ti-btn btn-wave  p-0 transition-none focus:outline-none bg-gray-50 border-gray-200 text-gray-600 hover:bg-primary/30 hover:border-primary hover:text-primary dark:bg-bodybg dark:border-white/10 dark:text-white/70 dark:hover:bg-white/[.05] dark:hover:border-white/[.1] dark:hover:text-white">
+                    <i class="ri-arrow-up-s-line"></i>
+                  </span>
+                  <div class="hs-tooltip-content ti-main-tooltip-content hidden" role="tooltip" style="position: fixed; inset: auto auto 0px 0px; margin: 0px; transform: translate(835px, -490px);" data-popper-placement="top">
+                    Focus me
+                  </div>
+                </a>
+              </div>
+            </div>
+          </app-showcode-card>
+  
+  </div>
+  <div class="col-span-12 lg:col-span-6 xxl:col-span-6">
+      <app-showcode-card [title]="'Popover With Content'" [prism]="prsimCodeData.popoverTS9">
+          <div class="flex justify-center">
+              <div class="hs-tooltip ti-main-tooltip [--trigger:click]">
+                <a class="hs-tooltip-toggle ti-main-tooltip-toggle" href="javascript:;">
+                  <span class="w-10 h-10 ti-btn btn-wave  p-0 transition-none focus:outline-none bg-gray-50 border-gray-200 text-gray-600 hover:bg-primary/30 hover:border-primary hover:text-primary dark:bg-bodybg dark:border-white/10 dark:text-white/70 dark:hover:bg-white/[.05] dark:hover:border-white/[.1] dark:hover:text-white">
+                    <i class="ri-arrow-up-s-line"></i>
+                  </span>
+                  <div class="hs-tooltip-content ti-main-tooltip-content !p-0 max-w-xs border-gray-200 text-start rounded-sm hidden" role="tooltip" style="position: fixed; inset: auto auto 0px 0px; margin: 0px; transform: translate(1132px, -490px);" data-popper-placement="top">
+                    <span class="pt-3 px-4 block text-lg font-bold text-gray-800 dark:text-white">Overview</span>
+                    <div class="py-2 px-3 text-sm text-gray-600 dark:text-white/70">
+                      <img class="rounded-sm mb-3" src="./assets/images/media/media-28.jpg" alt="Image Description">
+                      <p>This is a popover body with supporting text below as a natural lead-in to additional content.</p>
+                      <dl class="mt-3">
+                        <dt class="font-bold pt-3 first:pt-0 dark:text-white">Assigned to:</dt>
+                        <dd class="m-0 text-gray-600 dark:text-white/70">Mark Welson</dd>
+                        <dt class="font-bold pt-3 first:pt-0 dark:text-white">Due:</dt>
+                        <dd class="m-0 text-gray-600 dark:text-white/70">December 21, 2021</dd>
+                      </dl>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </app-showcode-card>
+  
+  </div>
+  <div class="col-span-12 lg:col-span-6 xxl:col-span-6">
+      <app-showcode-card [title]="'Popover With Hover event'" [prism]="prsimCodeData.popoverTS10">
+          <div class="flex justify-center">
+              <div class="hs-tooltip ti-main-tooltip [--trigger:hover]">
+                <a class="hs-tooltip-toggle ti-main-tooltip-toggle" href="javascript:;">
+                  <span class="w-10 h-10 ti-btn btn-wave  p-0 transition-none focus:outline-none bg-gray-50 border-gray-200 text-gray-600 hover:bg-primary/30 hover:border-primary hover:text-primary dark:bg-bodybg dark:border-white/10 dark:text-white/70 dark:hover:bg-white/[.05] dark:hover:border-white/[.1] dark:hover:text-white">
+                    <i class="ri-arrow-up-s-line"></i>
+                  </span>
+                  <div class="hs-tooltip-content ti-main-tooltip-content" role="tooltip" style="position: fixed; inset: auto auto 0px 0px; margin: 0px; transform: translate(427px, -319px);" data-popper-placement="top">
+                    Hover me
+                  </div>
+                </a>
+              </div>
+            </div>
+          </app-showcode-card>
+  </div>
+</div>
+<!-- End:: row-5 --> 
+
+<!-- Start:: row-6 --> 
+<div class="grid grid-cols-12 gap-6">
+<div class="col-span-12 lg:col-span-6 xxl:col-span-6">
+  <app-showcode-card [title]="'Review popover'" [prism]="prsimCodeData.popoverTS11">
+        <!-- Popover -->
+        <div class="hs-tooltip ti-main-tooltip [--trigger:click]">
+          <div class="hs-tooltip-toggle ti-main-tooltip-toggle">
+            <button type="button" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-primary hover:text-primary/80 disabled:opacity-50 disabled:pointer-events-none dark:text-primary dark:hover:text-primary/80 dark:focus:outline-none dark:focus:ring-0 dark:shadow-none dark:focus:ring-primary">
+              Preline review
+              <i class="ri-arrow-up-s-line"></i>
+            </button>
+
+            <div class="hs-tooltip-content ti-main-tooltip-content border border-defaultborder dark:border-defaultborder/10 max-w-xs w-full !z-[105] hidden" role="tooltip" style="position: fixed; inset: auto auto 0px 0px; margin: 0px; transform: translate(1433px, -490px);" data-popper-placement="top">
+              <div class="p-4">
+                <!-- Header -->
+                <div class="mb-3 flex justify-between items-center gap-x-3">
+                  <div class="flex items-center gap-x-2">
+                    <h4 class="font-semibold text-gray-800 dark:text-white">
+                      5.0
+                    </h4>
+
+                    <!-- Rating -->
+                    <div class="flex">
+                      <i class="ri-star-fill text-lg text-warning dark:text-warning"></i>
+                      <i class="ri-star-fill text-lg text-warning dark:text-warning"></i>
+                      <i class="ri-star-fill text-lg text-warning dark:text-warning"></i>
+                      <i class="ri-star-fill text-lg text-warning dark:text-warning"></i>
+                      <i class="ri-star-fill text-lg text-warning dark:text-warning"></i>
+                    </div>
+                    <!-- End Rating -->
+                  </div>
+
+                  <a class="inline-flex items-center gap-x-1 text-xs text-primary decoration-2 hover:underline font-medium dark:focus:outline-none dark:focus:ring-0 dark:focus:shadow-none dark:focus:ring-primary" href="#">
+                    See all (4)
+                  </a>
+                </div>
+                <!-- End Header -->
+
+                <div class="mb-3">
+                  <!-- Progress -->
+                  <div class="flex items-center gap-x-3 whitespace-nowrap">
+                    <div class="w-10 text-end">
+                      <span class="text-sm text-gray-800 dark:text-white">5 star</span>
+                    </div>
+                    <div class="flex w-full h-2 bg-gray-200 rounded-full overflow-hidden dark:bg-bodybg2" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100">
+                      <div class="flex flex-col justify-center rounded-full overflow-hidden bg-warning text-xs text-white text-center whitespace-nowrap transition duration-500 dark:bg-yellow-600" style="width: 78%"></div>
+                    </div>
+                    <div class="w-10 text-end">
+                      <span class="text-sm text-gray-800 dark:text-white">78%</span>
+                    </div>
+                  </div>
+                  <!-- End Progress -->
+
+                  <!-- Progress -->
+                  <div class="flex items-center gap-x-3 whitespace-nowrap">
+                    <div class="w-10 text-end">
+                      <span class="text-sm text-gray-800 dark:text-white">4 star</span>
+                    </div>
+                    <div class="flex w-full h-2 bg-gray-200 rounded-full overflow-hidden dark:bg-bodybg2" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                      <div class="flex flex-col justify-center rounded-full overflow-hidden bg-warning text-xs text-white text-center whitespace-nowrap transition duration-500 dark:bg-yellow-600" style="width: 20%"></div>
+                    </div>
+                    <div class="w-10 text-end">
+                      <span class="text-sm text-gray-800 dark:text-white">20%</span>
+                    </div>
+                  </div>
+                  <!-- End Progress -->
+
+                  <!-- Progress -->
+                  <div class="flex items-center gap-x-3 whitespace-nowrap">
+                    <div class="w-10 text-end">
+                      <span class="text-sm text-gray-800 dark:text-white">3 star</span>
+                    </div>
+                    <div class="flex w-full h-2 bg-gray-200 rounded-full overflow-hidden dark:bg-bodybg2" role="progressbar" aria-valuenow="6" aria-valuemin="0" aria-valuemax="100">
+                      <div class="flex flex-col justify-center rounded-full overflow-hidden bg-warning text-xs text-white text-center whitespace-nowrap transition duration-500 dark:bg-yellow-600" style="width: 6%"></div>
+                    </div>
+                    <div class="w-10 text-end">
+                      <span class="text-sm text-gray-800 dark:text-white">6%</span>
+                    </div>
+                  </div>
+                  <!-- End Progress -->
+
+                  <!-- Progress -->
+                  <div class="flex items-center gap-x-3 whitespace-nowrap">
+                    <div class="w-10 text-end">
+                      <span class="text-sm text-gray-800 dark:text-white">2 star</span>
+                    </div>
+                    <div class="flex w-full h-2 bg-gray-200 rounded-full overflow-hidden dark:bg-bodybg2" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                      <div class="flex flex-col justify-center rounded-full overflow-hidden bg-warning text-xs text-white text-center whitespace-nowrap transition duration-500 dark:bg-yellow-600" style="width: 2%"></div>
+                    </div>
+                    <div class="w-10 text-end">
+                      <span class="text-sm text-gray-800 dark:text-white">2%</span>
+                    </div>
+                  </div>
+                  <!-- End Progress -->
+
+                  <!-- Progress -->
+                  <div class="flex items-center gap-x-3 whitespace-nowrap">
+                    <div class="w-10 text-end">
+                      <span class="text-sm text-gray-800 dark:text-white">1 star</span>
+                    </div>
+                    <div class="flex w-full h-2 bg-gray-200 rounded-full overflow-hidden dark:bg-bodybg2" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                      <div class="flex flex-col justify-center rounded-full overflow-hidden bg-warning text-xs text-white text-center whitespace-nowrap transition duration-500 dark:bg-yellow-600" style="width: 0%"></div>
+                    </div>
+                    <div class="w-10 text-end">
+                      <span class="text-sm text-gray-800 dark:text-white">0%</span>
+                    </div>
+                  </div>
+                  <!-- End Progress -->
+                </div>
+
+                <a class="inline-flex items-center gap-x-1 text-xs text-gray-600 decoration-2 hover:underline dark:text-white/70 dark:focus:outline-none dark:focus:ring-0 dark:shadow-none dark:focus:ring-gray-400" href="#">
+                  How reviews and ratings work
+                  <i class="ri-arrow-right-s-line rtl:rotate-180"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Popover -->
+      </app-showcode-card>
+
+</div>
+  <div class="col-span-12 lg:col-span-6 xxl:col-span-6">
+      <app-showcode-card [title]="'User popover example'" [prism]="prsimCodeData.popoverTS12">
+             <!-- User -->
+        <div class="hs-tooltip inline-block [--trigger:hover] sm:[--placement:right]">
+          <div class="hs-tooltip-toggle max-w-xs p-3 flex items-center gap-x-3 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-bodybg dark:border-white/10">
+            <img class="inline-block size-9 rounded-full" src="./assets/images/faces/1.jpg" alt="Image Description">
+            <!-- User Content -->
+            <div class="grow">
+              <h4 class="font-semibold text-sm text-gray-800 dark:text-white">
+                Amanda Harvey
+              </h4>
+              <p class="text-sm text-gray-800 md:text-gray-500 dark:text-white md:dark:text-white/70">
+                amanda&#64;email.com
+              </p>
+            </div>
+            <!-- End User Content -->
+            <!-- Popover Content -->
+            <div class="hs-tooltip-content overflow-hidden ti-main-tooltip-content !p-0 max-w-xs w-full after:absolute after:top-0 after:-start-4 after:w-4 after:h-full hidden" role="tooltip" style="position: fixed; inset: 0px auto auto 0px; margin: 0px; transform: translate(929px, 563px);" data-popper-placement="right">
+              <!-- Header -->
+              <div class="py-3 px-4 border-b border-gray-200 dark:border-white/10">
+                <div class="flex items-center gap-x-3">
+                  <img class="flex-shrink-0 inline-block size-10 rounded-full ring-2 ring-white dark:ring-bodybg" src="./assets/images/faces/1.jpg" alt="Image Description">
+                  <div class="grow">
+                    <h6 class="font-semibold text-gray-800 dark:text-white">
+                      Amanda Harvey
+                      <span class="ms-0.5 inline-flex items-center align-middle gap-x-1.5 py-0.5 px-1.5 mt-1 rounded-md text-[11px] font-medium bg-gray-800 text-white dark:bg-bodybg dark:text-white">
+                        PRO
+                      </span>
+                    </h6>
+                    <p class="text-sm text-gray-500 dark:text-white/70">
+                      Storyteller
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- End Header -->
+              <!-- List -->
+              <ul class="py-3 px-4 space-y-1">
+                <li>
+                  <div class="inline-flex items-center gap-x-3 text-sm text-gray-800 dark:text-white">
+                    <i class="ri-building-line text-gray-600 dark:text-white/70"></i>
+                    Pixeel Ltd.
+                  </div>
+                </li>
+                <li>
+                  <div class="inline-flex items-center gap-x-3 text-sm text-gray-800 dark:text-white">
+                    <i class="ri-smartphone-line text-gray-600 dark:text-white/70"></i>
+                    (892) 312-5483
+                  </div>
+                </li>
+                <li>
+                  <div class="inline-flex items-center gap-x-3 text-sm text-gray-800 dark:text-white">
+                    <i class="ri-mail-line text-gray-600 dark:text-white/70"></i>
+                    amanda&#64;email.com
+                  </div>
+                </li>
+              </ul>
+              <!-- End List -->
+              <!-- Footer -->
+              <div class="py-2 px-4 flex justify-between items-center bg-gray-100 dark:bg-bodybg">
+                <a class="inline-flex items-center gap-x-1.5 text-xs text-gray-500 hover:text-primary disabled:opacity-50 disabled:pointer-events-none dark:text-white/70 dark:hover:text-white dark:focus:outline-none" href="javascript:void(0);">
+                  <i class="ri-flag-line"></i>
+                  Flag
+                </a>
+                <button type="button" class="py-1.5 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-transparent bg-primary text-white hover:bg-primary/80 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-primary">
+                  Follow
+                </button>
+              </div>
+              <!-- End Footer -->
+            </div>
+            <!-- End Popover Content -->
+          </div>
+        </div>
+        <!-- End User -->
+          </app-showcode-card>
+  
+  </div>
+</div>
+<!-- End:: row-6 --> 

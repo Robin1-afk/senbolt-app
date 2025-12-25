@@ -1,0 +1,530 @@
+<app-page-header [title]="'Forms'" [title1]="['Form layout']" [activeitem]="'Form layout'"></app-page-header>
+
+ <!-- Start:: row-1 -->
+ <div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-12 col-span-12">
+        <app-showcode-card [title]="'Vertical Forms'"  [prism]="prismCode.layout1">
+                <div class="mb-4">
+                    <label for="form-text" class="ti-form-label !text-[.875rem] text-black">Enter name</label>
+                    <input type="text" class="form-control" id="form-text" placeholder="">
+                </div>
+                <div class="mb-4">
+                    <label for="form-password" class="ti-form-label text-[.875rem] text-black">Enter
+                        Password</label>
+                    <input type="password" class="form-control" id="form-password" placeholder="">
+                </div>
+                <div class="form-check mb-4">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck"
+                       required>
+                    <label class="form-check-label" for="invalidCheck">
+                        Accept Policy
+                    </label>
+                </div>
+                <button class="ti-btn ti-btn-primary" type="submit">Submit</button>
+        </app-showcode-card>
+    </div>
+    <div class="xl:col-span-12 col-span-12">
+        <app-showcode-card [title]="'Horizontal Form'"  [prism]="prismCode.layout2">
+                <form>
+                    <div class="grid grid-cols-12 mb-4">
+                        <label for="inputEmail3"
+                            class="sm:col-span-2 col-span-12 col-ti-form-label">Email</label>
+                        <div class="sm:col-span-10 col-span-12">
+                            <input type="email" class="form-control" id="inputEmail3">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-12 mb-4">
+                        <label for="inputPassword3"
+                            class="sm:col-span-2 col-span-12 col-ti-form-label">Password</label>
+                        <div class="sm:col-span-10 col-span-12">
+                            <input type="password" class="form-control" id="inputPassword3">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-12 mb-4">
+                        <div class=" sm:col-span-2 col-span-12 col-ti-form-label pt-0">Qualified</div>
+                        <div class="sm:col-span-10 col-span-12 ">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio"
+                                    name="gridRadios" id="gridRadios1" value="option1"
+                                    checked>
+                                <label class="form-check-label" for="gridRadios1">
+                                    Prelims
+                                </label>
+                            </div>
+                            <div class="form-check disabled">
+                                <input class="form-check-input" type="radio"
+                                    name="gridRadios" id="gridRadios2" value="option3"
+                                    disabled>
+                                <label class="form-check-label" for="gridRadios2">
+                                    Mains
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox"
+                                    id="gridCheck1">
+                                <label class="form-check-label" for="gridCheck1">
+                                    Certified
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="ti-btn ti-btn-primary">Sign in</button>
+                </form>
+        </app-showcode-card>
+    </div>
+</div>
+<!-- End:: row-1 -->
+
+<!-- Start:: row-2 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-12 col-span-12">
+        <app-showcode-card [title]="' Vertical Forms with icon'"  [prism]="prismCode.layout3">
+                <div class="mb-4">
+                    <label for="form-text1" class="ti-form-label text-[.875rem] text-black">Enter name</label>
+                    <div class="input-group">
+                        <div class="input-group-text"><i class="ri-user-line"></i></div>
+                        <input type="text" class="form-control" id="form-text1" placeholder="">
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label for="form-password1" class="ti-form-label text-[.875rem] text-black">Enter
+                        Password</label>
+                    <div class="input-group">
+                        <div class="input-group-text"><i class="ri-lock-line"></i></div>
+                        <input type="password" class="form-control" id="form-password1" placeholder="">
+                    </div>
+                </div>
+                <div class="form-check mb-4">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck1"
+                       required>
+                    <label class="form-check-label" for="invalidCheck1">
+                        Accept Policy
+                    </label>
+                </div>
+                <button class="ti-btn ti-btn-primary !mb-0 mt-4" type="submit">Submit</button>
+        </app-showcode-card>
+    </div>
+    <div class="xl:col-span-12 col-span-12">
+        <app-showcode-card [title]="' Horizontal Forms with icon'"  [prism]="prismCode.layout4">
+                <form>
+                    <div class="grid grid-cols-12 mb-4">
+                        <label for="inputEmail1"
+                            class="sm:col-span-2 col-span-12 col-ti-form-label">Email</label>
+                        <div class="sm:col-span-10 col-span-12">
+                            <div class="input-group">
+                                <input type="email" class="form-control !border-s" id="inputEmail1">
+                                <div class="input-group-text">
+                                    <i class="ri-mail-line"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-12 mb-4">
+                        <label for="inputPassword1"
+                            class="sm:col-span-2 col-span-12 col-ti-form-label">Password</label>
+                        <div class="sm:col-span-10 col-span-12">
+                            <div class="input-group">
+                                <input type="password" class="form-control !border-s" id="inputPassword1">
+                                <div class="input-group-text">
+                                    <i class="ri-lock-line"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-12 mb-4">
+                        <div class="col-ti-form-label sm:col-span-2 col-span-12 pt-0">Qualified</div>
+                        <div class="sm:col-span-10 col-span-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio"
+                                    name="gridRadios" id="gridRadios4" value="option1"
+                                    checked>
+                                <label class="form-check-label" for="gridRadios4">
+                                    Prelims
+                                </label>
+                            </div>
+                            <div class="form-check disabled">
+                                <input class="form-check-input" type="radio"
+                                    name="gridRadios" id="gridRadios3" value="option3"
+                                    disabled>
+                                <label class="form-check-label" for="gridRadios3">
+                                    Mains
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox"
+                                    id="gridCheck2">
+                                <label class="form-check-label" for="gridCheck2">
+                                    Certified
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="ti-btn ti-btn-primary">Sign in</button>
+                </form>
+        </app-showcode-card>
+    </div>
+</div>
+<!-- End:: row-2 -->
+
+<!-- Start:: row-3 -->
+<div class="grid grid-cols-12 gap-6">
+    <div class="xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="'Inline forms'"  [prism]="prismCode.layout5">
+                <form class="sm:grid grid-cols-4 gap-4 items-center">
+                    <div class="mb-4 sm:mb-0 input-group">
+                        <div class="input-group-text">&#64;</div>
+                        <input type="text" class="form-control"
+                            id="inlineFormInputGroupUsername" placeholder="Username">
+                    </div>
+                    <select class="mb-4 sm:mb-0 form-select" id="inlineFormSelectPref">
+                        <option selected>Choose...</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                    <div class=" form-check !my-auto">
+                        <input class="form-check-input" type="checkbox"
+                            id="inlineFormCheck">
+                        <label class="form-check-label" for="inlineFormCheck">
+                            Remember me
+                        </label>
+                    </div>
+                    <button type="submit" class="ti-btn ti-btn-primary !mb-0 mt-4">Submit</button>
+                </form>
+        </app-showcode-card>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="' Column sizing'"  [prism]="prismCode.layout6">
+                <div class="grid grid-cols-12 gap-4">
+                    <div class="sm:col-span-7 col-span-12">
+                        <input type="text" class="form-control" placeholder="City"
+                            aria-label="City">
+                    </div>
+                    <div class="sm:col-span-3 col-span-12">
+                        <input type="text" class="form-control" placeholder="State"
+                            aria-label="State">
+                    </div>
+                    <div class="sm:col-span-2 col-span-12">
+                        <input type="text" class="form-control" placeholder="Zip"
+                            aria-label="Zip">
+                    </div>
+                </div>
+        </app-showcode-card>
+    </div>
+</div>
+<!-- End:: row-3 -->
+
+<!-- Start:: row-4 -->
+<div class="grid grid-cols-12 gap-6">
+    <div class="xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="'Utilities'"  [prism]="prismCode.layout7">
+                <div class="mb-4">
+                    <label for="formGroupExampleInput" class="ti-form-label">Example label</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput"
+                        placeholder="Example input placeholder">
+                </div>
+                <div class="mb-1">
+                    <label for="formGroupExampleInput2" class="ti-form-label">Another label</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2"
+                        placeholder="Another input placeholder">
+                </div>
+        </app-showcode-card>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="' Horizontal form label sizing'"  [prism]="prismCode.layout8">
+                <div class="grid grid-cols-12 mb-4">
+                    <label for="colFormLabelSm"
+                        class="sm:col-span-2 col-span-12 col-ti-form-label col-ti-form-label-sm">Email</label>
+                    <div class="sm:col-span-10 col-span-12">
+                        <input type="email" class="form-control form-control-sm"
+                            id="colFormLabelSm" placeholder="col-ti-form-label-sm">
+                    </div>
+                </div>
+                <div class="grid grid-cols-12 mb-4">
+                    <label for="colFormLabel" class="sm:col-span-2 col-span-12 col-ti-form-label">Email</label>
+                    <div class="sm:col-span-10 col-span-12">
+                        <input type="email" class="form-control" id="colFormLabel"
+                            placeholder="col-ti-form-label">
+                    </div>
+                </div>
+                <div class="grid grid-cols-12">
+                    <label for="colFormLabelLg"
+                        class="sm:col-span-2 col-span-12 col-ti-form-label col-ti-form-label-lg text-[1.25rem]">Email</label>
+                    <div class="sm:col-span-10 col-span-12">
+                        <input type="email" class="form-control form-control-lg"
+                            id="colFormLabelLg" placeholder="col-ti-form-label-lg">
+                    </div>
+                </div>
+        </app-showcode-card>
+    </div>
+</div>
+<!-- End:: row-4 -->
+
+<!-- Start:: row-5 -->
+<div class="grid grid-cols-12 gap-6">
+    <div class="xl:col-span-12 col-span-12">
+        <app-showcode-card [title]="'Auto sizing'"  [prism]="prismCode.layout9">
+                <form class="sm:grid grid-cols-12 block gap-y-2 gap-x-4 items-center mb-4">
+                    <div class="col-span-12 mb-4 sm:mb-0">
+                        <label class="hidden" for="autoSizingInput">Name</label>
+                        <input type="text" class="form-control" id="autoSizingInput"
+                            placeholder="Jane Doe">
+                    </div>
+                    <div class="col-span-12 mb-4 sm:mb-0">
+                        <label class="hidden"
+                            for="autoSizingInputGroup">Username</label>
+                        <div class="input-group">
+                            <div class="input-group-text">&#64;</div>
+                            <input type="text" class="form-control"
+                                id="autoSizingInputGroup" placeholder="Username">
+                        </div>
+                    </div>
+                    <div class="col-span-12 mb-4 sm:mb-0">
+                        <label class="hidden"
+                            for="autoSizingSelect">Preference</label>
+                            <spk-ng-select 
+                            [options]="Preference"
+                            [id]="'inlineFormSelectPref'"
+                            [selectClass]="''"
+                            [clearable]="true"
+                            [searchable]="true"
+                            [hideSelected]="true"
+                            [placeholder]="'Choose...'"
+                            [additionalProperties]="{}">
+                            </spk-ng-select>
+                    </div>
+                    <div class="col-span-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox"
+                                id="autoSizingCheck">
+                            <label class="form-check-label" for="autoSizingCheck">
+                                Remember me
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-span-12">
+                        <button type="submit" class="ti-btn ti-btn-primary !mb-0 mt-4">Submit</button>
+                    </div>
+                </form>
+                <span class="font-semibold text-[#8c9097] dark:text-white/50">You can then remix that once again with size-specific column
+                    classes.</span>
+                <form class="grid grid-cols-12  gap-x-4 gap-y-2 items-center mt-2">
+                    <div class="sm:col-span-3 col-span-12">
+                        <label class="hidden"
+                            for="specificSizeInputName">Name</label>
+                        <input type="text" class="form-control" id="specificSizeInputName"
+                            placeholder="Jane Doe">
+                    </div>
+                    <div class="sm:col-span-3 col-span-12">
+                        <label class="hidden"
+                            for="specificSizeInputGroupUsername">Username</label>
+                        <div class="input-group">
+                            <div class="input-group-text">&#64;</div>
+                            <input type="text" class="form-control"
+                                id="specificSizeInputGroupUsername" placeholder="Username">
+                        </div>
+                    </div>
+                    <div class="sm:col-span-3 col-span-12">
+                        <label class="hidden"
+                            for="specificSizeSelect">Preference</label>
+                            <spk-ng-select 
+                            [options]="Preference"
+                            [id]="'inlineFormSelectPref'"
+                            [selectClass]="''"
+                            [clearable]="true"
+                            [searchable]="true"
+                            [hideSelected]="true"
+                            [placeholder]="'Choose...'"
+                            [additionalProperties]="{}">
+                            </spk-ng-select>
+                    </div>
+                    <div class="sm:col-span-3 col-span-12">
+                        <div class="form-check !my-auto">
+                            <input class="form-check-input" type="checkbox"
+                                id="autoSizingCheck2">
+                            <label class="form-check-label" for="autoSizingCheck2">
+                                Remember me
+                            </label>
+                        </div>
+                    </div>
+                    <div class="sm:col-span-3 col-span-12">
+                        <button type="submit" class="ti-btn ti-btn-primary">Submit</button>
+                    </div>
+                </form>
+        </app-showcode-card>
+    </div>
+</div>
+<!-- End:: row-5 -->
+
+<!-- Start:: row-6 -->
+<div class="grid grid-cols-12 gap-6">
+    <div class="xl:col-span-12 col-span-12">
+        <app-showcode-card [title]="'Form grid'"  [prism]="prismCode.layout10">
+                <div class="grid grid-cols-12 sm:gap-x-6 sm:gap-y-4">
+                    <div class="md:col-span-6 col-span-12 mb-4">
+                        <label class="ti-form-label">First Name</label>
+                        <input type="text" class="form-control" placeholder="First name"
+                            aria-label="First name">
+                    </div>
+                    <div class="md:col-span-6 col-span-12 mb-4">
+                        <label class="ti-form-label">Last Name</label>
+                        <input type="text" class="form-control" placeholder="Last name"
+                            aria-label="Last name">
+                    </div>
+                    <div class="md:col-span-6 col-span-12 mb-4 sm:mb-0">
+                        <label class="ti-form-label">Address</label>
+                        <div class="grid grid-cols-12 sm:gap-x-4">
+                            <div class="xl:col-span-12 col-span-12 mb-4">
+                                <input type="text" class="form-control" placeholder="Street"
+                                aria-label="Street">
+                            </div>
+                            <div class="xl:col-span-12 col-span-12 mb-4">
+                                <input type="text" class="form-control" placeholder="Landmark"
+                                aria-label="Landmark">
+                            </div>
+                            <div class="xxl:col-span-6 xl:col-span-12 col-span-12 mb-4">
+                                <input type="text" class="form-control" placeholder="City"
+                                aria-label="City">
+                            </div>
+                            <div class="xxl:col-span-6 xl:col-span-12 col-span-12 mb-4">
+                                <select id="inputState1" class="form-select !py-[0.23rem]">
+                                    <option selected>State</option>
+                                    <option>...</option>
+                                </select>
+                            </div>
+                            <div class="xxl:col-span-6 xl:col-span-12 col-span-12 xxl:mb-0 mb-4">
+                                <input type="text" class="form-control" placeholder="Postal/Zip code"
+                                aria-label="Postal/Zip code">
+                            </div>
+                            <div class="xxl:col-span-6 xl:col-span-12 col-span-12">
+                                <select id="inputCountry" class="form-select !py-[0.23rem]">
+                                    <option selected>Country</option>
+                                    <option>...</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:col-span-6  col-span-12">
+                        <div class="grid grid-cols-12">
+                            <div class="xl:col-span-12 col-span-12 mb-4">
+                                <label class="ti-form-label">Email</label>
+                                <input type="email" class="form-control" placeholder="Email"
+                                aria-label="email">
+                            </div>
+                            <div class="xl:col-span-12 col-span-12 mb-4">
+                                <label class="ti-form-label">D.O.B</label>
+                                <input type="date" class="form-control"
+                                aria-label="dateofbirth">
+                            </div>
+                            <div class="xl:col-span-12 col-span-12 mb-4">
+                                <div class="grid grid-cols-12 gap-3">
+                                    <label class="ti-form-label mb-1 xl:col-span-12 col-span-12">Maritial Status</label>
+                                    <div class="xl:col-span-6 col-span-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" value="" id="status-married" name="status-married">
+                                            <label class="form-check-label" for="status-married">
+                                                Married
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="xl:col-span-6 col-span-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" value="" id="status-unmarried" name="status-married" checked>
+                                            <label class="form-check-label" for="status-unmarried">
+                                                Single
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="xl:col-span-12 col-span-12">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:col-span-6 col-span-12 mb-4 sm:mb-0">
+                        <label class="ti-form-label">Contact Number</label>
+                        <input type="number" class="form-control" placeholder="Phone number"
+                            aria-label="Phone number">
+                    </div>
+                    <div class="md:col-span-6 col-span-12 mb-4 sm:mb-0">
+                        <label class="ti-form-label">Alternative Contact</label>
+                        <input type="number" class="form-control" placeholder="Phone number"
+                            aria-label="Phone number">
+                    </div>
+                    <div class="md:col-span-12 col-span-12 mb-4 sm:mb-0">
+                        <div class="form-check mb-4">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">
+                                Check me out
+                            </label>
+                        </div>
+                    </div>
+                    <div class="md:col-span-12 col-span-12">
+                        <button type="submit" class="ti-btn ti-btn-primary !mb-0">Sign in</button>
+                    </div>
+                </div>
+        </app-showcode-card>
+    </div>
+    <div class="xl:col-span-12 col-span-12">
+        <app-showcode-card [title]="'Gutters'"  [prism]="prismCode.layout11">
+                <form class="grid grid-cols-12 gap-4 mt-0">
+                    <div class="md:col-span-6 col-span-12">
+                        <label class="ti-form-label">First Name</label>
+                        <input type="text" class="form-control" placeholder="First name"
+                            aria-label="First name">
+                    </div>
+                    <div class="md:col-span-6 col-span-12">
+                        <label class="ti-form-label">Last Name</label>
+                        <input type="text" class="form-control" placeholder="Last name"
+                            aria-label="Last name">
+                    </div>
+                    <div class="md:col-span-6 col-span-12">
+                        <label for="inputEmail4" class="ti-form-label">Email</label>
+                        <input type="email" class="form-control" id="inputEmail4">
+                    </div>
+                    <div class="md:col-span-6 col-span-12">
+                        <label for="inputPassword4" class="ti-form-label">Password</label>
+                        <input type="password" class="form-control" id="inputPassword4">
+                    </div>
+                    <div class="col-span-12">
+                        <label for="inputAddress" class="ti-form-label">Address</label>
+                        <input type="text" class="form-control" id="inputAddress"
+                            placeholder="1234 Main St">
+                    </div>
+                    <div class="col-span-12">
+                        <label for="inputAddress2" class="ti-form-label">Address 2</label>
+                        <input type="text" class="form-control" id="inputAddress2"
+                            placeholder="Apartment, studio, or floor">
+                    </div>
+                    <div class="md:col-span-6 col-span-12">
+                        <label for="inputCity" class="ti-form-label">City</label>
+                        <input type="text" class="form-control" id="inputCity">
+                    </div>
+                    <div class="md:col-span-4 col-span-12">
+                        <label for="inputState" class="ti-form-label">State</label>
+                        <select id="inputState" class="form-select !py-[0.23rem]">
+                            <option selected>Choose...</option>
+                            <option>...</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-2 col-span-12">
+                        <label for="inputZip" class="ti-form-label">Zip</label>
+                        <input type="text" class="form-control" id="inputZip">
+                    </div>
+                    <div class="col-span-12 ">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck3">
+                            <label class="form-check-label" for="gridCheck3">
+                                Check me out
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-span-12">
+                        <button type="submit" class="ti-btn ti-btn-primary">Sign in</button>
+                    </div>
+                </form>
+        </app-showcode-card>
+    </div>
+</div>
+<!-- End:: row-6 -->

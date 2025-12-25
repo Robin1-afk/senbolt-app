@@ -1,0 +1,61 @@
+<div [ngClass]="'box ' + CustomClass">
+  <!-- Image Tag -->
+   @if (Imagetag) {
+  <img  [src]="Imgsrc" class="card-img-top" alt="..." />
+   }
+  <!-- Anchor Tag Before Header -->
+   @if (Anchortagbefore && AnchortagNavigate) {
+  <a
+    [routerLink]="AnchortagNavigate"
+    class="card-anchor"
+    aria-label="anchor"
+  ></a>
+   }
+
+  <!-- Card Header -->
+   @if (Cardheader) {
+  <div [ngClass]="'box-header ' + CustomHeaderClass">
+    <div class="box-title">{{ Title }}</div>
+
+    <!-- Link Tag -->
+     @if (Linktag && Navigate) {
+    <a  [routerLink]="Navigate"
+      [ngClass]="LinkClass"
+      aria-label="anchor"
+      (click)="handleClick()"
+    >
+      <!-- Icon Tag -->
+       @if (Icontag) {
+      <i [ngClass]="Icon"></i>
+       }
+    </a>
+  }
+  </div>
+}
+
+  <!-- Card Body -->
+  <div [ngClass]="'box-body ' + CustomBodyClass">
+    <ng-content></ng-content>
+  </div>
+
+  <!-- Card Footer -->
+   @if (Cardfooter) {
+  <div [ngClass]="'box-footer ' + CustomFooterClass">
+    @if (ButtonTag) {
+    <button
+      type="button"
+      class="ti-btn ti-btn-primary-full"
+    >
+      Read More
+    </button>
+  }
+  @if (TwoButtonTag) {
+    <a href="javascript:void(0);" class="card-link text-danger me-3">Buy Now</a>
+    <a href="javascript:void(0);" class="card-link text-success me-2"><u>Review</u></a>
+  }
+  @if (!ButtonTag) {
+    <span>{{ Footertext }}</span>
+  }
+  </div>
+}
+</div>

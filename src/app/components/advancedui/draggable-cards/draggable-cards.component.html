@@ -1,0 +1,65 @@
+<app-page-header [title]="'Advanced Ui'" [title1]="['Draggable Cards']" [activeitem]="'Draggable Cards'"></app-page-header>
+
+<!-- Start::row-1 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-6 col-span-12" id="draggable-left" [sortablejs]="normalList2"
+    [sortablejsOptions]="normalOptions">
+    <spk-blockquote-card
+        [quote]="'The best and most beautiful things in the world cannot be seen or even touched — they must be felt with the heart..'"
+        [author]="'Someone famous as'" [source]="'-Helen Keller'" [isDarkTheme]="true"
+        [backgroundClass]="'box-bg-primary'">
+    </spk-blockquote-card>
+  <spk-collapse-card
+    [title]="'Card With Close Button'"
+    [subtitle]="'Closable Card'"
+    [content]="'Lorem Ipsum content for the closable card.'"
+    [isClosable]="true"
+    [isCollapsible]="false"
+    [isFullscreenable]="false"
+  ></spk-collapse-card>
+  
+    <spk-link-card [avatarSrc]="'./assets/images/faces/8.jpg'" [avatarSize]="'avatar-xl'" [name]="'Alicia Keys'"
+        [titleClass]="' text-[.75rem] mb-1'" [title]="'Department Of Commerce'"
+        [customClass]="'border !border-info'" [textColorClass]=" 'text-info'" [anchorLabel]=" 'alicia-profile'"
+        [description]="'24 Years, Female'"></spk-link-card>
+    <spk-link-card [avatarSrc]="'./assets/images/faces/15.jpg'" [avatarSize]="'avatar-md'"
+        [name]="'Atharva Simon.'" [titleClass]="'box-title !text-[#8c9097] dark:text-white/50 !text-[.75rem] mb-0'"
+        [title]="'Correspondent Professor'" [anchorLabel]="'atharva-profile'"></spk-link-card>  
+
+</div>
+<div class="xl:col-span-6 col-span-12" id="draggable-right" [sortablejs]="normalList1"
+    [sortablejsOptions]="normalOptions">
+    <spk-overlay-card [imgSrc]="'./assets/images/media/media-36.jpg'" [boxClass]="'!bottom-auto inset-x-0 top-0'"
+        [bodyAdditionalText]="'Image Overlays Are Awesome!'" [hasFooter]="true"
+        [footerText]="'Last updated 3 mins ago'"
+        [bodyText]="'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even.'">
+    </spk-overlay-card>
+    <spk-bgcolor-card [cardClass]="'!bg-success'" [avatar]="'./assets/images/faces/5.jpg'" [name]="'Samantha Sid'"
+        [status]="'In leave for 1 month'" [statusClass]="'text-white'" [anchorClass]="'text-white'">
+    </spk-bgcolor-card>
+    <spk-overlay-card [imgSrc]="'./assets/images/media/media-35.jpg'" [additionalClass]="'mb-2'"
+        [boxClass]="'!bottom-auto inset-x-0 top-0'" [headerText]="'Image Overlays Are Awesome!'" [hasFooter]="false"
+        [bodyText]="'Last updated 3 mins ago'"
+        [bodyAdditionalText]="'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even.'">
+    </spk-overlay-card>
+    <spk-collapse-card
+    [title]="'Card With Collapse Button'"
+    [subtitle]="'Collapsible Card'"
+    [content]="'Lorem Ipsum content for the collapsible card.'"
+    [isCollapsible]="true"
+    [isClosable]="false"
+    [isFullscreenable]="false"
+  ></spk-collapse-card>
+  
+  <spk-collapse-card
+    [title]="'Card With Fullscreen Button'"
+    [subtitle]="'Fullscreen Card'"
+    [content]="'Lorem Ipsum content for the fullscreen card.'"
+    [isFullscreenable]="true"
+    [isCollapsible]="false"
+    [isClosable]="false"
+  ></spk-collapse-card>
+
+</div>
+</div>
+<!--End::row-1 -->

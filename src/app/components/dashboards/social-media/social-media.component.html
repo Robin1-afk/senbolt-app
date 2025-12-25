@@ -1,0 +1,376 @@
+<app-page-header [title]="'Dashboards'" [title1]="['Social Media']" [activeitem]="'Social Media'"></app-page-header>
+<!-- Start::Row-1 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xxl:col-span-8 col-span-12">
+        <div class="grid grid-cols-12 gap-x-6">
+          @for(socialmedia of cardData;track $index){
+            <div class="xl:col-span-4 col-span-12">
+                <spk-social-media-card
+                [socialmedia]="socialmedia" >
+                </spk-social-media-card>
+            </div>
+        }
+        </div>
+    </div>
+    <div class="xxl:col-span-4 col-span-12">
+        <div class="box overflow-hidden">
+            <div class="box-header justify-between">
+                <div class="box-title"> 
+                    Follow On Device
+                </div>
+                <a href="javascript:void(0);" class="ti-btn bg-light ti-btn-sm text-textmuted dark:text-textmuted/50">
+                    View All
+                </a>
+            </div>
+            <div class="box-body p-0">
+                <div class="grid grid-cols-12 p-4 pt-2">
+                    <div class="xl:col-span-6 col-span-12 px-0">
+                        <div id="follow-on-device">
+                            <spk-apexcharts [chartOptions]="chartOptions1"></spk-apexcharts>
+                        </div>
+                    </div>
+                    <div class="xl:col-span-6 col-span-12">
+                        <ul class="ti-list-group list-group-flush border border-t mt-3">
+                            <li class="ti-list-group-item">
+                                <div class="flex items-start justify-between">
+                                    <div class="session-type leading-none mobile">
+                                        <div class="font-medium mb-0">Mobile</div>
+                                        <span class="text-xs text-textmuted dark:text-textmuted/50 leading-[1.2rem]">Increased By<span class="text-success text-xs ms-1 font-medium inline-block">1.67%</span></span>
+                                    </div>
+                                    <div class="leading-none text-end">
+                                        <span class="block text-xs text-textmuted dark:text-textmuted/50 mb-1">Total</span>
+                                        <span class="block font-semibold mb-0">1,754</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="ti-list-group-item">
+                                <div class="flex items-start justify-between">
+                                    <div class="session-type leading-none tablet">
+                                        <div class="font-medium mb-0">Tablet</div>
+                                        <span class="text-xs text-textmuted dark:text-textmuted/50 leading-[1.2rem]">Increased By<span class="text-success text-xs ms-1 font-medium inline-block">0.46%</span></span>
+                                    </div>
+                                    <div class="leading-none text-end">
+                                        <span class="block text-xs text-textmuted dark:text-textmuted/50 mb-1">Total</span>
+                                        <span class="block font-semibold mb-0">1,234</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="ti-list-group-item">
+                                <div class="flex items-start justify-between">
+                                    <div class="session-type desktop leading-none">
+                                        <div class="font-medium mb-0">Desktop</div>
+                                        <span class="text-xs text-textmuted dark:text-textmuted/50 leading-[1.2rem]">Decresed By<span class="text-danger text-xs ms-1 font-medium inline-block">3.43%</span></span>
+                                    </div>
+                                    <div class="leading-none text-end">
+                                        <span class="block text-xs text-textmuted dark:text-textmuted/50 mb-1">Total</span>
+                                        <span class="block font-semibold mb-0">878</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End::Row-1 -->
+
+<!-- Start::Row-2 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xxl:col-span-3 col-span-12">
+        <div class="box">
+            <div class="box-header justify-between">
+                <div class="box-title">
+                    Suggestions
+                </div>
+                <a href="javascript:void(0);" class="ti-btn bg-light ti-btn-sm text-textmuted dark:text-textmuted/50">
+                    View All
+                </a>
+            </div>
+            <div class="box-body">
+                
+                <ul class="list-none personal-favourite mb-0">
+                    @for (user of users; track $index) {
+                    <li>
+                      <div class="flex items-center">
+                        <div class="me-2">
+                          <span class="avatar avatar-sm">
+                            <img [src]="user.avatar" [alt]="user.name">
+                          </span>
+                        </div>
+                        <div class="flex-auto">
+                          <span class="font-medium block mb-0">{{ user.name }}</span>
+                          <span class="text-textmuted dark:text-textmuted/50 block text-xs">
+                            {{ user.mutualFriends }}
+                          </span>
+                        </div>
+                        <div class="ms-auto">
+                          <button aria-label="button" type="button" 
+                            class="ti-btn ti-btn-sm ti-btn-icon bg-primary text-white">
+                            <i class="ri-user-add-line"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </li>
+                }
+                  </ul>
+            </div>
+        </div>
+    </div>
+    <div class="xxl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header justify-between flex-wrap">
+                <div class="box-title">
+                    Audience Statistics
+                </div>
+                <div class="flex gap-2">
+                    <div class="ti-btn ti-btn-outline-light ti-btn-full ti-btn-sm">Today</div>
+                    <div class="ti-btn ti-btn-outline-light ti-btn-full ti-btn-sm">Weakly</div>
+                    <div class="ti-btn bg-light ti-btn-full ti-btn-sm">Yearly</div>
+                </div>
+            </div>
+            <div class="box-body">
+                <div id="audience" class="">
+                    <spk-apexcharts [chartOptions]="chartOptions"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xxl:col-span-3 col-span-12">
+        <div class="box">
+            <div class="box-header justify-between">
+                <div class="box-title">
+                    Requests
+                </div>
+                <a href="javascript:void(0);" class="ti-btn bg-light ti-btn-sm text-textmuted dark:text-textmuted/50">
+                    View All
+                </a>
+            </div>
+            <div class="box-body">
+                <ul class="list-none personal-favourite mb-0">
+                    <li>
+                        <div class="flex items-center gap-1">
+                            <div class="me-1">
+                                <span class="avatar avatar-sm">
+                                    <img src="./assets/images/faces/2.jpg" alt="">
+                                </span>
+                            </div>
+                            <div class="flex-auto truncate">
+                                <span class="font-medium block mb-0">Socrates Itumay</span>
+                                <span class="text-textmuted dark:text-textmuted/50 block text-xs w-75 truncate">want's to add you as a friend </span>
+                            </div>
+                            <div class="ti-btn-list text-nowrap ms-auto">
+                                <button aria-label="buton" type="button" class="ti-btn ti-btn-icon ti-btn-sm ti-btn-soft-success">
+                                    <i class="ri-check-line"></i>
+                                </button>
+                                <button aria-label="buton" type="button" class="ti-btn ti-btn-icon ti-btn-sm ti-btn-soft-danger me-0">
+                                    <i class="ri-close-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex items-center gap-1">
+                            <div class="me-1">
+                                <span class="avatar avatar-sm">
+                                    <img src="./assets/images/faces/3.jpg" alt="">
+                                </span>
+                            </div>
+                            <div class="flex-auto truncate">
+                                <span class="font-medium block mb-0">Ryan Gercia</span>
+                                <span class="text-textmuted dark:text-textmuted/50 block text-xs w-75 truncate">want's to add you as a friend </span>
+                            </div>
+                            <div class="ti-btn-list text-nowrap ms-auto">
+                                <button aria-label="buton" type="button" class="ti-btn ti-btn-icon ti-btn-sm ti-btn-soft-success">
+                                    <i class="ri-check-line"></i>
+                                </button>
+                                <button aria-label="buton" type="button" class="ti-btn ti-btn-icon ti-btn-sm ti-btn-soft-danger me-0">
+                                    <i class="ri-close-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex items-center gap-1">
+                            <div class="me-1">
+                                <span class="avatar avatar-sm">
+                                    <img src="./assets/images/faces/10.jpg" alt="">
+                                </span>
+                            </div>
+                            <div class="flex-auto truncate">
+                                <span class="font-medium block mb-0">Prax Bhav</span>
+                                <span class="text-textmuted dark:text-textmuted/50 block text-xs w-75 truncate">want's to add you as a friend </span>
+                            </div>
+                            <div class="ti-btn-list text-nowrap ms-auto">
+                                <button aria-label="buton" type="button" class="ti-btn ti-btn-icon ti-btn-sm ti-btn-soft-success">
+                                    <i class="ri-check-line"></i>
+                                </button>
+                                <button aria-label="buton" type="button" class="ti-btn ti-btn-icon ti-btn-sm ti-btn-soft-danger me-0">
+                                    <i class="ri-close-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex items-center gap-1">
+                            <div class="me-1">
+                                <span class="avatar avatar-sm">
+                                    <img src="./assets/images/faces/12.jpg" alt="">
+                                </span>
+                            </div>
+                            <div class="flex-auto truncate">
+                                <span class="font-medium block mb-0">Jackie Chen</span>
+                                <span class="text-textmuted dark:text-textmuted/50 block text-xs w-75 truncate">want's to add you as a friend </span>
+                            </div>
+                            <div class="ti-btn-list text-nowrap ms-auto">
+                                <button aria-label="buton" type="button" class="ti-btn ti-btn-icon ti-btn-sm ti-btn-soft-success">
+                                    <i class="ri-check-line"></i>
+                                </button>
+                                <button aria-label="buton" type="button" class="ti-btn ti-btn-icon ti-btn-sm ti-btn-soft-danger me-0">
+                                    <i class="ri-close-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex items-center gap-1">
+                            <div class="me-1">
+                                <span class="avatar avatar-sm">
+                                    <img src="./assets/images/faces/5.jpg" alt="">
+                                </span>
+                            </div>
+                            <div class="flex-auto truncate">
+                                <span class="font-medium block mb-0">Samantha Sam</span>
+                                <span class="text-textmuted dark:text-textmuted/50 block text-xs w-75 truncate">want's to add you as a friend </span>
+                            </div>
+                            <div class="ti-btn-list text-nowrap ms-auto">
+                                <button aria-label="buton" type="button" class="ti-btn ti-btn-icon ti-btn-sm ti-btn-soft-success">
+                                    <i class="ri-check-line"></i>
+                                </button>
+                                <button aria-label="buton" type="button" class="ti-btn ti-btn-icon ti-btn-sm ti-btn-soft-danger me-0">
+                                    <i class="ri-close-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex items-center gap-1">
+                            <div class="me-1">
+                                <span class="avatar avatar-sm">
+                                    <img src="./assets/images/faces/15.jpg" alt="">
+                                </span>
+                            </div>
+                            <div class="flex-auto truncate">
+                                <span class="font-medium block mb-0">Robert Lewis</span>
+                                <span class="text-textmuted dark:text-textmuted/50 block text-xs w-75 truncate">want's to add you as a friend </span>
+                            </div>
+                            <div class="ti-btn-list text-nowrap ms-auto">
+                                <button aria-label="buton" type="button" class="ti-btn ti-btn-icon ti-btn-sm ti-btn-soft-success">
+                                    <i class="ri-check-line"></i>
+                                </button>
+                                <button aria-label="buton" type="button" class="ti-btn ti-btn-icon ti-btn-sm ti-btn-soft-danger me-0">
+                                    <i class="ri-close-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End::Row-2 -->
+
+<!-- Start::Row-3 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-12 col-span-12">
+        <div class="box">
+            <div class="box-header justify-between">
+                <div class="box-title">
+                    Social Media Performance
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <div>
+                        <input class="form-control form-control-sm" type="text" placeholder="Search Here">
+                    </div>
+                    <spk-dropdowns [Customclass]="'dropdown'" [title]="'Sort By'" [class]="'ti-btn bg-primary text-white ti-btn-sm !m-0 btn-wave waves-effect waves-light'" [Icon]="true" [IconClass]="'ri-arrow-down-s-line align-middle ms-1 inline-block'" 
+                    [Menuclass]="'dropdown-menu'"  >
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">New</a></li>
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Popular</a></li>
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Relevant</a></li>
+                       </spk-dropdowns>
+                </div>
+            </div>
+            <div class="box-body">
+                <div class="table-responsive overflow-auto table-bordered-default">
+                    <spk-reusable-tables [columns]="socialMediColumns" tableClass="ti-custom-table text-nowrap"
+                                [showCheckbox]="false">
+                                @for(social of socials;track $index){
+                            <tr class="border-b border-defaultborder dark:border-defaultborder/10">
+                                <td>
+                                    {{social.date}}
+                                </td>
+                                <td>
+                                   <div class="flex items-center gap-2">
+                                        <span class="avatar avatar-sm bg-{{social.bg}}/10 !text-{{social.bg}}">
+                                            <i class="ri-{{social.icon}}-fill text-[1rem] text-{{social.textcolor}}"></i>
+                                        </span>
+                                        <span class="font-medium">{{social.title}}</span>
+                                   </div>
+                                </td>
+                                <td>
+                                    {{social.likes}}
+                                </td>
+                                <td>
+                                    {{social.comments}}
+                                </td>
+                                <td>
+                                    {{social.shares}}
+                                </td>
+                                <td>
+                                    <span class="badge bg-{{social.bg1}}/10 text-{{social.bg1}}">{{social.impressions}}</span>
+                                </td>
+                                <td>
+                                    {{social.percent}}
+                                </td>
+                                <td>
+                                    {{social.followers}}
+                                </td>
+                                <td>
+                                    {{social.following}}
+                                </td>
+                            </tr>
+                        }
+                        </spk-reusable-tables>
+                </div>
+            </div>
+            <div class="box-footer border-t-0"> 
+                <div class="flex items-center flex-wrap"> 
+                    <div> Showing 5 Entries <i class="bi bi-arrow-right ms-2 font-semibold"></i> </div>
+                    <div class="ms-auto"> 
+                        <nav aria-label="Page navigation" class="pagination-style-4">
+                            <ul class="ti-pagination mb-0 flex-wrap">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="javascript:void(0);">
+                                        Prev
+                                    </a>
+                                </li>
+                                <li class="page-item "><a class="page-link active"
+                                        href="javascript:void(0);">1</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                                
+                                <li class="page-item">
+                                    <a class="page-link !text-primary" href="javascript:void(0);">
+                                        next
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div> 
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End::Row-3 -->

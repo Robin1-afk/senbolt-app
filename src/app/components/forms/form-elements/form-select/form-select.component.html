@@ -1,0 +1,334 @@
+<app-page-header [title]="'Form Elements'" [title1]="['Forms Select']" [activeitem]="'Forms Select'"></app-page-header>
+
+          <!-- Start::row-1 -->
+           <div class="grid grid-cols-12 gap-x-6">
+            <div class="col-span-12 lg:col-span-12">
+              <div class="box">
+                <div class="box-header">
+                  <h5 class="box-title">Choices Multiple Select</h5>
+                </div>
+                <div class="box-body">
+                  <label class="ti-form-select  rounded-sm !p-0 mb-2 font-medium">Default Choices Select</label>
+                  <spk-ng-select 
+                  [options]="multipleSelect"
+                  [selectClass]="''"
+                  [clearable]="true"
+                  [multiple]="true"
+                  [defaultValue]="selectedCompanies"
+                  [hideSelected]="true"
+                  [searchable]="true"
+                  [placeholder]="'Choose a city'"
+                  [additionalProperties]="{}"
+                  (change)="handleSelectChange($event)">
+                  </spk-ng-select>
+                  <label class="ti-form-select  rounded-sm !p-0 mb-2 font-medium mt-2">With Remove Button</label>
+                  <spk-ng-select 
+                    [options]="multipleRemove"
+                    [selectClass]="'rounded-sm'"
+                    [clearable]="true"
+                    [multiple]="true"
+                    [defaultValue]="selected"
+                    [hideSelected]="true"
+                    [searchable]="true"
+                    [placeholder]="'Choose a city'"
+                    [additionalProperties]="{}"
+                    (change)="handleSelectChange($event)">
+                    </spk-ng-select>
+                  <label class="ti-form-select  rounded-sm !p-0 mb-2 font-medium mt-2">Option groups</label>
+                  <spk-ng-select 
+                    [options]="accounts"
+                    [selectClass]="''"
+                    [clearable]="true"
+                    [multiple]="true"
+                    [searchable]="true"
+                    [placeholder]="'Choose a city'"
+                    [additionalProperties]="{}"
+                    (change)="handleSelectChange($event)">
+                    </spk-ng-select>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+          <!-- End::row-1 -->
+  
+          <!-- Start::row-2 -->
+          <div class="grid grid-cols-12 gap-x-6">
+            <div class="col-span-12 lg:col-span-12">
+              <div class="box">
+                <div class="box-header">
+                  <h5 class="box-title">Passing Through Options</h5>
+                </div>
+                <div class="box-body">
+                  <spk-ng-select 
+                  [options]="Passing"
+                  [selectClass]="''"
+                  [clearable]="true"
+                  [multiple]="true"
+                  [defaultValue]="selectedValues"
+                  [hideSelected]="true"
+                  [searchable]="true"
+                  [placeholder]="'Type to Add'"
+                  [additionalProperties]="{}"
+                  (change)="handleSelectChange($event)">
+                  </spk-ng-select>
+                </div>
+              </div>
+            </div>
+            <div class="col-span-12 lg:col-span-12">
+              <div class="box">
+                <div class="box-header">
+                  <h5 class="box-title"> Email Address Only</h5>
+                </div>
+                <div class="box-body">
+
+                  <input class="ti-form-input" id="choices-text-email-filter" type="text" [(ngModel)]="email"
+                  [formControl]="emailFormControl">
+                  @if(emailFormControl.hasError('email') && emailFormControl.touched){
+                    <div
+                      class="text-danger"
+                    >
+                      Only values matching specific conditions can be added
+                    </div>
+                }
+                </div>
+              </div>
+            </div>
+            <div class="col-span-12 lg:col-span-12">
+              <div class="box">
+                <div class="box-header">
+                  <h5 class="box-title">Single Select</h5>
+                </div>
+                <div class="box-body">
+                  <label class="ti-form-select rounded-sm !p-0 mb-2 font-medium">Default Single Choices Select</label>
+                  <spk-ng-select 
+                  [options]="Single"
+                  [selectClass]="''"
+                  [clearable]="true"
+                  [multi]="true"
+                  [searchable]="true"
+                  [placeholder]="'This is a placeholder'"
+                  [additionalProperties]="{}"
+                  (change)="handleSelectChange($event)">
+                  </spk-ng-select>
+                  <label class="ti-form-select rounded-sm !p-0 mb-2 font-medium mt-2">Option groups</label>
+                  <spk-ng-select 
+                  [options]="cityOptions"
+                  [selectClass]="''"
+                  [clearable]="true"
+                  [multi]="true"
+                  [searchable]="true"
+                  [placeholder]="'Choose a city'"
+                  [additionalProperties]="{}"
+                  (change)="handleSelectChange($event)">
+                  </spk-ng-select>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+          <!-- End::row-2 -->
+  
+          <!-- Start::row-3 -->
+          <div class="grid grid-cols-12 gap-x-6">
+            <div class="col-span-12 md:col-span-6 xl:col-span-12">
+              <div class="box">
+                <div class="box-header">
+                  <h5 class="box-title">Select With Label</h5>
+                </div>
+                <div class="box-body">
+                  <label for="hs-select-label" class="ti-form-select rounded-sm !p-0 mb-2 font-medium">Label</label>
+                  <select id="hs-select-label" class="ti-form-select rounded-sm !py-2 !px-3">
+                    <option selected>Open this select menu</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-span-12 md:col-span-6 xl:col-span-12">
+              <div class="box">
+                <div class="box-header">
+                  <h5 class="box-title">Select Sizes</h5>
+                </div>
+                <div class="box-body">
+                  <div class="space-y-3">
+                    <select class="ti-form-select rounded-sm !py-2 !px-3">
+                      <option selected>Open this select menu</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                    </select>
+  
+                    <select class="ti-form-select rounded-sm sm:!p-4">
+                      <option selected>Open this select menu</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                    </select>
+  
+                    <select class="ti-form-select rounded-sm sm:!p-5">
+                      <option selected>Open this select menu</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-span-12 xl:col-span-12">
+              <div class="box">
+                <div class="box-header">
+                  <h5 class="box-title">Select With Validation States</h5>
+                </div>
+                <div class="box-body">
+                  <div class="space-y-3">
+                    <div>
+                      <label for="select-1" class="ti-form-select rounded-sm !p-0 mb-2 font-medium">Label</label>
+                      <div class="relative">
+                        <select id="select-1" class="ti-form-select rounded-sm !py-2 !px-3 pe-16 !border-red focus:border-red focus:ring-red">
+                          <option selected>Open this select menu</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                        </select>
+                        <div class="absolute inset-y-0 end-0 flex items-center pointer-events-none pe-8">
+                          <svg class="h-4 w-4 text-danger" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                          </svg>
+                        </div>
+                      </div>
+                      <p class="text-sm text-danger mt-2">Please select a valid state.</p>
+                    </div>
+  
+                    <div>
+                      <label for="select-2" class="ti-form-select rounded-sm !p-0 mb-2 font-medium">Label</label>
+                      <div class="relative">
+                        <select id="select-2" class="ti-form-select rounded-sm !py-2 !px-3 pe-16 !border-green focus:border-green focus:ring-green">
+                          <option>Open this select menu</option>
+                          <option selected>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                        </select>
+                        <div class="absolute inset-y-0 end-0 flex items-center pointer-events-none pe-8">
+                          <svg class="h-4 w-4 text-success" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.6091 3.41829C13.8594 3.68621 14 4.04952 14 4.42835C14 4.80718 13.8594 5.1705 13.6091 5.43841L6.93313 12.5817C6.68275 12.8495 6.3432 13 5.98916 13C5.63511 13 5.29556 12.8495 5.04518 12.5817L2.3748 9.72439C2.13159 9.45494 1.99701 9.09406 2.00005 8.71947C2.00309 8.34488 2.14351 7.98656 2.39107 7.72167C2.63862 7.45679 2.9735 7.30654 3.32359 7.30328C3.67367 7.30002 4.01094 7.44403 4.26276 7.70427L5.98916 9.55152L11.7211 3.41829C11.9715 3.15046 12.3111 3 12.6651 3C13.0191 3 13.3587 3.15046 13.6091 3.41829Z" fill="currentColor"/>
+                          </svg>
+                        </div>
+                      </div>
+                      <p class="text-sm text-success mt-2">Looks good!</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End::row-3 -->
+  
+          <!-- Start::row-5 -->
+          <div class="grid grid-cols-12 gap-x-6">
+            <div class="col-span-12 md:col-span-6 xxl:!col-span-6">
+              <div class="box">
+                <div class="box-header">
+                  <h5 class="box-title">Default Select</h5>
+                </div>
+                <div class="box-body">
+                  <select class="ti-form-select rounded-sm !py-2 !px-3">
+                    <option selected>Open this select menu</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-span-12 md:col-span-6 xxl:!col-span-6">
+              <div class="box">
+                <div class="box-header">
+                  <h5 class="box-title">Pilled Select</h5>
+                </div>
+                <div class="box-body">
+                  <select class="ti-form-select  !py-2 !px-3 rounded-sm">
+                    <option selected>Open this select menu</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-span-12 md:col-span-6 xxl:!col-span-6">
+              <div class="box">
+                <div class="box-header">
+                  <h5 class="box-title">Disabled Select</h5>
+                </div>
+                <div class="box-body">
+                  <select class="opacity-70 pointer-events-none ti-form-select rounded-sm !py-2 !px-3" disabled>
+                    <option selected>Open this select menu</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-span-12 md:col-span-6 xxl:!col-span-6">
+              <div class="box">
+                <div class="box-header">
+                  <h5 class="box-title">Select With Hidden Label</h5>
+                </div>
+                <div class="box-body">
+                  <label for="hs-hidden-select" class="sr-only">Label</label>
+                  <select id="hs-hidden-select" class="ti-form-select rounded-sm !py-2 !px-3">
+                    <option selected>Open this select menu</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End::row-5 -->
+  
+          <!-- Start::row-6 -->
+          <div class="grid grid-cols-12 gap-x-6">
+            <div class="col-span-12 lg:col-span-6">
+              <div class="box">
+                <div class="box-header">
+                  <h5 class="box-title"> Options added via config with no search</h5>
+                </div>
+                <div class="box-body">
+                  <select class="ti-form-select rounded-sm !py-2 !px-3" name="choices-single-no-search" id="choices-single-no-search">
+                    <option value="0">Zero</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-span-12 lg:col-span-6">
+              <div class="box">
+                <div class="box-header">
+                  <h5 class="box-title"> Passing Unique Values</h5>
+                </div>
+                <div class="box-body">
+                  <spk-ng-select 
+                  [options]="PassingUnique"
+                  [selectClass]="''"
+                  [clearable]="true"
+                  [multiple]="true"
+                  [defaultValue]="selectedValues1"
+                  [hideSelected]="true"
+                  [searchable]="true"
+                  [addTag]="true"
+                  [selectOnTab]="true"
+                  [placeholder]="'Type to Add'"
+                  [additionalProperties]="{}"
+                  (change)="handleSelectChange($event)">
+                  </spk-ng-select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End::row-6 -->

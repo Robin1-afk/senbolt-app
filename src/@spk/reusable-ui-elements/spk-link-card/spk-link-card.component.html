@@ -1,0 +1,26 @@
+<div [ngClass]="'box ' + customClass">
+  <a [attr.aria-label]="anchorLabel" href="javascript:void(0);" class="card-anchor"></a>
+  <div class="box-body">
+    <div class="flex align-center">
+      <!-- Avatar -->
+      <div class="me-3">
+        <span [ngClass]="'avatar ' + avatarSize">
+          <img [src]="avatarSrc" alt="avatar" />
+        </span>
+      </div>
+
+      <!-- Content -->
+      <div>
+        <p [ngClass]="'card-text mb-1 text-[.875rem] font-semibold ' + textColorClass">
+          {{ name }}
+        </p>
+        <div class="  {{titleClass}}">
+          {{ title }}
+        </div>
+        <div class="text-[#8c9097] dark:text-white/50 text-[.6875rem] mb-0">
+          {{ description }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

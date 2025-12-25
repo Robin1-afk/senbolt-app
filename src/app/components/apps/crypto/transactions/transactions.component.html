@@ -1,0 +1,84 @@
+<app-page-header [title]="'Crypto'" [title1]="['Transactions']" [activeitem]="'Transactions'"></app-page-header>
+ 
+ <!-- Start::row-1 -->
+  <div class="row">
+    <div class="col-xl-12">
+        <div class="box">
+            <div class="box-header justify-between">
+                <div class="box-title">
+                    Transaction History
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <div>
+                        <input class="form-control form-control-sm" type="text" placeholder="Search Here" aria-label=".form-control-sm example">
+                    </div>
+                    <spk-dropdowns [Customclass]="'dropdown'" [title]="'Sort By'" [class]="'ti-btn ti-btn-primary !m-0 ti-btn-sm btn-wave waves-effect waves-light'" [Icon]="true" [IconClass]="'ri-arrow-down-s-line align-middle ms-1 inline-block'" 
+                    [Menuclass]="'dropdown-menu'"  >
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">This Week</a></li>
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">This Month</a></li>
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">This Year</a></li>
+                    </spk-dropdowns>
+                    <button class="ti-btn bg-secondary text-white ti-btn-sm btn-wave !m-0">View All</button>
+                </div>
+            </div>
+            <div class="box-body p-0">
+                <div class="table-responsive">
+                    <spk-reusable-tables  [columns]="transactionColumn" tableClass="ti-custom-table ti-custom-table-head"
+                    [showCheckbox]="false"> 
+                    @for(crypto of cryptos;track $index){
+                            <tr class="transaction-list border-b !border-defaultborder dark:!border-defaultborder/10">
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <span class="avatar avatar-xs avatar-rounded">
+                                            <img [src]="crypto.src" alt="">
+                                        </span>
+                                        <div class="font-medium">{{crypto.name}}</div>
+                                    </div>
+                                </td>
+                                <td>{{crypto.date}}</td>
+                                <td>{{crypto.txn}}</td>
+                                <td class="text-{{crypto.bg1}} font-medium">{{crypto.type}}</td>
+                                <td>{{crypto.amount}}</td>
+                                <td> <span class="badge bg-{{crypto.bg}}/10 text-{{crypto.bg}}">{{crypto.status}}</span></td>
+                                <td class="text-textmuted dark:text-textmuted/50">{{crypto.recipoent}}</td>
+                                <td>
+                                    <div class="hs-tooltip ti-main-tooltip me-1">
+                                        <button class="ti-btn ti-btn-soft-info !m-0 ti-btn-icon ti-btn-sm hs-tooltip-toggle"><i class="ri-download-2-line"></i>
+                                            <span
+                                            class="hs-tooltip-content  ti-main-tooltip-content py-1 px-2 !bg-black !text-xs !font-medium !text-white shadow-sm "
+                                            role="tooltip">
+                                              Download
+                                        </span>
+                                        </button>
+                                    </div>
+                                    <button (click)="click(crypto.id)" class="ti-btn ti-btn-soft-danger !m-0 ti-btn-icon ms-1 ti-btn-sm transactions-delete"><i class="ri-delete-bin-5-line"></i></button>
+                                </td>
+                            </tr>
+                        }
+                        </spk-reusable-tables>
+                </div>
+            </div>  
+            <div class="box-footer sm:justify-end justify-center flex">
+                <nav aria-label="..." class="me-4">
+                    <ul class="ti-pagination">
+                        <li class="page-item disabled">
+                            <a class="page-link px-3 py-[0.375rem] !border-e-0">Previous</a>
+                        </li>
+                        <li class="page-item"><a class="page-link px-3 py-[0.375rem] !border-e-0"
+                                href="javascript:void(0);">1</a></li>
+                        <li class="page-item " aria-current="page">
+                            <a class="page-link active px-3 py-[0.375rem] !border-e-0"
+                            href="javascript:void(0);">2</a>
+                            </li>
+                        <li class="page-item"><a class="page-link px-3 py-[0.375rem] !border-e-0"
+                                href="javascript:void(0);">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link px-3 py-[0.375rem]" href="javascript:void(0);">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End::row-1 -->

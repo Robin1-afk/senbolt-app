@@ -1,0 +1,124 @@
+<app-page-header [title]="'Ui Elements'" [title1]="['Tooltips']" [activeitem]="'Tooltips'"></app-page-header>
+
+<!-- Start:: row-1 -->
+<div class="grid grid-cols-12 gap-x-6">
+  <div class="xl:col-span-12 col-span-12">
+    <app-showcode-card [title]="'Tooltip Directions'" [boxClass]="'custom-box'" [prism]="prsimCodeData.TolltipsTS1">
+            <div class="ti-btn-list">
+                <!-- Loop through each tooltip data and display the button with tooltip -->
+                 @for ( tooltip of DirectionsTooltip; track $index) {
+               <spk-tooltip [classList]="tooltip.customClass + ' hs-tooltip ti-main-tooltip'">
+                    <button type="button" class="hs-tooltip-toggle ti-btn btn-wave ti-btn-primary">
+                        {{ tooltip.title }}
+                        <span class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 !bg-black !text-xs !font-medium !text-white shadow-sm"
+                              role="tooltip">
+                            {{ tooltip.title }}
+                        </span>
+                    </button>
+                </spk-tooltip>
+            }
+              </div>
+              
+    </app-showcode-card>
+  </div>
+</div>
+<!-- End:: row-1 -->
+
+<!-- Start:: row-2 -->
+<div class="grid grid-cols-12 gap-x-6">
+  <div class="xl:col-span-12 col-span-12">
+    <app-showcode-card [title]="'Colored Tooltips'"  [prism]="prsimCodeData.TolltipsTS2">
+              <div class="ti-btn-list">
+                @for ( tooltip of ColorTooltip; track $index) {
+                    <spk-tooltip [classList]="tooltip.customClass + ' hs-tooltip ti-main-tooltip'">
+                      <button type="button" class="hs-tooltip-toggle ti-btn btn-wave  ti-btn-{{tooltip.class1}}">
+                         {{tooltip.text}}
+                          <span
+                              class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 !bg-{{tooltip.class1}} !text-xs !font-medium !text-{{tooltip.class2}} shadow-sm dark:bg-slate-700"
+                              role="tooltip">
+                             {{tooltip.text}}
+                          </span>
+                      </button>
+                    </spk-tooltip>
+                }
+              </div>
+    </app-showcode-card>
+  </div>
+</div>
+<!-- End:: row-2 -->
+
+<!-- Start:: row-3 -->
+<div class="grid grid-cols-12 gap-x-6">
+  <div class="xl:col-span-6 col-span-12">
+    <app-showcode-card [title]="'Tooltips on links'" [prism]="prsimCodeData.TolltipsTS3">
+            @for ( tooltip of LinkTooltip; track $index) {
+                <spk-tooltip [classList]="tooltip.customClass + ' hs-tooltip ti-main-tooltip'">
+                  <p class="text-muted mb-0">
+                      Hover on the link to view the <a aria-label="anchor" href="javascript:void(0);"
+                          title="Link Tooltip"></a>
+                      <span class="hs-tooltip-toggle !text-primary">
+                          Tooltip
+                          <span
+                              class="hs-tooltip-content ti-main-tooltip-content !py-1 !px-1 !bg-{{tooltip.color}} !text-xs !font-medium !text-white shadow-sm dark:bg-slate-700"
+                              role="tooltip">
+                              {{tooltip.title}}
+                          </span>
+                      </span>
+                  </p>
+                  </spk-tooltip>
+                }
+    </app-showcode-card>
+  </div>
+  <div class="xl:col-span-6 col-span-12">
+    <app-showcode-card [title]="'With an SVG\'s'" [classbody]="'flex'" [prism]="prsimCodeData.TolltipsTS4">
+            @for ( tooltip of tooltipsData; track $index) {
+                <spk-tooltip [classList]="tooltip.customClass + ' hs-tooltip ti-main-tooltip'">
+                        <button type="button" class="hs-tooltip-toggle me-4">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="{{tooltip.svgClass}}" height="24px" viewBox="0 0 24 24" width="24px">
+                            <path d="M0 0h24v24H0V0z" fill="none" />
+                            <path [attr.d]="tooltip.svgPath" />
+                          </svg>
+                          <span class="hs-tooltip-content ti-main-tooltip-content !py-1 !px-2 !{{tooltip.bgClass}} !text-xs !font-medium !text-white shadow-sm dark:bg-slate-700" role="tooltip">
+                            {{tooltip.tooltipText}}
+                          </span>
+                        </button>
+                  </spk-tooltip>
+                }
+    </app-showcode-card>
+  </div>
+  <div class="xl:col-span-6 col-span-12">
+         <app-showcode-card [title]="'Disabled elements'" [prism]="prsimCodeData.TolltipsTS5">
+            @for ( tooltip of DisabledTooltip; track $index) {
+                <spk-tooltip class="hs-tooltip ti-main-tooltip">
+                  <button type="button"
+                      class="hs-tooltip-toggle ti-btn btn-wave  ti-btn-primary opacity-[0.6]">
+                     {{tooltip.title}}
+                      <span
+                          class="hs-tooltip-content  ti-main-tooltip-content py-1 px-2 !bg-black !text-xs !font-medium !text-white shadow-sm "
+                          role="tooltip">
+                          {{tooltip.title}}
+                      </span>
+                  </button>
+                </spk-tooltip>
+            }
+         </app-showcode-card>
+  </div>
+  <div class="xl:col-span-6 col-span-12">
+    <app-showcode-card [title]="'Tooltip For Images'" [prism]="prsimCodeData.TolltipsTS6">
+            @for ( tooltip of imagesTooltip; track $index) {
+                <spk-tooltip class=" hs-tooltip ti-main-tooltip">
+                  <button type="button"
+                      class="hs-tooltip-toggle {{tooltip.buttonClass}}">
+                      <img [src]="tooltip.images" alt="img">
+                  </button>
+                  <span
+                      class="hs-tooltip-content  ti-main-tooltip-content !py-1 !px-2 !bg-primary !text-xs !font-medium !text-white shadow-sm "
+                      role="tooltip">
+                     {{tooltip.title}}
+                  </span>
+                  </spk-tooltip>
+                }
+    </app-showcode-card>
+  </div>
+</div>
+<!-- End:: row-3 -->

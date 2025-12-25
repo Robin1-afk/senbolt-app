@@ -1,0 +1,20 @@
+
+  <div class="box overflow-hidden">
+   <!-- Header -->
+   @if (header) {
+    <div class="box-header" >
+      {{ header }}
+    </div>
+}
+    <ul class="ti-list-group list-group-flush">
+      @for (item of items; track $index) {
+        <li class="ti-list-group-item"> {{ item }}</li>
+      }
+    </ul>
+    @if (footer) {
+      <div class="box-footer border-t-0">
+        {{ footer }}
+      </div>
+  }
+</div>
+  

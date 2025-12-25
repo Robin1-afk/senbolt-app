@@ -1,0 +1,76 @@
+ 
+ <app-page-header [title]="'Apex Charts'" [title1]="['Apex Pie Charts']" [activeitem]="'Apex Pie Charts'"></app-page-header>
+ <!-- Start::row-1 -->
+ <div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Basic Pie Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="pie-basic"><spk-apexcharts [chartOptions]="chartOptions"></spk-apexcharts></div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Simple Donut Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="donut-simple"><spk-apexcharts [chartOptions]="chartOptions1"></spk-apexcharts></div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Updating Donut Chart</div>
+            </div>
+            <div class="box-body mx-auto">
+                <div id="donut-update"><spk-apexcharts [chartOptions]="chartOptions2"></spk-apexcharts></div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Monochrome Pie Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="pie-monochrome"><spk-apexcharts [chartOptions]="chartOptions3"></spk-apexcharts></div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Gradient Donut Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="donut-gradient"> <spk-apexcharts [chartOptions]="chartOptions4"></spk-apexcharts></div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Donut Chart With Patterns</div>
+            </div>
+            <div class="box-body mx-auto">
+                <div id="donut-pattern"> <spk-apexcharts [chartOptions]="chartOptions5"></spk-apexcharts></div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Image Filled Pie Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="pie-image"><spk-apexcharts [chartOptions]="chartOptions6"></spk-apexcharts></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End::row-1 -->

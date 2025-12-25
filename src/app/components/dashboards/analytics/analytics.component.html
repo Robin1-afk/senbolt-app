@@ -1,0 +1,294 @@
+<app-page-header [title]="'Dashboards'" [title1]="['Analytics']" [activeitem]="'Analytics'"></app-page-header>
+
+ <!-- Start::row-1 -->
+ <div class="grid grid-cols-12 gap-x-6">
+    <div class="xxl:col-span-4 col-span-12">
+        <div class="box main-dashboard-banner main-dashboard-banner2 overflow-hidden">
+            <div class="box-body p-6">
+                <div class="grid grid-cols-12 sm:gap-x-6 justify-between">
+                    <div class="xxl:col-span-8 xl:col-span-4 lg:col-span-5 md:col-span-5 sm:col-span-5 col-span-12">
+                        <h4 class="mb-3 font-medium text-white">Upgrade to get more</h4>
+                        <p class="mb-3 text-white text-[11px]">Upgrade Now for Premium Access and Unlock Exclusive Features!</p>
+                        <a href="javascript:void(0);" class="font-medium text-white underline">Upgrade Now<i class="ti ti-arrow-narrow-right"></i></a>
+                    </div>
+                    <div class="xxl:col-span-4 xl:col-span-7 lg:col-span-7 md:col-span-7 sm:col-span-7 col-span-12 sm:block hidden text-end my-auto">
+                        <img src="./assets/images/media/media-91.png" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xxl:col-span-8 col-span-12">
+        <div class="grid grid-cols-12 gap-x-6">
+            @for(card of cardData;track $index){
+            <div class="xxl:col-span-3 lg:col-span-6 md:col-span-6 sm:col-span-12 col-span-12">
+                <spk-analytics-card
+                [title]="card.title" 
+                [value]="card.value" 
+                [percentageChange]="card.percentageChange" 
+                [chartOptions]="card.chartOptions" 
+                [iconClass]="card.iconClass" 
+                [percentageClass]="card.percentageClass" 
+                [bgClass]="card.bgClass"
+                [trend]="card.trend" 
+                >
+              </spk-analytics-card>
+            </div>
+        }
+        </div>
+
+    </div>
+</div>
+<!--End::row-1 -->
+
+<!-- Start::row-2 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xxl:col-span-3 col-span-12">
+        <div class="box">
+            <div class="box-header justify-between flex-wrap pb-1">
+                <div class="box-title">
+                    Activity
+                </div>
+                <spk-dropdowns [Customclass]="'dropdown'" [class]="'ti-btn ti-btn-light ti-btn-icons ti-btn-sm text-textmuted dark:text-textmuted/50 ti-dropdown-toggle hs-dropdown-toggle'"  [Icon]="true" [IconClass]="'fe fe-more-vertical fs-14'"
+                [Menuclass]="'dropdown-menu'"  >
+                        <li class="border-b border-defaultborder dark:border-defaultborder/10"><a class="ti-dropdown-item" href="javascript:void(0);">Today</a></li>
+                        <li class="border-b border-defaultborder dark:border-defaultborder/10"><a class="ti-dropdown-item" href="javascript:void(0);">This Week</a></li>
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Last Week</a></li>
+                    </spk-dropdowns>
+            </div>
+            <div class="box-body">
+                <div class="analytics-timeline">
+                    <ul class="list-none analytics-activity mb-0">
+                        @for(activity of activities;track $index){
+                        <li class="{{activity.class}}">
+                            <div class="flex items-center gap-2">
+                                <div>
+                                    <span class="avatar avatar-md avatar-rounded bg-{{activity.bg}}/10 !text-{{activity.bg}} avatar avatar-md avatar-rounded bg-{{activity.bg}}/10 !text-{{activity.bg}}">
+                                        <i class="ri-{{activity.icon}} text-[18px]"></i>
+                                    </span>
+                                </div>
+                                <div class="flex-auto">
+                                    <span class="block font-medium">{{activity.title}}</span>
+                                    <span class="text-[13px] text-textmuted dark:text-textmuted/50">{{activity.status}} <span class="text-{{activity.bg1}} font-medium ms-1">{{activity.percent}}<i class="ti ti-arrow-narrow-{{activity.arrow}}"></i></span></span>
+                                </div>
+                                <div class="ms-auto">
+                                    <span class="block text-[15px] mb-0 font-medium">{{activity.duration}}</span>
+                                </div>
+                            </div>
+                        </li>
+                    }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xxl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header justify-between">
+                <div class="box-title">
+                    Visitor Analytics
+                </div>
+                <div>
+                    <button type="button" class="ti-btn ti-btn-soft-primary text-xs px-2 py-[0.26rem]"><i class="ri-share-forward-line align-middle inline-block"></i>Export</button>
+                </div>
+            </div>
+            <div class="box-body pb-0">
+                <div id="audienceMetric">
+                    <spk-apexcharts [chartOptions]="chartOptions4"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xxl:col-span-3 col-span-12">
+        <div class="box">
+            <div class="box-header justify-between">
+                <div class="box-title">
+                    Users By Countries
+                </div>
+                <div class="">
+                    <a href="javascript:void(0);" class="ti-btn ti-btn-light text-textmuted dark:text-textmuted/50 ti-btn-sm">
+                        View All
+                    </a>
+                </div>
+            </div>
+            <div class="box-body">
+                <ul class="list-none mb-0 analytics-visitors-countries">
+                    @for(country of countries;track $index){
+                    <li  class="{{country.liClass}}">
+                        <div class="flex items-center gap-2">
+                            <div class="leading-none">
+                                <span class="avatar avatar-xs avatar-rounded text-defaulttextcolor">
+                                    <img [src]="country.flag" alt="">
+                                </span>
+                            </div>
+                            <div class="ms-1 flex-auto leading-none">
+                                <span class="text-[14px]">{{ country.name }}</span>
+                            </div>
+                            <div [ngClass]="country.percentageClass"> {{ country.percentage }} <i class="ti ti-arrow-narrow-{{country.changeDirection}}"></i></div>
+                            <div>
+                                <span class="text-defaulttextcolor badge bg-light font-medium">{{ country.visitors }}</span>
+                            </div>
+                        </div>
+                    </li>
+                }
+                </ul>
+                
+            </div>
+         </div>
+    </div>
+</div>
+<!--End::row-2 -->
+
+<!-- Start::row-3 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xxl:col-span-5 col-span-12">
+        <div class="box">
+            <div class="box-header justify-between">
+                <div class="box-title">
+                    Site Referrals
+                </div>
+                <a href="javascript:void(0);" class="ti-btn ti-btn-light btn-wave text-textmuted dark:text-textmuted/50 waves-effect ti-btn-sm waves-light">View All</a>
+            </div>
+            <div class="box-body sm:flex items-center">
+                <div id="referrals-chart" class="p-4 flex-shrink-0 px-0">
+                    <spk-apexcharts [chartOptions]="chartOptions5"></spk-apexcharts>
+                </div>
+                <div class="table-responsive overflow-auto table-bordered-default">
+                    <spk-reusable-tables [columns]="referrals" trClass="border-b border-defaultborder dark:border-defaultborder/10" tableClass="ti-custom-table text-nowrap"  [showCheckbox]="false">
+                        @for(referal of referalsdata;track $index){
+                        <tr>
+                            <td>{{referal.source}}</td>
+                            <td class="text-center font-medium">{{referal.total}}</td>
+                            <td class="text-{{referal.bg}}">{{referal.growth}}</td>
+                        </tr>
+                    }
+                    </spk-reusable-tables>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xxl:col-span-4 col-span-12">
+        <div class="box">
+            <div class="box-header justify-between">
+            <h5 class="box-title">Top Landing Pages</h5>
+            <a href="javascript:void(0);" class="ti-btn ti-btn-light btn-wave text-textmuted dark:text-textmuted/50 ti-btn-sm waves-effect waves-light">View All</a>
+            </div>
+            <div class="box-body">
+                @for(item of progressItems;track $index){
+                <div class="{{ item.liClass }}">
+                    <div class="flex mb-1">
+                        <span>{{ item.path }}</span>
+                        <span class="ms-auto text-[14px] font-semibold">{{ item.visits }}</span>
+                    </div>
+                    <div class="progress progress-md p-1">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-{{ item.progressBarClass }}" role="progressbar" style="width: 50%;"
+                        [style.width.%]="item.progress" 
+                      [attr.aria-valuenow]="item.progress" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="xxl:col-span-3 col-span-12">
+        <div class="box">
+            <div class="box-header justify-between pb-0">
+               <div class="box-title">
+                Sales Growth Rate
+               </div>
+               <spk-dropdowns [Customclass]="'dropdown'" [class]="'ti-btn ti-btn-light ti-btn-icons ti-btn-sm text-textmuted dark:text-textmuted/50 ti-dropdown-toggle hs-dropdown-toggle'"  [Icon]="true" [IconClass]="'fe fe-more-vertical'"
+               [Menuclass]="'dropdown-menu'"  >
+                       <li class="border-b border-defaultborder dark:border-defaultborder/10"><a class="ti-dropdown-item" href="javascript:void(0);">Today</a></li>
+                       <li class="border-b border-defaultborder dark:border-defaultborder/10"><a class="ti-dropdown-item" href="javascript:void(0);">This Week</a></li>
+                       <li><a class="ti-dropdown-item" href="javascript:void(0);">Last Week</a></li>
+               </spk-dropdowns>
+           </div>
+           <div class="box-body pb-1">
+                <div class="flex items-center p-4 bg-light rounded-sm">
+                    <div>
+                        <p class="mb-1 text-[13px]">Comparison: 2024 vs. 2023</p>
+                        <div class="text-textmuted dark:text-textmuted/50 text-xs mb-2">Increased By <span class="text-success"> 2.62%<i class="ti ti-arrow-narrow-up text-[16px]"></i></span></div>
+                        <h5 class="mb-0">20%</h5>
+                    </div>
+                    <div class="ms-auto">
+                        <div class="p-2 bg-primary/10 rounded-full">
+                            <div class="avatar-md avatar bg-primary svg-white avatar-rounded shadow-sm mb-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V48a8,8,0,0,1,16,0V156.69l50.34-50.35a8,8,0,0,1,11.32,0L128,132.69,180.69,80H160a8,8,0,0,1,0-16h40a8,8,0,0,1,8,8v40a8,8,0,0,1-16,0V91.31l-58.34,58.35a8,8,0,0,1-11.32,0L96,123.31l-56,56V200H224A8,8,0,0,1,232,208Z"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="sales-growth" class="mt-1">  <spk-apexcharts [chartOptions]="chartOptions6"></spk-apexcharts></div>
+            </div>
+        </div>
+    </div>
+</div>
+ <!--End::row-3 -->
+
+<!-- Start::row-4 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-12 col-span-12">
+        <div class="box">
+            <div class="box-header justify-between">
+                <div class="box-title">
+                    Visitors Statistics
+                </div>
+                <div class="flex flex-wrap">
+                    <spk-dropdowns [Customclass]="'dropdown my-1'" [title]="'Sort By'" [class]="'ti-btn ti-btn-light ti-dropdown-toggle hs-dropdown-toggle px-2 py-[0.26rem]'"  [Icon]="true" [IconClass]="'ri-arrow-down-s-line align-middle ms-1 inline-block'"
+                    [Menuclass]="'dropdown-menu'"  >
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">New</a></li>
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Popular</a></li>
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Relevant</a></li>
+                    </spk-dropdowns>
+                </div>
+            </div>
+            <div class="box-body">
+                <div class="table-responsive overflow-auto table-bordered-default">
+                    <spk-reusable-tables [columns]="statistics" trClass="border-b border-defaultborder dark:border-defaultborder/10" tableClass="ti-custom-table text-nowrap ti-custom-table-hover"  [showCheckbox]="false">
+                        @for(visitor of visitors;track $index){
+                            <tr>
+                                <td class="{{visitor.bg1}}" >{{visitor.total}}</td>
+                                <td class="{{visitor.bg2}}">{{visitor.duration}}</td>
+                                <td >{{visitor.visitors}}</td>
+                                <td class="{{visitor.bg4}}">{{visitor.rate}}</td>
+                                <td class="{{visitor.bg5}}">{{visitor.bouncerate}}</td>
+                                <td class="{{visitor.bg6}}">{{visitor.conversionrate}}</td>
+                                <td class="{{visitor.bg7}}">{{visitor.avgduration}}</td>
+                                <td class="{{visitor.bg8}}">{{visitor.sources}}</td>
+                            </tr>
+                        }
+                        </spk-reusable-tables>
+                </div>
+            </div>
+            <div class="box-footer">
+                <div class="flex items-center flex-wrap">
+                    <div>
+                        Showing 6 Entries <i class="bi bi-arrow-right ms-2 font-medium"></i>
+                    </div>
+                    <div class="ms-auto">
+                       
+                        <nav aria-label="Page navigation" class="pagination-style-4">
+                            <ul class="ti-pagination mb-0 flex-wrap">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="javascript:void(0);">
+                                        Prev
+                                    </a>
+                                </li>
+                                <li class="page-item "><a class="page-link active"
+                                        href="javascript:void(0);">1</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                                
+                                <li class="page-item">
+                                    <a class="page-link !text-primary" href="javascript:void(0);">
+                                        next
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End::row-4 -->

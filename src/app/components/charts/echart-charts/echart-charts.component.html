@@ -1,0 +1,266 @@
+
+<app-page-header [title]="'Charts'" [title1]="['Echart Charts']" [activeitem]="'Echart Charts'"></app-page-header>
+<!-- Start::row-1 -->
+ <div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Basic Line Chart</div>
+            </div>
+            <div class="box-body">
+                <spk-echarts [echartId]="'echart-basic-line'" [options]="options1"></spk-echarts>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Smoothed Line Chart</div>
+            </div>
+            <div class="box-body">
+                <spk-echarts [echartId]="'echart-smoothed-line'" [options]="options2"></spk-echarts>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Basic Area Chart</div>
+            </div>
+            <div class="box-body">
+                <spk-echarts [echartId]="'echart-basic-area'" [options]="options3"></spk-echarts>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Stacked Line Chart</div>
+            </div>
+            <div class="box-body">
+                <spk-echarts [echartId]="'echart-stacked-line'" [options]="options4"></spk-echarts>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Stacked Area Chart</div>
+            </div>
+            <div class="box-body">
+                <spk-echarts [echartId]="'echart-stacked-area'" [options]="options5" [theme]="'macarons'"></spk-echarts>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Step Line Chart</div>
+            </div>
+            <div class="box-body">
+                <spk-echarts [echartId]="'echart-step-line'" [options]="options6" [theme]="'macarons'"></spk-echarts>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Basic Bar Chart</div>
+            </div>
+            <div class="box-body">
+                <spk-echarts [echartId]="'echart-bar-basic'" [options]="options7"></spk-echarts>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Bar With Background Chart</div>
+            </div>
+            <div class="box-body">
+                <spk-echarts [echartId]="'echart-bar-background'" [options]="options8" [theme]="'macarons'"></spk-echarts>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Style For a Single Bar Chart</div>
+            </div>
+            <div class="box-body">
+                <spk-echarts [echartId]="'echart-bar-single'" [options]="options9"></spk-echarts>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Water Fall Chart</div>
+            </div>
+            <div class="box-body">
+                <spk-echarts [echartId]="'echart-waterfall'" [options]="options10" [theme]="'macarons'"></spk-echarts>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Bar With Negative Values Chart</div>
+            </div>
+            <div class="box-body">
+                <spk-echarts [echartId]="'echart-negative-values'" [options]="options11" [theme]="'macarons'"></spk-echarts>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Bar With Labels Chart</div>
+            </div>
+            <div class="box-body">
+                <spk-echarts [echartId]="'echart-bar-labels'" [options]="options12" ></spk-echarts>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Horizontal Bar Chart</div>
+            </div>
+            <div class="box-body">
+                <spk-echarts [echartId]="'echart-bar-horizontal'" [options]="options14" ></spk-echarts>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Horizontal Stacked Bar Chart</div>
+            </div>
+            <div class="box-body">
+                <spk-echarts [echartId]="'echart-stacked-horizontal'" [options]="options15" ></spk-echarts>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Pie Chart</div>
+            </div>
+            <div class="box-body">
+                <spk-echarts [echartId]="'echart-pie'" [options]="options16" ></spk-echarts>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Doughnut Chart</div>
+            </div>
+            <div class="box-body">
+                <spk-echarts [echartId]="'echart-doughnut'" [options]="options17" [theme]="'theme'" ></spk-echarts>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Basic Scatter Chart</div>
+            </div>
+            <div class="box-body">
+                <spk-echarts [echartId]="'echart-scatter'" [options]="options18" [theme]="'theme'" ></spk-echarts>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Bubble Chart</div>
+            </div>
+            <div class="box-body">
+                <spk-echarts [echartId]="'echart-bubble'" [options]="options19" [theme]="'theme'" ></spk-echarts>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Candlestick Chart</div>
+            </div>
+            <div class="box-body">
+                <spk-echarts [echartId]="'echart-candlestick'" [options]="options20"></spk-echarts>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Basic Radar Chart</div>
+            </div>
+            <div class="box-body">
+                <spk-echarts [echartId]="'echart-basic-radar'" [options]="options21"  ></spk-echarts>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Heatmap Chart</div>
+            </div>
+            <div class="box-body">
+                <spk-echarts [echartId]="'echart-heatmap'" [options]="options22"  ></spk-echarts>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Treemap Chart</div>
+            </div>
+            <div class="box-body">
+                <spk-echarts [echartId]="'echart-treemap'" [options]="options23" ></spk-echarts>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Funnel Chart</div>
+            </div>
+            <div class="box-body">
+                <spk-echarts [echartId]="'echart-funnel'" [options]="options24"  ></spk-echarts>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Basic Gauge Chart</div>
+            </div>
+            <div class="box-body">
+               <spk-echarts [echartId]="'echart-gauge-basic'" [options]="options25" ></spk-echarts>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Simple Graph Chart</div>
+            </div>
+            <div class="box-body">
+                <spk-echarts [echartId]="'echart-simple-graph'" [options]="options" ></spk-echarts>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Pictorial Chart</div>
+            </div>
+            <div class="box-body">
+                <spk-echarts [echartId]="'echart-pictorial'" [options]="options27" ></spk-echarts>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End::row-1 -->

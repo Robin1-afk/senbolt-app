@@ -1,0 +1,76 @@
+
+<app-page-header [title]="'Apex Charts'" [title1]="['Apex Radial Bar Charts']" [activeitem]="'Apex Radial Bar Charts'"></app-page-header>
+<!-- Start::row-1 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Basic Pie Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="radialbar-basic"><spk-apexcharts [chartOptions]="chartOptions"></spk-apexcharts></div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Multiple Radialbar Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="radialbar-multiple"><spk-apexcharts [chartOptions]="chartOptions1"></spk-apexcharts></div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Circle Chart - Custom Angle</div>
+            </div>
+            <div class="box-body">
+                <div id="circle-custom"><spk-apexcharts [chartOptions]="chartOptions2"></spk-apexcharts></div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Gradient Circle Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="gradient-circle"><spk-apexcharts [chartOptions]="chartOptions3"></spk-apexcharts></div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Stroked Circular Gauge</div>
+            </div>
+            <div class="box-body">
+                <div id="circular-stroked"><spk-apexcharts [chartOptions]="chartOptions4"></spk-apexcharts></div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Circle Chart With Image</div>
+            </div>
+            <div class="box-body">
+                <div id="circle-image"><spk-apexcharts [chartOptions]="chartOptions5"></spk-apexcharts></div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Semi Circular Gauge</div>
+            </div>
+            <div class="box-body">
+                <div id="circular-semi"><spk-apexcharts [chartOptions]="chartOptions7"></spk-apexcharts></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End::row-1 -->

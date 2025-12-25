@@ -1,0 +1,246 @@
+<app-page-header [title]="'Ui Elements'" [title1]="['Badge']" [activeitem]="'Badge'"></app-page-header>
+
+<!-- Start::row-1 -->
+<div class="grid grid-cols-12 gap-x-6">
+  <div class="xl:col-span-12 col-span-12">
+   <app-showcode-card [title]="' Buttons With Badges'" [prism]="prsimCodeData.badgeTS8">
+              <button type="button" class="ti-btn bg-primary text-white my-1 me-2">
+                  Notifications <span class="badge ms-2 bg-primarytint1color">4</span>
+              </button>
+              <button type="button" class="ti-btn bg-primarytint1color text-white my-1 me-2">
+                  Notifications <span class="badge ms-2 bg-primary">4</span>
+              </button>
+              <button type="button" class="ti-btn bg-primarytint2color text-white my-1 me-2">
+                  Notifications <span class="badge ms-2 bg-warning">4</span>
+              </button>
+              <button type="button" class="ti-btn bg-primarytint3color text-white my-1 me-2">
+                  Notifications <span class="badge ms-2 bg-primarytint1color">4</span>
+              </button>
+              <button type="button" class="ti-btn bg-secondary text-white my-1 me-2">
+                  Notifications <span class="badge ms-2 bg-primary">7</span>
+              </button>
+              <button type="button" class="ti-btn bg-success text-white my-1 me-2">
+                  Notifications <span class="badge ms-2 bg-danger">12</span>
+              </button>
+              <button type="button" class="ti-btn bg-info text-white my-1 me-2">
+                  Notifications <span class="badge ms-2 bg-warning">32</span>
+              </button>
+   </app-showcode-card>
+  </div>
+  <div class="xl:col-span-12 col-span-12">
+    <app-showcode-card [title]="'Outline Button Badges'" [prism]="prsimCodeData.badgeTS4"
+    [classbody]="'box-body flex flex-wrap gap-2'">
+              <button type="button" class="ti-btn ti-btn-outline-primary my-1 me-2">
+                  Notifications <span class="badge bg-primary ms-2 text-white">4</span>
+              </button>
+              <button type="button" class="ti-btn ti-btn-outline-secondary my-1 me-2">
+                  Notifications <span class="badge bg-secondary ms-2 text-white">7</span>
+              </button>
+              <button type="button" class="ti-btn ti-btn-outline-success my-1 me-2">
+                  Notifications <span class="badge bg-success ms-2 text-white">12</span>
+              </button>
+              <button type="button" class="ti-btn ti-btn-outline-info my-1 me-2">
+                  Notifications <span class="badge bg-info ms-2 text-white">32</span>
+              </button>
+    </app-showcode-card>
+  </div>
+</div>
+<!-- End::row-1 -->
+
+<!-- Start::row-2 -->
+<div class="grid grid-cols-12 gap-x-6">
+  <div class="xl:col-span-6 col-span-12">
+    <app-showcode-card [title]="'Light Badges'" [prism]="prsimCodeData.badgeTS2" [classbody]="'flex flex-wrap gap-2'">
+              <span class="badge bg-primary/10 text-primary">Primary</span>
+              <span class="badge bg-secondary/10 text-secondary">Secondary</span>
+              <span class="badge bg-success/10 text-success">Success</span>
+              <span class="badge bg-danger/10 text-danger">Danger</span>
+              <span class="badge bg-warning/10 text-warning">Warning</span>
+              <span class="badge bg-info/10 text-info">Info</span>
+              <span class="badge bg-light/10 text-black dark:text-defaulttextcolor/80">Light</span>
+              <span class="badge bg-black/10 text-black dark:text-defaulttextcolor/80">Dark</span>
+    </app-showcode-card>
+  </div>
+  <div class="xl:col-span-6 col-span-12">
+    <app-showcode-card [title]="' Badges'" [prism]="prsimCodeData.badgeTS" [classbody]="'flex flex-wrap gap-2'">
+              <span class="badge bg-primary text-white">Primary</span>
+              <span class="badge bg-secondary text-white">Secondary</span>
+              <span class="badge bg-success text-white">Success</span>
+              <span class="badge bg-danger text-white">Danger</span>
+              <span class="badge bg-warning text-white">Warning</span>
+              <span class="badge bg-info text-white">Info</span>
+              <span class="badge bg-light text-dark">Light</span>
+              <span class="badge bg-black text-white">Dark</span>
+    </app-showcode-card>
+  </div>
+</div>
+<!-- End::row-2 -->
+
+<!-- Start::row-6 -->
+<div class="grid grid-cols-12 gap-x-6">
+  <div class="xl:col-span-12 col-span-12">
+      <div class="grid grid-cols-12 gap-x-6">
+          <div class="xl:col-span-12 col-span-12">
+            <app-showcode-card [title]="'Positioned Badges'" [prism]="prsimCodeData.badgeTS10"
+            [classbody]="'flex flex-wrap gap-4'">
+                      <button type="button" class="ti-btn bg-primary text-white relative">
+                          Inbox
+                          <span
+                              class="absolute -top-2 start-[60%] translate-middle  badge !rounded-full bg-danger">
+                              99+
+                              <span class="hidden">unread messages</span>
+                          </span>
+                      </button>
+                      <button type="button" class="ti-btn bg-secondary text-white relative">
+                          Profile
+                          <span
+                              class="absolute -top-2 start-[80%] translate-middle p-2 bg-success border border-light !rounded-full">
+                              <span class="hidden">New alerts</span>
+                          </span>
+                      </button>
+                      <span class="avatar relative">
+                          <img src="./assets/images/faces/2.jpg" alt="img" class="!rounded-md">
+                          <span
+                              class="absolute -top-1 start-[80%] translate-middle p-1 bg-success border border-light !rounded-full">
+                              <span class="hidden">New alerts</span>
+                          </span>
+                      </span>
+                      <span class="avatar avatar-rounded relative">
+                          <img src="./assets/images/faces/15.jpg" alt="img">
+                          <span
+                              class="absolute top-0 start-[80%] translate-middle p-1 bg-success border border-light !rounded-full">
+                              <span class="hidden">New alerts</span>
+                          </span>
+                      </span>
+                      <span class="avatar avatar-rounded relative">
+                          <img src="./assets/images/faces/10.jpg" alt="img">
+                          <span
+                              class="absolute -top-2 start-[60%] translate-middle badge bg-secondary !rounded-full shadow-lg text-white">1000+
+                              <span class="hidden">New alerts</span>
+                          </span>
+                      </span>
+            </app-showcode-card>
+          </div>
+          <div class="xl:col-span-12 col-span-12">
+            <app-showcode-card [title]="'Custom Badges'" [prism]="prsimCodeData.badgeTS11" [classbody]="'flex flex-wrap gap-4'">
+                          <div>
+                              <span
+                                  class="badge border bg-outline-secondary !font-semibold !text-[.9375rem] inline-flex items-center">
+                                  <i class="ti ti-flame me-1"></i>
+                                  Hot
+                              </span>
+                          </div>
+                          <div>
+                              <span class="relative">
+                                  <svg class="fill-textmuted dark:fill-textmuted/50 w-8 h-8 text-[2rem]"
+                                      xmlns="http://www.w3.org/2000/svg" height="24px"
+                                      viewBox="0 0 24 24" width="24px" fill="#000000">
+                                      <path
+                                          d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z">
+                                      </path>
+                                  </svg>
+                                  <span
+                                      class="badge !rounded-full bg-success text-white absolute -end-2 top-0">14</span>
+                              </span>
+                          </div>
+                          <div>
+                              <span
+                                  class="badge border dark:border-light bg-light text-defaulttextcolor font-semibold font-[.7rem]"><i
+                                      class="fe fe-eye me-2 inline-block"></i>13.2k</span>
+                          </div>
+                          <div>
+                              <span class="text-badge relative">
+                                  <span class="text text-lg">Inbox</span>
+                                  <span class="badge !rounded-full bg-success text-white">32</span>
+                              </span>
+                          </div>
+            </app-showcode-card>
+            </div>
+      </div>
+  </div>
+  <div class="xl:col-span-12 col-span-12">
+    <app-showcode-card [title]="' Headings'" [prism]="prsimCodeData.badgeTS12">
+              <h1 class="text-[2.5rem]">Example heading <span
+                      class="badge bg-primary text-white !text-[11px] leading-none">New</span></h1>
+              <h2 class="text-[2rem]">Example heading <span
+                      class="badge bg-primary text-white !text-[11px] leading-none">New</span></h2>
+              <h3 class="text-[1.75rem]">Example heading <span
+                      class="badge bg-primary text-white !text-[11px] leading-none">New</span></h3>
+              <h4 class="text-[1.5rem]">Example heading <span
+                      class="badge bg-primary text-white !text-[11px] leading-none">New</span></h4>
+              <h5 class="text-[1.25rem]">Example heading <span
+                      class="badge bg-primary text-white !text-[11px] leading-none">New</span></h5>
+              <h6 class="text-[1rem]">Example heading <span
+                      class="badge bg-primary text-white !text-[11px] leading-none">New</span></h6>
+    </app-showcode-card>
+  </div>
+</div>
+<!-- End::row-6 -->
+
+    <!-- Start::row-3 -->
+    <div class="grid grid-cols-12 gap-x-6">
+        <div class="xl:col-span-6 col-span-12">
+            <app-showcode-card [title]="'Gradient Badges'" [prism]="prsimCodeData.badgeTS6"
+            [classbody]="'flex flex-wrap gap-2'">
+            @for(badge of gradientBadges;track $index){
+      
+              <span class="badge {{badge.class}}">{{badge.text}}</span>
+            }
+          
+          </app-showcode-card>
+      
+        </div>
+        <div class="xl:col-span-6 col-span-12">
+            <app-showcode-card [title]="'Gradient Pill Badges'" [prism]="prsimCodeData.badgeTS7"
+            [classbody]="'flex flex-wrap gap-2'">
+            @for(badge of gradientBadges;track $index){
+              <span class="badge rounded-full {{badge.class}}">{{badge.text}}</span>
+            }
+          </app-showcode-card>
+         
+        </div>
+    </div>
+    <!-- End::row-3 -->
+
+    <!-- Start::row-4 -->
+    <div class="grid grid-cols-12 gap-x-6">
+        <div class="xl:col-span-6 col-span-12">
+            <app-showcode-card [title]="'Outline Badges'" [prism]="prsimCodeData.badgeTS7"
+      [classbody]="'flex flex-wrap gap-2'">
+      @for(badge of outlineBadges;track $index){
+        <span class="badge bg-outline-{{badge.class}}">{{badge.text}}</span>
+      }
+    </app-showcode-card>
+         
+        </div>
+        <div class="xl:col-span-6 col-span-12">
+            <app-showcode-card [title]="'Outline Pill Badges'" [prism]="prsimCodeData.badgeTS5"
+      [classbody]="'flex flex-wrap gap-2'">
+      @for(badge of outlineBadges;track $index){
+        <span class="badge !rounded-full bg-outline-{{badge.class}}">{{badge.text}}</span>
+      }
+    </app-showcode-card>
+        
+        </div>
+    </div>
+    <!-- End::row-4 -->
+
+<!-- Start::row-5 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="'Pill Badges'" [prism]="prsimCodeData.badgeTS1" [classbody]="'flex flex-wrap gap-2'">
+            @for(badge of pillBadges;track $index){
+              <span [class]="badge.class">{{badge.text}}</span>
+            }
+          </app-showcode-card>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="'Light Pill Badges'" [prism]="prsimCodeData.badgeTS3"
+        [classbody]="'flex flex-wrap gap-2'">
+        @for(badge of lightpillBadges;track $index){
+          <span [class]="badge.class">{{badge.text}}</span>
+        }
+      </app-showcode-card>
+    </div>
+</div>
+<!-- End::row-5 -->

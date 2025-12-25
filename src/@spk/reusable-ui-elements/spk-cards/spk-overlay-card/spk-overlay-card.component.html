@@ -1,0 +1,26 @@
+<div class="box overlay-card">
+  <!-- Image -->
+  <img [src]="imgSrc" class="card-img" alt="Image" />
+
+  <!-- Overlay Content -->
+  <div class="box-img-overlay flex flex-col p-0">
+    <!-- Header -->
+    <div *ngIf="headerText" class="box-header !border-b !border-defaultborder/10">
+      <div class="box-title !text-white">{{ headerText }}</div>
+    </div>
+
+    <!-- Body -->
+    <div
+      class="box-body text-white"
+      [ngClass]="{ 'overflow-y-scroll sm:text-[0.87rem] text-[0.65rem]': scrollable }"
+    >
+      <div *ngIf="bodyAdditionalText" class="card-text text-white">{{ bodyAdditionalText }}</div>
+      <div class="card-text !text-white">{{ bodyText }}</div>
+    </div>
+
+    <!-- Footer -->
+    <div *ngIf="hasFooter" class="box-footer !text-white !border-t !border-defaultborder/10">
+      {{ footerText }}
+    </div>
+  </div>
+</div>

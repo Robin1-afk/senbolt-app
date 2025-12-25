@@ -1,0 +1,32 @@
+<div [ngClass]="'box border border-' + CustomCardClass">
+  <div class="box-body">
+    <!-- Title and Link -->
+    <p class="text-[.875rem] font-semibold mb-2 leading-none">
+      {{ Title }}
+      <a aria-label="anchor">
+        <i [ngClass]="'bi bi-plus-square ltr:float-right rtl:float-left text-' + Class + ' text-[1.125rem]'"></i>
+      </a>
+    </p>
+
+    <!-- Badges -->
+    <div class="flex flex-wrap gap-2 mb-4">
+      <span
+        *ngFor="let badge of Badges"
+        [ngClass]="badge.className"
+        class="badge"
+      >
+        {{ badge.text }}
+      </span>
+    </div>
+
+    <!-- Avatar Images -->
+    <div class="avatar-list-stacked">
+      <span
+        *ngFor="let src of Images; let index = index"
+        class="avatar avatar-sm avatar-rounded"
+      >
+        <img [src]="src" [alt]="'img-' + index" />
+      </span>
+    </div>
+  </div>
+</div>

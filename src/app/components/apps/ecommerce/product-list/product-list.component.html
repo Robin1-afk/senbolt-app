@@ -1,0 +1,80 @@
+<app-page-header [title]="'Ecommerce'" [title1]="['Products List']" [activeitem]="'Products List'"></app-page-header>
+
+<!-- Start::row-1 -->
+<div class="row">
+    <div class="col-xl-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">
+                    Products List
+                </div>
+            </div>
+            <div class="box-body">
+                <div class="table-responsive overflow-auto table-bordered-default">
+                    <spk-reusable-tables  tableClass="ti-custom-table text-nowrap" [tableHead]="'border-b'"  (toggleSelectAll)="handleToggleSelectAll($event)" [showCheckbox]="true" [columns]="productlistColumns"> 
+                        @for (list of lists; track list) {
+                            <tr class="product-list border-b !border-defaultborder dark:!border-defaultborder/10">
+                                <td class="product-checkbox" ><input class="form-check-input" [(ngModel)]="list.checked" 
+                                    [checked]="allTasksChecked" 
+                                    (change)="toggleRowChecked(list)" type="checkbox" id="product1" value="" aria-label="..."></td>
+                                <td>
+                                    <div class="flex">
+                                        <span class="avatar avatar-md avatar-square bg-light"><img
+                                            [src]="list.img" class="w-full h-full" alt="..."></span>
+                                        <div class="ms-2">
+                                            <p class="font-semibold mb-0 flex items-center"><a href="javascript:void(0);"> {{list.product}}</a></p>
+                                            <p class="text-xs text-textmuted dark:text-textmuted/50 mb-0">{{list.type}}</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span>{{list.category}}</span>
+                                </td>
+                                <td>{{list.price}}</td>
+                                <td>{{list.stock}}</td>
+                                <td><span class="badge bg-{{list.bg}}/10 text-{{list.bg}}">{{list.status}}</span></td>
+                                <td>
+                                    <div class="flex items-center font-semibold">
+                                        <span class="avatar avatar-sm p-1 bg-light me-2 avatar-rounded">
+                                            <img [src]="list.src" alt="">
+                                        </span>
+                                        <a href="javascript:void(0);">{{list.seller}}</a>
+                                    </div>
+                                </td>
+                                <td>{{list.date}}</td>
+                                <td>
+                                    <div class="flex flex-row items-center !gap-2 text-[0.9375rem]">
+                                        <a aria-label="anchor" [routerLink]="['/apps/ecommerce/edit-product']" class="ti-btn btn-wave  ti-btn-sm ti-btn-soft-primary waves-effect waves-light"><i class="ri-edit-line"></i></a>
+                                      <a aria-label="anchor" (click)="Remove(list.id)" href="javascript:void(0);" class="ti-btn btn-wave product-btn ti-btn-sm ti-btn-soft-danger waves-effect waves-light"><i class="ri-delete-bin-line"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                        </spk-reusable-tables>
+                </div>
+            </div>
+            <div class="box-footer">
+                <div class="flex items-center flex-wrap overflow-auto">
+                    <div class="mt-2">
+                        Showing <b>1</b> to <b>5</b> of <b>10</b> entries <i class="bi bi-arrow-right ms-2 font-semibold"></i>
+                    </div>
+                    <div class="ms-auto my-2">
+                        <nav aria-label="page" class="">
+                            <ul class="ti-pagination mb-0 !p-0 justify-end float-end">
+                                <li class="page-item disabled"> <a class="page-link px-3 py-[0.375rem] !text-[1rem] bg-white dark:bg-bodybg !border-e-0 !rounded-tr-none !rounded-br-none">Previous</a>
+                                </li>
+                                <li class="page-item"><a class="page-link px-3 py-[0.375rem] !text-[1rem] bg-white dark:bg-bodybg !rounded-none !border-e-0" href="javascript:void(0);">1</a></li>
+                                <li class="page-item " aria-current="page"> <a class="page-link active px-3 py-[0.375rem] !text-[1rem] bg-white dark:bg-bodybg !rounded-none !border-e-0" href="javascript:void(0);">2</a></li>
+                                <li class="page-item"><a class="page-link px-3 py-[0.375rem] !text-[1rem] bg-white dark:bg-bodybg !rounded-none !border-e-0" href="javascript:void(0);">3</a></li>
+                                <li class="page-item"><a class="page-link px-3 py-[0.375rem] !text-[1rem] bg-white dark:bg-bodybg !rounded-none !border-e-0" href="javascript:void(0);">4</a></li>
+                                <li class="page-item"><a class="page-link px-3 py-[0.375rem] !text-[1rem] bg-white dark:bg-bodybg !rounded-none !border-e-0" href="javascript:void(0);">5</a></li>
+                                <li class="page-item"> <a class="page-link px-3 py-[0.375rem] !text-[1rem] bg-white dark:bg-bodybg !rounded-tl-none !rounded-bl-none !border-s-0" href="javascript:void(0);">Next</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End::row-1 -->

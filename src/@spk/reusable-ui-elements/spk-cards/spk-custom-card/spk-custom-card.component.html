@@ -1,0 +1,36 @@
+
+  <div class="box">
+    <div class="box-header">
+        <div class="flex items-center w-full">
+            <div class="me-2">
+                <span class="avatar avatar-rounded">
+                    <img  [src]="avatar" alt="img">
+                </span>
+            </div>
+            <div class="">
+                <div class="text-[15px] font-medium">{{ name }}</div>
+                <p class="mb-0 text-textmuted dark:text-textmuted/50 text-[11px]">{{ subtitle }}
+                </p>
+            </div>
+            <div class="ti-dropdown hs-dropdown ms-auto">
+              <spk-dropdowns [Id]="'hs-dropdown-auto-close-inside'" [class]="'ti-btn ti-btn-icon btn-sm ti-btn-light'"
+              [Icon]="true" [IconClass]="'fe fe-more-vertical'"
+              >
+                    <li><a class="ti-dropdown-item" href="javascript:void(0);">Week</a></li>
+                    <li><a class="ti-dropdown-item" href="javascript:void(0);">Month</a></li>
+                    <li><a class="ti-dropdown-item" href="javascript:void(0);">Year</a></li>
+                  </spk-dropdowns>
+            </div>
+        </div>
+    </div>
+    <div class="box-body">
+      {{ bodyText }}
+    </div>
+    <div class="box-footer">
+        <div class="flex justify-between flex-wrap gap-2">
+            <div class="fs-semibold text-[14px]">{{ footerLeftText }}</div>
+            <div class="font-medium text-success">{{ footerRightText }}</div>
+        </div>
+    </div>
+</div>
+  

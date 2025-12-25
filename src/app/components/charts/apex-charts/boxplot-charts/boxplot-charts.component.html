@@ -1,0 +1,42 @@
+<app-page-header [title]="'Apex Charts'" [title1]="['Apex Boxplot Charts']" [activeitem]="'Apex Boxplot Charts'"></app-page-header>
+
+ <!-- Start::row-1 -->
+  <div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Basic Boxplot Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="boxplot-basic">
+                    <spk-apexcharts [chartOptions]="chartOptions"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Boxplot With Scatter Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="boxplot-scatter">
+                    <spk-apexcharts [chartOptions]="chartOptions1"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Horizontal Boxplot Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="boxplot-horizontal">
+                    <spk-apexcharts [chartOptions]="chartOptions2"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End::row-1 -->

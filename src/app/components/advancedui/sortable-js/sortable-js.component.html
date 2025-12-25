@@ -1,0 +1,241 @@
+<app-page-header [title]="'Advanced Ui'" [title1]="['Sortable Js']" [activeitem]="'Sortable Js'"></app-page-header>
+
+                <!-- Start::row-1 -->
+                <div class="grid grid-cols-12 gap-x-6">
+                    <div class="xl:col-span-4 col-span-12">
+                        <div class="box">
+                            <div class="box-header">
+                                <div class="box-title">
+                                    SIMPLE LIST
+                                </div>
+                            </div>
+                            <div class="box-body">
+                                <ol class="ti-list-group !p-0 !border-0 sortable-list list-group-numbered" id="simple-list" (cdkDropListDropped)="onDrop($event)" cdkDropList>
+                                    @for (item of items; track $index) {
+                                    <li cdkDrag class="ti-list-group-item">{{item}}</li>
+                                    }
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xl:col-span-8 col-span-12">
+                        <div class="box">
+                            <div class="box-header">
+                                <div class="box-title">SHARED LISTS</div>
+                            </div>
+                            <div class="box-body">
+                                <div class="grid grid-cols-12 sm:gap-x-6" cdkDropListGroup> 
+                                    <div class="xl:col-span-6 col-span-12">
+                                        <ol class="ti-list-group !p-0 !border-0 sortable-list list-group-numbered" id="shared-left" cdkDropList  (cdkDropListDropped)="onDrop1($event)"
+                                        [cdkDropListData]="leftItems">
+                                        @for (item of leftItems; track $index) {
+                                            <li cdkDrag class="ti-list-group-item">{{item}}</li>
+                                        }
+                                        </ol>
+                                    </div>
+                                    <div class="xl:col-span-6 col-span-12">
+                                        <ol class="ti-list-group !p-0 !border-0 sortable-list list-group-numbered" id="shared-right"  cdkDropList
+                                        [cdkDropListData]="rightItems" (cdkDropListDropped)="onDrop1($event)">
+                                            @for (item of rightItems; track $index) {
+                                            <li cdkDrag class="ti-list-group-item">{{item}}</li>
+                                            }
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End::row-1 -->
+
+              <!-- Start:: row-2 -->
+              <div class="grid grid-cols-12 gap-x-6">
+                  <div class="xl:col-span-6 col-span-12">
+                      <div class="box">
+                          <div class="box-header">
+                              <div class="box-title">
+                                  CLONING
+                              </div>
+                          </div>
+                          <div class="box-body">
+                              <div class="grid grid-cols-12 sm:gap-x-6">
+                                  <div class="xl:col-span-6 col-span-12">
+                                      <ul class="ti-list-group !p-0 !border-0 sortable-list" id="cloning-left" [sortablejs]="normalList1" [sortablejsOptions]="normalOptions">
+                                          <li class="ti-list-group-item">Update social media profiles.</li>
+                                          <li class="ti-list-group-item">Draft project budget.</li>
+                                          <li class="ti-list-group-item">Brainstorm domain names.</li>
+                                          <li class="ti-list-group-item">Revise resume content.</li>
+                                          <li class="ti-list-group-item">Test website functionality.</li>
+                                          <li class="ti-list-group-item">Edit meeting agenda.</li>
+                                      </ul>
+                                  </div>
+                                  <div class="xl:col-span-6 col-span-12">
+                                      <ul class="ti-list-group !p-0 !border-0 sortable-list" id="cloning-right" [sortablejs]="normalList1" [sortablejsOptions]="normalOptions">
+                                          <li class="ti-list-group-item">Create mood board.</li>
+                                          <li class="ti-list-group-item">Design event flyer.</li>
+                                          <li class="ti-list-group-item">Research industry trends.</li>
+                                          <li class="ti-list-group-item">Format spreadsheet cells.</li>
+                                          <li class="ti-list-group-item">Outline marketing strategy.</li>
+                                          <li class="ti-list-group-item">Compile data report.</li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="xl:col-span-6 col-span-12">
+                      <div class="box">
+                          <div class="box-header">
+                              <div class="box-title">
+                                  DISABLING SORTING
+                              </div>
+                          </div>
+                          <div class="box-body">
+                              <div class="grid grid-cols-12 sm:gap-x-6" cdkDropListGroup>
+                                  <div class="xl:col-span-6 col-span-12">
+                                      <ul  cdkDropList
+                                      #todoList="cdkDropList"
+                                      [cdkDropListData]="list3"
+                                      [cdkDropListConnectedTo]="[doneList]"
+                                      (cdkDropListDropped)="onDrop1($event)" class="ti-list-group !p-0 !border-0 sortable-list" id="disabling-sorting-left">
+                                      @for (item of list3; track item) {
+                                        <li class="ti-list-group-item" cdkDrag>{{ item }}</li>
+                                        }
+                                      </ul>
+                                  </div>
+                                  <div class="xl:col-span-6 col-span-12">
+                                      <ul   cdkDropList
+                                      #doneList="cdkDropList"
+                                      [cdkDropListData]="list4"
+                                      [cdkDropListConnectedTo]="[todoList]"
+                                      (cdkDropListDropped)="onDrop1($event)" class="ti-list-group !p-0 !border-0 sortable-list" id="disabling-sorting-right">
+                                      @for (item of list4; track item) {
+                                        <li class="ti-list-group-item" disableHandle>{{ item }}</li>
+                                        }
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- End:: row-2 -->
+
+              <!-- Start:: row-3 -->
+              <div class="grid grid-cols-12 gap-x-6">
+                  <div class="xl:col-span-6 col-span-12">
+                      <div class="box">
+                          <div class="box-header">
+                              <div class="box-title">
+                                  SORTING WITH HANDLE
+                              </div>
+                          </div>
+                          <div class="box-body">
+                              <ol class="ti-list-group !p-0 !border-0 sortable-list list-item-numbered" id="sorting-with-handle"  cdkDropList
+                              (cdkDropListDropped)="onDrop2($event)">
+                              @for (item of list1; track item) {
+                                  <li class="ti-list-group-item" cdkDrag><i class="ri-drag-move-2-fill me-2 text-dark text-[1rem] handle leading-none" cdkDragHandle></i>  {{ item }}.</li>
+                              }
+                              </ol>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="xl:col-span-6 col-span-12">
+                      <div class="box">
+                          <div class="box-header">
+                              <div class="box-title">
+                                  SORTING WITH FILTER
+                              </div>
+                          </div>
+                          <div class="box-body">
+                              <ul class="ti-list-group !p-0 !border-0 sortable-list" id="sorting-with-filter" [sortablejs]="normalList1" [sortablejsOptions]="normalOptions">
+                                  <li class="ti-list-group-item">Analyze market trends.</li>
+                                  <li class="ti-list-group-item">Edit video content.</li>
+                                  <li class="ti-list-group-item">Plan social media calendar.</li>
+                                  <li class="ti-list-group-item filtered">Update company policies.</li>
+                                  <li class="ti-list-group-item">Compile sales reports.</li>
+                                  <li class="ti-list-group-item">Schedule client calls.</li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- End:: row-3 -->
+
+              <!-- Start:: row-4 -->
+              <div class="grid grid-cols-12 gap-x-6">
+                  <div class="xl:col-span-12 col-span-12">
+                      <div class="box">
+                          <div class="box-header">
+                              <div class="box-title">
+                                  SORTABLE GRID
+                              </div>
+                          </div>
+                          <div class="box-body" id="sortable-grid" [sortablejs]="normalList1" [sortablejsOptions]="normalOptions">
+                              <div class="grid-square">
+                                  <span class="font-medium">Item-1</span>
+                              </div>
+                              <div class="grid-square">
+                                  <span class="font-medium">Item-2</span>
+                              </div>
+                              <div class="grid-square">
+                                  <span class="font-medium">Item-3</span>
+                              </div>
+                              <div class="grid-square">
+                                  <span class="font-medium">Item-4</span>
+                              </div>
+                              <div class="grid-square">
+                                  <span class="font-medium">Item-5</span>
+                              </div>
+                              <div class="grid-square">
+                                  <span class="font-medium">Item-6</span>
+                              </div>
+                              <div class="grid-square">
+                                  <span class="font-medium">Item-7</span>
+                              </div>
+                              <div class="grid-square">
+                                  <span class="font-medium">Item-8</span>
+                              </div>
+                              <div class="grid-square">
+                                  <span class="font-medium">Item-9</span>
+                              </div>
+                              <div class="grid-square">
+                                  <span class="font-medium">Item-10</span>
+                              </div>
+                              <div class="grid-square">
+                                  <span class="font-medium">Item-11</span>
+                              </div>
+                              <div class="grid-square">
+                                  <span class="font-medium">Item-12</span>
+                              </div>
+                              <div class="grid-square">
+                                  <span class="font-medium">Item-13</span>
+                              </div>
+                              <div class="grid-square">
+                                  <span class="font-medium">Item-14</span>
+                              </div>
+                              <div class="grid-square">
+                                  <span class="font-medium">Item-15</span>
+                              </div>
+                              <div class="grid-square">
+                                  <span class="font-medium">Item-16</span>
+                              </div>
+                              <div class="grid-square">
+                                  <span class="font-medium">Item-17</span>
+                              </div>
+                              <div class="grid-square">
+                                  <span class="font-medium">Item-18</span>
+                              </div>
+                              <div class="grid-square">
+                                  <span class="font-medium">Item-19</span>
+                              </div>
+                              <div class="grid-square">
+                                  <span class="font-medium">Item-20</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- End:: row-4 -->
+
+            

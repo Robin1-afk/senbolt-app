@@ -1,0 +1,26 @@
+
+<app-page-header [title]="'Apex Charts'" [title1]="['Apex Slope Charts']" [activeitem]="'Apex Slope Charts'"></app-page-header>
+<!-- Start::row-1 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title"> Basic Slope Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="basic-slope-chart"><spk-apexcharts [chartOptions]="chartOptions"></spk-apexcharts></div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title"> Multi-group Slope Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="multigroupchart"><spk-apexcharts [chartOptions]="chartOptions1"></spk-apexcharts></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End::row-1 -->

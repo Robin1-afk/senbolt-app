@@ -1,0 +1,20 @@
+<ul class="list-unstyled recent-activity-list">
+    @for (activity of activities; track $index) {
+    <li>
+      <div class="d-flex justify-content-between align-items-start gap-2 pe-4">
+        <div>
+          <span class="d-block">
+            {{ activity.activity }}
+            @if (activity.highlight) {
+            <span [ngClass]="activity.highlightClass">{{ activity.highlight }}</span>
+            }
+            {{activity.highlight1}}
+          </span>
+        </div>
+        <div class="recent-activity-time fs-13">
+          <span class="text-muted">{{ activity.time }}</span>
+        </div>
+      </div>
+    </li>
+}
+  </ul>

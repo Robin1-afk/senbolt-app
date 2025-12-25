@@ -1,0 +1,127 @@
+ 
+<app-page-header [title]="'Crypto'" [title1]="['Market Cap']" [activeitem]="'Market Cap'"></app-page-header>
+<!-- Start::row-1 -->
+ <div class="grid grid-cols-12 gap-x-6">
+    @for(crypto of cryptoCards;track $index){
+    <div class="xxl:col-span-4 xl:col-span-6 lg:col-span-12 col-span-12">
+        <spk-crypto-marketcap-card [crypto]="crypto" ></spk-crypto-marketcap-card>
+    </div>
+}
+</div>
+<!--End::row-1 -->
+<!-- Start::row-2  -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-12 col-span-12">
+        <div class="box">
+            <div class="box-header justify-between">
+                <div class="box-title">
+                    Crypto MarketCap
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <div>
+                        <input class="form-control form-control-sm" type="text" placeholder="Search Here" aria-label=".form-control-sm example">
+                    </div>
+                    <spk-dropdowns [Customclass]="'dropdown'" [title]="'Sort By'" [class]="'ti-btn ti-btn-primary !m-0 ti-btn-sm btn-wave waves-effect waves-light'" [Icon]="true" [IconClass]="'ri-arrow-down-s-line align-middle ms-1 inline-block'" 
+                    [Menuclass]="'dropdown-menu'">
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Market Cap</a></li>
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Price</a></li>
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Trading Volume</a></li>
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Price Change (24h)</a></li>
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Rank</a></li>
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">A - Z</a></li>
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">All-Time High (ATH)</a></li>
+                    </spk-dropdowns>
+                    <div>
+                        <button class="ti-btn ti-btn-secondary !m-0 ti-btn-sm btn-wave waves-effect waves-light">View All</button>
+                    </div>
+                </div>
+            </div>
+            <div class="box-body p-0">
+                <div class="table-responsive">
+                    <spk-reusable-tables  [columns]="marketcapColumn" tableClass="ti-custom-table ti-custom-table-head"
+                    [showCheckbox]="false">
+                    @for (crypto of cryptoData; track $index) {
+                            <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                <td class="text-center">
+                                    <a href="javascript:void(0);"><i class="ri-star-line text-[1rem] text-textmuted dark:text-textmuted/50"></i></a>
+                                </td>
+                                <td>{{crypto.id}}</td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <div class="leading-none">
+                                            <span class="avatar avatar-xs avatar-rounded">
+                                                <img [src]="crypto.src" alt="">
+                                            </span>
+                                        </div>
+                                        <div class="font-medium"><a href="javascript:void(0);">{{crypto.coin}}</a></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="font-medium">{{crypto.price}}</span>
+                                </td>
+                                <td>
+                                    <div id="btc-chart">
+                                        <spk-apexcharts [chartOptions]="crypto.chartOptions"></spk-apexcharts>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="text-{{crypto.bg}} font-medium"><i class="ti ti-arrow-narrow-{{crypto.arrow}} text-[15px] font-medium"></i>{{crypto.percent}}</span>
+                                </td>
+                                <td>
+                                    <span class="font-medium">
+                                        <a href="javascript:void(0);">{{crypto.value}}</a>
+                                    </span>
+                                </td>
+                                <td>
+                                    <span class="text-{{crypto.bg1}} font-medium"><i class="ti ti-arrow-narrow-{{crypto.arrow1}} text-[15px] font-medium"></i>{{crypto.percent1}}</span>
+                                </td>
+                                <td>
+                                    <a href="javascript:void(0)">
+                                        <span class="block font-medium">$11.79B USD</span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="javascript:void(0);">
+                                        <span class="font-medium block {{crypto.supplyClass}}">
+                                            {{crypto.supply}}
+                                        </span>
+                                        @if(crypto.progressWidth){
+                                        <div class="progress-stacked progress-xs w-[75%] mb-4 flex"> 
+                                            <div class="progress-bar !bg-success opacity-[0.5] w-[88%]" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" [style.width]="crypto.progressWidth.success"></div> 
+                                            <div class="progress-bar !rounded-s-none !rounded-e-full !bg-danger opacity-[0.5] w-[12%]" role="progressbar" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100" [style.width]="crypto.progressWidth.danger"></div> 
+                                        </div>
+                                        }
+                                    </a>    
+                                </td>
+                                <td>
+                                    <button class="ti-btn ti-btn-soft-success ti-btn-sm">Trade</button>
+                                </td>
+                            </tr>
+                        }
+                    </spk-reusable-tables>
+                </div>
+            </div>
+            <div class="box-footer flex sm:justify-end justify-center">
+                <nav aria-label="..." class="me-4">
+                    <ul class="ti-pagination">
+                        <li class="page-item disabled">
+                            <a class="page-link px-3 py-[0.375rem] !border-e-0">Previous</a>
+                        </li>
+                        <li class="page-item"><a class="page-link px-3 py-[0.375rem] !border-e-0"
+                                href="javascript:void(0);">1</a></li>
+                        <li class="page-item " aria-current="page">
+                            <a class="page-link active px-3 py-[0.375rem] !border-e-0"
+                                href="javascript:void(0);">2</a>
+                        </li>
+                        <li class="page-item"><a class="page-link px-3 py-[0.375rem] !border-e-0"
+                            href="javascript:void(0);">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link px-3 py-[0.375rem]" href="javascript:void(0);">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End::row-2  -->

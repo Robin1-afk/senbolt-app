@@ -1,0 +1,27 @@
+<div class="position-relative mb-3 overflow-hidden rounded">
+    <img [src]="image" class="card-img rounded" alt="...">
+    <p class="mb-0 bg-{{bgColor}} text-fixed-white nft-auction-time"> 04hrs : 24m : 38s </p>
+    <div class="nft-content">
+        <a href="javascript:void(0);" class="fs-14 fw-bold text-fixed-white">{{title}}</a>
+        <div class="d-flex mb-0 align-items-center flex-wrap gap-2 justify-content-between">
+            <div> 
+                <span class="fs-12 text-fixed-white d-block mb-1 op-8">Created By</span>
+                <span class="fw-medium text-fixed-white d-block lh-1">{{title1}}</span>
+            </div>
+            <div class="text-end">
+                <span class="fs-12 text-fixed-white d-block mb-1">Top Bid</span>
+                <div class="d-flex align-items-center">
+                    <span class="avatar avatar-xs">
+                        <img src="./assets/images/crypto-currencies/square-color/Ethereum.svg" alt="">
+                    </span>
+                    <span class="ms-1 h6 mb-0 fw-semibold text-fixed-white">{{value}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="d-grid">
+    <button class="btn btn-primary btn-wave waves-effect waves-light">
+        Place BId
+    </button>
+</div>

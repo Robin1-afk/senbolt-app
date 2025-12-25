@@ -1,0 +1,288 @@
+<app-page-header [title]="'Advanced Ui'" [title1]="['Ratings']" [activeitem]="'Ratings'"></app-page-header>
+
+ <!-- Start::row-1 -->
+ <div class="grid grid-cols-12 gap-x-6">
+  <div class="xxl:col-span-6 xl:col-span-6 col-span-12">
+      <div class="box">
+          <div class="box-header">
+             <div class="box-title">
+                  Basic Rater
+             </div> 
+          </div>
+          <div class="box-body">
+              <div class="flex flex-wrap items-center justify-between">
+                  <p class="text-[14px] mb-0 font-medium">Show Some <span class="text-danger">&#10084;</span> with rating :</p>
+                  <div id="rater-basic">
+                    <bar-rating [(rate)]="starRate1" [max]="5" [theme]="'default'" ></bar-rating>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="xxl:col-span-6 xl:col-span-6 col-span-12">
+      <div class="box">
+          <div class="box-header">
+              <div class="box-title">
+                  5 star rater with steps
+              </div> 
+           </div>
+          <div class="box-body">
+              <div class="flex flex-wrap items-center justify-between">
+                  <p class="text-[14px] mb-0 font-medium">Dont forget to rate the product :</p>
+                  <div id="rater-steps">
+                    <div class="flex items-center">
+                      <button type="button"
+                          class="size-5 me-1 inline-flex justify-center items-center text-2xl rounded-full text-warning disabled:opacity-50 disabled:pointer-events-none dark:text-warning">
+                          <svg class="flex-shrink-0 size-5" xmlns="http://www.w3.org/2000/svg"
+                              width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                              <path
+                                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                          </svg>
+                      </button>
+                      <button type="button"
+                          class="size-5 me-1 inline-flex justify-center items-center text-2xl rounded-full text-warning disabled:opacity-50 disabled:pointer-events-none dark:text-warning">
+                          <svg class="flex-shrink-0 size-5" xmlns="http://www.w3.org/2000/svg"
+                              width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                              <path
+                                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                          </svg>
+                      </button>
+                      <button type="button"
+                          class="size-5 me-1 inline-flex justify-center items-center text-2xl rounded-full text-warning disabled:opacity-50 disabled:pointer-events-none dark:text-warning">
+                          <svg class="flex-shrink-0 size-5" xmlns="http://www.w3.org/2000/svg"
+                              width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                              <path
+                                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                          </svg>
+                      </button>
+                      <button type="button"
+                          class="size-5 me-1 inline-flex justify-center items-center text-2xl rounded-full text-warning disabled:opacity-50 disabled:pointer-events-none dark:text-warning">
+                          <svg class="flex-shrink-0 size-5" xmlns="http://www.w3.org/2000/svg"
+                              width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                              <path
+                                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                          </svg>
+                      </button>
+                      <button type="button"
+                          class="size-5 me-1 inline-flex justify-center items-center text-2xl rounded-full text-gray-400 hover:text-warning disabled:opacity-50 disabled:pointer-events-none dark:text-gray-200 dark:hover:text-warning">
+                          <svg class="flex-shrink-0 size-5" xmlns="http://www.w3.org/2000/svg"
+                              width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                              <path
+                                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                          </svg>
+                      </button>
+                  </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="xxl:col-span-6 xl:col-span-12 col-span-12">
+      <div class="box">
+          <div class="box-header">
+              <div class="box-title">
+                Button with heart shapes.
+              </div> 
+           </div>
+          <div class="box-body">
+              <div class="flex flex-wrap items-center justify-between">
+                  <p class="text-[14px] mb-0 font-medium">Your rating is much appreciated👏 :</p>
+                  <div id="custom-messages">
+                    <div class="flex items-center">
+                      <button type="button"
+                          class="size-5 me-1 inline-flex justify-center items-center text-2xl rounded-full text-danger disabled:opacity-50 disabled:pointer-events-none dark:text-danger">
+                          <svg class="flex-shrink-0 size-5" xmlns="http://www.w3.org/2000/svg"
+                              width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd"
+                                  d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                          </svg>
+                      </button>
+                      <button type="button"
+                          class="size-5 me-1 inline-flex justify-center items-center text-2xl rounded-full text-danger disabled:opacity-50 disabled:pointer-events-none dark:text-danger">
+                          <svg class="flex-shrink-0 size-5" xmlns="http://www.w3.org/2000/svg"
+                              width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd"
+                                  d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                          </svg>
+                      </button>
+                      <button type="button"
+                          class="size-5 me-1 inline-flex justify-center items-center text-2xl rounded-full text-danger disabled:opacity-50 disabled:pointer-events-none dark:text-danger">
+                          <svg class="flex-shrink-0 size-5" xmlns="http://www.w3.org/2000/svg"
+                              width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd"
+                                  d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                          </svg>
+                      </button>
+                      <button type="button"
+                          class="size-5 me-1 inline-flex justify-center items-center text-2xl rounded-full text-danger disabled:opacity-50 disabled:pointer-events-none dark:text-danger">
+                          <svg class="flex-shrink-0 size-5" xmlns="http://www.w3.org/2000/svg"
+                              width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd"
+                                  d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                          </svg>
+                      </button>
+                      <button type="button"
+                          class="size-5 me-1 inline-flex justify-center items-center text-2xl rounded-full text-gray-400 hover:text-danger disabled:opacity-50 disabled:pointer-events-none dark:text-gray-300 dark:hover:text-danger">
+                          <svg class="flex-shrink-0 size-5" xmlns="http://www.w3.org/2000/svg"
+                              width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd"
+                                  d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                          </svg>
+                      </button>
+                  </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="xxl:col-span-6 xl:col-span-6 col-span-12">
+      <div class="box">
+          <div class="box-header">
+              <div class="box-title">
+                Static Ratings.
+              </div> 
+           </div>
+          <div class="box-body">
+              <div class="flex flex-wrap items-center justify-between">
+                  <p class="text-[14px] mb-0 font-medium">Thanks for rating :</p>
+                  <div id="stars-unlimited">
+                    <div class="flex items-center">
+                      <svg class="flex-shrink-0 me-1 size-5 text-warning dark:text-warning"
+                          xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                          fill="currentColor" viewBox="0 0 16 16">
+                          <path
+                              d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                      </svg>
+                      <svg class="flex-shrink-0 me-1 size-5 text-warning dark:text-warning"
+                          xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                          fill="currentColor" viewBox="0 0 16 16">
+                          <path
+                              d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                      </svg>
+                      <svg class="flex-shrink-0 me-1 size-5 text-warning dark:text-warning"
+                          xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                          fill="currentColor" viewBox="0 0 16 16">
+                          <path
+                              d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                      </svg>
+                      <svg class="flex-shrink-0 me-1 size-5 text-gray-400 dark:text-gray-300"
+                          xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                          fill="currentColor" viewBox="0 0 16 16">
+                          <path
+                              d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                      </svg>
+                      <svg class="flex-shrink-0 me-1 size-5 text-gray-400 dark:text-gray-300"
+                          xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                          fill="currentColor" viewBox="0 0 16 16">
+                          <path
+                              d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                      </svg>
+                  </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="xxl:col-span-6 xl:col-span-6 col-span-12">
+      <div class="box">
+          <div class="box-header">
+              <div class="box-title">
+                Emoji's Ratings.
+              </div> 
+           </div>
+          <div class="box-body">
+              <div class="flex flex-wrap items-center justify-between">
+                  <p class="text-[14px] mb-0 font-medium">Please give your valuable rating :</p>
+                  <div class="flex flex-wrap items-center">
+                      <div id="stars-hover">
+                        <div class="sm:flex items-center justify-between space-y-2 sm:space-y-0">
+                          <p class="text-sm mb-0 font-semibold"> Did this answer your question?</p>
+                          <!-- Rating -->
+                          <div class="flex justify-center items-center">
+                              <button type="button"
+                                  class="size-8 inline-flex justify-center items-center text-xl rounded-full hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+                                  😔 
+                              </button>
+                              <button type="button"
+                                  class="size-8 inline-flex justify-center items-center text-xl rounded-full hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+                                  😐 
+                              </button>
+                              <button type="button"
+                                  class="size-8 inline-flex justify-center items-center text-xl rounded-full hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+                                  🤩 
+                              </button>
+                          </div>
+                          <!-- End Rating -->
+                      </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="xxl:col-span-6 xl:col-span-12 col-span-12">
+      <div class="box">
+          <div class="box-header">
+              <div class="box-title">
+                Rate with thumb buttons.
+              </div> 
+           </div>
+          <div class="box-body">
+              <div class="flex flex-wrap items-center justify-between">
+                  <p class="text-[14px] mb-0 font-medium">Thank You so much for your support :</p>
+                  <div class="flex flex-wrap items-center">
+                      <div id="rater-reset">
+                        <div class="mt-2 flex justify-center items-center gap-x-2">
+                          <h6 class="text-gray-800 dark:text-white">
+                              Was this page helpful?
+                          </h6>
+                          <button type="button"
+                              class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-sm border border-gray-200 bg-white text-gray-800 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-bodybg dark:border-white/10 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+                              <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
+                                  width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                  stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                  stroke-linejoin="round">
+                                  <path d="M7 10v12" />
+                                  <path
+                                      d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h0a3.13 3.13 0 0 1 3 3.88Z" />
+                              </svg>
+                              Yes
+                          </button>
+                          <button type="button"
+                              class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-sm border border-gray-200 bg-white text-gray-800 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-bodybg dark:border-white/10 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+                              <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
+                                  width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                  stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                  stroke-linejoin="round">
+                                  <path d="M17 14V2" />
+                                  <path
+                                      d="M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22h0a3.13 3.13 0 0 1-3-3.88Z" />
+                              </svg>
+                              No
+                          </button>
+                      </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="xxl:col-span-12 xl:col-span-12 col-span-12">
+      <div class="box">
+          <div class="box-header">
+              <div class="box-title">
+                Unlimited number of stars readOnly
+              </div> 
+           </div>
+          <div class="box-body">
+              <div class="flex flex-wrap items-center justify-between">
+                  <p class="text-[14px] mb-0 font-medium">Thanks for rating :</p>
+                  <div id="stars-busytext">
+                    <spk-bar-rating [rating]="unlimitedratings"></spk-bar-rating>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!--End::row-1 -->

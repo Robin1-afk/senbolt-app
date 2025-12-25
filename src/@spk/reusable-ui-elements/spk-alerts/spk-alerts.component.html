@@ -1,0 +1,18 @@
+@if (visible) {
+<div class="alert alert-dismissible fade show flex" [ngClass]="alertClass" role="alert">
+  @if (icon) {
+  <div class="alert-icon" [innerHTML]="icon"></div>
+  }@else if(image){
+    <div class="avatar  me-3 " [ngClass]="avatarClass">
+      <img [src]="image" alt="alert image" class="alert-image" />
+    </div>
+  }
+  <div class="sm:flex-shrink-0">{{ message }}</div>
+  <div class="ms-auto">
+    <button type="button" class="inline-flex rounded-sm focus:outline-none focus:ring-0 focus:ring-offset-0" (click)="dismiss()">
+      <span class="sr-only">Dismiss</span>
+      <i class="bi bi-x text-xl leading-none"></i>
+    </button>
+  </div>
+</div>
+}

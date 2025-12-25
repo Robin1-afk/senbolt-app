@@ -1,0 +1,176 @@
+<app-page-header [title]="'NFT'" [title1]="['Wallet Integration']" [activeitem]="'Wallet Integration'"></app-page-header>
+
+ <!-- Start::row-1 -->
+ <div class="grid grid-cols-12 sm:gap-x-6 justify-center">
+    <div class="xxl:col-span-3 col-span-12">
+        <div class="box overflow-hidden bg-gradient-to-r from-primary to-secondary nft-wallet-card">
+            <div class="box-body text-center">
+                <div class="font-medium mb-2 text-white opacity-70">
+                    Wallet Balance
+                </div>
+                <h5 class="font-bold text-white">$25,680</h5>
+                <p class="text-textmuted dark:text-textmuted/50 mb-0 text-white opacity-70">Available
+                    Balance</p>
+            </div>
+        </div>
+        <div class="box overflow-hidden">
+            <div class="box-header justify-between">
+                <div class="box-title">
+                    Wallet Transactions
+                </div>
+                <div class="ti-dropdown hs-dropdown">
+                    <a href="javascript:void(0);"
+                        class="p-2 py-2 bg-light text-xs text-textmuted dark:text-textmuted/50"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Last 24 Hours <i
+                            class="ri-arrow-down-s-line align-middle ms-1 inline-block"></i>
+                    </a>
+                    <ul class="ti-dropdown-menu hs-dropdown-menu hidden" role="menu">
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Last 24 Hours</a>
+                        </li>
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Last 7 Days</a></li>
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Last 30 Days</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="box-body p-0">
+                <ul class="ti-list-group list-group-flush !border-0">
+                    @for (transaction of transactions; track $index) {
+                    <li class="ti-list-group-item !border-b border-defaultborder dark:border-defaultborder/10">
+                      <div class="flex gap-4 items-center flex-wrap">
+                        <div class="leading-none">
+                          <span [ngClass]="transaction.iconColor" class="avatar avatar-xl">
+                            <i [ngClass]="transaction.icon" class="text-[25px]"></i>
+                          </span>
+                        </div>
+                        <div class="flex-auto">
+                          <div class="mb-1 flex justify-between gap-1">
+                            <span class="font-medium">{{ transaction.title }}</span>
+                            <span class="text-xs text-textmuted dark:text-textmuted/50 ms-auto inline-block">
+                              {{ transaction.timestamp }}
+                            </span>
+                          </div>
+                          <div class="text-[13px]">{{transaction.transactionMode}}<span class="text-primary font-medium" > {{ transaction.fromOrTo }}</span> </div>
+                          <div class="text-[13px]">
+                            Amount: <span [ngClass]="{ 'text-success': transaction.type === 'received', 'text-danger': transaction.type === 'sent' }" class="font-medium">
+                              {{ transaction.amount }}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                }
+                  </ul>
+                  
+                <div class="p-4 text-center">
+                    <a href="javascript:void(0);" class="text-center text-primary underline">View All
+                        Transactions</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xxl:col-span-9 col-span-12">
+        <div class="box overflow-hidden">
+            <div class="box-header">
+                <div class="box-title">
+                    Choose Network
+                </div>
+            </div>
+            <div class="box-body p-0">
+                <ul class="ti-list-group list-group-flush nft-list flex items-center gap-4 flex-row p-4 bg-light/50 flex-wrap !rounded-none">
+                    <li class="ti-list-group-item !shadow-none !bg-white dark:!bg-bodybg border border-defaultborder dark:border-defaultborder/10 active hover:!bg-primary  hover:!text-white dark:hover:!bg-primary dark:hover:!text-white">
+                        <div class="flex items-center gap-2">
+                            <div> <span class="avatar avatar-rounded avatar-sm bg-light p-1"> <img
+                                        src="./assets/images/nft-images/34.png" alt=""> </span> </div>
+                            <div class="text-[.875rem] font-medium my-auto hover:!text-white">Ethereum</div>
+                        </div>
+                    </li>
+                    <li class="ti-list-group-item !shadow-none !bg-white dark:!bg-bodybg border border-defaultborder dark:border-defaultborder/10 hover:!bg-primary  hover:!text-white dark:hover:!bg-primary dark:hover:!text-white">
+                        <div class="flex items-center gap-2">
+                            <div> <span class="avatar avatar-rounded avatar-sm bg-light p-1"> <img
+                                        src="./assets/images/nft-images/33.png" alt=""> </span> </div>
+                            <div class="text-[.875rem] font-medium my-auto hover:!text-white">Binance</div>
+                        </div>
+                    </li>
+                    <li class="ti-list-group-item !shadow-none !bg-white dark:!bg-bodybg border border-defaultborder dark:border-defaultborder/10  hover:!bg-primary  hover:!text-white dark:hover:!bg-primary dark:hover:!text-white">
+                        <div class="flex items-center gap-2">
+                            <div> <span class="avatar avatar-rounded avatar-sm bg-light p-1"> <img
+                                        src="./assets/images/nft-images/32.png" alt=""> </span> </div>
+                            <div class="text-[.875rem] font-medium my-auto hover:!text-white">Solana</div>
+                        </div>
+                    </li>
+                    <li class="ti-list-group-item !shadow-none !bg-white dark:!bg-bodybg border border-defaultborder dark:border-defaultborder/10  hover:!bg-primary  hover:!text-white dark:hover:!bg-primary dark:hover:!text-white">
+                        <div class="flex items-center gap-2">
+                            <div> <span class="avatar avatar-rounded avatar-sm bg-light p-1"> <img
+                                        src="./assets/images/nft-images/28.png" alt=""> </span> </div>
+                            <div class="text-[.875rem] font-medium my-auto hover:!text-white">Tezos</div>
+                        </div>
+                    </li>
+                    <li class="ti-list-group-item !shadow-none !bg-white dark:!bg-bodybg border border-defaultborder dark:border-defaultborder/10  hover:!bg-primary  hover:!text-white dark:hover:!bg-primary dark:hover:!text-white">
+                        <div class="flex items-center gap-2">
+                            <div> <span class="avatar avatar-rounded avatar-sm bg-light p-1"> <img
+                                        src="./assets/images/nft-images/30.png" alt=""> </span> </div>
+                            <div class="text-[.875rem] font-medium my-auto hover:!text-white">Avalanche</div>
+                        </div>
+                    </li>
+                    <li class="ti-list-group-item !shadow-none !bg-white dark:!bg-bodybg border border-defaultborder dark:border-defaultborder/10  hover:!bg-primary  hover:!text-white dark:hover:!bg-primary dark:hover:!text-white">
+                        <div class="flex items-center gap-2">
+                            <div> <span class="avatar avatar-rounded avatar-sm bg-light p-1"> <img
+                                        src="./assets/images/nft-images/29.png" alt=""> </span> </div>
+                            <div class="text-[.875rem] font-medium my-auto hover:!text-white">boxano</div>
+                        </div>
+                    </li>
+                    <li class="ti-list-group-item !shadow-none !bg-white dark:!bg-bodybg !border border-defaultborder dark:border-defaultborder/10  hover:!bg-primary  hover:!text-white dark:hover:!bg-primary dark:hover:!text-white">
+                        <div class="flex items-center gap-2">
+                            <div> <span class="avatar avatar-rounded avatar-sm bg-light p-1"> <img
+                                        src="./assets/images/nft-images/36.png" alt=""> </span> </div>
+                            <div class="text-[.875rem] font-medium my-auto  hover:!text-white">Menaro</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-header justify-between">
+                <div class="box-title">
+                    Connect Wallet
+                </div>
+                <div>
+                </div>
+            </div>
+            <div class="box-body pb-0">
+                <div class="grid grid-cols-12 sm:gap-x-6 justify-center">
+                    @for (wallet of wallets; track $index;let i = $index) {
+                    <div  class="xxl:col-span-6 col-span-12">
+                      <div
+                        class="box nft-wallet !shadow-none border border-defaultborder dark:border-defaultborder/10"
+                        [ngClass]="{'active': wallet.isActive}" 
+                        (click)="activateWallet(i)" 
+                      >
+                        <div class="box-body p-4">
+                          <a href="javascript:void(0);" class="stretched-link"></a>
+                          <div class="flex items-center gap-4">
+                            <div class="leading-none">
+                              <span class="avatar avatar-rounded {{wallet.avatarClass}} bg-light">
+                                <img [src]="wallet.image" alt="{{ wallet.name }}">
+                              </span>
+                            </div>
+                            <div>
+                              <h6 class="font-medium mb-0">{{ wallet.name }}</h6>
+                            </div>
+                            <a href="javascript:void(0);" class="text-primary underline ms-auto">{{ wallet.connectText }}</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                }
+                  </div>
+        </div>
+            <div class="box-footer flex justify-between gap-2">
+                <button class="ti-btn ti-btn-soft-primary btn-wave ti-btn-lg">Import More</button>
+                <button class="ti-btn ti-btn-primary btn-wave ti-btn-lg">Add New Wallet</button>
+            </div>
+    </div>
+</div>
+<!--End::row-1 -->
+

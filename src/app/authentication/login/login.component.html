@@ -1,0 +1,178 @@
+
+<div class="container">
+    <div class="grid grid-cols-1 authentication authentication-basic items-center h-full place-items-center">
+        <div class="col-span-12 px-[0.5rem]">
+            <nav class="sm:flex bg-gray-100 hover:bg-gray-200 rounded-lg transition p-1 dark:bg-black/20 dark:hover:bg-black/20" role="tablist">
+                <a class="w-full sm:w-auto hs-tab-active:bg-primary hs-tab-active:text-gray-700 dark:hs-tab-active:bg-bgdark dark:hs-tab-active:text-white py-2 px-3 inline-flex justify-center items-center gap-2 bg-transparent text-sm text-gray-500 hover:text-gray-700 font-medium rounded-md hover:hover:text-primary dark:text-white/70 dark:hover:text-white "
+                id="segment-item-1" data-hs-tab="#segment-1" aria-controls="segment-1">
+                    <img class="firebase" src="./assets/images/firebase.svg" alt="">
+                </a>
+                <a class="w-full sm:w-auto hs-tab-active:bg-primary hs-tab-active:text-gray-700 dark:hs-tab-active:bg-bgdark dark:hs-tab-active:text-white py-2 px-3 inline-flex justify-center items-center gap-2 bg-transparent text-sm text-gray-500 hover:text-gray-700 font-medium rounded-md hover:hover:text-primary dark:text-white/70 dark:hover:text-white active"
+                id="segment-item-2" data-hs-tab="#segment-2" aria-controls="segment-2">
+                    <img class="firebase" src="./assets/images/favicon.svg" alt=""  >
+                </a>
+            </nav>
+            <div id="segment-1"  class="hidden" role="tabpanel" aria-labelledby="segment-item-1">
+                <div class="box my-6" >
+                    <div class="box-body !p-[3rem]">
+                        <div class="mb-3 flex justify-center">
+                            <a [routerLink]="['/dashboards/sales']">
+                                <img src="./assets/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                                <img src="./assets/images/brand-logos/desktop-white.png" alt="logo" class="desktop-white">
+                            </a>
+                        </div>
+                        <form [formGroup]="loginForm" (ngSubmit)="login()" >
+                            @if(errorMessage.length > 0){
+
+                            <p class="text-danger">  
+                                {{errorMessage}}</p>
+                            }
+                            @if(_error.message.length > 0){   
+
+
+                            <p class="text-danger">
+                                {{_error.message}} </p>
+                            }
+                            <p class="h4 font-semibold !mb-1">Sign In</p>
+                            <p class="mb-4 text-textmuted dark:text-textmuted/50 font-normal">Welcome back Jhon !</p>
+                            <div class="grid grid-cols-12 gap-y-4">
+                            <div class="xl:col-span-12 col-span-12">
+                                <label for="signup-firstname" class="ti-form-label text-default">Use Name</label>
+                                <input type="email" class="form-control" id="signup-firstname" placeholder="User Name" autocomplete formControlName="username"
+                                [ngModel]="email" required>
+                            </div>
+                            <div class="xl:col-span-12 col-span-12">
+                                <label for="signin-password" class="ti-form-label text-default block">Password<a routerLink="/authentication/reset-password/basic" class="float-end text-danger opacity-50 font-medium text-[0.75rem]">Forget password ?</a></label>
+                                <div class="relative">
+                                    <input type="password" [type]="showPassword ? 'text' : 'password'" class="form-control" id="signin-password" placeholder="password"  autocomplete placeholder="password"
+                                    [type]="showPassword ? 'text' : 'password'" autocomplete
+                                    placeholder="Password" formControlName="password"
+                                    [ngModel]="password" required>
+                                    <a href="javascript:void(0);" class="show-password-button text-textmuted dark:text-textmuted/50" (click)="togglePassword()"><i class="{{toggleClass}}  align-middle"></i></a>
+                                    
+                                </div>
+                                <div class="mt-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label text-textmuted dark:text-textmuted/50 font-normal text-[0.75rem]" for="defaultCheck1">
+                                            Remember password ?
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="text-center my-4 authentication-barrier">
+                                <span class="opacity-40 text-[0.6875rem]">OR SignIn With</span>
+                            </div>
+                            <div class="flex items-center justify-between flex-wrap gap-4 mb-4">
+                                <button class="ti-btn ti-btn-light ti-btn-w-lg !border !border-defaultborder dark:!border-defaultborder/10 flex items-center justify-center flex-grow">
+                                    <span class="avatar avatar-xs">
+                                        <img src="./assets/images/media/apps/google.png" alt="">
+                                    </span>
+                                    <span class="leading-none ms-2 text-[0.8125rem] text-default font-medium">Google</span>
+                                </button>
+                                <button class="ti-btn ti-btn-light ti-btn-w-lg !border  !border-defaultborder dark:!border-defaultborder/10 flex items-center justify-center flex-grow">
+                                    <span class="avatar avatar-xs">
+                                        <img src="./assets/images/media/apps/facebook.png" alt="">
+                                    </span>
+                                    <span class="leading-none ms-2 text-[0.8125rem] text-default font-medium">Facebook</span>
+                                </button>
+                            </div>
+                            <div class="grid mt-4">
+                                <button  [disabled]="!loginForm.valid || authservice.showLoader" autofocus
+                                [class.loader--text]="authservice.showLoader" class="ti-btn ti-btn-primary{{
+                                    disabled
+                                }}" >Sign In</button>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-textmuted dark:text-textmuted/50 mt-4 mb-0">Dont have an account?  <a [routerLink]="'/authentication/sign-up/basic'" class="text-primary">Sign Up</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div> 
+            </div>
+            <div id="segment-2"  role="tabpanel" aria-labelledby="segment-item-2">
+                <div class="box my-6" >
+                
+                    <div class="box-body !p-[3rem]">
+                        <div class="mb-3 flex justify-center">
+                            <a [routerLink]="['/dashboards/sales']">
+                                <img src="./assets/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                                <img src="./assets/images/brand-logos/desktop-white.png" alt="logo" class="desktop-white">
+                            </a>
+                        </div>
+                    <form [formGroup]="loginForm" (ngSubmit)="Submit()" >
+                        @if(errorMessage.length > 0){
+
+                        <p class="text-danger">
+                            {{errorMessage}}</p>
+                        }
+                        @if(_error.message.length > 0){
+
+
+                        <p class="text-danger">
+                            {{_error.message}} </p>
+                        }
+                    <p class="h4 font-semibold !mb-1">Sign In</p>
+                    <p class="mb-4 text-textmuted dark:text-textmuted/50 font-normal">Welcome back Jhon !</p>
+                    <div class="grid grid-cols-12 gap-y-4">
+                        <div class="xl:col-span-12 col-span-12">
+                            <label for="signup-firstname" class="ti-form-label text-default">Use Name</label>
+                            <input type="email" class="form-control" id="signup-firstname" placeholder="User Name" autocomplete formControlName="username"
+                            [ngModel]="email" required>
+                        </div>
+                        <div class="xl:col-span-12 col-span-12">
+                            <label for="signin-password" class="ti-form-label text-default block">Password<a routerLink="/authentication/reset-password/basic" class="float-end text-danger opacity-50 font-medium text-[0.75rem]">Forget password ?</a></label>
+                            <div class="relative">
+                                <input type="password" [type]="showPassword ? 'text' : 'password'" class="form-control" id="signin-password" placeholder="password"  autocomplete placeholder="password"
+                                [type]="showPassword ? 'text' : 'password'" autocomplete
+                                placeholder="Password" formControlName="password"
+                                [ngModel]="password" required>
+                                <a href="javascript:void(0);" class="show-password-button text-textmuted dark:text-textmuted/50" (click)="togglePassword()"><i class="{{toggleClass}}  align-middle"></i></a>
+                                
+                            </div>
+                            <div class="mt-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                    <label class="form-check-label text-textmuted dark:text-textmuted/50 font-normal text-[0.75rem]" for="defaultCheck1">
+                                        Remember password ?
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center my-4 authentication-barrier">
+                        <span class="opacity-40 text-[0.6875rem]">OR SignIn With</span>
+                    </div>
+                    <div class="flex items-center justify-between flex-wrap gap-4 mb-4">
+                        <button class="ti-btn ti-btn-light ti-btn-w-lg !border !border-defaultborder dark:!border-defaultborder/10 flex items-center justify-center flex-grow">
+                            <span class="avatar avatar-xs">
+                                <img src="./assets/images/media/apps/google.png" alt="">
+                            </span>
+                            <span class="leading-none ms-2 text-[0.8125rem] text-default font-medium">Google</span>
+                        </button>
+                        <button class="ti-btn ti-btn-light ti-btn-w-lg !border  !border-defaultborder dark:!border-defaultborder/10 flex items-center justify-center flex-grow">
+                            <span class="avatar avatar-xs">
+                                <img src="./assets/images/media/apps/facebook.png" alt="">
+                            </span>
+                            <span class="leading-none ms-2 text-[0.8125rem] text-default font-medium">Facebook</span>
+                        </button>
+                    </div>
+                    <div class="grid mt-4">
+                        <button  [disabled]="!loginForm.valid || authservice.showLoader" autofocus
+                        [class.loader--text]="authservice.showLoader" class="ti-btn ti-btn-primary{{
+                        disabled
+                        }}" >Sign In</button>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-textmuted dark:text-textmuted/50 mt-4 mb-0">Dont have an account?  <a [routerLink]="'/authentication/sign-up/basic'" class="text-primary">Sign Up</a></p>
+                    </div>
+                    </form>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  

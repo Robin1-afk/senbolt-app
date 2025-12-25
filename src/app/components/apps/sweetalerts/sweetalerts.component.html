@@ -1,0 +1,177 @@
+<app-page-header [title]="'Apps'" [title1]="['Sweet Alerts']" [activeitem]="'Sweet Alerts'"></app-page-header>
+ 
+<!-- Start:: row-1 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-4 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">
+                    Basic Alert
+                </div>
+            </div>
+            <div class="box-body text-center">
+                <button type="button" class="ti-btn bg-primary text-white" id="basic-alert" (click)="basicAlert()">Basic Alert</button>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-4 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">
+                    Title With Text Under
+                </div>
+            </div>
+            <div class="box-body text-center">
+                <button type="button" class="ti-btn bg-primary text-white" id="alert-text"  (click)="titleAlert()">Title With Text</button>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-4 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">
+                    With Text,Error Icon &amp;  Footer
+                </div>
+            </div>
+            <div class="box-body text-center">
+                <button type="button" class="ti-btn bg-primary text-white" id="alert-footer" (click)="footerAlert()">Alert Footer</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End:: row-1 -->
+
+<!-- Start:: row-2 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-4 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">
+                    Alert With Long Window
+                </div>
+            </div>
+            <div class="box-body text-center">
+                <button type="button" class="ti-btn bg-primary text-white" id="long-window" (click)="longWindowAlert()">Long Window Here</button>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-4 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">
+                    Custom HTML Description
+                </div>
+            </div>
+            <div class="box-body text-center">
+                <button type="button" class="ti-btn bg-primary text-white" id="alert-description" (click)="htmlAlert()"> Custom HTML Alert</button>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-4 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">
+                    Alert With Multiple Buttons
+                </div>
+            </div>
+            <div class="box-body text-center">
+                <button type="button" class="ti-btn bg-primary text-white" id="three-buttons" (click)="multiBtnAlert()">Multiple Buttons</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End:: row-2 -->
+
+<!-- Start:: row-3 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-4 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">
+                    Custom Positioned Dialog Alert
+                </div>
+            </div>
+            <div class="box-body text-center">
+                <button type="button" class="ti-btn bg-primary text-white" id="alert-dialog" (click)="dialogAlert()">Alert Dialog</button>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-4 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">
+                    Confirm Alert
+                </div>
+            </div>
+            <div class="box-body text-center">
+                <button type="button" class="ti-btn bg-primary text-white" id="alert-confirm" (click)="confirmAlert()">Confirm Alert</button>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-4 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">
+                    Alert With Parameters
+                </div>
+            </div>
+            <div class="box-body text-center">
+                <button type="button" class="ti-btn bg-primary text-white" id="alert-parameter" (click)="parametersAlert()">Alert Parameters</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End:: row-3 -->
+
+<!-- Start:: row-4 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-4 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">
+                    Alert With Image
+                </div>
+            </div>
+            <div class="box-body text-center">
+                <button type="button" class="ti-btn bg-primary text-white" id="alert-image" (click)="imageAlert()">Image Alert</button>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-4 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">
+                    Alert With Image
+                </div>
+            </div>
+            <div class="box-body text-center">
+                <button type="button" class="ti-btn bg-primary text-white" id="alert-custom-bg" (click)="customAlert()">Custom Alert</button>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-4 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">
+                    Auto Close Alert
+                </div>
+            </div>
+            <div class="box-body text-center">
+                <button type="button" class="ti-btn bg-primary text-white" id="alert-auto-close" (click)="timerAlert()">Auto Close</button>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-4 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">
+                    Ajax Request Alert
+                </div>
+            </div>
+            <div class="box-body text-center">
+                <button type="button" class="ti-btn bg-primary text-white" id="alert-ajax" (click)="AjaxAlert()">Ajax Request</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End:: row-4 -->

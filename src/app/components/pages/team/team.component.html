@@ -1,0 +1,18 @@
+<app-page-header [title]="'Pages'" [title1]="['Team']" [activeitem]="'Team'"></app-page-header>
+
+<!-- Start:: row-1 -->
+<div class="grid grid-cols-12 gap-x-6">
+    @for(member of teamMembers;track $index){
+    <div class="xl:col-span-3 lg:col-span-4 md:col-span-6 sm:col-span-6 col-span-12">
+        <spk-team-card
+        [name]="member.name"
+        [role]="member.role"
+        [class1]="member.class1"
+        [description]="member.description"
+        [image]="member.image"
+        [badgeColor]="member.badgeColor">
+      </spk-team-card>
+    </div>
+}
+</div>
+<!-- End:: row-1 -->

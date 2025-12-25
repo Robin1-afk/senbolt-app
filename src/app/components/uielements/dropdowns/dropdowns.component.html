@@ -1,0 +1,535 @@
+<app-page-header [title]="'Ui Elements'" [title1]="['Dropdowns']" [activeitem]="'Dropdowns'"></app-page-header>
+
+<!--Start:: row-1-->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="'Dropdowns'" [prism]="prsimCodeData.dropdownTS1">
+                <div class="ti-btn-list flex align-center flex-wrap">
+                    @for (data of dropdowns; track $index) {
+                   <spk-dropdowns [title]="data.label" [Id]="'dropdownMenuButton1'" [class]="'ti-btn btn-wave ti-btn-' + data.type + ' ti-dropdown-toggle !py-2'"
+                   [Icon]="true" [IconClass]="'ri-arrow-down-s-line align-middle ms-1 inline-block'"
+                   >
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Action</a></li>
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Another
+                                    action</a></li>
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Something else
+                                    here</a></li>
+                    </spk-dropdowns>
+                }
+                </div>
+        </app-showcode-card>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="'Single Button Dropdowns'" [prism]="prsimCodeData.dropdownTS2">
+                <div class="ti-btn-list">
+                    <div class="ti-btn-group !p-0 !border-0 !m-0 flex-wrap justify-start">
+                        @for (data of singledropdown; track $index) {
+                            <spk-dropdowns [title]="data.label" [Id]="'dropdownMenuButton2'" [class]="'ti-btn btn-wave ti-' + data.style + ' ti-dropdown-toggle !py-2'"
+                            [Icon]="true" [IconClass]="'ri-arrow-down-s-line align-middle ms-1 inline-block'"
+                            >
+                                <li><a class="ti-dropdown-item" href="javascript:void(0);">Action</a>
+                                </li>
+                                <li><a class="ti-dropdown-item" href="javascript:void(0);">Another
+                                        action</a></li>
+                                <li><a class="ti-dropdown-item" href="javascript:void(0);">Something
+                                        else here</a></li>
+                            </spk-dropdowns>
+                        }
+                    </div>
+                </div>
+           </app-showcode-card>
+    </div>
+</div>
+<!--End:: row-1-->
+
+<!-- Start:: row-2 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="'Rounded dropdown buttons'" [prism]="prsimCodeData.dropdownTS3">
+                <div class="ti-btn-list">
+                    <div class="ti-btn-group !p-0 !border-0 !m-0 flex-wrap justify-start">
+                        @for (data of Roundeddropdown; track $index) {
+                            <spk-dropdowns [title]="data.label" [Id]="'dropdownMenuButton3'" [class]="'ti-btn btn-wave ti-' + data.style + ' ti-dropdown-toggle !py-2'"
+                            [Icon]="true" [IconClass]="'ri-arrow-down-s-line align-middle ms-1 inline-block'"
+                            >
+                                <li><a class="ti-dropdown-item" href="javascript:void(0);">Action</a>
+                                </li>
+                                <li><a class="ti-dropdown-item" href="javascript:void(0);">Another
+                                        action</a></li>
+                                <li><a class="ti-dropdown-item" href="javascript:void(0);">Something
+                                        else here</a></li>
+                            </spk-dropdowns>
+                        }
+                    </div>
+                </div>
+        </app-showcode-card>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="' Dropdown Sizing'" [classbody]="'flex flex-wrap gap-1'" [prism]="prsimCodeData.dropdownTS4">
+                @for (dropdown of dropdownsizing; track $index) {
+                    <spk-dropdowns [Customclass]="''"  [Id]="'dropdownMenuButton32'" [splitbutton]="dropdown.splitbutton" [IconClass]="'ri-arrow-down-s-line align-middle inline-block'"
+                        [splitTitle]="dropdown.splitTitle" [Icon]="true" [splitbuttonClass]="dropdown.splitbuttonClass"
+                        [class]="dropdown.style" [Menuclass]="'dropdown-menu'" [title]="dropdown.label">
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Action</a></li>
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Another action</a>
+                        </li>
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Something else
+                                here</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Separated link</a>
+                        </li>
+                    </spk-dropdowns>
+                    }
+        </app-showcode-card>
+    </div>
+</div>
+<!-- End:: row-2 -->
+
+<!-- Start:: row-3 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="'Outline Button Dropdowns'" [prism]="prsimCodeData.dropdownTS5">
+                <div class="ti-btn-list">
+                    <div class="ti-btn-group !p-0 !border-0 !m-0 flex-wrap justify-start">
+                        @for (data of OutlineGroups; track $index) {
+                            <spk-dropdowns [title]="data.label" [Id]="'dropdownMenuButton14'" [class]="'ti-btn btn-wave ti-' + data.style + ' ti-dropdown-toggle !py-2'"
+                            [Icon]="true" [IconClass]="'ri-arrow-down-s-line align-middle ms-1 inline-block'"
+                            >
+                                <li><a class="ti-dropdown-item" href="javascript:void(0);">Action</a>
+                                </li>
+                                <li><a class="ti-dropdown-item" href="javascript:void(0);">Another
+                                        action</a></li>
+                                <li><a class="ti-dropdown-item" href="javascript:void(0);">Something
+                                        else here</a></li>
+                            </spk-dropdowns>
+                        }
+                    </div>
+                </div>
+        </app-showcode-card>
+
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="'Outline Button Dropdowns'" [prism]="prsimCodeData.dropdownTS6">
+                <div class="ti-btn-list">
+                    <div class="ti-btn-group !p-0 !border-0 !m-0 flex-wrap justify-start">
+                        @for (data of roundedOutlineGroups; track $index) {
+                            <spk-dropdowns [title]="data.label" [Id]="'dropdownMenuButton14'" [class]="'ti-btn btn-wave ti-' + data.style + ' ti-dropdown-toggle !py-2'"
+                            [Icon]="true" [IconClass]="'ri-arrow-down-s-line align-middle ms-1 inline-block'"
+                            >
+                                <li><a class="ti-dropdown-item" href="javascript:void(0);">Action</a>
+                                </li>
+                                <li><a class="ti-dropdown-item" href="javascript:void(0);">Another
+                                        action</a></li>
+                                <li><a class="ti-dropdown-item" href="javascript:void(0);">Something
+                                        else here</a></li>
+                            </spk-dropdowns>
+                        }
+                    </div>
+                </div>
+        </app-showcode-card>
+    </div>
+</div>
+<!-- End:: row-3 -->
+
+<!-- Start:: row-4 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-12 col-span-12">
+        <app-showcode-card [title]="'Split Buttons'" [prism]="prsimCodeData.dropdownTS7">
+                <div class="ti-btn-list">
+                    <div class="ti-btn-group !p-0 !border-0 !m-0 flex-wrap justify-start">
+                        <div class="inline-flex">
+                            @for (dropdown of splitButtons; track $index) {
+                                <spk-dropdowns [Customclass]="''"  [Id]="'dropdownMenuButton32'" [splitbutton]="dropdown.splitbutton" [IconClass]="'ri-arrow-down-s-line align-middle inline-block'"
+                                    [splitTitle]="dropdown.splitTitle" [Icon]="true" [splitbuttonClass]="dropdown.splitbuttonClass"
+                                    [class]="dropdown.style" [Menuclass]="'dropdown-menu'">
+                                    <li><a class="ti-dropdown-item" href="javascript:void(0);">Action</a></li>
+                                    <li><a class="ti-dropdown-item" href="javascript:void(0);">Another action</a>
+                                    </li>
+                                    <li><a class="ti-dropdown-item" href="javascript:void(0);">Something else
+                                            here</a></li>
+                                </spk-dropdowns>
+                                }
+                        </div>
+                    </div>
+                </div>
+        </app-showcode-card>
+    </div>
+</div>
+<!-- End:: row-4 -->
+
+<!-- Start:: row-5 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="'Dropup'" [prism]="prsimCodeData.dropdownTS8">
+                @for (dropdown of SvgDropdowns; track $index) {
+                    <spk-dropdowns [title]="dropdown.label" [Customclass]="dropdown.Customclass" [Id]="'dropdownMenuButton32'"
+                         [Svg]="true" [Svgicon]="'M2 11L8.16086 5.31305C8.35239 5.13625 8.64761 5.13625 8.83914 5.31305L15 11'" 
+                        [SvgClass]="'hs-dropdown-open:rotate-180 ti-dropdown-caret !text-white'"   [splitbutton]="dropdown.splitbutton" [splitTitle]="dropdown.splitTitle" [splitbuttonClass]="dropdown.splitbuttonClass"
+                        [class]="dropdown.style" [Menuclass]="'dropdown-menu'">
+                        <a class="ti-dropdown-item" href="javascript:void(0);">
+                            Action
+                        </a>
+                        <a class="ti-dropdown-item" href="javascript:void(0);">
+                            Another action
+                        </a>
+                        <a class="ti-dropdown-item" href="javascript:void(0);">
+                            Something else here
+                        </a>
+                    </spk-dropdowns>
+                }
+        </app-showcode-card>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="'Dropup right'" [prism]="prsimCodeData.dropdownTS9">
+                @for (dropdown of dropright; track $index) {
+                    <spk-dropdowns [title]="dropdown.label" [Customclass]="dropdown.Customclass" [Id]="'dropdownMenuButton32'"
+                         [Svg]="true" [Svgicon]="'M5 1L10.6869 7.16086C10.8637 7.35239 10.8637 7.64761 10.6869 7.83914L5 14'" 
+                        [SvgClass]="'w-auto h-2.5 ti-dropdown-caret !text-white'"   [splitbutton]="dropdown.splitbutton" [splitTitle]="dropdown.splitTitle" [splitbuttonClass]="dropdown.splitbuttonClass"
+                        [class]="dropdown.style" [Menuclass]="'dropdown-menu'">
+                        <a class="ti-dropdown-item" href="javascript:void(0);">
+                            Action
+                        </a>
+                        <a class="ti-dropdown-item" href="javascript:void(0);">
+                            Another action
+                        </a>
+                        <a class="ti-dropdown-item" href="javascript:void(0);">
+                            Something else here
+                        </a>
+                        <a aria-label="anchor">
+                            <hr class="dropdown-divider">
+                        </a>
+                        <a class="ti-dropdown-item" href="javascript:void(0);">
+                            Separated link
+                        </a>
+                    </spk-dropdowns>
+                }
+        </app-showcode-card>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="'Dropup left'" [prism]="prsimCodeData.dropdownTS10">
+                    @for (dropdown of dropleft; track $index) {
+                        <spk-dropdowns [title]="dropdown.label" [Customclass]="dropdown.Customclass" [Id]="'dropdownMenuButton32'"
+                             [Svg]="true" [Svgicon]="'M11 1L5.31305 7.16086C5.13625 7.35239 5.13625 7.64761 5.31305 7.83914L11 14'" 
+                            [SvgClass]="'w-auto h-2.5 text-white'" [splitbutton]="dropdown.splitbutton" [splitTitle]="dropdown.splitTitle" [splitbuttonClass]="dropdown.splitbuttonClass"
+                            [class]="dropdown.style" [Menuclass]="'dropdown-menu'">
+                            <a class="ti-dropdown-item" href="javascript:void(0);">
+                                Action
+                            </a>
+                            <a class="ti-dropdown-item" href="javascript:void(0);">
+                                Another action
+                            </a>
+                            <a class="ti-dropdown-item" href="javascript:void(0);">
+                                Something else here
+                            </a>
+                            <a aria-label="anchor">
+                                <hr class="dropdown-divider">
+                            </a>
+                            <a class="ti-dropdown-item" href="javascript:void(0);">
+                                Separated link
+                            </a>
+                        </spk-dropdowns>
+                    }
+        </app-showcode-card>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="'Active'" [prism]="prsimCodeData.dropdownTS11">
+                @for (data of Activedropdown; track $index) {
+                    <spk-dropdowns [title]="data.label" [Id]="'dropdownMenuButton2'" [class]="'ti-btn btn-wave ti-' + data.style + ' ti-dropdown-toggle !py-2'"
+                    [Icon]="true" [IconClass]="'ri-arrow-down-s-line align-middle ms-1 inline-block'"
+                    >
+                    <li><a class="ti-dropdown-item" href="javascript:void(0);">Regular link</a></li>
+                    <li><a class="ti-dropdown-item active" href="javascript:void(0);"
+                            aria-current="true">Active
+                            link</a>
+                    </li>
+                    <li><a class="ti-dropdown-item" href="javascript:void(0);">Another link</a></li>
+                    </spk-dropdowns>
+                }
+        </app-showcode-card>
+    </div>
+</div>
+<!-- End:: row-5 -->
+
+<!-- Start:: row-6 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-3 col-span-12">
+        <app-showcode-card [title]="'Disabled'" [prism]="prsimCodeData.dropdownTS12">
+                @for (data of Disabledropdown; track $index) {
+                    <spk-dropdowns [title]="data.label" [Id]="'dropdownMenuButton2'" [class]="'ti-btn btn-wave ti-' + data.style + ' ti-dropdown-toggle !py-2'"
+                    [Icon]="true" [IconClass]="'ri-arrow-down-s-line align-middle ms-1 inline-block'"
+                    >
+                    <li><a class="ti-dropdown-item" href="javascript:void(0);">Regular link</a></li>
+                    <li><a class="ti-dropdown-item disabled" href="javascript:void(0);"
+                            aria-current="true">Active
+                            link</a></li>
+                    <li><a class="ti-dropdown-item" href="javascript:void(0);">Another link</a></li>
+                    </spk-dropdowns>
+                }
+        </app-showcode-card>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="'Auto close behavior'" [prism]="prsimCodeData.dropdownTS13">
+                <div class="ti-btn-list">
+                    <div class="ti-btn-group !p-0 !m-0 !border-0">
+                        @for (data of AutocloseDropdown; track $index) {
+                            <spk-dropdowns [title]="data.label" [Id]="data.Id" [class]="'ti-btn btn-wave ti-' + data.style + ' ti-dropdown-toggle !py-2'"
+                            [Icon]="true" [IconClass]="'ri-arrow-down-s-line align-middle ms-1 inline-block'"
+                            >
+                                <li><a class="ti-dropdown-item" href="javascript:void(0);">Menu item</a>
+                                </li>
+                                <li><a class="ti-dropdown-item" href="javascript:void(0);">Menu item</a>
+                                </li>
+                                <li><a class="ti-dropdown-item" href="javascript:void(0);">Menu item</a>
+                                </li>
+                            </spk-dropdowns>
+                        }
+                    </div>
+                </div>
+        </app-showcode-card>
+    </div>
+    <div class="xl:col-span-3 col-span-12">
+        <app-showcode-card [title]="'dropdowns with Forms'" [prism]="prsimCodeData.dropdownTS14">
+                    <spk-dropdowns [title]="'Dropdowns'" [Customclass]="'[--auto-close:inside]'" [Id]="'hs-dropdown-auto-close-inside'" [class]="'ti-btn ti-btn-secondary !py-2'"
+                    [Icon]="true" [IconClass]="'ri-arrow-down-s-line align-middle inline-block'"
+                    >
+                        <form class="!px-6 !py-4">
+                            <div class="mb-4">
+                                <label for="exampleDropdownFormEmail1" class="ti-form-label">Email
+                                    address</label>
+                                <input type="email" class="form-control w-full !rounded-md"
+                                    id="exampleDropdownFormEmail1" placeholder="email@example.com">
+                            </div>
+                            <div class="mb-4">
+                                <label for="exampleDropdownFormPassword1"
+                                    class="ti-form-label">Password</label>
+                                <input type="password" class="form-control w-full !rounded-md"
+                                    id="exampleDropdownFormPassword1" placeholder="Password">
+                            </div>
+                            <div class="mb-4">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                                    <label class="form-check-label" for="dropdownCheck">
+                                        Remember me
+                                    </label>
+                                </div>
+                            </div>
+                            <button type="submit" class="ti-btn ti-btn-primary">Sign in</button>
+                        </form>
+                        <div class="dropdown-divider"></div>
+                        <a class="ti-dropdown-item" href="javascript:void(0);">New around here? Sign
+                            up</a>
+                        <a class="ti-dropdown-item" href="javascript:void(0);">Forgot password?</a>
+                    </spk-dropdowns>
+        </app-showcode-card>
+    </div>
+</div>
+<!-- End:: row-6 -->
+<!-- Start:: row-7 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-9 col-span-12">
+        <app-showcode-card [title]="'Alignment options'" [prism]="prsimCodeData.dropdownTS15">
+                <div class="">
+                    @for (data of AlignmentDropdown; track $index) {
+                        <spk-dropdowns [Svgaftertext]="data.Svgaftertext"  [title]="data.label" [Id]="data.Id" [Customclass]="data.Customclass" [class]="'ti-btn btn-wave ti-' + data.style + ' ti-dropdown-toggle !py-2'"
+                        [SvgClass]="data.svgclass" [Svg]="true" [Svgicon]="data.svgIcon" 
+                        >
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Menu item</a>
+                            </li>
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Menu item</a>
+                            </li>
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Menu item</a>
+                            </li>
+                        </spk-dropdowns>
+                    }
+                </div>
+        </app-showcode-card>
+    </div>
+    <div class="xl:col-span-3 col-span-12">
+        <app-showcode-card [title]="' Dark Dropdowns'" [prism]="prsimCodeData.dropdownTS16">
+                <spk-dropdowns [title]="'Dropdown Button'" [Customclass]="'[--auto-close:inside]'" [Id]="'hs-dropdown-auto-close-inside'" [class]="'ti-btn btn-wave  ti-btn-dark ti-dropdown-toggle !py-2'"
+                [Icon]="true" [IconClass]="'ri-arrow-down-s-line align-middle inline-block'"
+                >
+                        <li><a class="ti-dropdown-item !text-white dark:text-black bg-black"
+                                href="javascript:void(0);">Action</a></li>
+                        <li><a class="ti-dropdown-item !text-white dark:text-black bg-black"
+                                href="javascript:void(0);">Another action</a></li>
+                        <li><a class="ti-dropdown-item !text-white dark:text-black bg-black"
+                                href="javascript:void(0);">Something else here</a></li>
+                </spk-dropdowns>
+        </app-showcode-card>
+    </div>
+</div>
+<!-- End:: row-7 -->
+
+<!-- Start:: row-8 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="' Custom Dropdown Menu\'s'" [prism]="prsimCodeData.dropdownTS17">
+                <div class="ti-btn-list">
+                    <spk-dropdowns [title]="'Primary'" [Id]="'hs-dropdown-auto-close-inside'" [class]="'ti-btn btn-wave  ti-btn-primary ti-dropdown-toggle !py-2'"
+                [Icon]="true" [IconClass]="'ri-arrow-down-s-line align-middle inline-block'" [Custommenuclass]="'hs-dropdown-menu ti-dropdown-menu !bg-primary hidden'"
+                >
+                            <li><a class="ti-dropdown-item !text-white"
+                                    href="javascript:void(0);">Action</a></li>
+                            <li><a class="ti-dropdown-item !text-white"
+                                    href="javascript:void(0);">Another action</a></li>
+                            <li><a class="ti-dropdown-item !text-white"
+                                    href="javascript:void(0);">Something else here</a></li>
+                    </spk-dropdowns>
+                    <spk-dropdowns [title]="'Secondary'" [Id]="'hs-dropdown-auto-close-inside'" [class]="'ti-btn btn-wave  ti-btn-secondary ti-dropdown-toggle !py-2'"
+                [Icon]="true" [IconClass]="'ri-arrow-down-s-line align-middle inline-block'" [Custommenuclass]="'hs-dropdown-menu ti-dropdown-menu !bg-secondary hidden'"
+                >
+                            <li><a class="ti-dropdown-item !text-white"
+                                    href="javascript:void(0);">Action</a></li>
+                            <li><a class="ti-dropdown-item !text-white"
+                                    href="javascript:void(0);">Another action</a></li>
+                            <li><a class="ti-dropdown-item !text-white"
+                                    href="javascript:void(0);">Something else here</a></li>
+                    </spk-dropdowns>
+                    <spk-dropdowns [title]="'Warning'" [Id]="'hs-dropdown-auto-close-inside'" [class]="'ti-btn btn-wave  ti-btn-warning ti-dropdown-toggle !py-2'"
+                    [Icon]="true" [IconClass]="'ri-arrow-down-s-line align-middle inline-block'" [Custommenuclass]="'hs-dropdown-menu ti-dropdown-menu dropmenu-item-warning hidden'"
+                    >
+                    <li><a class="ti-dropdown-item active" href="javascript:void(0);">Active</a>
+                    </li>
+                    <li><a class="ti-dropdown-item" href="javascript:void(0);">Action</a></li>
+                    <li><a class="ti-dropdown-item" href="javascript:void(0);">Another
+                            action</a></li>
+                    <li><a class="ti-dropdown-item" href="javascript:void(0);">Something else
+                            here</a></li>
+                        </spk-dropdowns>
+                     <spk-dropdowns [title]="'Info'" [Id]="'hs-dropdown-auto-close-inside'" [class]="'ti-btn btn-wave  ti-btn-info ti-dropdown-toggle !py-2'"
+                        [Icon]="true" [IconClass]="'ri-arrow-down-s-line align-middle inline-block'" [Custommenuclass]="'hs-dropdown-menu ti-dropdown-menu dropmenu-item-info hidden'"
+                        >
+                        <li><a class="ti-dropdown-item active" href="javascript:void(0);">Active</a>
+                        </li>
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Action</a></li>
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Another
+                                action</a></li>
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Something else
+                                here</a></li>
+                    </spk-dropdowns>
+                    <spk-dropdowns [title]="'Success'" [Id]="'hs-dropdown-auto-close-inside'" [class]="'ti-btn btn-wave  ti-btn-success ti-dropdown-toggle !py-2'"
+                            [Icon]="true" [IconClass]="'ri-arrow-down-s-line align-middle inline-block'" [Custommenuclass]="'dropmenu-light-success block'"
+                            >
+                            <li><a class="ti-dropdown-item " href="javascript:void(0);">Active</a>
+                            </li>
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Action</a></li>
+                            <li><a class="ti-dropdown-item active" href="javascript:void(0);">Another
+                                    action</a></li>
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Something else
+                                    here</a></li>
+                     </spk-dropdowns>
+                     <spk-dropdowns [title]="'Danger'" [Id]="'hs-dropdown-auto-close-inside'" [class]="'ti-btn btn-wave  ti-btn-danger ti-dropdown-toggle !py-2'"
+                     [Icon]="true" [IconClass]="'ri-arrow-down-s-line align-middle inline-block'" [Custommenuclass]="'dropmenu-light-danger block'"
+                     >
+                     <li><a class="ti-dropdown-item " href="javascript:void(0);">Active</a>
+                     </li>
+                     <li><a class="ti-dropdown-item" href="javascript:void(0);">Action</a></li>
+                     <li><a class="ti-dropdown-item active" href="javascript:void(0);">Another
+                             action</a></li>
+                     <li><a class="ti-dropdown-item" href="javascript:void(0);">Something else
+                             here</a></li>
+              </spk-dropdowns>
+                </div>
+        </app-showcode-card>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="' Ghost Button Dropdowns'" [prism]="prsimCodeData.dropdownTS18">
+                <div class="ti-btn-list">
+                    @for (data of Ghostdropdown; track $index) {
+                        <spk-dropdowns [title]="data.label" [Id]="'dropdownMenuButton2'" [class]=" data.style + ' ti-btn btn-wave ti-dropdown-toggle !py-2 !shadow-none'"
+                        [Icon]="true" [IconClass]="'ri-arrow-down-s-line align-middle inline-block'"
+                        >
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Action</a>
+                            </li>
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Another
+                                    action</a></li>
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Something
+                                    else here</a></li>
+                        </spk-dropdowns>
+                    }
+                </div>
+        </app-showcode-card>
+    </div>
+</div>
+<!-- End:: row-8 -->
+
+<!-- Start:: row-9 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="'non-interactive dropdown items'" [prism]="prsimCodeData.dropdownTS19">
+                <p class=" mb-3">Use <code class="!text-[#d63384]">.ti-dropdown-item-text.</code> to
+                    create non-interactive
+                    dropdown items.</p>
+                <div class="bd-example">
+                    <ul
+                        class="dropdown-menu border dark:border-defaultborder/10 shadow-sm p-2 rounded-sm">
+                        <li><span class="!py-2 !px-4 !text-[0.875rem]">Dropdown item text</span>
+                        </li>
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Action</a></li>
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Another action</a>
+                        </li>
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Something else
+                                here</a>
+                        </li>
+                    </ul>
+                </div>
+        </app-showcode-card>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="'Dropdown Headers'" [prism]="prsimCodeData.dropdownTS20">
+                <p class="card-titlte mb-3">Add a <code class="!text-[#d63384]">.dropdown-header</code>
+                    to label sections of
+                    actions in any dropdown menu.</p>
+                <div class="bd-example">
+                    <ul class="dropdown-menu border dark:border-defaultborder/10 shadow-sm rounded-sm">
+                        <li>
+                            <h6 class="dropdown-header">Dropdown header</h6>
+                        </li>
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Action</a></li>
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Another action</a>
+                        </li>
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Something else
+                                here</a></li>
+                    </ul>
+                </div>
+        </app-showcode-card>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="'Dropdown Dividers'" [prism]="prsimCodeData.dropdownTS21">
+                <div class="bd-example">
+                    <ul class="dropdown-menu border dark:border-defaultborder/10 shadow-sm !rounded-sm">
+                        <li><a class="dropdown-header" href="javascript:void(0);">Heading</a></li>
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Action</a></li>
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Another action</a>
+                        </li>
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Something else
+                                here</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Separated link</a>
+                        </li>
+                    </ul>
+                </div>
+        </app-showcode-card>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <app-showcode-card [title]="'Dropdown Menu Text'" [prism]="prsimCodeData.dropdownTS22">
+                <div class="bd-example">
+                    <div
+                        class="dropdown-menu border dark:border-defaultborder/10 shadow-sm p-6 !rounded-sm text-[#8c9097] dark:text-white/50 text-[0.875rem] max-w-[200px]">
+                        <p class="mb-4">
+                            Some example text that's free-flowing within the dropdown menu.
+                        </p>
+                        <p class="mb-0">
+                            And this is more example text.
+                        </p>
+                    </div>
+                </div>
+        </app-showcode-card>
+    </div>
+</div>
+<!-- End:: row-9 -->

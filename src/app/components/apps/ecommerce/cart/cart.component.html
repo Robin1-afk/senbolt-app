@@ -1,0 +1,203 @@
+<app-page-header [title]="'Ecommerce'" [title1]="['Cart']" [activeitem]="'Cart'"></app-page-header>
+ 
+ <!-- Start:: Row-1 -->
+ <div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-9 col-span-12">
+        @if (!isCartEmpty()) {
+        <div class="box" id="cart-container-delete" >
+            <div class="box-header">
+                <div class="box-title">
+                    Cart Items
+                </div>
+            </div>
+            <div class="box-body">
+                <div class="table-responsive">
+                    <spk-reusable-tables  [columns]="cartColumn" tableClass="table table-bordered min-w-full"
+                    [showCheckbox]="false">
+                    @for (product of products; track product) {
+                        <tr class="border border-solid dark:!border-defaultborder/10 !border-defaultborder">
+                            <td class="cart-items01">
+                                <div class="flex items-center">
+                                    <div class="me-3">
+                                        <span class="avatar avatar-xxl bg-light">
+                                            <img [src]="product.img" alt="">
+                                        </span>
+                                    </div>
+                                    <div class="flex-auto">
+                                        <div class="mb-1 text-[14px] font-semibold">
+                                            <a href="javascript:void(0);">{{product.name}}
+                                                @if(product.discount){
+                                                    <span class="badge bg-{{product.bg}} text-white text-[0.5625rem] inline-flex gap-1"><i class="ri-discount-percent-line text-[10px]"></i> {{product.discount}}</span>
+                                                }
+                                            </a>
+                                        </div>
+                                        <div class="flex gap-4 flex-wrap mb-1 items-center">
+                                            <div>
+                                                <span class="me-1">Size:</span><span
+                                                    class="font-normal text-textmuted dark:text-textmuted/50">{{product.size}}</span>
+                                            </div>
+                                            <div>
+                                                <span class="me-1">Color:</span><span
+                                                    class="font-normal text-textmuted dark:text-textmuted/50">{{product.color}}</span>
+                                            </div>
+                                        </div>
+                                        <span class="badge bg-{{product.bg1}}/10 text-{{product.bg1}}">{{product.status}}</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="font-semibold text-[14px]">
+                                    {{product.price}}
+                                </div>
+                            </td>
+                            <td class="product-quantity-container">
+                                <div class="flex items-center flex-nowrap gap-1 rounded-full cart-input-group">
+                                    <button (click)="decreaseQuantity(product)" type="button" aria-label="button"
+                                        class="ti-btn ti-btn-icon btn-wave ti-btn-sm !rounded-full bg-primary/10 text-primary border product-quantity-minus1 border-end-0 waves-effect waves-light"><i
+                                            class="ri-subtract-line" ></i></button>
+                                    <input [(ngModel)]="product.quantity" type="number" class="form-control form-control-sm !rounded-full text-center p-0"
+                                        aria-label="number" value="2">
+                                    <button (click)="increaseQuantity(product)" type="button" aria-label="button"
+                                        class="ti-btn ti-btn-icon btn-wave ti-btn-sm  !rounded-full bg-primary/10 text-primary border product-quantity-plus1 border-start-0 waves-effect waves-light"><i
+                                            class="ri-add-line"></i></button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="text-[14px] font-semibold">
+                                    {{product.total}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="flex items-center">
+                                    <div class="hs-tooltip ti-main-tooltip">
+                                        <a [routerLink]="['/apps/ecommerce/wishlist']" class="ti-btn ti-btn-icon bg-primary text-white ti-btn-sm me-1 hs-tooltip-toggle">
+                                            <i class="ri-heart-line"></i>
+                                            <span class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 !bg-black !text-xs !font-medium !text-white shadow-sm hidden" role="tooltip" data-popper-placement="top">
+                                                Add To Wishlist
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="hs-tooltip ti-main-tooltip ltr:[--placement:left] rtl:[--placement:right]">
+                                        <a (click)="confirmAlert(product.id)" href="javascript:void(0);" class="hs-tooltip-toggle ti-btn ti-btn-icon bg-primarytint2color text-white ti-btn-sm btn-delete waves-effect waves-light">
+                                            <i class="ri-delete-bin-line"></i>
+                                            <span class="hs-tooltip-content ti-main-tooltip-content py-1 px-2 !bg-black !text-xs !font-medium !text-white shadow-sm" role="tooltip" data-popper-placement="left">
+                                                Remove From cart
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                    </spk-reusable-tables>
+                </div>
+            </div>
+        </div>
+    }
+        @if (isCartEmpty()) {
+        <div class="box " id="cart-empty-cart" >
+            <div class="box-header">
+                <div class="box-title">
+                    Empty Cart
+                </div>
+            </div>
+            <div class="box-body">
+                <div class="cart-empty text-center">
+                    <span class="svg-muted"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" class="!inline-flex" width="24" height="24" viewBox="0 0 24 24"><path d="M18.6 16.5H8.9c-.9 0-1.6-.6-1.9-1.4L4.8 6.7c0-.1 0-.3.1-.4.1-.1.2-.1.4-.1h17.1c.1 0 .3.1.4.2.1.1.1.3.1.4L20.5 15c-.2.8-1 1.5-1.9 1.5zM5.9 7.1 8 14.8c.1.4.5.8 1 .8h9.7c.5 0 .9-.3 1-.8l2.1-7.7H5.9z"></path><path d="M6 10.9 3.7 2.5H1.3v-.9H4c.2 0 .4.1.4.3l2.4 8.7-.8.3zM8.1 18.8 6 11l.9-.3L9 18.5z"></path><path d="M20.8 20.4h-.9V20c0-.7-.6-1.3-1.3-1.3H8.9c-.7 0-1.3.6-1.3 1.3v.5h-.9V20c0-1.2 1-2.2 2.2-2.2h9.7c1.2 0 2.2 1 2.2 2.2v.4z"></path><path d="M8.9 22.2c-1.2 0-2.2-1-2.2-2.2s1-2.2 2.2-2.2c1.2 0 2.2 1 2.2 2.2s-1 2.2-2.2 2.2zm0-3.5c-.7 0-1.3.6-1.3 1.3 0 .7.6 1.3 1.3 1.3.8 0 1.3-.6 1.3-1.3 0-.7-.5-1.3-1.3-1.3zM18.6 22.2c-1.2 0-2.2-1-2.2-2.2s1-2.2 2.2-2.2c1.2 0 2.2 1 2.2 2.2s-.9 2.2-2.2 2.2zm0-3.5c-.8 0-1.3.6-1.3 1.3 0 .7.6 1.3 1.3 1.3.7 0 1.3-.6 1.3-1.3 0-.7-.5-1.3-1.3-1.3z"></path></svg> </span>
+                    <h3 class="font-bold mb-1">Your Cart is Empty</h3>
+                    <h5 class="mb-3">Add some items to make me happy :)</h5>
+                    <a [routerLink]="['/apps/ecommerce/products']" class="ti-btn bg-primary text-white btn-wave m-3" data-abc="true">continue shopping <i class="bi bi-arrow-right ms-1"></i></a>
+                </div>
+            </div>
+        </div>
+    }
+    </div>
+    <div class="xl:col-span-3 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">
+                    Order Summary
+                </div>
+            </div>
+            <div class="box-body p-0">
+                <div class="p-4 border-b border-defaultborder dark:border-defaultborder/10 border-dashed">
+                    <label for="promo-code" class="font-medium mb-0">Have a Promo Code?</label>
+                    <div class="text-[11px] text-textmuted dark:text-textmuted/50 mb-3">Apply Your Promo Code for an Instant Discount!</div>
+                    <div class="input-group mb-0">
+                        <input type="text" class="form-control form-control-sm !border-s" id="promo-code" name="promo-code" placeholder="Enter Promo Code" aria-label="Enter Promo Code" aria-describedby="coupons">
+                        <button class="ti-btn ti-btn-primary !m-0" type="button" id="coupons">Apply</button>
+                    </div>
+                </div>
+                <div class="p-4 pb-2">
+                    <p class="mb-2 font-semibold">Delivery:</p>
+                    <nav class="nav nav-tabs tab-style-8 scaleX rounded cart-summary-nav gap-2 flex" aria-label="Tabs" role="tablist" aria-orientation="horizontal">
+                        <button type="button" class="nav-link w-full active" id="freeshipping-pane" aria-selected="true" data-hs-tab="#freeshipping" aria-controls="freeshipping" role="tab">
+                            Free Shipping
+                        </button>
+                        <button type="button" class="nav-link w-full" id="expressshipping-tab-pane" aria-selected="false" data-hs-tab="#expressshipping" aria-controls="expressshipping" role="tab">
+                            Express Shipping
+                        </button>
+                    </nav>
+                </div>
+                <div class="p-4 border-b border-defaultborder dark:border-defaultborder/10 border-dashed">
+                    <div id="freeshipping" class="overflow-hidden p-0 border-0" role="tabpanel" aria-labelledby="freeshipping-pane">
+                        <div class="text-xs text-textmuted dark:text-textmuted/50 mb-3"><i class="ri-information-fill"></i> Delivered Within 7 Days</div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="text-textmuted dark:text-textmuted/50">Sub Total</div>
+                            <div class="font-medium text-[14px]">$2,547</div>
+                        </div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="text-textmuted dark:text-textmuted/50">Discount</div>
+                            <div class="font-medium text-[14px] text-success">20% - $124</div>
+                        </div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="text-textmuted dark:text-textmuted/50">Delivery Charges</div>
+                            <div class="font-medium text-[14px] text-danger">- $0</div>
+                        </div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="text-textmuted dark:text-textmuted/50">Service Tax (18%)</div>
+                            <div class="font-medium text-[14px]">- $12</div>
+                        </div>
+                        <div class="flex items-center justify-between h5">
+                            <div class="text-[1rem]">Total :</div>
+                            <div class="font-semibold"> $2,254</div>
+                        </div>
+                        <div class="grid">
+                            <a [routerLink]="['/apps/ecommerce/checkout']" class="ti-btn bg-primary text-white btn-wave mb-2">Proceed To Checkout</a>
+                            <a [routerLink]="['/apps/ecommerce/products']" class="ti-btn ti-btn-soft-primary1 btn-wave">Continue Shopping</a>
+                        </div>
+                    </div>
+                    <div id="expressshipping" class="overflow-hidden p-0 border-0 hidden" role="tabpanel" aria-labelledby="expressshipping-tab-pane">
+                        <div class="text-xs text-textmuted dark:text-textmuted/50 mb-3"><i class="ri-information-fill"></i> Delivered by Tomorrow</div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="text-textmuted dark:text-textmuted/50">Sub Total</div>
+                            <div class="font-medium text-[14px]">$2,547</div>
+                        </div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="text-textmuted dark:text-textmuted/50">Discount</div>
+                            <div class="font-medium text-[14px] text-success">20% - $124</div>
+                        </div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="text-textmuted dark:text-textmuted/50">Delivery Charges</div>
+                            <div class="font-medium text-[14px] text-danger">- $15</div>
+                        </div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="text-textmuted dark:text-textmuted/50">Service Tax (18%)</div>
+                            <div class="font-medium text-[14px]">- $12</div>
+                        </div>
+                        <div class="flex items-center justify-between h5">
+                            <div class="text-[1rem]">Total :</div>
+                            <div class="font-semibold"> $2,546</div>
+                        </div>
+                        <div class="grid">
+                            <a [routerLink]="['/apps/ecommerce/checkout']" class="ti-btn bg-primary text-white btn-wave mb-2">Proceed To Checkout</a>
+                            <a [routerLink]="['/apps/ecommerce/products']" class="ti-btn ti-btn-soft-primary1 btn-wave">Continue Shopping</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End:: Row-1 -->

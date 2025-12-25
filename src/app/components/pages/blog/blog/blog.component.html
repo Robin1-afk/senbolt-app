@@ -1,0 +1,259 @@
+<app-page-header [title]="'Blogs'" [title1]="['Blog']" [activeitem]="'Blog'"></app-page-header>
+ 
+ <!-- Start:: row-1 -->
+ <div class="grid grid-cols-12 gap-x-6">
+    <div class="xxl:col-span-6 col-span-12">
+        <div class="box overflow-hidden">
+            <div class="box-body p-0">
+                <div class="swiper swiper-basic !rounded-none">
+                    <div class="swiper-wrapper">
+                        <swiper-container
+                        #swiperContainer
+                        class="swiper overflow-hidden swiper-related-jobs swiper-initialized swiper-backface-hidden"
+                        [spaceBetween]="0"
+                        [slidesPerView]="1"
+                        [slidesPerGroup]="1"
+                        [autoplay]="{ delay: 5000, disableOnInteraction: true }"
+                      >
+                      @for (image of images; track $index) {
+                        <swiper-slide>
+                          <img [src]="image" class="block w-full" alt="...">
+                        </swiper-slide>
+                    }
+                      </swiper-container>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h5 class="font-semibold"><a [routerLink]="['/pages/blog/blog-details']">Melodic Mastery: A Deep Dive into Music Notes</a></h5>
+                    <p class="mb-3">Exploring the intricate symbols and structures that form the foundation of every melody.</p>
+                    <p class="mb-3">As musicologist Charles Seeger notes, “Music is a system of communication involving structured sounds produced by members of a community that communicate with other members”</p>
+                    <p class="mb-3">“Music” is one of the most difficult terms to define, partially because beliefs about music have changed dramatically over time just in Western culture alone.<a href="javascript:void(0);" class="font-medium text-primary ms-2 align-middle text-xs text-Augoration-underline inline-block">Read More</a></p>
+                    <div class="flex flex-wrap items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="avatar avatar-md avatar-rounded me-2">
+                                <img src="./assets/images/faces/11.jpg" alt="">
+                            </div>
+                            <div>
+                                <p class="mb-0 font-medium">Justin Roy</p>
+                                <p class="text-textmuted dark:text-textmuted/50 text-xs mb-0">26,Mar 2024 - 15:37</p>
+                            </div>
+                        </div>
+                        <div class="avatar avatar-sm bg-danger/10 avatar-rounded">
+                            <i class="ri-heart-line text-danger"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xxl:col-span-6 col-span-12">
+        <div class="grid grid-cols-12 gap-x-6">
+            <div class="xxl:col-span-7 col-span-12">
+                <div class="box">
+                    <div class="grid grid-cols-12 gap-x-0">
+                        <div class="xxl:col-span-8 md:col-span-10 sm:col-span-10 col-span-12">
+                            <div class="box-body">
+                                <h5 class="font-semibold">
+                                    <a href="javascript:void(0);">Listening: Finding Happiness in Music</a>
+                                </h5>
+                                <span class="block mb-3">
+                                    Different genres and melodies can evoke joy, reduce stress, and create lasting memories. <a href="javascript:void(0);" class="font-medium text-primary ms-2 align-middle text-xs text-Augoration-underline inline-block">
+                                        Read More
+                                    </a>
+                                </span>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-start flex-wrap">
+                                        <div class="avatar avatar-md avatar-rounded me-2">
+                                            <img src="./assets/images/faces/10.jpg" alt="" class="">
+                                        </div>
+                                        <div>
+                                            <p class="mb-0 font-medium">Nicolas Noor</p>
+                                            <div class="text-textmuted dark:text-textmuted/50 text-xs mb-0">20,Aug 2024 - 16:32</div>
+                                        </div>
+                                    </div>
+                                    <div class="avatar avatar-sm bg-danger/10 avatar-rounded">
+                                        <i class="ri-heart-line text-danger"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="xxl:col-span-4 md:col-span-2 sm:col-span-2 col-span-12">
+                            <img src="./assets/images/media/blog/4.jpg" class="img-fluid !rounded-tr-md !rounded-br-md h-full w-full" alt="...">
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="grid grid-cols-12 gap-x-6 g-0 justify-center">
+                        <div class="sm:col-span-12 col-span-12">
+                            <div class="box-body">
+                                <h5 class="font-semibold">
+                                    <a href="javascript:void(0);">Music for the Soul: Enhancing Your Life Through Sound</a>
+                                </h5>
+                                <span class="block mb-3">
+                                    Learn how to create sacred spaces for musical reflection, find solace in times of hardship, and cultivate mindfulness through. <a href="javascript:void(0);" class="font-medium text-primary ms-2 align-middle text-xs text-Augoration-underline inline-block">
+                                        Read More
+                                    </a>
+                                </span>
+                                <div class="flex flex-wrap items-center justify-between">
+                                    <div class="flex items-center">
+                                        <div class="avatar avatar-md avatar-rounded me-2">
+                                            <img src="./assets/images/faces/8.jpg" alt="">
+                                        </div>
+                                        <div>
+                                            <p class="mb-0 font-medium">Sissera William</p>
+                                            <div class="text-textmuted dark:text-textmuted/50 text-xs mb-0">25,Aug 2024 - 04:25</div>
+                                        </div>
+                                    </div>
+                                    <div class="avatar avatar-sm bg-danger/10 avatar-rounded ms-auto">
+                                        <i class="ri-heart-fill text-danger"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sm:col-span-12 col-span-12 text-center">
+                            <div class="box-body pt-1">
+                                <img src="./assets/images/media/blog/9.jpg" class="img-fluid rounded-md w-full" alt="...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="xxl:col-span-5 col-span-12">
+                <div class="box overflow-hidden">
+                    <div class="box-header justify-between">
+                        <div class="box-title">
+                            Categories :
+                        </div>
+                        <a href="javascript:void(0);" class="ti-btn bg-light btn-wave ti-btn-sm text-textmuted dark:text-textmuted/50 waves-effect waves-light">All<i class="ti ti-arrow-narrow-right ms-1"></i></a>
+                    </div>
+                    <div class="box-body p-0">
+                        <ul class="ti-list-group list-group-flush list-style !border-0">
+                            @for (category of categories; track $index) {
+                            <li  class="ti-list-group-item">
+                              <div class="flex items-center justify-between">
+                                <span class="font-medium">
+                                  <i
+                                    [class]="category.icon"
+                                    [ngStyle]="{
+                                      'background-color': category.bgColor,
+                                      color: category.textColor
+                                    }"
+                                    class="text-[14px] p-1 rounded-md me-2 inline-block align-middle leading-none"
+                                  ></i>
+                                  {{ category.name }}
+                                </span>
+                                <span class="badge bg-primary/10 text-primary">{{ category.count }}</span>
+                              </div>
+                            </li>
+                        }
+                          </ul>
+                          
+                    </div>
+                </div>
+                <div class="box overflow-hidden">
+                    <div class="box-header flex items-center justify-between">
+                        <div class="box-title">
+                            Related Blogs:
+                        </div>
+                        <div>
+                            <span class="badge bg-primary/10 text-primary rounded-full">15</span>
+                        </div>
+                    </div>
+                    <div class="box-body p-0">
+                        <ul class="ti-list-group list-group-flush !border-t-0 !rounded-none">
+                            @for (blog of RelatedBlogs; track $index) {
+                            <li class="ti-list-group-item border-b-0">
+                              <div class="flex flew-wrap truncate items-center gap-2">
+                                <span class="avatar avatar-xl flex-shrink-0 me-1">
+                                  <img [src]="blog.image" class="img-fluid" [alt]="blog.title">
+                                </span>
+                                <div class="flex-auto text-wrap">
+                                  <a href="javascript:void(0);" class="text-[14px] font-medium mb-0">{{ blog.title }}</a>
+                                  <p class="mb-1 popular-blog-content truncate text-textmuted dark:text-textmuted/50">
+                                    {{ blog.content }}
+                                  </p>
+                                  <span class="text-textmuted dark:text-textmuted/50 text-[10px]">{{ blog.date }}</span>
+                                </div>
+                              </div>
+                            </li>
+                        }
+                          </ul>
+                          
+                        <div class="p-4 pt-2 mt-1">
+                            <button class="ti-btn mx-auto ti-btn-primary ti-btn-loader text-center justify-center w-full">
+                                <span class="me-2">Load More</span>
+                                <span class="loading"><i class="ri-loader-4-line text-[1rem]"></i></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End:: row-1 -->
+
+ <!-- Start::row-2 -->
+<div class="grid grid-cols-12 gap-x-6">
+   
+    <div class="xxl:col-span-4 lg:col-span-12 md:col-span-12 col-span-12">
+        <div class="box overflow-hidden">
+            <div class="box-header flex items-center justify-between">
+                <div class="box-title">
+                    Featured Blogs
+                </div>
+                <div>
+                    <span class="badge bg-primary/10 text-primary">23 Blogs</span>
+                </div>
+            </div>
+            <div class="box-body p-0">
+                <ul class="ti-list-group list-group-flush !rounded-none !border-t-0">
+                    @for (blog of featureBlogs; track $index) {
+                    <li class="ti-list-group-item" [ngClass]="{ 'border-b-0': blog.last }">
+                      <div class="flex flex-wrap items-center gap-4">
+                        <span class="avatar avatar-lg">
+                          <img [src]="blog.image" class="img-fluid" [alt]="blog.title">
+                        </span>
+                        <div class="flex-auto">
+                          <a href="javascript:void(0);" class="text-[14px] font-medium mb-1">{{ blog.title }}</a>
+                          <p class="mb-0 mt-1 popular-blog-content truncate">{{ blog.content }}</p>
+                        </div>
+                        <div>
+                          <button class="ti-btn ti-btn-icon bg-light ti-btn-sm rtl-rotate">
+                            <i class="ri-arrow-right-s-line"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </li>
+                }
+                  </ul>
+                <div class="p-4 pt-2">
+                    <button class="ti-btn mx-auto ti-btn-soft-primary ti-btn-sm ti-btn-loader text-center justify-center w-full ti-btn-sm !mb-0">
+                        <span class="me-2">Load More</span>
+                        <span class="loading"><i class="ri-loader-4-line text-[1rem]"></i></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xxl:col-span-8 lg:col-span-12 md:col-span-12 col-span-12">
+        <div class="grid grid-cols-12 gap-x-6">
+            @for(card of blogCards1;track $index){
+                <div class="xxl:col-span-4 lg:col-span-12 md:col-span-12 col-span-12">
+                    <spk-blog-image-card [cardData]="card"></spk-blog-image-card>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<!--End::row-2 -->
+
+<!--Start::row-3 -->
+<div class="grid grid-cols-12 gap-x-6">
+    @for(card of blogCards;track $index){
+    <div class="xxl:col-span-3 xl:col-span-6 lg:col-span-6 md:col-span-6 sm:col-span-6 col-span-12">
+        <spk-blog-image-card [cardData]="card"></spk-blog-image-card>
+    </div>
+}
+</div>
+<!--End::row-3 -->

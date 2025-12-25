@@ -1,0 +1,148 @@
+<app-page-header [title]="'Advanced Ui'" [title1]="['Accordions']" [activeitem]="'Accordions'"></app-page-header>
+
+<!-- Start:: row-1 -->
+ <div class="grid grid-cols-12 gap-x-6">
+  <div class="xl:col-span-6 col-span-12">
+    <app-showcode-card [title]="'Basic Accordion'" [prism]="prismCode.accordionTS1">        
+      <spk-accordions  [accordions]="accordions"></spk-accordions>       
+</app-showcode-card>
+  </div>
+  <div class="xl:col-span-6 col-span-12">
+    <app-showcode-card [title]="'Always Open'"   [prism]="prismCode.accordionTS12">
+           
+      <spk-accordions  [accordions]="alwaysOpenAccordions"></spk-accordions>        
+
+ </app-showcode-card>
+  </div>
+  <div class="xl:col-span-6 col-span-12">
+    <app-showcode-card [title]="'Nested'"   [prism]="prismCode.accordionTS13">
+      <spk-accordions  [accordions]="nestedAccordions"></spk-accordions>        
+   </app-showcode-card>
+  </div>
+  <div class="xl:col-span-6 col-span-12">
+    <app-showcode-card [title]="' No arrow '"  [boxClass]="'custom-box'"  [prism]="prismCode.accordionTS14">
+      <spk-accordions  [accordions]="noArrowAccordions"></spk-accordions>        
+   </app-showcode-card>
+  </div>
+  <div class="xl:col-span-6 col-span-12">
+    <app-showcode-card [title]="'With Arrow'"  [boxClass]="'custom-box'"  [prism]="prismCode.accordionTS15">
+      <spk-accordions  [accordions]="ArrowAccordions"></spk-accordions>        
+   </app-showcode-card>
+  </div>
+  <div class="xl:col-span-6 col-span-12">
+    <app-showcode-card [title]="'With title and arrow stretched'"  [boxClass]="'custom-box'"  [prism]="prismCode.accordionTS16">
+      <spk-accordions  [accordions]="stretchedAccordions"></spk-accordions>        
+   </app-showcode-card>
+  </div>
+  <div class="xl:col-span-6 col-span-12">
+    <app-showcode-card [title]="'Bordered'" [boxClass]="'custom-box'"    [prism]="prismCode.accordionTS17">
+      <spk-accordions  [accordions]="bordered"></spk-accordions>        
+   </app-showcode-card>
+  </div>
+  <div class="xl:col-span-6 col-span-12">
+    <app-showcode-card [title]="'Active Content Bordered'" [boxClass]="'custom-box'"    [prism]="prismCode.accordionTS18">
+      <spk-accordions  [accordions]="activebordered"></spk-accordions>        
+   </app-showcode-card>
+  </div>
+</div>
+<!-- End:: row-1 -->
+
+<!-- Start:: row-2 -->
+<div class="grid grid-cols-12 gap-x-6">
+  <div class="xl:col-span-6 col-span-12">
+    <app-showcode-card [title]="'Basic Custom Accordion'" [boxClass]="'custom-box'"    [prism]="prismCode.accordionTS19">
+      <spk-accordions  [accordions]="basiccustomAccordions"></spk-accordions>        
+   </app-showcode-card>
+  </div>
+  <div class="xl:col-span-6 col-span-12">
+    <app-showcode-card [title]="'Basic Accordion With Icon'" [boxClass]="'custom-box'"    [prism]="prismCode.accordionTS2">
+      <spk-accordions  [accordions]="basiccustomIconAccordions"></spk-accordions>        
+   </app-showcode-card>
+  </div>
+</div>
+<!-- End:: row-2 -->
+
+<!-- Start:: row-3 -->
+<div class="grid grid-cols-12 gap-x-6">
+  <div class="xl:col-span-12 col-span-12">
+    <app-showcode-card [title]="'Accordin Arrow Streched'" [boxClass]="'custom-box'"    [prism]="prismCode.accordionTS3">
+      <spk-accordions  [accordions]="arrowstrechedAccordions"></spk-accordions>        
+   </app-showcode-card>
+  </div>
+</div>
+<!-- End:: row-3 -->
+
+<!-- Start:: row-4 -->
+<h6 class="mb-3 !text-defaulttextcolor">Light Colors:</h6>
+<div class="grid grid-cols-12 gap-x-6">
+  <div class="xl:col-span-6 col-span-12">
+    <app-showcode-card [title]="'Primary Soft Color'" [boxClass]="'custom-box'"    [prism]="prismCode.accordionTS4">
+      <spk-accordions  [accordions]="lightprimaryAccordions"></spk-accordions>        
+   </app-showcode-card>
+  </div>
+  <div class="xl:col-span-6 col-span-12">
+    <app-showcode-card [title]="'Secondary Soft Color'" [boxClass]="'custom-box'"    [prism]="prismCode.accordionTS5">
+      <spk-accordions  [accordions]="lightsecondaryAccordions"></spk-accordions>        
+   </app-showcode-card>
+  </div>
+</div>
+<!-- End:: row-4 -->
+
+<!-- Start:: row-5 -->
+<h6 class="mb-3 !text-defaulttextcolor">Solid Colors:</h6>
+<div class="grid grid-cols-12 gap-x-6">
+  <div class="xl:col-span-6 col-span-12">
+    <app-showcode-card [title]="'Primary'" [boxClass]="'custom-box'"    [prism]="prismCode.accordionTS6">
+      <spk-accordions  [accordions]="solidprimaryAccordions"></spk-accordions>        
+   </app-showcode-card>
+  </div>
+  <div class="xl:col-span-6 col-span-12">
+    <app-showcode-card [title]="'Secondary'" [boxClass]="'custom-box'"    [prism]="prismCode.accordionTS7">
+      <spk-accordions  [accordions]="solidsecondaryAccordions"></spk-accordions>        
+   </app-showcode-card>
+  </div>
+</div>
+<!-- End:: row-5 -->
+
+<!-- Start:: row-6 -->
+<h6 class="mb-3 !text-defaulttextcolor">Colored Borders:</h6>
+<div class="grid grid-cols-12 gap-x-6">
+  <div class="xl:col-span-6 col-span-12">
+    <app-showcode-card [title]="'Primary'" [boxClass]="'custom-box'"    [prism]="prismCode.accordionTS8">
+      <div class="accordion accordion-border-primary accordions-items-seperate"
+      id="accordionprimaryborderExample">
+      <spk-accordions  [accordions]="primarybordered"></spk-accordions>     
+      </div>   
+   </app-showcode-card>
+  </div>
+  <div class="xl:col-span-6 col-span-12">
+    <app-showcode-card [title]="'Success'" [boxClass]="'custom-box'"    [prism]="prismCode.accordionTS9">
+      <div class="accordion accordion-border-success accordions-items-seperate"
+      id="accordionsuccessborderExample">
+      <spk-accordions  [accordions]="successbordered"></spk-accordions>     
+      </div>   
+   </app-showcode-card>
+  </div>
+</div>
+<!-- End:: row-6 -->
+
+<!-- Start:: row-7 -->
+<div class="grid grid-cols-12 gap-x-6">
+  <div class="xl:col-span-6 col-span-12">
+    <app-showcode-card [title]="'Left Aligned Icons'" [boxClass]="'custom-box'"    [prism]="prismCode.accordionTS10">
+      <div class="accordion accordionicon-left accordions-items-seperate"
+      id="accordioniconLeftExample">
+      <spk-accordions  [accordions]="leftaligned"></spk-accordions>     
+      </div>   
+   </app-showcode-card>
+  </div>
+  <div class="xl:col-span-6 col-span-12">
+     <app-showcode-card [title]="'Custom Accordion'" [boxClass]="'custom-box'"    [prism]="prismCode.accordionTS11">
+              <div class="accordion customized-accordion accordions-items-seperate"
+              id="customizedAccordion">
+              <spk-accordions  [accordions]="customAccodions"></spk-accordions>     
+              </div>   
+           </app-showcode-card>
+  </div>
+</div>
+<!-- End:: row-7 -->

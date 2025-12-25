@@ -1,0 +1,183 @@
+<app-page-header [title]="'Forms'" [title1]="['Form Advanced']" [activeitem]="'Form Advanced'"></app-page-header>
+  
+  <!-- Start:: row-3 -->
+  <div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-12 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">
+                    TAGIFY JS
+                </div>
+            </div>
+            <div class="box-body basic-tagify">
+                <div class="grid grid-cols-12 sm:gap-x-6 gap-y-4">
+                    <div class="xl:col-span-6 col-span-12">
+                        <label class="ti-form-label block">Basic Tagify</label>
+                        <spk-ng-select
+                        [options]="Tagify"
+                        [id]="'choices-multiple-groups'"
+                        [selectClass]="''"
+                        [defaultValue]="selected"
+                        [multiple]="true"
+                        [clearable]="true"
+                        [searchable]="true"
+                        [hideSelected]="true"
+                        [additionalProperties]="{}">
+                        </spk-ng-select>
+                    </div>
+                    <div class="xl:col-span-6 col-span-12">
+                        <label class="ti-form-label block">Tagify With Custom Suggestions</label>
+                        <spk-ng-select 
+                                        [options]="companiesNames"
+                                        [id]="'choices-multiple-groups'"
+                                        [selectClass]="''"
+                                        [defaultValue]="selectedCompanies"
+                                        [multiple]="true"
+                                        [clearable]="true"
+                                        [searchable]="true"
+                                        [hideSelected]="true"
+                                        [additionalProperties]="{}">
+                                        </spk-ng-select>
+                    </div>
+                    <div class="xl:col-span-6 col-span-12">
+                        <label class="ti-form-label block">Diasbled User Input</label>
+                        <input name='tags-disabled-user-input' placeholder='Select tags from the list' class="form-control">
+                    </div>
+                    <div class="xl:col-span-6 col-span-12">
+                        <label class="ti-form-label block">Drag & Sort</label>
+                        <div cdkDropList cdkDropListOrientation="horizontal" class="example-list border flex-wrap sm:flex-nowrap" (cdkDropListDropped)="drop($event)">
+                            @for (item of items; track item) {
+                              <input  cdkDrag type="text" name="drag-sort" class="form-control" value="{{item}}" tabindex="-1">
+                            }
+                          </div> 
+                    </div>
+                    <div class="xl:col-span-6 col-span-12">
+                        <label class="ti-form-label block">Tagify Single-Value Select</label>
+                        <spk-ng-select 
+                        [options]="tags"
+                        [id]="'choices-multiple-groups'"
+                        [selectClass]="''"
+                        [clearable]="true"
+                        [searchable]="true"
+                        [hideSelected]="true"
+                        [additionalProperties]="{}">
+                        </spk-ng-select>
+                    </div>
+                    <div class="xl:col-span-6 col-span-12">
+                        <label class="ti-form-label block">Readonly Tags</label>
+                        <input name='tags4' class="form-control" readonly value='tag1, tag 2, another tag'>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End:: row-3 -->
+
+<!-- Start:: row-2 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-12 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">
+                    TELEPHONE INPUT
+                </div>
+            </div>
+            <div class="box-body">
+                <div class="grid grid-cols-12 sm:gap-x-6 gap-y-6">
+                    <div class="xl:col-span-3 col-span-12">
+                        <label for="phone" class="ti-form-label block">Basic Telephone Input</label>
+                        <input type="tel"
+                        class="{{isInvalid ? 'text-danger': ''}}"
+                        (focus)="onFocus()"
+                        (blur)="onBlur()"
+                        (keypress)="onInputKeyPress($event)"
+                        [(ngModel)]="phoneNumber"
+                        (ngModelChange)="onPhoneNumberChange()"
+                        #telInput>
+                    </div>
+                    <div class="xl:col-span-5 col-span-12">
+                        <label for="phone-validation" class="ti-form-label block">Telephone Input with valdation</label>
+                        <input type="tel"
+                        class="{{isInvalid ? 'text-danger': ''}}"
+                        (focus)="onFocus()"
+                        (blur)="onBlur()"
+                        (keypress)="onInputKeyPress($event)"
+                        [(ngModel)]="phoneNumber"
+                        (ngModelChange)="onPhoneNumberChange()"
+                        #telInput>
+                        <button id="btn" type="button" class="ti-btn ti-btn-primary btn-wave telephone-input-btn ms-2">Validate</button>
+                        <span id="valid-msg" class="hide">✓ Valid</span>
+                        <span id="error-msg" class="hide"></span>
+                    </div>
+                    <div class="xl:col-span-4 col-span-12">
+                        <label for="phone-only-countries" class="ti-form-label block">Telephone Input With Only Countries</label>
+                        <input type="tel"
+                        id="phone-only-countries"
+                        class="{{isInvalid ? 'text-danger': ''}}"
+                        (focus)="onFocus()"
+                        (blur)="onBlur()"
+                        (keypress)="onInputKeyPress($event)"
+                        [(ngModel)]="phoneNumber"
+                        (ngModelChange)="onPhoneNumberChange()"
+                        #telInput>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End:: row-2 -->
+
+<!-- Start::row-1 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-12 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">AUTO COMPLETE</div>
+            </div>
+            <div class="box-body">
+                <div class="grid grid-cols-12 sm:gap-x-6 gap-y-4">
+                    <div class="xl:col-span-4 col-span-12">
+                        <label for="autoComplete" class="ti-form-label">Search Results Of Food & Drinks Combo</label>
+                        <input type="search" class="form-control" id="autoComplete" placeholder="Placeholder" spellcheck=false autocomplete="off" autocapitalize="off">
+                    </div>
+                    <div class="xl:col-span-4 col-span-12">
+                        <label for="autoComplete-color" class="ti-form-label">Advanced Search Results For Colors</label>
+                        <input type="search" class="form-control" id="autoComplete-color" spellcheck=false autocomplete="off" autocapitalize="off">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End::row-1 -->
+
+<!-- Start:: row-4 -->
+<div class="grid grid-cols-12 sm:gap-x-6">
+    <div class="xl:col-span-12 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">DUAL LIST BOX</div>
+            </div>
+            <div class="box-body">
+                <div class="grid grid-cols-12 gap-6">
+                    <div class="xl:col-span-12 col-span-12">
+                        <dual-list
+                                        [sort]="keepSorted"
+                                        [source]="source"
+                                        [key]="key"
+                                        [display]="display"
+                                        [filter]="filter"
+                                        [(destination)]="confirmed"
+                                        height="265px"
+                                        [format]="format"
+                                        [disabled]="disabled"
+                                      ></dual-list> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End:: row-4 -->

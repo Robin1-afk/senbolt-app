@@ -1,0 +1,21 @@
+<div [ngClass]="'box ' + cardClass">
+    <div class="box-body">
+      <div class="flex items-center w-full">
+        <div class="me-2">
+          <span class="avatar avatar-rounded">
+            <img [src]="avatar" alt="Avatar" />
+          </span>
+        </div>
+        <div>
+          <div class="text-[15px] font-medium" [ngClass]="statusClass">{{ name }}</div>
+          <p class="mb-0 opacity-70 text-xs" [ngClass]="statusClass">{{ status }}</p>
+        </div>
+        <div class="ms-auto">
+          <a href="javascript:void(0);" aria-label="anchor" [ngClass]="anchorClass">
+            <i class="bi bi-three-dots-vertical"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  

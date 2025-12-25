@@ -1,0 +1,126 @@
+<app-page-header [title]="'Projects'" [title1]="['Create Project']" [activeitem]="'Create Project'"></app-page-header>
+ 
+  <!-- Start::row-1 -->
+  <div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-12 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">
+                    Create Project
+                </div>
+            </div>
+            <div class="box-body">
+                <div class="grid grid-cols-12 sm:gap-x-6 gap-y-3">
+                    <div class="xl:col-span-4 col-span-12">
+                        <label for="input-label" class="form-label">Project Name :</label>
+                        <input type="text" class="form-control" id="input-label" placeholder="Enter Project Name">
+                    </div>
+                    <div class="xl:col-span-4 col-span-12">
+                        <label for="input-label11" class="form-label">Project Manager :</label>
+                        <input type="text" class="form-control" id="input-label11" placeholder="Project Manager Name">
+                    </div>
+                    <div class="xl:col-span-4 col-span-12">
+                        <label for="input-label1" class="form-label">Client / Stakeholder :</label>
+                        <input type="text" class="form-control" id="input-label1" placeholder="Enter Client Name">
+                    </div>
+                    <div class="xl:col-span-12 col-span-12">
+                        <label class="form-label">Project Description :</label>
+                        <div id="editor">
+                            <angular-editor [(ngModel)]="htmlContent" [config]="config1">
+                            </angular-editor>
+                        </div>
+                    </div>
+                    <div class="xl:col-span-6 col-span-12">
+                        <label class="form-label">Start Date :</label>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-text text-textmuted dark:text-textmuted/50"> <i class="ri-calendar-line"></i> </div>
+                                <spk-flatpickr placeholder="Choose Date and Time" class="form-control custom-datepickr"
+                                [mode]="'single'" [altInput]="false" [convertModelValue]="true" [enableTime]="true"
+                                [dateFormat]="'Y-m-d H:i'"></spk-flatpickr>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xl:col-span-6 col-span-12">
+                        <label class="form-label">End Date :</label>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-text text-textmuted dark:text-textmuted/50"> <i class="ri-calendar-line"></i> </div>
+                                <spk-flatpickr placeholder="Choose Date With Time" class="form-control custom-datepickr"
+                                [mode]="'single'" [altInput]="false" [convertModelValue]="true" [enableTime]="true"
+                                [dateFormat]="'Y-m-d H:i'"></spk-flatpickr>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xl:col-span-6 col-span-12">
+                        <label class="form-label">Status :</label>
+                        <spk-ng-select 
+                        [options]="Status"
+                        [id]="'choices-single-default'"
+                        [selectClass]="''"
+                        [clearable]="true"
+                        [searchable]="true"
+                        [hideSelected]="true"
+                        [placeholder]="'Inprogress'"
+                        [additionalProperties]="{}">
+                        </spk-ng-select>
+                    </div>
+                    <div class="xl:col-span-6 col-span-12">
+                        <label class="form-label">Priority :</label>
+                        <spk-ng-select 
+                        [options]="Priority"
+                        [id]="'choices-single-default2'"
+                        [selectClass]="''"
+                        [clearable]="true"
+                        [searchable]="true"
+                        [hideSelected]="true"
+                        [placeholder]="'Medium'"
+                        [additionalProperties]="{}">
+                        </spk-ng-select>
+                    </div>
+                    <div class="xl:col-span-6 col-span-12">
+                        <label class="form-label">Assigned To</label>
+                        <spk-ng-select 
+                        [options]="tags"
+                        [id]="'assigned-team-members'"
+                        [selectClass]="''"
+                        [clearable]="true"
+                        [defaultValue]="selectedTags"
+                        [multiple]="true"
+                        [searchable]="true"
+                        [hideSelected]="true"
+                        [placeholder]="'Medium'"
+                        [additionalProperties]="{}">
+                        </spk-ng-select>
+                    </div>
+                    <div class="xl:col-span-6 col-span-12">
+                        <label class="form-label">Tags</label>
+                        <spk-ng-select 
+                        [options]="selectedTags1"
+                        [id]="'assigned-team-members'"
+                        [selectClass]="''"
+                        [clearable]="true"
+                        [defaultValue]="selected"
+                        [multiple]="true"
+                        [searchable]="true"
+                        [hideSelected]="true"
+                        [placeholder]="'Medium'"
+                        [additionalProperties]="{}">
+                        </spk-ng-select>
+                    </div>
+                    <div class="xl:col-span-12 col-span-12">
+                        <label class="form-label">Attachments</label>
+                        <file-pond #myPond [options]="pondOptions" class="multiple-filepond" name="filepond"
+                        id="file-input" [files]="pondFiles" (oninit)="pondHandleInit()"
+                        (onaddfile)="pondHandleAddFile($event)" (onactivatefile)="pondHandleActivateFile($event)">
+                    </file-pond>
+                    </div>
+                </div>
+            </div>
+            <div class="box-footer">
+                <button class="ti-btn ti-btn-primary btn-wave ms-auto float-end">Create Project</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End::row-1 -->

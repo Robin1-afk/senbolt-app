@@ -1,0 +1,17 @@
+<div class="d-flex align-items-start gap-3 flex-wrap">
+    <div>
+        <span class="avatar avatar-md bg-{{Bgcolor}}">
+            <i class="ri-{{iconClass}}-line fs-18"></i>
+        </span>
+    </div>
+    <div class="flex-fill">
+        <span class="d-block mb-2">{{title}}</span>
+        <h5 class="fw-semibold mb-2 lh-1">{{value}}<span class="text-{{textcolor}} fw-semibold fs-12 me-2 "><i class="ti ti-arrow-narrow-{{direction}}"></i>{{percentageChange}}</span></h5>
+    </div>
+    <spk-dropdowns [Customclass]="'dropdown'" [class]="'no-caret'" [IconClass]="'ri-more-2-fill fs-18 text-muted'" [Icon]="true" 
+    [Menuclass]="'dropdown-menu'"  >
+          <li><a class="dropdown-item" href="javascript:void(0);">Week</a></li> 
+            <li><a class="dropdown-item" href="javascript:void(0);">Day</a></li> 
+            <li><a class="dropdown-item" href="javascript:void(0);">Year</a></li> 
+</spk-dropdowns>
+</div>

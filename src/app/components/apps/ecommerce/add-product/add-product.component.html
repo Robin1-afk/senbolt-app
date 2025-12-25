@@ -1,0 +1,204 @@
+<app-page-header [title]="'Ecommerce'" [title1]="['Add Product']" [activeitem]="'Add Product'"></app-page-header>
+ 
+ <!-- Start::row-1 -->
+ <div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-12 col-span-12">
+        <div class="box">
+            <div class="box-body add-products">
+                <div class="grid grid-cols-12 sm:gap-x-6 gap-y-5">
+                    <div class="xxl:col-span-6 xl:col-span-12 lg:col-span-12 md:col-span-6 col-span-12">
+                        <div class="box shadow-none mb-0 border-0">
+                            <div class="box-body p-0">
+                                <div class="grid grid-cols-12 sm:gap-x-6 gap-y-3">
+                                    <div class="xl:col-span-12 col-span-12">
+                                        <label for="product-name-add" class="form-label">Product Name</label>
+                                        <input type="text" class="form-control" id="product-name-add" placeholder="Name">
+                                        <label for="product-name-add" class="form-label mt-1 text-xs font-normal text-textmuted dark:text-textmuted/50 mb-0">*Product Name should not exceed 30 characters</label>
+                                    </div>
+                                    <div class="xl:col-span-6 col-span-12">
+                                        <label for="product-size-add" class="form-label">Size</label>
+                                        <spk-ng-select 
+                                            [options]="simpleItems"
+                                            [selectClass]="''"
+                                            [clearable]="true"
+                                            [searchable]="true"
+                                            [placeholder]="'Select'"
+                                            [additionalProperties]="{}">
+                                            </spk-ng-select>
+                                    </div>
+                                    <div class="xl:col-span-6 col-span-12">
+                                        <label for="product-brand-add" class="form-label">Brand</label>
+                                        <spk-ng-select 
+                                            [options]="simpleItems1"
+                                            [selectClass]="'rounded w-full'"
+                                            [clearable]="true"
+                                            [searchable]="true"
+                                            [placeholder]="'Select'"
+                                            [additionalProperties]="{}">
+                                            </spk-ng-select>
+                                    </div>
+                                    <div class="xl:col-span-6 col-span-12">
+                                        <label for="product-category-add" class="form-label">Category</label>
+                                        <spk-ng-select 
+                                            [options]="simpleItems2"
+                                            [selectClass]="'rounded w-full'"
+                                            [clearable]="true"
+                                            [searchable]="true"
+                                            [placeholder]="'Select'"
+                                            [additionalProperties]="{}">
+                                            </spk-ng-select>
+                                    </div>
+                                    <div class="xl:col-span-6 col-span-12">
+                                        <label for="product-gender-add" class="form-label">Gender</label>
+                                        <spk-ng-select 
+                                        [options]="simpleItems3"
+                                        [selectClass]="'rounded w-full'"
+                                        [clearable]="true"
+                                        [searchable]="true"
+                                        [placeholder]="'Select'"
+                                        [additionalProperties]="{}">
+                                        </spk-ng-select>
+                                    </div>
+                                    <div class="xl:col-span-6 col-span-12 color-selection">
+                                        <label for="product-color-add" class="form-label">Colors</label>
+                                        <spk-ng-select 
+                                        [options]="simpleItems4"
+                                        [selectClass]="'rounded w-full'"
+                                        [clearable]="true"
+                                        [searchable]="true"
+                                        [multiple]="true"
+                                        [placeholder]="'Select'"
+                                        [additionalProperties]="{}">
+                                        </spk-ng-select>
+                                    </div>
+                                    <div class="xl:col-span-6 col-span-12">
+                                        <label for="product-cost-add" class="form-label">Enter Cost</label>
+                                        <input type="text" class="form-control" id="product-cost-add" placeholder="Cost">
+                                        <label for="product-cost-add" class="form-label mt-1 text-xs font-normal text-textmuted dark:text-textmuted/50 mb-0">*Mention final price of the product</label>
+                                    </div>
+                                    <div class="xl:col-span-12 col-span-12">
+                                        <label for="product-description-add" class="form-label">Product Description</label>
+                                        <textarea class="form-control" id="product-description-add" rows="3"></textarea>
+                                        <label for="product-description-add" class="form-label mt-1 text-xs font-normal text-textmuted dark:text-textmuted/50 mb-0">*Description should not exceed 500 letters</label>
+                                    </div>
+                                    <div class="xl:col-span-6 col-span-12">
+                                        <label for="product-type" class="form-label">Product Type</label>
+                                        <input type="text" class="form-control" id="product-type" placeholder="Type">
+                                    </div>
+                                    <div class="xl:col-span-6 col-span-12">
+                                        <label for="product-discount" class="form-label">Item Weight</label>
+                                        <input type="text" class="form-control" id="product-discount1" placeholder="Weight in gms">
+                                    </div>
+                                    <div class="xl:col-span-12 col-span-12 product-documents-container">
+                                        <p class="font-medium mb-1 text-[14px]">Product Images :</p>
+                                        <file-pond multiple class="product-Images" data-allow-reorder="true" data-max-file-size="3MB" data-max-files="6" [options]="pondOptions" [files]="pondFiles"
+                                        (oninit)="pondHandleInit()" (onaddfile)="pondHandleAddFile($event)"
+                                        (onactivatefile)="pondHandleActivateFile($event)">
+                                    </file-pond>
+                                    <label class="form-label text-textmuted dark:text-textmuted/50 my-1 font-normal text-xs">* Minimum of 6 images are need to be uploaded,
+                                        all images should be uniformly maintained, width and height to the container.
+                                    </label>
+                                    </div>
+                                    <div class="xl:col-span-12 col-span-12">
+                                        <label for="product-status-add1" class="form-label">Availability</label>
+                                        <spk-ng-select 
+                                            [options]="Avaliability"
+                                            [selectClass]="'rounded w-full'"
+                                            [clearable]="true"
+                                            [searchable]="true"
+                                            [placeholder]="'Select'"
+                                            [hideSelected]="true"
+                                            [additionalProperties]="{}">
+                                            </spk-ng-select>
+                                            
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xxl:col-span-6 xl:col-span-12 lg:col-span-12 md:col-span-6 col-span-12">
+                        <div class="box shadow-none mb-0 border-0">
+                            <div class="box-body p-0">
+                                <div class="grid grid-cols-12 sm:gap-x-6 gap-y-3">
+                                    <div class="xl:col-span-12 col-span-12">
+                                        <label class="form-label">Product Features</label>
+                                        <div id="product-features" class="ngx-editor-custom">
+                                            <form [formGroup]="form">
+                                                <ngx-editor-menu [editor]="editor" [toolbar]="toolbar">
+                                                </ngx-editor-menu>
+                                                <ngx-editor [editor]="editor" class="overflow-auto" >
+                                                </ngx-editor>
+                                        </form>
+                                        </div>
+                                    </div>
+                                    <div class="xl:col-span-12 col-span-12 product-documents-container">
+                                        <p class="font-medium mb-1 text-[14px]">Warrenty Documents :</p>
+                                        <file-pond multiple class="product-Images" data-allow-reorder="true" data-max-file-size="3MB" data-max-files="6" [options]="pondOptions" [files]="pondFiles"
+                                        (oninit)="pondHandleInit()" (onaddfile)="pondHandleAddFile($event)"
+                                        (onactivatefile)="pondHandleActivateFile($event)">
+                                    </file-pond>
+                                    </div>
+                                    <div class="xl:col-span-4 col-span-12">
+                                        <label for="product-actual-price" class="form-label">Actual Price</label>
+                                        <input type="text" class="form-control" id="product-actual-price" placeholder="Actual Price">
+                                 </div>
+                                    <div class="xl:col-span-4 col-span-12">
+                                        <label for="product-dealer-price" class="form-label">Dealer Price</label>
+                                        <input type="text" class="form-control" id="product-dealer-price" placeholder="Dealer Price">
+                                    </div>
+                                    <div class="xl:col-span-4 col-span-12">
+                                        <label for="product-discount" class="form-label">Discount</label>
+                                        <input type="text" class="form-control" id="product-discount" placeholder="Discount in %">
+                                    </div>
+                                    <div class="xl:col-span-6 col-span-12 flatpickr-product">
+                                        <label for="publish-date" class="form-label">Publish Date</label>
+                                        <spk-flatpickr placeholder="Choose date" class="form-control"
+                                        [mode]="'single'" [altInput]="false" [convertModelValue]="true" [enableTime]="false"
+                                        [dateFormat]="'Y-m-d'"></spk-flatpickr>
+                                    </div>
+                                    <div class="xl:col-span-6 col-span-12 flatpickr-product">
+                                        <label for="publish-time" class="form-label">Publish Time</label>
+                                        <spk-flatpickr [placeholder]="'Choose date and time'" class="form-control" [noCalendar]="true"
+                                        [mode]="'single'" [altInput]="false" [convertModelValue]="true" [enableTime]="true"
+                                        [dateFormat]="'H:i'"></spk-flatpickr>
+                                    </div>
+                                    <div class="xl:col-span-12 col-span-12">
+                                        <label for="product-status-add" class="form-label">Published Status</label>
+                                        <spk-ng-select 
+                                        [options]="simpleItems5"
+                                        [selectClass]="'w-full rounded'"
+                                        [clearable]="true"
+                                        [searchable]="true"
+                                        [placeholder]="'Select'"
+                                        [hideSelected]="true"
+                                        [additionalProperties]="{}">
+                                        </spk-ng-select>
+                                    </div>
+                                    <div class="xl:col-span-12 col-span-12">
+                                        <label for="product-tags" class="form-label">Product Tags</label>
+                                        <spk-ng-select 
+                                        [options]="Tags"
+                                        [selectClass]="''"
+                                        [clearable]="true"
+                                        [multiple]="true"
+                                        [defaultValue]="selectedTags"
+                                        [searchable]="true"
+                                        [placeholder]="'Select'"
+                                        [hideSelected]="true"
+                                        [additionalProperties]="{}">
+                                        </spk-ng-select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-footer border-t border-block-start-dashed sm:flex justify-end">
+                <button type="button" class="ti-btn bg-primarytint1color text-white me-2 mb-2 mb-sm-0">Add Product<i class="bi bi-plus-lg ms-2"></i></button>
+                <button type="button" class="ti-btn ti-btn-primary mb-2 mb-sm-0">Save Product<i class="bi bi-download ms-2"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End::row-1 -->

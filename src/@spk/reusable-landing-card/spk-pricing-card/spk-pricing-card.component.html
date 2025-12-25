@@ -1,0 +1,45 @@
+<div class="box pricing-card hover {{mainClass}}">
+  @if(isPopular){
+  <div class="pricing-table-item-icon">
+      <i class="fe fe-zap me-2"></i> Popular
+  </div>
+}
+  <div class="box-body !p-4 border-b border-dashed {{borderClass}}/10" >
+      <h6 class="font-medium mb-1 {{textColor}}">{{title}}</h6>
+      <h2 class="mb-3 font-semibold block {{textColor}}">{{price}}<span class="text-xs font-medium ms-1 opacity-80"> / {{pricingPlan}}</span></h2>
+      <span class="opacity-70 block {{textColor}} text-[11px]">{{description}}</span>
+  </div>
+  <div class="box-body {{bodyClass}}">
+      <ul class="list-none pricing-body">
+        @for(feature of features;track $index){
+          <li>
+              <div class="flex items-center">
+                  <span class="avatar avatar-xs svg-success">
+                     <i class="ti ti-circle-arrow-right-filled {{arrowClass}} text-lg"></i>
+                  </span>
+                  <span class="ms-2 my-auto flex-auto">
+                      {{feature.text}}
+                  </span>
+                  @if(feature.icon){
+                    <div class="hs-tooltip inline-block">
+                      <a href="javascript:void(0);" class="hs-tooltip-toggle bg-info/10 !text-info px-1 py-[0.1rem] leading-none rounded-full hs-tooltip-toggle transition">
+                        <i class="ri-information-2-line"></i>
+                        <span class="hs-tooltip-content max-w-[200px] ti-main-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 !border-black py-3 px-2 !bg-black !text-xs !font-medium !text-white shadow-sm" role="tooltip">
+                          Provide essential insights and data analysis to help you track the performance.
+                        </span>
+                      </a>
+                  </div>
+                  }  @if(feature.badge){
+                    <span class="{{feature.badgeClass}}">{{ feature.badge }}</span>
+                  }
+              </div>
+          </li>
+        }
+      </ul>
+  </div>
+  <div class="box-footer {{footerClass}} p-4">
+      <button type="button" class="ti-btn ti-btn-lg {{buttonClass}} grid w-full btn-wave">
+          <span class="ms-4 me-4">Get Started!</span>
+      </button>
+  </div>
+</div>

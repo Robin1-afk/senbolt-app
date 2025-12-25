@@ -1,0 +1,96 @@
+<app-page-header [title]="'Ecommerce'" [title1]="['Orders']" [activeitem]="'Orders'"></app-page-header>
+ 
+ <!-- Start::row-1 -->
+ <div class="box">
+    <div class="box-header justify-between">
+        <div class="box-title">
+            All Orders List
+        </div>
+        <div class="flex gap-4 items-center flex-wrap">
+            <div class="ti-btn-group ti-dropdown hs-dropdown p-0 border-0">
+                <button class="ti-btn ti-btn-outline-light border !m-0 !border-defaultborder dark:!border-defaultborder/10 ti-dropdown-toggle hs-dropdown-toggle gap-0" type="button" >
+                    <i class="ti ti-sort-descending-2 me-1"></i> Sort By
+                    <i class="ri-arrow-down-s-line align-middle ms-1 inline-block"></i>
+                </button>
+                <ul class="ti-dropdown-menu hs-dropdown-menu hidden">
+                    <li><a class="ti-dropdown-item" href="javascript:void(0)">Created Date</a></li>
+                    <li><a class="ti-dropdown-item" href="javascript:void(0)">Status</a></li>
+                    <li><a class="ti-dropdown-item" href="javascript:void(0)">Orders</a></li>
+                    <li><a class="ti-dropdown-item" href="javascript:void(0)">Product Name</a></li>
+                    <li><a class="ti-dropdown-item" href="javascript:void(0)">Newest</a></li>
+                    <li><a class="ti-dropdown-item" href="javascript:void(0)">Oldest</a></li>
+                </ul>
+            </div>
+            <div class="custom-form-group grow">
+                <input type="text" class="form-control !pe-[7rem]" placeholder="Search Orders.." aria-label="Recipient's username" aria-describedby="button-addon2">
+                <a aria-label="anchor" href="javascript:void(0);" class="text-textmuted dark:text-textmuted/50 custom-form-btn"><i class="ti ti-search"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="box-body p-0">
+        <div class="table-responsive">
+            <spk-reusable-tables [columns]="ordersColumn" tableClass="ti-custom-table ti-custom-table-hover text-nowrap"
+            [showCheckbox]="false">
+            @for(order of orders;track $index)
+            {
+                    <tr class="order-list border-b !border-defaultborder dark:!border-defaultborder/10">
+                        <td>{{order.id}}</td>
+                        <td>
+                            <div class="flex items-center">
+                                <span class="avatar avatar-sm avatar-square bg-gray-300"><img [src]="order.img" class="w-full h-full" alt="..."></span>
+                                <div class="ms-2">
+                                    <p class="font-semibold mb-0 flex items-center"><a  [routerLink]="['/apps/ecommerce/order-details']">{{order.name}}</a></p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex items-center">
+                                <span class="avatar avatar-sm me-2 avatar-rounded">
+                                    <img  [src]="order.src1" alt="">
+                                </span>{{order.customer}}
+                            </div>
+                        </td>
+                        <td>{{order.contact}}</td>
+                        <td>
+                            {{order.date}}
+                        </td>
+                        <td><span class="badge bg-{{order.bg}}/10 text-{{order.bg}}">{{order.status}}</span></td>
+                        <td>{{order.payment}}</td>
+                        <td class="font-semibold">{{order.price}}</td>
+                        <td>
+                            <a aria-label="anchor" [routerLink]="['/apps/ecommerce/order-details']" class="ti-btn ti-btn-sm ti-btn-soft-primary btn-wave waves-effect waves-light !mb-0">
+                                <i class="ri-eye-line"></i>
+                            </a>
+                            <a aria-label="anchor" href="javascript:void(0);" class="ti-btn ti-btn-sm ti-btn-soft-info btn-wave waves-effect waves-light !mb-0">
+                                <i class="ri-download-line"></i>
+                            </a>
+                            <a (click)="remove(order.contact)" aria-label="anchor" href="javascript:void(0);" class="order-delete-btn ti-btn ti-btn-sm ti-btn-soft-primary2 btn-wave waves-effect waves-light !mb-0">
+                                <i class="ri-delete-bin-line"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+                </spk-reusable-tables>
+    </div>
+    <div class="box-footer">
+        <div class="flex items-center flex-wrap overflow-auto">
+            <div class="mb-2 mb-sm-0">
+                Showing <b>1</b> to <b>10</b> entries <i class="bi bi-arrow-right ms-2 font-semibold"></i>
+            </div>
+            <div class="ms-auto my-2">
+                <nav aria-label="page" class="">
+                    <ul class="ti-pagination mb-0 !p-0 justify-end float-end">
+                        <li class="page-item disabled"> <a class="page-link px-3 py-[0.375rem] !text-[1rem] bg-white dark:bg-bodybg !border-e-0 !rounded-tr-none !rounded-br-none">Previous</a>
+                        </li>
+                        <li class="page-item"><a class="page-link px-3 py-[0.375rem] active !text-[1rem] bg-white dark:bg-bodybg !rounded-none !border-e-0" href="javascript:void(0);">1</a></li>
+                        <li class="page-item " aria-current="page"> <a class="page-link px-3 py-[0.375rem] !text-[1rem] bg-white dark:bg-bodybg !rounded-none !border-e-0" href="javascript:void(0);">2</a></li>
+                        <li class="page-item"><a class="page-link px-3 py-[0.375rem] !text-[1rem] bg-white dark:bg-bodybg !rounded-none !border-e-0" href="javascript:void(0);">3</a></li>
+                        <li class="page-item"><a class="page-link px-3 py-[0.375rem] !text-[1rem] bg-white dark:bg-bodybg !rounded-none !border-e-0" href="javascript:void(0);">4</a></li>
+                        <li class="page-item"> <a class="page-link px-3 py-[0.375rem] !text-[1rem] bg-white dark:bg-bodybg !rounded-tl-none !rounded-bl-none" href="javascript:void(0);">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End::row-1 -->

@@ -1,0 +1,19 @@
+
+<div class="d-flex align-items-start justify-content-between mb-2 flex-wrap">
+    <div>
+        <span class="d-block mb-3 fw-medium">{{ title }}</span>
+        <h3 class="fw-semibold lh-1 mb-0">{{ value }}</h3>
+    </div>
+    <div class="text-end">
+        <div class="mb-4">
+            <span class="">
+                <div class="avatar avatar-md bg-{{Bgcolor}} svg-white avatar-rounded" [innerHTML]="icon"></div>
+            </span>
+        </div>
+    </div>
+</div>
+<div class="d-flex align-items-center justify-content-between">
+    <a href="javascript:void(0);" class="text-muted fw-medium fs-15">{{ linkText }}</a>
+    <span class="text-{{textcolor}} fw-semibold">{{ percentageChange }}<i class="ti ti-arrow-narrow-{{direction}}"></i></span>
+</div>
+

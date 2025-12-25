@@ -1,0 +1,194 @@
+  
+  <app-page-header [title]="'Forms'" [title1]="['Select2']" [activeitem]="'Select2'"></app-page-header>
+  <!-- Start::row-1 -->
+   <div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box custom-box">
+            <div class="box-header">
+                <div class="box-title">
+                    Basic Select2
+                </div>
+            </div>
+            <div class="box-body">
+                <spk-ng-select 
+                [options]="Selection"
+                [selectClass]="'js-example-basic-single'"
+                [clearable]="true"
+                [searchable]="true"
+                [hideSelected]="true"
+                [placeholder]="'Selection-1'"
+                [additionalProperties]="{}">
+                </spk-ng-select>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title !text-start">
+                    Single Select With Placeholder Select
+                </div>
+            </div>
+            <div class="box-body">
+                <spk-ng-select 
+                [options]="singleSelection"
+                [selectClass]="'js-example-basic-single js-states'"
+                [clearable]="true"
+                [searchable]="true"
+                [hideSelected]="true"
+                [placeholder]="'Texas'"
+                [additionalProperties]="{}">
+                </spk-ng-select>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">
+                    Multiple Select
+                </div>
+            </div>
+            <div class="box-body">
+                <spk-ng-select 
+                [options]="multipleSelect"
+                [clearable]="true"
+                [multiple]="true"
+                [defaultValue]="selectedMulti"
+                [searchable]="true"
+                [hideSelected]="true"
+                [placeholder]="'Texas'"
+                [additionalProperties]="{}">
+                </spk-ng-select>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box custom-box">
+            <div class="box-header">
+                <div class="box-title">
+                    Multiple Select With Placeholder
+                </div>
+            </div>
+            <div class="box-body">
+                <spk-ng-select 
+                [options]="multipleSelection"
+                [selectClass]="'js-example-basic-single js-states'"
+                [clearable]="true"
+                [multiple]="true"
+                [searchable]="true"
+                [hideSelected]="true"
+                [placeholder]="'Multiple Select'"
+                [additionalProperties]="{}">
+                </spk-ng-select>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box custom-box">
+            <div class="box-header">
+                <div class="box-title">
+                    Templating
+                </div>
+            </div>
+            <div class="box-body templating-input">
+                <ng-select placeholder=" Select" [items]="cities1" [ngModel]="selectedCity" bindLabel="name"
+                bindValue="name">
+                <ng-template ng-label-tmp let-item="item">
+                    <img height="15" width="15" [src]="item.avatar" />
+                    {{item.name}}
+                </ng-template>
+            </ng-select>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box custom-box">
+            <div class="box-header">
+                <div class="box-title">
+                    Templating Selection
+                </div>
+            </div>
+            <div class="box-body templating-input">
+                <ng-select [items]="cities1" [(ngModel)]="selectedCity1" [maxSelectedItems]="2" bindLabel="name"
+            bindValue="name">
+            <ng-template ng-label-tmp let-item="item">
+                <img height="15" width="15" [src]="item.avatar" />
+                {{ item.name }}
+            </ng-template>
+            <input style="width: 100%; line-height: 24px" type="text" />
+        </ng-select>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End::row-1 -->
+
+<!-- Start:: row-2 -->
+<div class="grid grid-cols-12 gap-6">
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box custom-box">
+            <div class="box-header">
+                <div class="box-title">
+                    Max Selections Limiting
+                </div>
+            </div>
+            <div class="box-body">
+                <spk-ng-select 
+                #select
+                [options]="Selection"
+                [selectClass]="''"
+                [clearable]="true"
+                [defaultValue]="selectedPersonId"
+                [multiple]="true"
+                [searchable]="true"
+                [hideSelected]="true"
+                [maxSelectedItems]="3" 
+                [additionalProperties]="{}">
+                </spk-ng-select>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box custom-box">
+            <div class="box-header">
+                <div class="box-title">
+                    Disabling a Select2 control
+                </div>
+            </div>
+            <div class="box-body flex flex-col gap-3">
+                <spk-ng-select 
+                [selectClass]="'js-example-disabled mb-3'"
+                [clearable]="true"
+                [options]="Selection"
+                [defaultValue]="selectedMulti"
+                [searchable]="true"
+                [disabled]="disable"
+                [hideSelected]="true"
+                [placeholder]="'Selection-1'"
+                [additionalProperties]="{}"
+                (valueChange)="onCitySelected($event)">
+             
+                </spk-ng-select>
+                <spk-ng-select 
+                [selectClass]="'js-example-disabled mb-3'"
+                [clearable]="true"
+                [multiple]="true"
+                [options]="Selection"
+                [defaultValue]="selectedMulti"
+                [searchable]="true"
+                [disabled]="disable"
+                [hideSelected]="true"
+                [placeholder]="'Selection-1'"
+                [additionalProperties]="{}"
+                (valueChange)="onCitySelected($event)">
+                </spk-ng-select>
+                <div>
+                    <button (click)="enableSelect()" type="button" class="ti-btn ti-btn-soft-primary js-programmatic-enable">Enable</button>
+                    <button (click)="disableSelect()" type="button" class="ti-btn ti-btn-primary js-programmatic-disable">Disable</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End:: row-2 -->

@@ -1,0 +1,125 @@
+ 
+ <app-page-header [title]="'Apex Charts'" [title1]="['Apex Column Charts']" [activeitem]="'Apex Column Charts'"></app-page-header>
+ <!-- Start::row-1 -->
+ <div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Basic Column Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="column-basic"> 
+                    <spk-apexcharts [chartOptions]="chartOptions"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Column Chart With Datalabels</div>
+            </div>
+            <div class="box-body">
+                <div id="column-datalabels">
+                    <spk-apexcharts [chartOptions]="chartOptions1"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Stacked Column Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="column-stacked">
+                    <spk-apexcharts [chartOptions]="chartOptions2"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">100% Stacked Column Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="column-stacked-full">
+                    <spk-apexcharts [chartOptions]="chartOptions3"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Column Chart With Markers</div>
+            </div>
+            <div class="box-body">
+                <div id="column-markers">
+                    <spk-apexcharts [chartOptions]="chartOptions4"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Column Chart With Rotated Labels</div>
+            </div>
+            <div class="box-body">
+                <div id="column-rotated-labels">
+                    <spk-apexcharts [chartOptions]="chartOptions5"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Column Chart With Negative Values</div>
+            </div>
+            <div class="box-body">
+                <div id="column-negative">
+                    <spk-apexcharts [chartOptions]="chartOptions6"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Range Column Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="column-range">
+                    <spk-apexcharts [chartOptions]="chartOptions7"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Dynamic Loaded Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="chart-year"> <spk-apexcharts [chartOptions]="chartOptions8"></spk-apexcharts></div>
+                <div id="chart-quarter"> <spk-apexcharts [chartOptions]="chartQuarterOptions8"></spk-apexcharts></div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Distributed Columns Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="columns-distributed">
+                    <spk-apexcharts [chartOptions]="chartOptions9"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End::row-1 -->

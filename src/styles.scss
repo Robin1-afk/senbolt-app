@@ -1,0 +1,425 @@
+
+@forward "../public/assets/css/styles.css";
+@forward '../node_modules/overlayscrollbars/styles/overlayscrollbars.css';
+@forward "../node_modules/@ng-select/ng-select/themes/default.theme.css";
+@forward'../node_modules/filepond/dist/filepond.min.css';
+@forward '../node_modules/flatpickr/dist/flatpickr.css';
+
+//ng2-nouislider
+@forward "../node_modules/nouislider/dist/nouislider.css";
+
+// @import "swiper/scss";
+// @import "swiper/scss/navigation";
+// @import "swiper/scss/pagination";
+// angular material
+@import "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
+@import "../node_modules/@angular/cdk/overlay-prebuilt.css";
+// font awesome
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import '../node_modules/ngx-easy-table/style.css';
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("../public/assets/icon-fonts/RemixIcons/fonts/remixicon.css");
+@import url("../public/assets/icon-fonts/feather/feather.css");
+@import url("../public/assets/icon-fonts/bootstrap-icons/icons/font/bootstrap-icons.css");
+@import url("../public/assets/icon-fonts/tabler-icons/webfont/tabler-icons.css");
+@import url("../public/assets/icon-fonts/line-awesome/1.3.0/css/line-awesome.css");
+@import url("../public/assets/icon-fonts/boxicons/css/boxicons.css");
+
+@import 'intl-tel-input/build/css/intlTelInput.css';
+@import "../node_modules/ngx-toastr/toastr.css";
+
+// swiper-container::part(button-next) {
+//     width:1rem !important;
+//     height:1rem !important;
+//     color: #fff !important;
+//     background-color: rgba(26, 10, 10, 0.3);
+//     border-radius: 0.3rem;
+//     padding:5px;
+//   }
+//   swiper-container::part(button-prev) {
+//     width:1rem !important;
+//     height:1rem !important;
+//     color: #fff !important;
+//     background-color: rgba(255, 255, 255, 0.3);
+//     border-radius: 0.3rem;
+//     padding:5px;
+//     opacity:1;
+//   }
+
+  swiper-container::part(button-next) {
+    @apply w-4 h-4 text-white bg-[rgba(26,10,10,0.3)] rounded-sm p-1;
+  }
+
+  swiper-container::part(button-prev) {
+    @apply w-4 h-4 text-white bg-[rgba(255,255,255,0.3)] rounded-sm p-1 opacity-100;
+  }
+  .ng-select .ng-select-container .ng-value-container .ng-input>input {
+    @apply bg-transparent #{!important}
+  }
+
+  spk-flatpickr.custom-datepickr {
+    @apply p-0 #{!important};
+    .form-control {
+      @apply leading-[1.85] #{!important};
+    }
+  }
+  .NgxEditor__MenuBar {
+    @apply border-inputborder #{!important}
+  }
+  .input-group {
+    spk-flatpickr:nth-child(2) input {
+        @apply rounded-s-none leading-[1.7] #{!important};
+    }
+}
+.arrow-image, 
+.empty-arrow-image {
+  @apply w-5 h-5 bg-[length:20px] #{!important};
+}
+.right-arrow-image, 
+.left-arrow-image {
+  @apply w-3.5 h-3.5 bg-[length:14px] #{!important};
+}
+
+#carousel-container > .current-figure .nav,
+#carousel-container > .current-figure > .nav-right,
+#carousel-container > .current-figure > .nav-left {
+  @apply p-1 bg-[#f0f8ff2e] rounded-sm #{!important};
+}
+.product-details-page img {
+  @apply rounded-sm;
+}
+.previews-container > .preview-inner-container > .preview-image {
+  @apply p-[0.1rem] rounded-md;
+}
+.crypto-input {
+  .ng-select.ng-select-single .ng-select-container .ng-value-container .ng-input {
+    @apply pr-[28px] rtl:pl-[28px] rtl:pr-[10px];
+  }
+}
+.authentication .form-control {
+  @apply pe-[2.5rem] #{!important};
+}
+
+.create-nft-item .filepond--root {
+  @apply h-[15.08rem] sm:w-[22.25rem] mx-2.5 sm:mx-auto text-center mx-auto;
+}
+
+.create-nft-item .filepond--root .filepond--drop-label {
+  @apply bottom-0 h-auto flex justify-center items-center;
+}
+app-pricing {
+  @apply overflow-hidden;
+}
+.testimonialSwiperService swiper-slide {
+    @apply mb-[2.25rem]; 
+  }
+  
+.testimonialSwiperService .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+    @apply bottom-[-6px] #{!important};
+}
+@media (max-width: 360px) {
+  .dual-list {
+    @apply flex-wrap;
+  }
+}
+.record-picker li.selected, .record-picker li:hover {
+  @apply text-black;
+}
+.angular-editor .angular-editor-wrapper .angular-editor-textarea {
+  @apply border-inputborder focus:outline-none #{!important};
+}
+.angular-editor .angular-editor-wrapper .angular-editor-textarea:focus-visible {
+  @apply outline-[0] #{!important};
+}
+.ae-font .ae-picker-label:before {
+  @apply dark:bg-gradient-to-r dark:from-white/10 dark:to-white/10 #{!important};
+  // @apply bg-white/10 #{!important};
+}
+.ae-font .ae-picker-label svg .ae-stroke {
+  @apply dark:stroke-white/80 #{!important};
+}
+input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
+  @apply dark:invert #{!important};
+}
+.templating-input .ng-value {
+  @apply flex gap-1 items-center;
+}
+
+.templating-input .ng-value img {
+  @apply flex-shrink-0 rounded-full;
+}
+.custom-apexcharts  button.active {
+  @apply bg-primary text-white dark:text-white hover:bg-primary focus:ring-primary border-primary dark:border-primary dark:focus:ring-offset-white/10 #{!important};
+}
+.custom-apexcharts {
+  button {
+    @apply bg-customwhite text-black dark:text-white hover:bg-customwhite focus:ring-customwhite border-defaultborder dark:border-white/10 dark:focus:ring-offset-white/10 #{!important};
+  }
+}
+.mat-mdc-paginator-icon {
+  @apply dark:fill-white/80 #{!important};
+}
+.mat-mdc-icon-button[aria-disabled] .mat-mdc-paginator-icon {
+  @apply dark:fill-white/50 #{!important};
+}
+.mat-mdc-select-arrow {
+  @apply dark:text-white/80 #{!important};
+}
+
+.mdc-text-field--outlined .mdc-notched-outline .mdc-notched-outline__leading, 
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
+    @apply dark:border-defaultborder/10 #{!important};
+}
+.mat-mdc-paginator-outer-container {
+  @apply dark:bg-defaultborder/10 #{!important};
+}
+.ngx-table__table--normal > tbody > tr > td, .ngx-table__table--normal > thead > tr > th {
+  @apply border-b-defaultborder dark:border-b-defaultborder/10 #{!important};
+}
+.ngx-pagination li, .ngx-pagination-range-dropdown-button {
+  @apply border-defaultborder dark:border-defaultborder/10 #{!important};
+}
+.ngx-pagination-range-dropdown-button-item {
+  @apply text-defaulttextcolor #{!important};
+}
+.ngx-menu {
+  @apply bg-customwhite border-defaultborder dark:border-defaultborder/10 #{!important};
+}
+.ngx-pagination-range--selected {
+  @apply dark:bg-white/10 #{!important};
+}
+.ngx-table {
+  @apply border-t border-t-defaultborder border-s border-e border-b border-defaultborder dark:border-white/10 border-solid dark:border-t-white/10 #{!important};
+  th {
+    @apply text-start #{!important}
+  }
+}
+.rgba-text {
+  [type=number]:is(.dark *) {
+    @apply bg-transparent #{!important};
+  }
+}
+.record-picker li:hover {
+  @apply dark:bg-white/10 dark:text-white/80 #{!important};
+}
+.record-picker li:hover label {
+  @apply dark:text-white/80 #{!important};
+}
+div.record-picker {
+  @apply dark:border-white/10 #{!important};
+}
+.record-picker li {
+  @apply dark:border-t-white/10 dark:border-b-white/10 #{!important};
+}
+.record-picker li.selected {
+  @apply bg-primary dark:bg-primary #{!important};
+}
+file-pond[multiple] {
+  @apply border-transparent dark:border-transparent block #{!important}
+}
+
+.task-Null {
+  @apply relative min-h-[12.5rem];
+  &::before {
+      @apply absolute content-[""] bg-white dark:bg-bodybg bg-[url(../public/assets/images/media/media-92.svg)] bg-cover bg-center h-[12.5rem] w-full mx-auto my-0 rounded-[0.3rem] inset-0 #{!important};
+  }
+}
+
+@media (min-width: 992px) {
+  [data-nav-style="menu-hover"][data-nav-layout="horizontal"]
+    .app-sidebar
+    .slide.has-sub
+    .slide-menu.child1 {
+    inset-block-start: 100% !important;
+    inset-inline-start: auto !important;
+    inset-inline-end: auto !important;
+  }
+}
+@media (min-width: 992px) {
+  [data-nav-layout="horizontal"]  {
+//     .main-menu-container {
+//       .slide-right {
+//         inset-inline-end: 8%;
+//       }
+//       .slide-left {
+//         inset-inline-start: 8%;
+//       }
+//     } 
+    
+    // .app-sidebar {
+    //   [data-overlayscrollbars], [data-overlayscrollbars-padding], [data-overlayscrollbars-viewport] {
+    //     overflow: visible !important;
+    //   }
+    //   [data-overlayscrollbars-viewport~=overflowYHidden] {
+    //     overflow-y: hidden !important;
+    //   }
+    //   [data-overlayscrollbars-viewport~=overflowXScroll] {
+    //       overflow-x: scroll !important;
+    //   }
+    // } 
+   
+  }
+}
+[data-nav-layout="vertical"] .main-menu {
+  margin-inline: 0 !important;
+}
+
+.breadcrumb-datepicker {
+  spk-flatpickr {
+      @apply min-w-[12.75rem] #{!important};
+  }
+}
+.ngx-editor-custom .NgxEditor__MenuBar {
+  @apply border-b-0 dark:border-b-0 #{!important};
+}
+.NgxEditor {
+  ol {
+    @apply list-decimal ps-4 #{!important}
+  }
+  ul {
+    @apply list-disc ps-4 #{!important}
+  }
+}
+.product-checkout {
+  .tab-style-8.nav-tabs > button.nav-link.active {
+    @apply bg-transparent #{!important};
+  }
+}
+.flatpickr-product spk-flatpickr {
+  @apply p-0 #{!important};
+}
+.ng-select.ng-select-single .ng-select-container .ng-value-container, .ng-select.ng-select-single .ng-select-container .ng-value-container .ng-value {
+  @apply text-defaulttextcolor text-[0.8125rem] #{!important};
+}
+.product-documents-container {
+  file-pond {
+    @apply p-0 #{!important};
+  }
+}
+// @media (min-width: 623px) {
+//   .companies-search-input .ng-select .ng-select-container {
+//       @apply border-s-0 #{!important}
+//   }
+// }
+@media (max-width: 622px) {
+  .companies-search-input.input-group .ng-select .ng-select-container {
+    @apply rounded-[0.25rem] mb-3 #{!important}
+  }
+  .companies-search-input.input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+    @apply rounded-s-[0.25rem] #{!important};
+  }
+}
+.authentication.two-step-verification .form-control {
+  @apply pe-[0.75rem] #{!important};
+}
+@media (min-width: 1116px) and (max-width: 1200px) {
+  .landing-main-image:before {
+    @apply start-[65px] #{!important};
+  }
+}
+div.record-picker::-webkit-scrollbar-track {
+  @apply bg-light #{!important};
+}
+div.record-picker::-webkit-scrollbar-thumb {
+  @apply bg-primary border-defaultborder dark:border-defaultborder/10 #{!important};
+}
+.point-right:after {
+  // content: "\25b6";
+  // padding-left: 1em;
+  @apply rtl:pl-0 rtl:pr-[1em] #{!important};
+}
+.iti__country-container {
+  @apply rtl:left-auto rtl:right-0 #{!important};
+}
+.iti--allow-dropdown input.iti__tel-input {
+  @apply rtl:text-end #{!important};
+}
+dropzone>.dropzone.dz-wrapper .dz-message {
+  @apply border-transparent bg-transparent #{!important};
+}
+.color-picker {
+  @apply bg-customwhite dark:border-white/10 #{!important};
+}
+.color-picker input {
+  @apply text-defaulttextcolor #{!important};
+}
+ngx-colors-panel {
+  .opened {
+    @apply bg-customwhite dark:border-white/10 #{!important};
+  }
+  .opened .manual-input-wrapper .g-input {
+    @apply dark:border-white/10 #{!important};
+  }
+  .add svg {
+    @apply invert;
+  }
+}
+.inform-alerts {
+  .alert:last-child {
+    @apply mb-0 #{!important};
+  }
+}
+audio::-webkit-media-controls-panel { 
+  @apply flex-wrap px-[1px] #{!important};
+}
+.mat-mdc-paginator-range-actions{ 
+  @apply flex-wrap #{!important};
+}
+#chart-01 {
+  .apexcharts-canvas {
+    @apply w-[120px] ms-auto #{!important};
+  }
+}
+ngx-table {
+  &.table-bordered {
+    @apply border-s-0 border-e-0 #{!important};
+  }
+}
+@media (min-width: 992px) {
+  [data-menu-styles="dark"][data-nav-layout="horizontal"]
+  .app-sidebar .slide.has-sub .slide-menu.child2,
+  .app-sidebar .slide.has-sub .slide-menu.child3 {
+    @apply bg-[#202947]
+  }
+  .dark[data-menu-styles="light"][data-nav-layout="vertical"] {
+    &[data-nav-style="icon-click"][data-toggled="icon-click-closed"], &[data-nav-style="icon-hover"][data-toggled="icon-hover-closed"], &[data-vertical-style="doublemenu"] {
+      .app-sidebar .main-sidebar-header .header-logo .toggle-logo {
+        @apply block #{!important}
+      }
+      .app-sidebar .main-sidebar-header .header-logo .toggle-white {
+        @apply hidden #{!important}
+      }
+    }
+  }
+}
+.responsive-dropdown {
+  &.hs-dropdown > .ti-dropdown-menu {
+      @apply translate-x-[-51px] translate-y-[64.5px] rtl:translate-x-[51px] #{!important};
+  }
+}
+@media (max-width: 576px) {
+  .swiper.myNestedSwiper {
+      @apply h-[174px] #{!important}
+  }
+}
+
+.NgxEditor {
+  @apply border-inputborder dark:border-white/10 #{!important};
+}
+.NgxEditor__MenuBar .NgxEditor__Seperator {
+  @apply border-s border-s-inputborder dark:border-s-white/10 #{!important}
+}
+.NgxEditor__Popup--Col input {
+  &:focus-visible {
+    @apply outline-0 #{!important};
+  }
+}
+.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-input {
+  @apply pe-[6px] #{!important};
+}
+.ti-modal-content {
+  .ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-input {
+      @apply z-0 #{!important}
+  }
+}

@@ -1,0 +1,125 @@
+   
+<app-page-header [title]="'Apex Charts'" [title1]="['Apex Bar Charts']" [activeitem]="'Apex Bar Charts'"></app-page-header>
+<!-- Start::row-1 -->
+   <div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Basic Bar Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="bar-basic">
+                    <spk-apexcharts [chartOptions]="chartOptions"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Grouped Bar Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="bar-group">
+                    <spk-apexcharts [chartOptions]="chartOptions1"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Stacked Bar Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="bar-stacked">
+                    <spk-apexcharts [chartOptions]="chartOptions2"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">100% Stacked Bar Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="bar-full"></div>
+                <spk-apexcharts [chartOptions]="chartOptions3"></spk-apexcharts>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Bar Chart With Negative Values</div>
+            </div>
+            <div class="box-body">
+                <div id="bar-negative">
+                    <spk-apexcharts [chartOptions]="chartOptions4"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Bar Chart With Markers</div>
+            </div>
+            <div class="box-body">
+                <div id="bar-markers">
+                    <spk-apexcharts [chartOptions]="chartOptions5"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Reversed Bar Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="bar-reversed">
+                    <spk-apexcharts [chartOptions]="chartOptions6"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Bar With Categogry DataLabels</div>
+            </div>
+            <div class="box-body">
+                <div id="bar-categories">
+                    <spk-apexcharts [chartOptions]="chartOptions7"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Patterned Bar Chart</div>
+            </div>
+            <div class="box-body">
+                <div id="bar-pattern">
+                    <spk-apexcharts [chartOptions]="chartOptions8"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title">Bar With Image Fill</div>
+            </div>
+            <div class="box-body">
+                <div id="bar-image">
+                    <spk-apexcharts [chartOptions]="chartOptions9"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End::row-1 -->

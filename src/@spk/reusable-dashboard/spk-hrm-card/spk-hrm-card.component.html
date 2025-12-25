@@ -1,0 +1,19 @@
+<div class="box overflow-hidden">
+    <div class="m-4 bg-light rounded-sm border border-defaultborder dark:border-defaultborder/10">
+        <div class="box-body pb-4 mb-2">
+            <div class="flex items-center w-full justify-between gap-1">
+                <div>
+                    <p class="mb-1 text-textmuted dark:text-textmuted/50 font-medium">{{ title }}</p>
+                    <h4 class="mb-0 font-medium">{{value}}</h4>
+                </div>
+                <div class="ms-auto text-end">
+                    <span [ngClass]="badgeClass" class="badge rounded-full items-center text-[11px] inline-flex"><i  [ngClass]="iconClass" class="text-[11px] me-1"></i>{{ percentage }}%</span>
+                    <div class="text-textmuted dark:text-textmuted/50 text-xs mt-1">{{subtitle}}</div>
+                </div>
+            </div>
+        </div>
+        <div id="{{ chartId }}">
+            <spk-apexcharts [chartOptions]="chartOptions"></spk-apexcharts>
+        </div>
+    </div>
+</div>

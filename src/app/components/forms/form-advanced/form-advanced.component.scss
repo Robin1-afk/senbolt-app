@@ -1,0 +1,33 @@
+.iti__flag {
+  background-image: url("https://raw.githubusercontent.com/jackocnr/intl-tel-input/master/build/img/flags.png");
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+.iti__flag {
+    background-image: url("https://raw.githubusercontent.com/jackocnr/intl-tel-input/master/build/img/flags@2x.png");
+  }
+}
+
+.example-list {
+  @apply w-[1000px] max-w-full border-defaultborder rounded-md dark:border-white/10 min-h-[35px] flex flex-row  overflow-hidden border-solid;
+  background: var(--form-control-bg);
+}
+.example-box {
+  @apply text-[color:var(--default-text)] flex flex-row items-center justify-between box-border cursor-move text-sm grow basis-0 p-[5px] border-r-[solid] border-r-[#ccc] last:border-[none];
+  background: var(--default-background);
+}
+.cdk-drag-preview {
+  @apply box-border  shadow-[0_5px_5px_-3px_rgba(0,0,0,0.2),0_8px_10px_1px_rgba(0,0,0,0.14),0_3px_14px_2px_rgba(0,0,0,0.12)];
+}
+.cdk-drag-placeholder {
+  @apply opacity-0 ;
+}  
+.cdk-drag-animating {
+  @apply transition-transform duration-[250ms] ease-out ;
+}
+.example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+  @apply transition-transform duration-[250ms] ease-out ;
+}
+input.cdk-drag.form-control {
+  @apply m-[2px];
+}

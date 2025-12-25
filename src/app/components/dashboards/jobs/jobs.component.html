@@ -1,0 +1,607 @@
+<app-page-header [title]="'Dashboards'" [title1]="['Jobs']" [activeitem]="'Jobs'"></app-page-header>
+<!-- Start::row-1 -->
+<div class="grid xxl:grid-cols-5 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-x-6">
+    @for(card of cardData;track $index){
+    <div class="col">
+        <spk-sales-cards [card]="card"></spk-sales-cards>
+    </div>
+}
+</div>
+<!--End::row-1 -->
+
+<!-- Start::row-2 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xxl:col-span-6 col-span-12">
+        <div class="box">
+            <div class="box-header justify-between">
+                <div class="box-title">Job Statistics</div>
+                <div class="flex gap-2">
+                    <div class="ti-btn ti-btn-sm ti-btn-outline-light">Today</div>
+                    <div class="ti-btn ti-btn-sm ti-btn-outline-light">Weakly</div>
+                    <div class="ti-btn ti-btn-sm ti-btn-light">Yearly</div>
+                </div>
+            </div>
+            <div class="box-body">
+                <div id="jobs-statistics">
+                    <spk-apexcharts [chartOptions]="chartOptions"></spk-apexcharts>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xxl:col-span-3 col-span-12">
+        <div class="mb-4 flex items-center justify-between">
+            <h6 class="mb-0">Need To Hire:</h6>
+            <div>
+                <button type="button" class="ti-btn ti-btn-sm ti-btn-soft-primary ">View All</button>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-body">
+                <ul class="mb-0 list-none hire-list">
+                    <li>
+                        <div class="flex items-center">
+                            <a aria-label="anchor" href="javascript:void(0);" class="me-2">
+                                <span class="avatar avatar-lg bg-primary/10 !text-primary">UD</span>
+                            </a>
+                            <div class="flex-auto truncate">
+                                <a href="javascript:void(0);" class="font-medium text-[14px] w-75 truncate block"> UI/UX Designers</a>
+                                <p class="text-textmuted dark:text-textmuted/50 mb-0 text-xs w-75 truncate">Status: <span class="text-success">75% completed</span></p>
+                            </div>
+                            <div class=" text-end ms-auto">
+                                <div class="text-textmuted dark:text-textmuted/50 opacity-70 text-xs">Candidates</div>
+                                <div class="font-medium">03</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <a aria-label="anchor" href="javascript:void(0);" class="me-2">
+                                <span class="avatar avatar-lg bg-primarytint1color/10 !text-primarytint1color">SD</span>
+                            </a>
+                            <div class="flex-auto truncate">
+                                <a href="javascript:void(0);" class="font-medium text-[14px] w-75 truncate block"> Senior Developer</a>
+                                <p class="text-textmuted dark:text-textmuted/50 mb-0 text-xs w-75 truncate">Status: <span class="text-danger">15% completed</span></p>
+                            </div>
+                            <div class=" text-end ms-auto">
+                                <div class="text-textmuted dark:text-textmuted/50 opacity-70 text-xs">Candidates</div>
+                                <div class="font-medium">12</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <a aria-label="anchor" href="javascript:void(0);" class="me-2">
+                                <span class="avatar avatar-lg bg-primarytint2color/10 !text-primarytint2color">MM</span>
+                            </a>
+                            <div class="flex-auto truncate">
+                                <a href="javascript:void(0);" class="font-medium text-[14px] w-75 truncate block"> Marketing Manager</a>
+                                <p class="text-textmuted dark:text-textmuted/50 mb-0 text-xs w-75 truncate">Status: <span class="text-warning">pending</span></p>
+                            </div>
+                            <div class=" text-end ms-auto">
+                                <div class="text-textmuted dark:text-textmuted/50 opacity-70 text-xs">Candidates</div>
+                                <div class="font-medium">08</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <a aria-label="anchor" href="javascript:void(0);" class="me-2">
+                                <span class="avatar avatar-lg bg-primarytint3color/10 !text-primarytint3color">CW</span>
+                            </a>
+                            <div class="flex-auto truncate">
+                                <a href="javascript:void(0);" class="font-medium text-[14px] w-75 truncate block"> Content Writers</a>
+                                <p class="text-textmuted dark:text-textmuted/50 mb-0 text-xs w-75 truncate">Status: <span class="text-success">55% completed</span></p>
+                            </div>
+                            <div class=" text-end ms-auto">
+                                <div class="text-textmuted dark:text-textmuted/50 opacity-70 text-xs">Candidates</div>
+                                <div class="font-medium">01</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="!mb-0">
+                        <div class="flex items-center">
+                            <a aria-label="anchor" href="javascript:void(0);" class="me-2">
+                                <span class="avatar avatar-lg bg-warning/10 !text-warning">RD</span>
+                            </a>
+                            <div class="flex-auto truncate">
+                                <a href="javascript:void(0);" class="font-medium text-[14px] w-75 truncate block"> React Developer</a>
+                                <p class="text-textmuted dark:text-textmuted/50 mb-0 text-xs w-75 truncate">Status: <span class="text-danger">15% completed</span></p>
+                            </div>
+                            <div class="text-end ms-auto">
+                                <div class="text-textmuted dark:text-textmuted/50 opacity-70 text-xs">Candidates</div>
+                                <div class="font-medium">03</div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="xxl:col-span-3 col-span-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-title w-95 truncate">
+                    Candidates By Gender
+                </div>
+            </div>
+            <div class="box-body m-3 pb-4 px-0 bg-light rounded-sm">
+                <div id="job-acceptance">
+                    <spk-apexcharts [chartOptions]="chartOptions1"></spk-apexcharts>
+                </div>
+            </div>
+            <div class="box-footer">    
+                <div class="grid grid-cols-12 gap-y-4">
+                    <div class="xl:col-span-12 col-span-12">
+                        <div class="flex items-end gap-4 flex-wrap justify-between">
+                            <div>
+                                <h5 class="mb-0">15,754</h5>
+                                <span class="text-textmuted dark:text-textmuted/50 text-xs op-8">Male Candidates</span>
+                            </div>
+                            <div class="text-textmuted dark:text-textmuted/50 text-[13px]">
+                                <span class="text-success"><i class="ri-arrow-up-s-fill"></i>1.6%<i class="ri-bar-chart-fill ms-2 text-textmuted dark:text-textmuted/50"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xl:col-span-12 col-span-12">
+                        <div class="flex items-end gap-4 flex-wrap justify-between">
+                            <div>
+                                <h5 class="mb-0">4,872</h5>
+                                <span class="text-textmuted dark:text-textmuted/50 text-xs op-8">Female Candidates</span>
+                            </div>
+                            <div class="text-textmuted dark:text-textmuted/50 text-[13px]">
+                                <span class="text-danger"><i class="ri-arrow-down-s-fill"></i>1.3%<i class="ri-bar-chart-fill ms-2 text-textmuted dark:text-textmuted/50"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xl:col-span-12 col-span-12">
+                        <div class="flex items-end gap-4 flex-wrap justify-between">
+                            <div>
+                                <h5 class="mb-0">2.5k</h5>
+                                <span class="text-textmuted dark:text-textmuted/50 text-[11px] opacity-70">Total Candidates</span>
+                            </div>
+                            <div class="text-textmuted dark:text-textmuted/50 text-[13px]">
+                                <span class="text-success"><i class="ri-arrow-up-s-fill"></i>0.6%<i class="ri-bar-chart-fill ms-2 text-textmuted dark:text-textmuted/50"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End::row-2 -->
+
+<!-- Start::row-3 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xxl:col-span-3 md:col-span-12 col-span-12">
+        <div class="box">
+            <div class="box-header justify-between">
+                <div class="box-title">
+                    New Applicants
+                </div>
+                <spk-dropdowns [Customclass]="'dropdown'" [class]="'ti-btn ti-btn-outline-light border ti-btn-full ti-btn-sm'" [title]="'View All'"  [Icon]="true" [IconClass]="'ti ti-chevron-down '"
+                  [Menuclass]="'dropdown-menu'">
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Download</a></li>
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Import</a></li>
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Export</a></li>
+                </spk-dropdowns>
+            </div>
+            <div class="box-body">
+                <ul class="mb-0 list-none">
+                    <li class="mb-[1.5rem]">
+                        <div class="flex items-center">
+                            <a aria-label="anchor" href="javascript:void(0);" class="me-2">
+                                <span class="avatar avatar-md bg-primary/10 text-primary">
+                                    <img src="./assets/images/faces/1.jpg" alt="">
+                                </span>
+                            </a>
+                            <div class="grow">
+                                <a href="javascript:void(0);" class="text-[13px] font-medium"> Mona Cruzis</a>
+                                <p class="text-textmuted dark:text-textmuted/50 mb-0 font-normal text-xs"><span class="font-medium">React Developer</span></p>
+                            </div>
+                            <div class="btn-list ms-auto">
+                                <div class="hs-tooltip inline-block">
+                                    <a href="javascript:void(0);" class="hs-tooltip-toggle ti-btn ti-btn-icon ti-btn-sm !rounded-full ti-btn-soft-info hs-tooltip-toggle transition">
+                                        <i class="ti ti-phone align-middle"></i>
+                                      <span class="hs-tooltip-content ti-main-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 !bg-black !text-xs !font-medium !text-white shadow-sm" role="tooltip">
+                                        Call
+                                      </span>
+                                    </a>
+                                </div>
+                                <div class="hs-tooltip inline-block">
+                                    <a href="javascript:void(0);" class="hs-tooltip-toggle ti-btn ti-btn-icon ti-btn-sm !rounded-full ti-btn-soft-primary1 transition">
+                                        <i class="ti ti-at align-middle"></i>
+                                      <span class="hs-tooltip-content ti-main-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 !bg-black !text-xs !font-medium !text-white shadow-sm" role="tooltip">
+                                        Mail
+                                      </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mb-[1.5rem]">
+                        <div class="flex items-center">
+                            <a aria-label="anchor" href="javascript:void(0);" class="me-2">
+                                <span class="avatar avatar-md bg-primary/10 text-primary">
+                                    <img src="./assets/images/faces/11.jpg" alt="">
+                                </span>
+                            </a>
+                            <div class="grow">
+                                <a href="javascript:void(0);" class="text-[13px] font-medium"> Soyab Khan</a>
+                                <p class="text-textmuted dark:text-textmuted/50 mb-0 font-normal text-xs"><span class="font-medium">Java Developer</span></p>
+                            </div>
+                            <div class="btn-list ms-auto">
+                                <div class="hs-tooltip inline-block">
+                                    <a href="javascript:void(0);" class="hs-tooltip-toggle ti-btn ti-btn-icon ti-btn-sm !rounded-full ti-btn-soft-info hs-tooltip-toggle transition">
+                                        <i class="ti ti-phone align-middle"></i>
+                                      <span class="hs-tooltip-content ti-main-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 !bg-black !text-xs !font-medium !text-white shadow-sm" role="tooltip">
+                                        Call
+                                      </span>
+                                    </a>
+                                </div>
+                                <div class="hs-tooltip inline-block">
+                                    <a href="javascript:void(0);" class="hs-tooltip-toggle ti-btn ti-btn-icon ti-btn-sm !rounded-full ti-btn-soft-primary1 transition">
+                                        <i class="ti ti-at align-middle"></i>
+                                      <span class="hs-tooltip-content ti-main-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 !bg-black !text-xs !font-medium !text-white shadow-sm" role="tooltip">
+                                        Mail
+                                      </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mb-[1.5rem]">
+                        <div class="flex items-center">
+                            <a aria-label="anchor" href="javascript:void(0);" class="me-2">
+                                <span class="avatar avatar-md bg-primarytint2color text-white">
+                                    KM
+                                </span>
+                            </a>
+                            <div class="grow">
+                                <a href="javascript:void(0);" class="text-[13px] font-medium"> Katherine Myn </a>
+                                <p class="text-textmuted dark:text-textmuted/50 mb-0 font-normal text-xs"><span class="font-medium">UI Developer</span></p>
+                            </div>
+                            <div class="btn-list ms-auto">
+                                <div class="hs-tooltip inline-block">
+                                    <a href="javascript:void(0);" class="hs-tooltip-toggle ti-btn ti-btn-icon ti-btn-sm !rounded-full ti-btn-soft-info hs-tooltip-toggle transition">
+                                        <i class="ti ti-phone align-middle"></i>
+                                      <span class="hs-tooltip-content ti-main-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 !bg-black !text-xs !font-medium !text-white shadow-sm" role="tooltip">
+                                        Call
+                                      </span>
+                                    </a>
+                                </div>
+                                <div class="hs-tooltip inline-block">
+                                    <a href="javascript:void(0);" class="hs-tooltip-toggle ti-btn ti-btn-icon ti-btn-sm !rounded-full ti-btn-soft-primary1 transition">
+                                        <i class="ti ti-at align-middle"></i>
+                                      <span class="hs-tooltip-content ti-main-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 !bg-black !text-xs !font-medium !text-white shadow-sm" role="tooltip">
+                                        Mail
+                                      </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mb-[1.5rem]">
+                        <div class="flex items-center">
+                            <a aria-label="anchor" href="javascript:void(0);" class="me-2">
+                                <span class="avatar avatar-md bg-primary/10 text-primary">
+                                    <img src="./assets/images/faces/13.jpg" alt="">
+                                </span>
+                            </a>
+                            <div class="grow">
+                                <a href="javascript:void(0);" class="text-[13px] font-medium"> James Roy</a>
+                                <p class="text-textmuted dark:text-textmuted/50 mb-0 font-normal text-xs"><span class="font-medium">React Developer</span></p>
+                            </div>
+                            <div class="btn-list ms-auto">
+                                <div class="hs-tooltip inline-block">
+                                    <a href="javascript:void(0);" class="hs-tooltip-toggle ti-btn ti-btn-icon ti-btn-sm !rounded-full ti-btn-soft-info hs-tooltip-toggle transition">
+                                        <i class="ti ti-phone align-middle"></i>
+                                      <span class="hs-tooltip-content ti-main-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 !bg-black !text-xs !font-medium !text-white shadow-sm" role="tooltip">
+                                        Call
+                                      </span>
+                                    </a>
+                                </div>
+                                <div class="hs-tooltip inline-block">
+                                    <a href="javascript:void(0);" class="hs-tooltip-toggle ti-btn ti-btn-icon ti-btn-sm !rounded-full ti-btn-soft-primary1 transition">
+                                        <i class="ti ti-at align-middle"></i>
+                                      <span class="hs-tooltip-content ti-main-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 !bg-black !text-xs !font-medium !text-white shadow-sm" role="tooltip">
+                                        Mail
+                                      </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mb-[1.5rem]">
+                        <div class="flex items-center">
+                            <a aria-label="anchor" href="javascript:void(0);" class="me-2">
+                                <span class="avatar avatar-md bg-primary/10 text-primary">
+                                    <img src="./assets/images/faces/5.jpg" alt="">
+                                </span>
+                            </a>
+                            <div class="grow">
+                                <a href="javascript:void(0);" class="text-[13px] font-medium"> Cayathe Dore </a>
+                                <p class="text-textmuted dark:text-textmuted/50 mb-0 font-normal text-xs"><span class="font-medium">Vue.js Developer</span></p>
+                            </div>
+                            <div class="btn-list ms-auto">
+                                <div class="hs-tooltip inline-block">
+                                    <a href="javascript:void(0);" class="hs-tooltip-toggle ti-btn ti-btn-icon ti-btn-sm !rounded-full ti-btn-soft-info hs-tooltip-toggle transition">
+                                        <i class="ti ti-phone align-middle"></i>
+                                      <span class="hs-tooltip-content ti-main-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 !bg-black !text-xs !font-medium !text-white shadow-sm" role="tooltip">
+                                        Call
+                                      </span>
+                                    </a>
+                                </div>
+                                <div class="hs-tooltip inline-block">
+                                    <a href="javascript:void(0);" class="hs-tooltip-toggle ti-btn ti-btn-icon ti-btn-sm !rounded-full ti-btn-soft-primary1 transition">
+                                        <i class="ti ti-at align-middle"></i>
+                                      <span class="hs-tooltip-content ti-main-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 !bg-black !text-xs !font-medium !text-white shadow-sm" role="tooltip">
+                                        Mail
+                                      </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mb-1">
+                        <div class="flex items-center">
+                            <a aria-label="anchor" href="javascript:void(0);" class="me-2">
+                                <span class="avatar avatar-md bg-primarytint3color text-white">
+                                    SP
+                                </span>
+                            </a>
+                            <div class="grow">
+                                <a href="javascript:void(0);" class="text-[13px] font-medium"> Surjith Pandey</a>
+                                <p class="text-textmuted dark:text-textmuted/50 mb-0 font-normal text-xs"><span class="font-medium">UX Developer</span></p>
+                            </div>
+                            <div class="btn-list ms-auto">
+                                <div class="hs-tooltip inline-block">
+                                    <a href="javascript:void(0);" class="hs-tooltip-toggle ti-btn ti-btn-icon ti-btn-sm !rounded-full ti-btn-soft-info hs-tooltip-toggle transition">
+                                        <i class="ti ti-phone align-middle"></i>
+                                      <span class="hs-tooltip-content ti-main-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 !bg-black !text-xs !font-medium !text-white shadow-sm" role="tooltip">
+                                        Call
+                                      </span>
+                                    </a>
+                                </div>
+                                <div class="hs-tooltip inline-block">
+                                    <a href="javascript:void(0);" class="hs-tooltip-toggle ti-btn ti-btn-icon ti-btn-sm !rounded-full ti-btn-soft-primary1 transition">
+                                        <i class="ti ti-at align-middle"></i>
+                                      <span class="hs-tooltip-content ti-main-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 !bg-black !text-xs !font-medium !text-white shadow-sm" role="tooltip">
+                                        Mail
+                                      </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="xxl:col-span-6 md:col-span-12 col-span-12">
+        <div class="mb-3 flex items-center justify-between">
+            <h6 class="mb-0">Recent Jobs:</h6>
+            <div>
+                <button type="button" class="ti-btn ti-btn-sm ti-btn-soft-primary ">View All</button>
+            </div>
+        </div>
+        <div class="box overflow-hidden">
+            <div class="box-body p-0">
+                <div class="table-responsive">
+                    <spk-reusable-tables [columns]="jobColumns" tableClass="ti-custom-table ti-custom-table-head recent-job"  [showCheckbox]="false">
+                        @for(job of jobs;track $index){
+                            <tr class="border-b !border-defaultborder dark:!border-defaultborder/10">
+                                <td>
+                                    <div class="flex items-center">
+                                        <div class="me-3">
+                                            <span class="avatar avatar-sm bg-{{job.bg}}/10 !text-{{job.bg}}">
+                                                <i class="ri-{{job.icon}}  text-xl"></i>
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <p class="mb-0 font-medium">{{job.title}}</p>
+                                            <p class=" mb-0 text-textmuted dark:text-textmuted/50 text-[11px]">posted: {{job.posted}} ago</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="mb-0">{{job.applicants}} Applicants</p>
+                                </td>
+                                <td>
+                                    <p class="mb-0 font-medium">{{job.date}}</p>
+                                </td>
+                                <td>
+                                    <p class="mb-0 text-xs text-textmuted dark:text-textmuted/50"><i class="ri-map-pin-fill text-xs me-1"></i>{{job.location}}</p>
+                                </td>
+                                <td>
+                                    <div class="btn-list">
+                                        <a href="javascript:void(0)" class="ti-btn ti-btn-icon ti-btn-sm ti-btn-soft-primary"><i class="ti ti-edit"></i></a>
+                                        <a href="javascript:void(0)" (click)="remove(job.date)" class="ti-btn ti-btn-icon ti-btn-sm ti-btn-soft-primary1"><i class="ti ti-trash"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                           </spk-reusable-tables>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xxl:col-span-3 md:col-span-12 col-span-12">
+        <div class="box">
+            <div class="box-header justify-between">
+                <div class="box-title">
+                    Activity Feed
+                </div>
+                <spk-dropdowns [Customclass]="'dropdown'" [class]="'ti-btn ti-btn-outline-light border ti-btn-full ti-btn-sm ti-dropdown-toggle hs-dropdown-toggle'" [title]="'View All'"  [Icon]="true" [IconClass]="'ti ti-chevron-down ms-1'"
+                [Menuclass]="'dropdown-menu'"  >
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Download</a></li>
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Import</a></li>
+                        <li><a class="ti-dropdown-item" href="javascript:void(0);">Export</a></li>
+                </spk-dropdowns>
+            </div>
+            <div class="box-body">
+                <ul class="ti-list-group list-group-flush list-none !border-0 activity-feed">
+                    <li class="flex gap-2 items-start">
+                        <div class="avatar avatar-sm bg-primary/10 !text-primary flex-shrink-0 avatar-rounded border border-primary/10">
+                            <i class="ri-user-fill"></i>
+                        </div>
+                        <div class="truncate">
+                            <span class="font-medium">New Job Posted</span>
+                            <p class="text-textmuted dark:text-textmuted/50 mb-0 text-xs w-[90%] truncate">Frontend Developer</p>
+                        </div>
+                        <span class="text-textmuted dark:text-textmuted/50 ms-auto text-xs flex-shrink-0">2 mins ago</span>
+                    </li>
+                    <li class="flex gap-2 items-start">
+                        <div class="avatar avatar-sm bg-primarytint1color/10 !text-primarytint1color flex-shrink-0 avatar-rounded border border-primarytint1color/10">
+                            <i class="ri-file-list-3-fill"></i>
+                        </div>
+                        <div class="truncate">
+                            <span class="font-medium">New Application</span>
+                            <p class="text-textmuted dark:text-textmuted/50 mb-0 text-xs w-[90%] truncate"><a href="javascript:void(0);" class="font-medium text-primary">John Doe</a> applied for Frontend Developer position</p>
+                        </div>
+                        <span class="text-textmuted dark:text-textmuted/50 ms-auto text-xs flex-shrink-0">5 mins ago</span>
+                    </li>
+                    <li class="flex gap-2 items-start">
+                        <div class="avatar avatar-sm bg-primarytint2color/10 !text-primarytint2color flex-shrink-0 avatar-rounded border border-primarytint2color/10">
+                            <i class="ri-user-fill"></i>
+                        </div>
+                        <div class="truncate">
+                            <span class="font-medium">New Job Posted</span>
+                            <p class="text-textmuted dark:text-textmuted/50 mb-0 text-xs w-[90%] truncate"><span class="font-medium text-primarytint1color">#245</span> Backend Developer </p>
+                        </div>
+                        <span class="text-textmuted dark:text-textmuted/50 ms-auto text-xs flex-shrink-0">10 mins ago</span>
+                    </li>
+                    <li class="flex gap-2 items-start">
+                        <div class="avatar avatar-sm bg-primarytint3color/10 !text-primarytint3color flex-shrink-0 avatar-rounded border border-primarytint3color/10">
+                            <i class="ri-user-fill"></i>
+                        </div>
+                        <div class="truncate">
+                            <span class="font-medium">New Job Posted</span>
+                            <p class="text-textmuted dark:text-textmuted/50 mb-0 text-xs w-[90%] truncate">Backend Developer</p>
+                        </div>
+                        <span class="text-textmuted dark:text-textmuted/50 ms-auto text-xs flex-shrink-0">10 mins ago</span>
+                    </li>
+                    <li class="flex gap-2 items-start">
+                        <div class="avatar avatar-sm bg-secondary/10 !text-secondary flex-shrink-0 avatar-rounded border border-secondary/10">
+                            <i class="ri-calendar-check-fill"></i>
+                        </div>
+                        <div class="truncate">
+                            <span class="font-medium">Updated Interview Dates</span>
+                            <p class="text-textmuted dark:text-textmuted/50 mb-0 text-xs w-[90%] truncate">Updated new interview scheduled and added in the <a href="javascript:void(0);" class="font-medium text-primarytint2color underline">notification list</a></p>
+                        </div>
+                        <span class="text-textmuted dark:text-textmuted/50 ms-auto text-xs flex-shrink-0">15 mins ago</span>
+                    </li>
+                    <li class="flex gap-2 items-start">
+                        <div class="avatar avatar-sm bg-danger/10 !text-danger flex-shrink-0 avatar-rounded border border-danger/10">
+                            <i class="ri-calendar-check-fill"></i>
+                        </div>
+                        <div class="truncate">
+                            <span class="font-medium">Rescheduled Interview Dates</span>
+                            <p class="text-textmuted dark:text-textmuted/50 mb-0 text-xs w-[90%] truncate">Rescheduled interview dates <a href="javascript:void(0);" class="font-medium text-primarytint2color underline">notification list</a></p>
+                        </div>
+                        <span class="text-textmuted dark:text-textmuted/50 ms-auto text-xs flex-shrink-0">15 mins ago</span>
+                    </li>
+                    <li class="flex gap-2 items-start !mb-0">
+                        <div class="avatar avatar-sm bg-warning/10 !text-warning flex-shrink-0 avatar-rounded border border-warning/25">
+                            <i class="ri-time-fill"></i>
+                        </div>
+                        <div class="truncate">
+                            <span class="font-medium">Closed Job Post</span>
+                            <p class="text-textmuted dark:text-textmuted/50 mb-0 text-xs w-[90%] truncate">closed React Job ID: <span class="font-medium text-primary">#454</span></p>
+                        </div>
+                        <span class="text-textmuted dark:text-textmuted/50 ms-auto text-xs flex-shrink-0">15 mins ago</span>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End::row-3 -->
+
+<!-- Start::row-4 -->
+<div class="grid grid-cols-12 gap-x-6">
+    <div class="xl:col-span-12 col-span-12">
+        <div class="box">
+            <div class="box-header justify-between">
+                <div class="box-title">
+                    Recent Applicants
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <div class="">
+                        <input class="form-control form-control-sm" type="text" placeholder="Search Here" aria-label=".form-control-sm example">
+                    </div>
+                    <spk-dropdowns [Customclass]="'dropdown'" [title]="'Sort By'" [class]="'ti-btn bg-primary !mb-0 !m-0 text-white ti-btn-sm'" [Icon]="true" [IconClass]="'ri-arrow-down-s-line align-middle ms-1 inline-block'" 
+                    [Menuclass]="'dropdown-menu'"  >
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">New</a></li>
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Popular</a></li>
+                            <li><a class="ti-dropdown-item" href="javascript:void(0);">Relevant</a></li>
+                    </spk-dropdowns>
+                </div>
+            </div>
+            <div class="box-body">
+                <div class="table-responsive overflow-auto table-bordered-default">
+                    <spk-reusable-tables [columns]="applicationColumns" tableClass="ti-custom-table text-nowrap ti-custom-table-hover"  [showCheckbox]="false">
+                        @for(application of applications;track $index){
+                            <tr class="border-b border-defaultborder dark:border-defaultborder/10">
+                                <th scope="row">{{application.id}}</th>
+                                <td>
+                                    <div class="flex items-center font-medium">
+                                        <span class="avatar avatar-sm me-2 avatar-rounded">
+                                            <img [src]="application.src" alt="img">
+                                        </span>{{application.name}}
+                                    </div>
+                                </td>
+                                <td>{{application.category}}</td>
+                                <td><span class="text-{{application.bg1}}">{{application.role}}</span></td>
+                                <td>{{application.mail}}</td>
+                                <td>
+                                    <div class="d-inline-flex items-center">
+                                        <i class="ri-map-pin-line text-textmuted dark:text-textmuted/50"></i>
+                                        <span class="ms-1">{{application.location}}</span>
+                                    </div>
+                                </td>
+                                <td>{{application.date}}</td>
+                                <td><span class="badge bg-{{application.bg}}/10 text-{{application.bg}}">{{application.type}}</span></td>
+                                <td>
+                                    <div class="hstack gap-2 text-[15px]">
+                                        <a aria-label="anchor" href="javascript:void(0);" class="ti-btn ti-btn-icon ti-btn-sm ti-btn-soft-success"><i class="ri-download-2-line"></i></a>
+                                        <a aria-label="anchor" href="javascript:void(0);" class="ti-btn ti-btn-icon ti-btn-sm ti-btn-soft-primary"><i class="ri-edit-line"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                        </spk-reusable-tables>
+                </div>
+            </div>
+            <div class="box-footer">
+                <div class="flex items-center flex-wrap">
+                    <div>
+                        Showing 6 Entries <i class="bi bi-arrow-right ms-2 font-medium"></i>
+                    </div>
+                    <div class="ms-auto">
+                        <nav aria-label="Page navigation" class="pagination-style-4">
+                            <ul class="ti-pagination mb-0 flex-wrap">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="javascript:void(0);">
+                                        Prev
+                                    </a>
+                                </li>
+                                <li class="page-item "><a class="page-link active"
+                                        href="javascript:void(0);">1</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                                
+                                <li class="page-item">
+                                    <a class="page-link !text-primary" href="javascript:void(0);">
+                                        next
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End::row-4 -->
