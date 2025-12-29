@@ -9,6 +9,7 @@ import { FirebaseService } from '../../shared/services/firebase.service';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { ApiTestService } from '../../core/services/api-test.service';
 
 @Component({
   selector: 'app-login',
@@ -40,6 +41,7 @@ export class LoginComponent {
 }
 disabled = '';
 constructor(
+  private apiTest: ApiTestService,
   @Inject(DOCUMENT) private document: Document,private elementRef: ElementRef,
  private sanitizer: DomSanitizer,
   public authservice: AuthService,
@@ -64,13 +66,9 @@ ngOnDestroy(): void {
 }
 ngOnInit(): void {
   this.loginForm = this.formBuilder.group({
-    username: ['spruko@admin.com', [Validators.required, Validators.email]],
-    password: ['sprukoadmin', Validators.required],
+    email: ['spruko@admin.com', [Validators.required, Validators.email]],
+    password: ['sprukoadmin', [Validators.required]]
   });
-// Initialize Firebase services here
-this.firestoreModule = this.firebaseService.getFirestore();
-this.databaseModule = this.firebaseService.getDatabase();
-this.authModule = this.firebaseService.getAuth();
 }
 
 // firebase
@@ -85,32 +83,27 @@ clearErrorMessage() {
   this._error = { name: '', message: '' };
 }
 
-login() {
-  // this.disabled = "btn-loading"
-  this.clearErrorMessage();
-  if (this.validateForm(this.email, this.password)) {
-    this.authservice
-      .loginWithEmail(this.email, this.password)
-      .then(() => {
-        this.router.navigate(['/dashboards/sales']);
-        console.clear();
-        this.toastr.success('login successful','Xintra', {
-          timeOut: 3000,
-          positionClass: 'toast-top-right',
-        });
-      })
-      .catch((_error: any) => {
-        this._error = _error;
-        this.router.navigate(['/']);
-      });
-   
+login(): void  {
+
+  if (this.loginForm.invalid) {
+    this.toastr.error('Formulario inválido', 'Xintra');
+    return;
   }
-  else {
-    this.toastr.error('Invalid details','Xintra', {
-      timeOut: 3000,
-      positionClass: 'toast-top-right',
-    });
-  }
+
+  const payload = this.loginForm.value;
+
+  this.authservice.login(payload).subscribe({
+    next: (res) => {
+
+      this.toastr.success('Login successful', 'Xintra');
+      this.router.navigate(['/dashboards/sales']);
+    },
+    error: (err) => {
+      
+      this.toastr.error(err.error?.message || 'Login error', 'Xintra');
+      return;
+    }
+  });
 }
 
 validateForm(email: string, password: string) {
@@ -142,24 +135,24 @@ get form() {
   return this.loginForm.controls;
 }
 
-Submit() {
-  console.log(this.loginForm)
-  if (
-    this.loginForm.controls['username'].value === 'spruko@admin.com' &&
-    this.loginForm.controls['password'].value === 'sprukoadmin'
-  ) {
-    this.router.navigate(['/dashboards/sales']);
-    this.toastr.success('login successful','Xintra', {
-      timeOut: 3000,
-      positionClass: 'toast-top-right',
-    });
-  } else {
-    this.toastr.error('Invalid details','Xintra', {
-      timeOut: 3000,
-      positionClass: 'toast-top-right',
-    });
-  }
+// Submit() {
+//   console.log(this.loginForm)
+//   if (
+//     this.loginForm.controls['username'].value === 'spruko@admin.com' &&
+//     this.loginForm.controls['password'].value === 'sprukoadmin'
+//   ) {
+//     this.router.navigate(['/dashboards/sales']);
+//     this.toastr.success('login successful','Xintra', {
+//       timeOut: 3000,
+//       positionClass: 'toast-top-right',
+//     });
+//   } else {
+//     this.toastr.error('Invalid details','Xintra', {
+//       timeOut: 3000,
+//       positionClass: 'toast-top-right',
+//     });
+//   }
 
-}
+// }
 
 }

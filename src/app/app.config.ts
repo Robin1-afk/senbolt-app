@@ -11,15 +11,18 @@ import { ToastrModule } from 'ngx-toastr';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
 import { FlatpickrModule } from 'angularx-flatpickr';
+import { provideHttpClient } from '@angular/common/http';
+import { withInterceptors, provideHttpClient as provideHttpClientWithInterceptors } from '@angular/common/http';
+import { authInterceptor } from './core/services/interceptors/auth.interceptor';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes),RouterOutlet,BrowserModule,provideCharts(withDefaultRegisterables()),
+  providers: [provideHttpClient(withInterceptors([authInterceptor])) ,provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes),RouterOutlet,BrowserModule,provideCharts(withDefaultRegisterables()),
     importProvidersFrom(AngularFireModule.initializeApp(environment.firebase),
      FlatpickrModule.forRoot(),
      BrowserAnimationsModule,
      ColorPickerModule,
      CalendarModule.forRoot({provide: DateAdapter,useFactory: adapterFactory}),
      ToastrModule.forRoot({timeOut: 15000,closeButton: true,progressBar: true,})
-    )
+    ), provideHttpClient()
   ]
 };
