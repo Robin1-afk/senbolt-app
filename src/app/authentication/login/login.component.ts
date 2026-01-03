@@ -10,6 +10,9 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { ApiTestService } from '../../core/services/api-test.service';
+import { PermissionApiService } from '../../core/services/permission-api.service';
+import { PermissionService } from '../../core/services/permission.service';
+import { AuthStorageService } from '../../core/services/auth-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -50,6 +53,9 @@ constructor(
   private renderer: Renderer2,
   private firebaseService: FirebaseService,
   private toastr: ToastrService 
+  ,private authStorage: AuthStorageService
+  ,private permissionApi: PermissionApiService
+  ,private permissionService: PermissionService
 ) {
   // AngularFireModule.initializeApp(environment.firebase);
   document.body.classList.add('authentication-background');
@@ -66,15 +72,11 @@ ngOnDestroy(): void {
 }
 ngOnInit(): void {
   this.loginForm = this.formBuilder.group({
-    email: ['spruko@admin.com', [Validators.required, Validators.email]],
-    password: ['sprukoadmin', [Validators.required]]
+    email: ['ro21b1in@1example.com', [Validators.required, Validators.email]],
+    password: ['secret123', [Validators.required]]
   });
 }
 
-// firebase
-
-email = 'spruko@admin.com';
-password = 'sprukoadmin';
 errorMessage = ''; // validation _error handle
 _error: { name: string; message: string } = { name: '', message: '' }; // for firbase _error handle
 
@@ -93,11 +95,17 @@ login(): void  {
   const payload = this.loginForm.value;
 
   this.authservice.login(payload).subscribe({
-    next: (res) => {
-
-      this.toastr.success('Login successful', 'Xintra');
-      this.router.navigate(['/dashboards/sales']);
-    },
+  next: (res) => {
+    //Guardas sesión
+    this.authStorage.saveSession(res.data);
+    //Pides permisos
+    this.permissionApi.getMyPermissions().subscribe(perms => {
+    //Guardas permisos en memoria 
+    this.permissionService.setPermissions(perms);
+    //Navegas
+    this.router.navigate(['/dashboards/sales']);
+    });
+  },
     error: (err) => {
       
       this.toastr.error(err.error?.message || 'Login error', 'Xintra');

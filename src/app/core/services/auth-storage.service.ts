@@ -13,6 +13,10 @@ export class AuthStorageService {
     return localStorage.getItem('token');
   }
 
+  hasSession(): boolean {
+    return !!this.getToken();
+  }
+
   getRoleId(): number {
     return Number(localStorage.getItem('rol_id'));
   }

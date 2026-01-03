@@ -13,7 +13,7 @@ import { environment } from '../environments/environment';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { provideHttpClient } from '@angular/common/http';
 import { withInterceptors, provideHttpClient as provideHttpClientWithInterceptors } from '@angular/common/http';
-import { authInterceptor } from './core/services/interceptors/auth.interceptor';
+import { authInterceptor } from './core/interceptors/auth.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideHttpClient(withInterceptors([authInterceptor])) ,provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes),RouterOutlet,BrowserModule,provideCharts(withDefaultRegisterables()),

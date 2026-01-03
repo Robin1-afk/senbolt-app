@@ -3,26 +3,20 @@ import { Injectable } from '@angular/core';
 @Injectable({ providedIn: 'root' })
 export class PermissionService {
 
+  // Store the user's permissions
   private permissions: string[] = [];
+  // Set permissions based on API response
+  setPermissions(apiResponse: any) {
+    this.permissions = apiResponse.data.has_permission.map((p: any) => p.value);
+        console.log('[PermissionService] permisos guardados:', this.permissions);
 
-  
-
-  /**
-   * Set the permissions for the user.
-   * @param perms - The list of permissions the user has.
-   */
-  setPermissions(perms: string[]) {
-    /**
-     * The list of permissions the user has.
-     */
-    this.permissions = perms;
   }
-    /**
-   * Check if the user has a specific permission.
-   * @param objectKey - The permission to check.
-   * @returns True if the user has the permission, false otherwise.
-   */
-  has(objectKey: string): boolean {
-    return this.permissions.includes(objectKey);
+  // Check if a specific permission exists
+  has(permission: string): boolean {
+    return this.permissions.includes(permission);
+  }
+  // Clear all stored permissions
+  clear() {
+    this.permissions = [];
   }
 }
