@@ -6,6 +6,7 @@ import { SpkSalesCardsComponent } from '../../../../@spk/reusable-dashboard/spk-
 import { SpkDropdownsComponent } from '../../../../@spk/reusable-ui-elements/spk-dropdowns/spk-dropdowns.component';
 import { SpkApexchartsComponent } from '../../../../@spk/spk-apexcharts/apexcharts.component';
 import { SpkReusableTablesComponent } from '../../../../@spk/spk-reusable-tables/spk-reusable-tables.component';
+import { PermissionService } from '../../../core/services/permission.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -34,8 +35,8 @@ export class SalesComponent {
     { header: 'Date Ordered', field: 'date' },
     { header: 'Actions', field: 'actions' }
   ]
-
-  constructor(private cdr: ChangeDetectorRef) {
+  
+  constructor(private cdr: ChangeDetectorRef, private permissionService: PermissionService) {
     document.querySelector('.single-page-header')?.classList.add('hidden');
   }
   rangeValue: { from: Date; to: Date } = {
@@ -44,6 +45,28 @@ export class SalesComponent {
   };
 
   ngOnInit() {
+
+
+    console.log(
+    '¿Tiene DASHBOARD?',
+    this.permissionService
+  );
+
+    console.log(
+    '¿Tiene DASHBOARD?',
+    this.permissionService.has('DASHBOARD')
+  );
+
+  console.log(
+    '¿Tiene SALE?',
+    this.permissionService.has('SALE')
+  );
+
+  console.log(
+    '¿Tiene USERS?',
+    this.permissionService.has('USERS')
+  );
+
     this.cdr.detectChanges(); 
   }
   ngOnDestroy(){

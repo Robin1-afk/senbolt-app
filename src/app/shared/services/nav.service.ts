@@ -1,6 +1,7 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { Subject, BehaviorSubject, fromEvent } from 'rxjs';
 import { takeUntil, debounceTime } from 'rxjs/operators';
+import { PermissionService } from '../../core/services/permission.service';
 import { Router } from '@angular/router';
 // Menu
 export interface Menu {
@@ -23,6 +24,7 @@ export interface Menu {
   menutype?:string;
   dirchange?: boolean;
   nochild?: any;
+  permission?: string;
 }
 
 @Injectable({
@@ -55,7 +57,9 @@ export class NavService implements OnDestroy {
   public fullScreen = false;
   active: any;
 
-  constructor(private router: Router) {
+  constructor(private router: Router,
+  private permissionService: PermissionService) {
+    this.filterMenu();
     this.setScreenWidth(window.innerWidth);
     fromEvent(window, 'resize')
       .pipe(debounceTime(1000), takeUntil(this.unsubscriber))
@@ -85,6 +89,36 @@ export class NavService implements OnDestroy {
     this.unsubscriber.complete();
   }
 
+private filterMenu(): void {
+  const filtered = this.filterItems(this.MENUITEMS);
+  this.items.next(filtered);
+}
+
+  private filterItems(items: Menu[]): Menu[] {
+    return items
+      .filter(item => {
+        // Si no tiene permiso, se deja pasar
+        if (!item.permission) return true;
+
+        // Si tiene permiso, se valida
+        return this.permissionService.has(item.permission);
+      })
+      .map(item => ({
+        ...item,
+        children: item.children
+          ? this.filterItems(item.children)
+          : undefined
+      }))
+      .filter(item => {
+        // Si es un submenú y quedó sin hijos → se elimina
+        if (item.type === 'sub' && item.children?.length === 0) {
+          return false;
+        }
+        return true;
+      });
+  }
+
+
   private setScreenWidth(width: number): void {
     this.screenWidth.next(width);
   }
@@ -96,6 +130,7 @@ export class NavService implements OnDestroy {
       title: 'Dashboards',
       icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 side-menu__icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"></path></svg>`,
       type: 'sub',
+      permission: 'DASHBOARD', // 👈 permiso padre
       selected: false,
       active: false,
       dirchange: false,
@@ -103,18 +138,22 @@ export class NavService implements OnDestroy {
         { path: '/dashboards/sales',
           title: 'Sal',
           type: 'link', 
+          permission: 'SALE', // 👈 permiso real
           dirchange: false 
+          
         },
         {
           path: '/dashboards/analytics',
           title: 'Analytics',
           type: 'link',
+          permission: 'ANAL', // 👈 permiso real
           dirchange: false,
         },
         {
           path: '/dashboards/ecommerce',
           title: 'Ecommerce',
           type: 'link',
+          permission: 'ANAL', // 👈 permiso real
           dirchange: false,
         },
        

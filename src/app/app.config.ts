@@ -14,15 +14,28 @@ import { FlatpickrModule } from 'angularx-flatpickr';
 import { provideHttpClient } from '@angular/common/http';
 import { withInterceptors, provideHttpClient as provideHttpClientWithInterceptors } from '@angular/common/http';
 import { authInterceptor } from './core/interceptors/auth.interceptor';
+import { AppInitService } from './core/services/app-init.service';
+import { APP_INITIALIZER } from '@angular/core';
+
+export function initApp(appInit: AppInitService) {
+  return () => appInit.init();
+}
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideHttpClient(withInterceptors([authInterceptor])) ,provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes),RouterOutlet,BrowserModule,provideCharts(withDefaultRegisterables()),
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initApp,
+      deps: [AppInitService],
+      multi: true
+    },
+    provideHttpClient(withInterceptors([authInterceptor])) ,provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes),RouterOutlet,BrowserModule,provideCharts(withDefaultRegisterables()),
     importProvidersFrom(AngularFireModule.initializeApp(environment.firebase),
      FlatpickrModule.forRoot(),
      BrowserAnimationsModule,
      ColorPickerModule,
      CalendarModule.forRoot({provide: DateAdapter,useFactory: adapterFactory}),
      ToastrModule.forRoot({timeOut: 15000,closeButton: true,progressBar: true,})
-    ), provideHttpClient()
+    )
   ]
 };
