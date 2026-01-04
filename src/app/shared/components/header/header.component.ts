@@ -3,6 +3,7 @@ import { Menu, NavService } from '../../services/nav.service';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { AppStateService } from '../../services/app-state.service';
 import { SwitcherComponent } from '../switcher/switcher.component';
+import { AuthService } from '../../../shared/services/auth.service';
 import { filter } from 'rxjs';
 interface Item {
   id: number;
@@ -33,8 +34,13 @@ export class HeaderComponent {
     public navServices: NavService,
     private elementRef: ElementRef,
     public renderer: Renderer2,
-    private router: Router, private activatedRoute: ActivatedRoute
-  ) {this.localStorageBackUp()}
+    private router: Router, private activatedRoute: ActivatedRoute,
+    private authService: AuthService
+  ) {}
+
+  logout() {
+    this.authService.logout().subscribe();
+  }
 
   toggleDropdown() {
     this.isOpen = !this.isOpen;

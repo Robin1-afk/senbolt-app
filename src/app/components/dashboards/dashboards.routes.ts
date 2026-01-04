@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { permissionGuard } from '../../core/services/guards/permission.guard';
+import { authGuard } from '../../core/services/guards/auth.guard';
 
 
 export const admin: Routes = [
   {
     path:'dashboards',
+    canActivate: [authGuard],   // 👈 AQUÍ
     children:[ {
     path: 'sales',
     loadComponent: () =>
