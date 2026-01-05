@@ -1,0 +1,25 @@
+:host ::ng-deep .mat-mdc-header-cell,
+:host ::ng-deep .mat-mdc-cell {
+  color: #ffffff;
+}
+
+:host ::ng-deep .mat-mdc-paginator {
+  color: #ffffff;
+}
+
+.actions-cell {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.table-overlay {
+  position: absolute;
+  inset: 0; /* top, right, bottom, left */
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
