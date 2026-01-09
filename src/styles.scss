@@ -423,3 +423,24 @@ ngx-table {
       @apply z-0 #{!important}
   }
 }
+
+/* TABLAS ANGULAR MATERIAL (MDC) – patrón Xintra */
+
+.mat-mdc-table {
+  @apply bg-customwhite dark:bg-bodybg #{!important};
+}
+
+.mat-mdc-header-cell,
+.mat-mdc-cell {
+  @apply text-defaulttextcolor dark:text-white/80 #{!important};
+}
+
+.table-overlay {
+  position: absolute;
+  inset: 0; /* top, right, bottom, left */
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
