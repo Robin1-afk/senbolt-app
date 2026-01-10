@@ -444,3 +444,15 @@ ngx-table {
   justify-content: center;
   z-index: 10;
 }
+.table-border{
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0.25rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.45rem;
+  padding-right: 0.45rem;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+}

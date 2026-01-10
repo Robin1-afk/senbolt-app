@@ -51,15 +51,18 @@
                   <small class="text-sm text-gray-500">Limit dropdown to 5 items</small>
                 </div>
                 <ul class="divide-y divide-gray-200">
-                  <li
-                    *ngFor="let menuItem of menuItems | slice: 0: 5"
-                    [routerLink]="menuItem?.path"
-                    class="p-3 hover:bg-gray-100 cursor-pointer text-gray-700 flex items-center"
-                    (click)="clearSearch()"
-                  >
-                    <i class="fa fa-angle-double-right mr-2 text-gray-500"></i>
-                    <span class="truncate">{{ menuItem?.title }}</span>
-                  </li>
+                    <li
+                        *ngFor="let menuItem of menuItems | slice: 0: 5"
+                        [routerLink]="menuItem?.path"
+                        class="p-3 hover:bg-gray-100 cursor-pointer text-gray-700 flex items-center"
+                        (click)="clearSearch()"
+                    >
+                        <i class="fa fa-angle-double-right mr-2 text-gray-500"></i>
+
+                    <span class="truncate">
+                    {{ translate(menuItem?.title) }}
+                    </span>
+                    </li>
                 </ul>
               </div>
                 <!-- <div class="search-result p-absolute w-100 card border mt-1" *ngIf="menuItems?.length;">
