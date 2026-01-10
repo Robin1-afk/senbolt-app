@@ -1,0 +1,49 @@
+{
+    "users": {
+        "pageTitle": "Administration du Système",
+        "pageBreadcrumb": "Utilisateurs",
+        "title": "Utilisateurs",
+        "columns": {
+            "id": "#",
+            "name": "Nom",
+            "email": "Courriel",
+            "role": "Rôle",
+            "organization": "Organisation",
+            "status": "Statut"
+        },
+        "status": {
+            "active": "Actif",
+            "inactive": "Inactif"
+        },
+        "empty": "Aucun utilisateur trouvé"
+    },
+
+    "organizations": {
+        "pageTitle": "Administration du Système",
+        "pageBreadcrumb": "Organisations",
+        "title": "Organisations",
+        "columns": {
+            "id": "#",
+            "name": "Nom",
+            "email": "Courriel",
+            "max_users": "Utilisateurs Max",
+            "type": "Type",
+            "owner_user_id": "Propriétaire",
+            "status": "Statut"
+        },
+        "status": {
+            "active": "Actif",
+            "inactive": "Inactif"
+        },
+        "empty": "Aucune organisation trouvée"
+    },
+    "nav": {
+        "control_panel":{
+            "title": "Panneau de Controle",
+            "users": "Utilisateurs",
+            "organizations": "Organisations",
+            "headTitle": "Panneau de Controle"
+        }
+    }
+    
+}

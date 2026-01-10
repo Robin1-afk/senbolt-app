@@ -40,7 +40,7 @@ export class HeaderComponent {
     private authService: AuthService
   ) {}
 
-  changeLanguage(lang: 'es' | 'en') {
+  changeLanguage(lang: 'es' | 'en' | 'fr') {
     this.i18n.load(lang);
   }
 
