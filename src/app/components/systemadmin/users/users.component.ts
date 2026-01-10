@@ -9,6 +9,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { SharedModule } from '../../../shared/shared.module';
 import { UserService } from '../../../services/user/user.service';
 import { User } from '../../../models/user/user.model';
+import { I18nService } from '../../../core/services/i18n.service';
 
 @Component({
   selector: 'app-users',
@@ -16,7 +17,7 @@ import { User } from '../../../models/user/user.model';
   imports: [
     CommonModule,
     SharedModule,
-    MatTableModule,      // ✅ ESTO ERA LO QUE FALTABA
+    MatTableModule,
     MatPaginatorModule
   ],
   templateUrl: './users.component.html',
@@ -37,7 +38,7 @@ export class UsersComponent implements OnInit {
   dataSource = new MatTableDataSource<User>([]);
 
   loading = false;
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, public i18n: I18nService) {}
 
   ngOnInit(): void {
     this.loadUsers();

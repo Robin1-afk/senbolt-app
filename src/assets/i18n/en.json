@@ -1,0 +1,49 @@
+{
+  "users": {
+    "pageTitle": "System Administration",
+    "pageBreadcrumb": "Users",
+    "title": "Users",
+    "columns": {
+      "id": "#",
+      "name": "Name",
+      "email": "Email",
+      "role": "Role",
+      "organization": "Organization",
+      "status": "Status"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "empty": "No users found"
+  },
+
+  "organizations": {
+    "pageTitle": "System Administration",
+    "pageBreadcrumb": "Organizations",
+    "title": "Organizations",
+    "columns": {
+      "id": "#",
+      "name": "Name",
+      "email": "Email",
+      "max_users": "Max Users",
+      "owner_user_id": "Owner",
+      "type": "Type",
+      "status": "Status"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "empty": "No organizations found"
+  },
+
+  "nav": {
+    "control_panel":{
+      "title": "Control Panel",
+      "users": "Users",
+      "organizations": "Organizations",
+      "headTitle": "Admin"
+    }
+  }
+}

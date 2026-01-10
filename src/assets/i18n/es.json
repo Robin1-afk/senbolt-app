@@ -1,0 +1,50 @@
+{
+  "users": {
+    "pageTitle": "Administración del Sistema",
+    "pageBreadcrumb": "Usuarios",
+    "title": "Usuarios",
+    "columns": {
+      "id": "#",
+      "name": "Nombre",
+      "email": "Correo",
+      "role": "Rol",
+      "organization": "Organización",
+      "status": "Estado"
+    },
+    "status": {
+      "active": "Activo",
+      "inactive": "Inactivo"
+    },
+    "empty": "No se encontraron usuarios"
+  },
+  
+  "organizations": {
+    "pageTitle": "Administración del Sistema",
+    "pageBreadcrumb": "Organizaciones",
+    "title": "Organizaciones",
+    "columns": {
+      "id": "#",
+      "name": "Nombre",
+      "email": "Correo",
+      "max_users": "Máximo de Usuarios",
+      "type": "Tipo",
+      "owner_user_id": "Propietario",
+      "status": "Estado"
+    },
+    "status": {
+      "active": "Activo",
+      "inactive": "Inactivo"
+    },
+    "empty": "No se encontraron organizaciones"
+  },
+
+  "nav": {
+    "control_panel":{
+      "title": "Panel de Control",
+      "users": "Usuarios",
+      "organizations": "Organizaciones",
+      "headTitle": "Administración"
+    }
+  }
+
+}

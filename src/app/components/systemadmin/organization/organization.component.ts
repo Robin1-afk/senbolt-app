@@ -7,6 +7,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';import { OrganizationService } from '../../../services/organization/organization.service';
 import { Organization } from '../../../models/organization/organization.model';
+import { I18nService } from '../../../core/services/i18n.service';
+
 // import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -37,7 +39,7 @@ export class OrganizationComponent {
   dataSource = new MatTableDataSource<Organization>([]);
 
   loading = false;
-  constructor(private OrganizationService: OrganizationService) {}
+  constructor(private OrganizationService: OrganizationService, public i18n: I18nService) {}
 
   ngOnInit(): void {
     this.loadUsers();

@@ -103,7 +103,7 @@ login(): void  {
     //Guardas permisos en memoria 
     this.permissionService.setPermissions(perms);
     //Navegas
-    this.router.navigate(['/dashboards/sales']);
+    this.router.navigate(['/systemadmin/users']);
     });
   },
     error: (err) => {

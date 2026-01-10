@@ -6,7 +6,7 @@ import { authGuard } from '../../core/services/guards/auth.guard';
 export const admin: Routes = [
 {
     path:'systemadmin',
-    canActivate: [authGuard],   // 👈 AQUÍ
+    canActivate: [authGuard],
     children:[ 
     {
         path: 'organization',

@@ -15,9 +15,14 @@ import { withInterceptors, provideHttpClient} from '@angular/common/http';
 import { authInterceptor } from './core/interceptors/auth.interceptor';
 import { AppInitService } from './core/services/app-init.service';
 import { APP_INITIALIZER } from '@angular/core';
+import { I18nService } from './core/services/i18n.service';
 
 export function initApp(appInit: AppInitService) {
   return () => appInit.init();
+}
+
+export function initI18n(i18n: I18nService) {
+  return () => i18n.load('es'); // idioma por defecto
 }
 
 export const appConfig: ApplicationConfig = {
@@ -26,6 +31,12 @@ export const appConfig: ApplicationConfig = {
       provide: APP_INITIALIZER,
       useFactory: initApp,
       deps: [AppInitService],
+      multi: true
+    },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initI18n,
+      deps: [I18nService],
       multi: true
     },
     provideHttpClient(withInterceptors([authInterceptor])) ,provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes),RouterOutlet,BrowserModule,provideCharts(withDefaultRegisterables()),
@@ -38,3 +49,4 @@ export const appConfig: ApplicationConfig = {
     )
   ]
 };
+

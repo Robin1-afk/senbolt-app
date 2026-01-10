@@ -4,6 +4,7 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { AppStateService } from '../../services/app-state.service';
 import { SwitcherComponent } from '../switcher/switcher.component';
 import { AuthService } from '../../../shared/services/auth.service';
+import { I18nService } from '../../../core/services/i18n.service';
 import { filter } from 'rxjs';
 interface Item {
   id: number;
@@ -30,6 +31,7 @@ export class HeaderComponent {
   selectedItem: string  | null ='selectedItem'
   isOpen: boolean = false;
   constructor(
+    public i18n: I18nService,
     private appStateService: AppStateService,
     public navServices: NavService,
     private elementRef: ElementRef,
@@ -37,6 +39,10 @@ export class HeaderComponent {
     private router: Router, private activatedRoute: ActivatedRoute,
     private authService: AuthService
   ) {}
+
+  changeLanguage(lang: 'es' | 'en') {
+    this.i18n.load(lang);
+  }
 
   logout() {
     this.authService.logout().subscribe();
