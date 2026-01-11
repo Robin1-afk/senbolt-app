@@ -37,6 +37,26 @@
     },
     "empty": "No organizations found"
   },
+  "plans": {
+    "pageTitle": "System Administration",
+    "pageBreadcrumb": "Plans",
+    "title": "Plans",
+    "columns": {
+      "id": "#",
+      "name": "Name",
+      "description": "Description",
+      "emails_per_month": "Emails/Month",
+      "price": "Price",
+      "subscription": "subscriptions",
+      "button-subscription": "Open",
+      "status": "Status"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "empty": "No plans found"
+  },
 
   "nav": {
     "control_panel":{

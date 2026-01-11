@@ -37,6 +37,27 @@
         },
         "empty": "Aucune organisation trouvée"
     },
+    "plans": {
+        "pageTitle": "Administration du Système",
+        "pageBreadcrumb": "Plans",
+        "title": "Plans",
+        "columns": {
+            "id": "#",
+            "name": "Nom",
+            "description": "Description",
+            "emails_per_month": "Emails/Mois",
+            "price": "Prix",
+            "subscription": "Abonnements",
+            "button-subscription": "Ouvrir",
+            "status": "Statut"
+        },
+        "status": {
+            "active": "Actif",
+            "inactive": "Inactif"
+        },
+        "empty": "Aucun plan trouvée"
+    },
+
     "nav": {
         "control_panel":{
             "title": "Panneau de Controle",

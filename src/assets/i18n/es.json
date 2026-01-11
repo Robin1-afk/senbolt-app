@@ -37,6 +37,26 @@
     },
     "empty": "No se encontraron organizaciones"
   },
+  "plans": {
+    "pageTitle": "Administración del Sistema",
+    "pageBreadcrumb": "Planes",
+    "title": "Planes",
+    "columns": {
+      "id": "#",
+      "name": "Nombre",
+      "description": "Descripción",
+      "emails_per_month": "Correos/Mes",
+      "price": "Precio",
+      "subscription": "Suscripciones",
+      "button-subscription": "Abrir",
+      "status": "Estado"
+    },
+    "status": {
+      "active": "Activo",
+      "inactive": "Inactivo"
+    },
+    "empty": "No se encontraron planes"
+  },
 
   "nav": {
     "control_panel":{

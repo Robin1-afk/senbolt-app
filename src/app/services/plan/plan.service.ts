@@ -8,10 +8,10 @@ import { Organization } from '../../models/organization/organization.model';
 @Injectable({
     providedIn: 'root'
 })
-export class OrganizationService {
-    private readonly apiUrl = `${environment.apiUrl}/organization/getAllOrganizations`;
+export class PlanService {
+    private readonly apiUrl = `${environment.apiUrl}/plan/getAllPlans`;
     constructor(private http: HttpClient) {}
-    getAllOrganizations(): Observable<any> {
+    getAllPlans(): Observable<any> {
         return this.http.get<any>(this.apiUrl);
-    }
+    }   
 }

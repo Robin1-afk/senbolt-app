@@ -1,1 +1,158 @@
-<p>plans works!</p>
+<app-page-header
+  [title]="i18n.translate('plans.pageTitle')"
+  [title1]="[i18n.translate('plans.pageBreadcrumb')]"
+  [activeitem]="i18n.translate('plans.pageBreadcrumb')">
+</app-page-header>
+
+<div class="box">
+    <div class="box-header">
+    <h5 class="box-title">{{ i18n.translate('plans.title') }}</h5>
+    </div>
+
+    <div class="box-body relative overflow-x-auto">
+
+    <!-- OVERLAY DE LOADING -->
+    <div *ngIf="loading" class="table-overlay">
+        <div class="ti-spinner" role="status">
+        <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+    <!--  TABLA -->
+    <table
+        mat-table
+        [dataSource]="dataSource"
+        class="w-full"
+        [class.pointer-events-none]="loading"
+        [class.opacity-50]="loading"
+    >
+
+        <!-- ID -->
+        <!-- <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>{{ i18n.translate('organizations.columns.id') }}</th>
+        <td mat-cell *matCellDef="let organization">{{ organization.id }}</td>
+        </ng-container> -->
+
+        <!-- Name -->
+        <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>{{ i18n.translate('plans.columns.name') }}</th>
+        <td mat-cell *matCellDef="let plan">{{ plan.name }}</td>
+        </ng-container>
+
+        <!-- Email -->
+        <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef>{{ i18n.translate('plans.columns.description') }}</th>
+        <td mat-cell *matCellDef="let plan">{{ plan.description }}</td>
+        </ng-container>
+
+        <!-- Role -->
+        <ng-container matColumnDef="emails_per_month">
+        <th mat-header-cell *matHeaderCellDef>{{ i18n.translate('plans.columns.emails_per_month') }}</th>
+        <td mat-cell *matCellDef="let plan">{{ plan.emails_per_month }}</td>
+        </ng-container>
+
+        <!-- Role -->
+        <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef>{{ i18n.translate('plans.columns.price') }}</th>
+        <td mat-cell *matCellDef="let plan">&#36;{{ plan.price }}</td>
+        </ng-container>
+
+        <!-- Subscription -->
+        <ng-container matColumnDef="subscription">
+        <th mat-header-cell *matHeaderCellDef>{{ i18n.translate('plans.columns.button-subscription') }}</th>
+        <td mat-cell *matCellDef="let plan">  
+                <button type="button" class="m-1 ms-0 ti-btn  btn-wave ti-btn-secondary"  data-hs-overlay="#hs-full-screen-modal-below-sm">
+                  Full screen below sm
+                </button>
+                <div id="hs-full-screen-modal-below-sm" class="hs-overlay hidden ti-modal">
+                  <div class="hs-overlay-open:mt-0 ti-modal-box mt-10 max-w-full w-full !m-0 sm:hs-overlay-open:!mt-10 sm:!mt-0 sm:max-w-lg sm:!mx-auto">
+                    <div class="ti-modal-content sm:border sm:rounded-sm sm:shadow-sm dark:bg-bodybg sm:dark:border-white/10">
+                      <div class="ti-modal-header">
+                        <h6 class="ti-modal-title">
+                          Full screen below sm
+                        </h6>
+                        <button type="button" class="hs-dropdown-toggle ti-modal-close-btn"  data-hs-overlay="#hs-full-screen-modal-below-sm">
+                          <span class="sr-only">Close</span>
+                          <svg class="w-3.5 h-3.5" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.258206 1.00652C0.351976 0.912791 0.479126 0.860131 0.611706 0.860131C0.744296 0.860131 0.871447 0.912791 0.965207 1.00652L3.61171 3.65302L6.25822 1.00652C6.30432 0.958771 6.35952 0.920671 6.42052 0.894471C6.48152 0.868271 6.54712 0.854471 6.61352 0.853901C6.67992 0.853321 6.74572 0.865971 6.80722 0.891111C6.86862 0.916251 6.92442 0.953381 6.97142 1.00032C7.01832 1.04727 7.05552 1.1031 7.08062 1.16454C7.10572 1.22599 7.11842 1.29183 7.11782 1.35822C7.11722 1.42461 7.10342 1.49022 7.07722 1.55122C7.05102 1.61222 7.01292 1.6674 6.96522 1.71352L4.31871 4.36002L6.96522 7.00648C7.05632 7.10078 7.10672 7.22708 7.10552 7.35818C7.10442 7.48928 7.05182 7.61468 6.95912 7.70738C6.86642 7.80018 6.74102 7.85268 6.60992 7.85388C6.47882 7.85498 6.35252 7.80458 6.25822 7.71348L3.61171 5.06702L0.965207 7.71348C0.870907 7.80458 0.744606 7.85498 0.613506 7.85388C0.482406 7.85268 0.357007 7.80018 0.264297 7.70738C0.171597 7.61468 0.119017 7.48928 0.117877 7.35818C0.116737 7.22708 0.167126 7.10078 0.258206 7.00648L2.90471 4.36002L0.258206 1.71352C0.164476 1.61976 0.111816 1.4926 0.111816 1.36002C0.111816 1.22744 0.164476 1.10028 0.258206 1.00652Z" fill="currentColor"/>
+                          </svg>
+                        </button>
+                      </div>
+                      <div class="ti-modal-body">
+                        <p class="mt-1 text-gray-800 text-textmuted dark:text-textmuted/50">
+                          ...
+                        </p>
+                      </div>
+                      <div class="ti-modal-footer">
+                        <button type="button" class="hs-dropdown-toggle ti-btn  btn-wave ti-btn-secondary" data-hs-overlay="#hs-full-screen-modal-below-sm">
+                            Close
+                          </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        </td>
+        </ng-container>
+
+        <!-- Status -->
+        <ng-container matColumnDef="status">    
+        <th mat-header-cell *matHeaderCellDef>{{ i18n.translate('plans.columns.status') }}</th>
+        <td mat-cell *matCellDef="let plan">
+            <span
+            class="px-2 py-1 rounded text-xs table-border"
+            [ngClass]="plan.is_active ? 'bg-green-600 text-white' : 'bg-red-600 text-white'">
+            {{
+                plan.is_active
+                ? i18n.translate('plans.status.active')
+                : i18n.translate('plans.status.inactive')
+            }}
+            </span>
+        </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+    </table>
+
+    <mat-paginator
+        [pageSize]="5"
+        [pageSizeOptions]="[5, 10, 20]"
+        showFirstLastButtons>
+    </mat-paginator>
+
+    <div *ngIf="!dataSource.data.length && !loading" class="text-center py-6 text-gray-400">
+        No organization found
+    </div>
+
+    </div>
+
+    <div id="hs-full-screen-modal-below-sm" class="hs-overlay hidden ti-modal">
+        <div class="hs-overlay-open:mt-0 ti-modal-box mt-10 max-w-full w-full !m-0 sm:hs-overlay-open:!mt-10 sm:!mt-0 sm:max-w-lg sm:!mx-auto">
+        <div class="ti-modal-content sm:border sm:rounded-sm sm:shadow-sm dark:bg-bodybg sm:dark:border-white/10">
+            <div class="ti-modal-header">
+            <h6 class="ti-modal-title">
+                Full screen below sm
+            </h6>
+            <button type="button" class="hs-dropdown-toggle ti-modal-close-btn"  data-hs-overlay="#hs-full-screen-modal-below-sm">
+                <span class="sr-only">Close</span>
+                <svg class="w-3.5 h-3.5" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.258206 1.00652C0.351976 0.912791 0.479126 0.860131 0.611706 0.860131C0.744296 0.860131 0.871447 0.912791 0.965207 1.00652L3.61171 3.65302L6.25822 1.00652C6.30432 0.958771 6.35952 0.920671 6.42052 0.894471C6.48152 0.868271 6.54712 0.854471 6.61352 0.853901C6.67992 0.853321 6.74572 0.865971 6.80722 0.891111C6.86862 0.916251 6.92442 0.953381 6.97142 1.00032C7.01832 1.04727 7.05552 1.1031 7.08062 1.16454C7.10572 1.22599 7.11842 1.29183 7.11782 1.35822C7.11722 1.42461 7.10342 1.49022 7.07722 1.55122C7.05102 1.61222 7.01292 1.6674 6.96522 1.71352L4.31871 4.36002L6.96522 7.00648C7.05632 7.10078 7.10672 7.22708 7.10552 7.35818C7.10442 7.48928 7.05182 7.61468 6.95912 7.70738C6.86642 7.80018 6.74102 7.85268 6.60992 7.85388C6.47882 7.85498 6.35252 7.80458 6.25822 7.71348L3.61171 5.06702L0.965207 7.71348C0.870907 7.80458 0.744606 7.85498 0.613506 7.85388C0.482406 7.85268 0.357007 7.80018 0.264297 7.70738C0.171597 7.61468 0.119017 7.48928 0.117877 7.35818C0.116737 7.22708 0.167126 7.10078 0.258206 7.00648L2.90471 4.36002L0.258206 1.71352C0.164476 1.61976 0.111816 1.4926 0.111816 1.36002C0.111816 1.22744 0.164476 1.10028 0.258206 1.00652Z" fill="currentColor"/>
+                </svg>
+            </button>
+            </div>
+            <div class="ti-modal-body">
+            <p class="mt-1 text-gray-800 text-textmuted dark:text-textmuted/50">
+                ...
+            </p>
+            </div>
+            <div class="ti-modal-footer">
+            <button type="button" class="hs-dropdown-toggle ti-btn  btn-wave ti-btn-secondary" data-hs-overlay="#hs-full-screen-modal-below-sm">
+                Close
+                </button>
+            </div>
+        </div>
+        </div>
+    </div>  
+
+</div>
