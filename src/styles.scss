@@ -456,3 +456,21 @@ ngx-table {
   font-weight: 500;
   line-height: 1;
 }
+
+.app-sidebar .main-sidebar-header img {
+  height: 42px;
+  width: auto;
+}
+
+/* Logo sidebar */
+.app-sidebar .main-sidebar-header .header-logo img {
+  height: 40px; 
+  width: auto;
+  max-height: 40px;
+}
+
+.desktop-white {
+  height: 40px; 
+  width: auto;
+  max-height: 40px;
+}

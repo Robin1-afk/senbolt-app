@@ -13,7 +13,7 @@ export const admin: Routes = [
         loadComponent: () =>
         import('./organization/organization.component').then((m) => m.OrganizationComponent),
         canActivate: [permissionGuard],
-        data: { permission: 'SALE' }
+        data: { permission: 'ORGANIZATION' }
     },
     {
         path: 'users',
@@ -22,7 +22,16 @@ export const admin: Routes = [
             (m) => m.UsersComponent
         ),
         canActivate: [permissionGuard],
-        data: { permission: 'SALE' }
+        data: { permission: 'USER' }
+    },
+    {
+        path: 'plans',
+        loadComponent: () =>
+        import('./plans/plans.component').then(
+            (m) => m.PlansComponent
+        ),
+        canActivate: [permissionGuard],
+        data: { permission: 'PLANS' }
     }
     // ,
     // {

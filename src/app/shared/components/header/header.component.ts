@@ -48,7 +48,12 @@ export class HeaderComponent {
   }
 
   logout() {
-    this.authService.logout().subscribe();
+this.authService.logout().subscribe({
+    complete: () => {
+      localStorage.clear() ;
+      this.router.navigate(['auth/login']);
+    }
+  });
   }
 
   toggleDropdown() {
