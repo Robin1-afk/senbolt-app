@@ -32,7 +32,6 @@ export class PlansComponent {
     'description',
     'emails_per_month',
     'price',
-    'subscription',
     'status',
   ];
 

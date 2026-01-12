@@ -32,6 +32,15 @@ export const admin: Routes = [
         ),
         canActivate: [permissionGuard],
         data: { permission: 'PLANS' }
+    },
+    {
+        path: 'subscription',
+        loadComponent: () =>
+        import('./subscription/subscription.component').then(
+            (m) => m.SubscriptionComponent
+        ),
+        canActivate: [permissionGuard],
+        data: { permission: 'SUBSCRIPTION' }
     }
     // ,
     // {

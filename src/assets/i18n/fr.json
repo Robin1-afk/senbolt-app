@@ -58,13 +58,33 @@
         "empty": "Aucun plan trouvée"
     },
 
+    "subscription": {
+        "pageTitle": "Administration du Système",
+        "pageBreadcrumb": "Abonnements",
+        "title": "Abonnements",
+        "columns": {
+            "id": "#",
+            "organization": "Organisation",
+            "plan": "Plan",
+            "start_date": "Date de Démarrage",
+            "end_date": "Date de Fin",
+            "status": "Statut"
+        },
+        "status": {
+            "active": "Actif",
+            "inactive": "Inactif"
+        },
+        "empty": "Aucun abonnement trouvé"
+    },
+
     "nav": {
         "control_panel":{
             "title": "Panneau de Controle",
             "users": "Utilisateurs",
             "organizations": "Organisations",
             "plans": "ætlanirs",
-            "headTitle": "Panneau de Controle"
+            "headTitle": "Panneau de Controle",
+            "subscription": "Abonnements"
         }
     }
     

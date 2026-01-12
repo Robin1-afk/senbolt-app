@@ -156,6 +156,12 @@ private filterMenu(): void {
           title: 'nav.control_panel.plans',
           type: 'link',
           permission: 'PLANS',
+        },
+        {
+          path: '/systemadmin/subscription',
+          title: 'nav.control_panel.subscription',
+          type: 'link',
+          permission: 'SUBSCRIPTION',
         }
       ],
     },

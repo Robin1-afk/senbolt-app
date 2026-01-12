@@ -47,7 +47,7 @@
       "description": "Description",
       "emails_per_month": "Emails/Month",
       "price": "Price",
-      "subscription": "subscriptions",
+      "subscription": "Subscriptions",
       "button-subscription": "Open",
       "status": "Status"
     },
@@ -58,13 +58,33 @@
     "empty": "No plans found"
   },
 
+  "subscription": {
+    "pageTitle": "System Administration",
+    "pageBreadcrumb": "Subscriptions",
+    "title": "Subscriptions",
+    "columns": {
+      "id": "#",
+      "organization": "Organization",
+      "plan": "Plan",
+      "start_date": "Start Date",
+      "end_date": "End Date",
+      "status": "Status"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "empty": "No subscriptions found"
+  },
+
   "nav": {
     "control_panel":{
       "title": "Control Panel",
       "users": "Users",
       "organizations": "Organizations",
       "plans": "Plans",
-      "headTitle": "Admin"
+      "headTitle": "Admin",
+      "subscription": "Subscriptions"
     }
   }
 }

@@ -57,6 +57,25 @@
     },
     "empty": "No se encontraron planes"
   },
+  
+    "subscription": {
+      "pageTitle": "Administración del Sistema",
+      "pageBreadcrumb": "Suscripciones",
+      "title": "Suscripciones",
+      "columns": {
+        "id": "#",
+        "organization": "Organización",
+        "plan": "Plan",
+        "start_date": "Fecha de Inicio",
+        "end_date": "Fecha de Fin",
+        "status": "Estado"
+      },
+      "status": {
+        "active": "Activo",
+        "inactive": "Inactivo"
+      },
+      "empty": "No se encontraron suscripciones"
+    },
 
   "nav": {
     "control_panel":{
@@ -64,7 +83,8 @@
       "users": "Usuarios",
       "organizations": "Organizaciones",
       "plans": "Planes",
-      "headTitle": "Administración"
+      "headTitle": "Administración",
+      "subscription": "Suscripciones"
     }
   }
 
