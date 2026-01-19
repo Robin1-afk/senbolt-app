@@ -42,6 +42,29 @@ export class UsersComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadUsers();
+
+    this.dataSource.filterPredicate = (data: User, filter: string) => {
+      const dataStr = `
+        ${data.id}
+        ${data.name}
+        ${data.email}
+        ${data.rol_id}
+        ${data.organization_id}
+        ${data.is_active ? 'active' : 'inactive'}
+      `.toLowerCase();
+
+      return dataStr.includes(filter);
+    };
+  }
+
+  applyFilter(event: Event): void {
+    const filterValue = (event.target as HTMLInputElement).value;
+
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
   }
 
 loadUsers(): void {

@@ -24,7 +24,7 @@ import { I18nService } from '../../../core/services/i18n.service';
 })
 export class SubscriptionComponent {
   displayedColumns: string[] = [
-    // 'id',
+    'id',
     'organization_id',
     'plan',
     'start_date',
@@ -40,8 +40,30 @@ export class SubscriptionComponent {
 
   ngOnInit(): void {
     this.loadSubscriptions();
+
+    this.dataSource.filterPredicate = (data: Subscription, filter: string) => {
+      const dataStr = `
+        ${data.id}
+        ${data.organization_id}
+        ${data.plan_id}
+        ${data.start_date}
+        ${data.end_date}
+        ${data.is_active ? 'active' : 'inactive'}
+      `.toLowerCase();
+
+      return dataStr.includes(filter);
+    };
   }
 
+  applyFilter(event: Event): void {
+    const filterValue = (event.target as HTMLInputElement).value;
+
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
   loadSubscriptions(): void {
     this.loading = true;
 
@@ -49,11 +71,11 @@ export class SubscriptionComponent {
       next: (res) => {
         console.log(res); 
         this.dataSource.data = res.data.map((u: Subscription) => ({
-          // id: u.id,
+          id: u.id,
           organization_id: u.organization_id,
-          // plan_id: u.plan_id,
-          // start_date: u.start_date,
-          // end_date: u.end_date,
+          plan_id: u.plan_id,
+          start_date: u.start_date,
+          end_date: u.end_date,
           is_active: !!u.is_active
         }));
         this.loading = false;

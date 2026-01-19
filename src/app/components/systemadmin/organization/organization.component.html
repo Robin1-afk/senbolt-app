@@ -17,6 +17,14 @@
       <span class="sr-only">Loading...</span>
     </div>
   </div>
+  <div class="mb-3">
+    <input
+          type="text"
+          class="search-organizations form-input w-full"
+          placeholder="Search organizations..."
+          (keyup)="applyFilter($event)"
+      />
+  </div>
 
   <!--  TABLA -->
   <table

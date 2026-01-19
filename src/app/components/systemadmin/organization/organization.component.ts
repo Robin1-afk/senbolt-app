@@ -43,8 +43,31 @@ export class OrganizationComponent {
 
   ngOnInit(): void {
     this.loadUsers();
+    
+    this.dataSource.filterPredicate = (data: Organization, filter: string) => {
+      const dataStr = `
+          ${data.id}
+          ${data.name}
+          ${data.email}
+          ${data.type}
+          ${data.max_users}
+          ${data.owner_user_id}
+          ${data.is_active ? 'active' : 'inactive'}
+        `.toLowerCase();
+
+        return dataStr.includes(filter);
+    };
   }
 
+  applyFilter(event: Event): void {
+    const filterValue = (event.target as HTMLInputElement).value;
+
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
 
   loadUsers(): void {
     this.loading = true;

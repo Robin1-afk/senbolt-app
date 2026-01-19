@@ -27,7 +27,7 @@ import { I18nService } from '../../../core/services/i18n.service';
 export class PlansComponent {
 
   displayedColumns: string[] = [
-    // 'id',
+    'id',
     'name',
     'description',
     'emails_per_month',
@@ -42,16 +42,34 @@ export class PlansComponent {
 
   ngOnInit(): void {
     this.loadUsers();
+
+    this.dataSource.filterPredicate = (data: Plan, filter: string) => {
+      const dataStr = `
+        ${data.id}
+        ${data.name}
+        ${data.description}
+        ${data.emails_per_month}
+        ${data.price}
+        ${data.is_active ? 'active' : 'inactive'}
+      `.toLowerCase();
+
+      return dataStr.includes(filter);
+    };
   }
 
+  applyFilter(event: Event): void {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 
   loadUsers(): void {
     this.loading = true;
 
     this.PlanService.getAllPlans().subscribe({
       next: (res) => {
+        console.log(res);
         this.dataSource.data = res.data.map((u: Plan) => ({
-          // id: u.id,
+          id: u.id,
           name: u.name,
           description: u.description,
           emails_per_month: u.emails_per_month,

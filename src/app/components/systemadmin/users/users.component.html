@@ -18,7 +18,14 @@
       <span class="sr-only">Loading...</span>
     </div>
   </div>
-
+  <div class="mb-3">
+    <input
+      type="text"
+      class="search-users form-input w-full"
+      placeholder="Search users..."
+      (keyup)="applyFilter($event)"
+    />
+  </div>
   <!--  TABLA -->
   <table
     mat-table
