@@ -1,12 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SpkReusableTablesComponent } from '../../../../@spk/spk-reusable-tables/spk-reusable-tables.component';
+import { SharedModule } from '../../../shared/shared.module';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
-
+import { SubscriptionService } from '../../../services/subscription/subscription.service';
+import { Subscription } from '../../../models/subscription/subscription.model';
 import { I18nService } from '../../../core/services/i18n.service';
-import { SharedModule } from '../../../shared/shared.module';
+
 
 @Component({
   selector: 'app-subscription',
@@ -20,5 +23,49 @@ import { SharedModule } from '../../../shared/shared.module';
   styleUrl: './subscription.component.scss'
 })
 export class SubscriptionComponent {
-  
+  displayedColumns: string[] = [
+    // 'id',
+    'organization_id',
+    'plan',
+    'start_date',
+    'end_date',
+    'is_active',
+  ];
+  dataSource = new MatTableDataSource<Subscription>([]);
+  loading = false;
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+  constructor(private SubscriptionService: SubscriptionService, public i18n: I18nService) {}
+
+  ngOnInit(): void {
+    this.loadSubscriptions();
+  }
+
+  loadSubscriptions(): void {
+    this.loading = true;
+
+    this.SubscriptionService.getAllSubscriptions().subscribe({
+      next: (res) => {
+        console.log(res); 
+        this.dataSource.data = res.data.map((u: Subscription) => ({
+          // id: u.id,
+          organization_id: u.organization_id,
+          // plan_id: u.plan_id,
+          // start_date: u.start_date,
+          // end_date: u.end_date,
+          is_active: !!u.is_active
+        }));
+        this.loading = false;
+      },
+      error: () => {
+        this.dataSource.data = [];
+        this.loading = false;
+      }
+    });
+  }
+
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator;
+  }
 }
