@@ -1,12 +1,17 @@
 // src/app/core/services/i18n.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class I18nService {
 
   private lang = 'es';
   private translations: any = {};
+
+  // 🔔 EMISOR DE CAMBIOS
+  private languageChangedSubject = new BehaviorSubject<string>(this.lang);
+  languageChanged$ = this.languageChangedSubject.asObservable();
 
   constructor(private http: HttpClient) {
     const savedLang = localStorage.getItem('lang');
@@ -23,6 +28,8 @@ export class I18nService {
     this.translations = await this.http
       .get(`./assets/i18n/${lang}.json`)
       .toPromise();
+      // NOTIFICAR CAMBIO
+      this.languageChangedSubject.next(lang);
   }
 
   t(path: string): string {

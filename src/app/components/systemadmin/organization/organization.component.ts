@@ -17,7 +17,7 @@ import { I18nService } from '../../../core/services/i18n.service';
   imports: [
       CommonModule,
       SharedModule,
-      MatTableModule,      // ✅ ESTO ERA LO QUE FALTABA
+      MatTableModule, 
       MatPaginatorModule
     ],
   templateUrl: './organization.component.html',

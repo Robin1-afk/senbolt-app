@@ -77,6 +77,20 @@
       "empty": "No se encontraron suscripciones"
     },
 
+  "roles": {
+    "pageTitle": "Administración del Sistema",
+    "pageBreadcrumb": "Roles",
+    "title": "Roles",
+    "title_table": "Asignación de Permisos a Rol",
+    "duallist": {
+        "add": "Agregar",
+        "remove": "Quitar",
+        "all": "Todos",
+        "none": "Ninguno"
+    },
+    "empty": "No se encontraron roles"
+  },
+
   "nav": {
     "control_panel":{
       "title": "Panel de Control",
@@ -85,6 +99,10 @@
       "plans": "Planes",
       "headTitle": "Administración",
       "subscription": "Suscripciones"
+    },
+    "roles_permissions":{
+      "title": "Roles y Permisos",
+      "roles": "Roles"
     }
   }
 

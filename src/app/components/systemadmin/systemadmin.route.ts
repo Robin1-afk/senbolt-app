@@ -41,17 +41,16 @@ export const admin: Routes = [
         ),
         canActivate: [permissionGuard],
         data: { permission: 'SUBSCRIPTION' }
+    },
+    {
+        path: 'roles',
+        loadComponent: () =>
+        import('./roles/roles.component').then(
+            (m) => m.RolesComponent
+        ),
+        canActivate: [permissionGuard],
+        data: { permission: 'ROLES' }
     }
-    // ,
-    // {
-        // path: 'analytics',
-        // loadComponent: () =>
-        // import('./analytics/analytics.component').then(
-        //     (m) => m.AnalyticsComponent
-        // ),
-        // canActivate: [permissionGuard],
-        // data: { permission: 'ANAL' }
-    // }
   ]
 }
 ];

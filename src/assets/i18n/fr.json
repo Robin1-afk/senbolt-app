@@ -77,6 +77,20 @@
         "empty": "Aucun abonnement trouvé"
     },
 
+    "roles": {
+        "pageTitle": "Administration du Système",
+        "pageBreadcrumb": "Rôles",
+        "title": "Rôles",
+        "title_table": "Assignation des Permissions au Rôles",
+        "duallist": {
+            "add": "Ajouter",
+            "remove": "Supprimer",
+            "all": "Tous",
+            "none": "Aucun"
+        },
+        "empty": "Aucun rôle trouvé"
+    },
+
     "nav": {
         "control_panel":{
             "title": "Panneau de Controle",
@@ -85,6 +99,10 @@
             "plans": "ætlanirs",
             "headTitle": "Panneau de Controle",
             "subscription": "Abonnements"
+        },
+        "roles_permissions":{
+            "title": "Rôles et Permissions",
+            "roles": "Rôles"
         }
     }
     

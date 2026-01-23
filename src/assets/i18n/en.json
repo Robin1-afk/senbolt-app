@@ -77,6 +77,20 @@
     "empty": "No subscriptions found"
   },
 
+  "roles": {
+    "pageTitle": "System Administration",
+    "pageBreadcrumb": "Roles",
+    "title": "Roles",
+    "title_table": "Permissions Assignment to Role",
+    "duallist": {
+        "add": "Add",
+        "remove": "Remove",
+        "all": "All",
+        "none": "None"
+    },
+    "empty": "No roles found"
+  },
+
   "nav": {
     "control_panel":{
       "title": "Control Panel",
@@ -85,6 +99,10 @@
       "plans": "Plans",
       "headTitle": "Admin",
       "subscription": "Subscriptions"
+    },
+    "roles_permissions":{
+      "title": "Roles and Permissions",
+      "roles": "Roles"
     }
   }
 }
