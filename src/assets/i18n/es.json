@@ -88,6 +88,21 @@
         "all": "Todos",
         "none": "Ninguno"
     },
+    "columns": {
+      "id": "#",
+      "name": "Nombre",
+      "organization_name": "Nombre de la Organización",
+      "is_system": "Rol del Sistema",
+      "status": "Estado"
+    },
+    "status": {
+      "active": "Activo",
+      "inactive": "Inactivo"
+    },
+    "is_system": {
+      "true": "Sí",
+      "false": "No"
+    },
     "empty": "No se encontraron roles"
   },
 

@@ -88,6 +88,21 @@
             "all": "Tous",
             "none": "Aucun"
         },
+        "columns": {
+            "id": "#",
+            "name": "Nom",
+            "organization_name": "Nom de l'Organisation",
+            "is_system": "Est Système",
+            "status": "Statut"
+        },
+        "status": {
+            "active": "Actif",
+            "inactive": "Inactif"
+        },
+        "is_system": {
+            "true": "Oui",
+            "false": "Non"
+        },
         "empty": "Aucun rôle trouvé"
     },
 
@@ -96,7 +111,7 @@
             "title": "Panneau de Controle",
             "users": "Utilisateurs",
             "organizations": "Organisations",
-            "plans": "ætlanirs",
+            "plans": "Plans",
             "headTitle": "Panneau de Controle",
             "subscription": "Abonnements"
         },

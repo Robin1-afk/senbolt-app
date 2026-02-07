@@ -5,7 +5,8 @@ import { SharedModule } from '../../../shared/shared.module';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';import { PlanService } from '../../../services/plan/plan.service';
+import { MatPaginator } from '@angular/material/paginator';
+import { PlanService } from '../../../services/plan/plan.service';
 import { Plan } from '../../../models/plan/plan.model';
 import { I18nService } from '../../../core/services/i18n.service';
 
