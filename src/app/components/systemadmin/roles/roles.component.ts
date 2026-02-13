@@ -28,7 +28,7 @@ export class RolesComponent{
     'organization_name',
     'is_system',
     'status',
-    'actions'
+    'actions',
   ];
 
   dataSource = new MatTableDataSource<Role>([]);
@@ -66,7 +66,7 @@ export class RolesComponent{
           name: u.name,
           organization_name: u.organization_name,
           is_system: u.is_system,
-          is_active: !!u.is_active
+          is_active: !!u.is_active,
         }));
         this.loading = false;
       },

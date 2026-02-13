@@ -93,7 +93,8 @@
       "name": "Nombre",
       "organization_name": "Nombre de la Organización",
       "is_system": "Rol del Sistema",
-      "status": "Estado"
+      "status": "Estado",
+      "actions": "Acciones"
     },
     "status": {
       "active": "Activo",
@@ -102,6 +103,10 @@
     "is_system": {
       "true": "Sí",
       "false": "No"
+    },
+    "actions": {
+      "edit": "Editar",
+      "delete": "Eliminar"
     },
     "empty": "No se encontraron roles"
   },
