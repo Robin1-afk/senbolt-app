@@ -23,9 +23,12 @@
                     placeholder="Search roles..."
                     (keyup)="applyFilter($event)"
                 />
-        <button class="nuew-role ti-btn ti-btn-sm ti-btn-soft-success !rounded-full">
-            <i class="add-role ri-add-line"></i>
-        </button>
+                <a
+                class="nuew-role ti-btn ti-btn-sm ti-btn-soft-success !rounded-full"
+                [routerLink]="['/systemadmin/roles-permision']"
+                >
+                <i class="add-role ri-add-line"></i>
+                </a>
         </div>
         <!--  TABLA -->
         <table

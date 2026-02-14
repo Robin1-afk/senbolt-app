@@ -8,12 +8,14 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { Role } from '../../../models/role/role.model';
 import { RoleService } from '../../../services/rol/rol.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-roles',
   standalone: true,
   imports: [      
         CommonModule,
+        RouterLink,
         SharedModule,
         MatTableModule,      // ✅ ESTO ERA LO QUE FALTABA
         MatPaginatorModule],

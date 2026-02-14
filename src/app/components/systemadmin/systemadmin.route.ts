@@ -50,7 +50,15 @@ export const admin: Routes = [
         ),
         canActivate: [permissionGuard],
         data: { permission: 'ROLES' }
-    }
+    },
+    {
+        path: 'roles-permision',
+        loadComponent: () =>
+            import('./roles-permision/roles-permision.component')
+            .then((m) => m.RolesPermisionComponent),
+        canActivate: [permissionGuard],
+        data: { permission: 'ROLES' } // o el permiso que corresponda
+    },
   ]
 }
 ];

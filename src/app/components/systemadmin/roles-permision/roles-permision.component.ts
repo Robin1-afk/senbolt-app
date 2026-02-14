@@ -9,8 +9,8 @@ import { Subject, takeUntil } from 'rxjs';
   selector: 'app-roles',
   standalone: true,
   imports: [CommonModule, AngularDualListBoxModule, SharedModule],
-  templateUrl: './roles.component.html',
-  styleUrl: './roles.component.scss'
+  templateUrl: './roles-permision.component.html',
+  styleUrl: './roles-permision.component.scss'
 })
 export class RolesPermisionComponent implements OnInit, OnDestroy {
 
