@@ -106,3 +106,30 @@
 
     </div>
 </div>
+
+<div class="box">
+    <!-- ✅ SECCIÓN PERMISOS (DUAL LIST) -->
+    <div class="grid grid-cols-12 gap-6 mt-6">
+    <div class="col-span-12">
+        <div class="box">
+        <div class="box-header">
+            <h5 class="box-title">{{ i18n.translate('roles.title_table') }}</h5>
+        </div>
+
+        <div class="box-body">
+            <dual-list
+            [source]="source"
+            [(destination)]="confirmed"
+            [key]="key"
+            [display]="display"
+            [sort]="keepSorted"
+            [filter]="filter"
+            [disabled]="disabled"
+            height="300px"
+            [format]="format">
+            </dual-list>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>

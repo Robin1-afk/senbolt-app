@@ -1,29 +1,37 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { AngularDualListBoxModule, DualListComponent } from 'angular-dual-listbox';
+import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { I18nService } from '../../../core/services/i18n.service';
-import { SharedModule } from '../../../shared/shared.module';
+import { RouterLink } from '@angular/router';
+
+import { AngularDualListBoxModule, DualListComponent } from 'angular-dual-listbox';
 import { Subject, takeUntil } from 'rxjs';
+
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+
+import { I18nService } from '../../../core/services/i18n.service';
+import { SharedModule } from '../../../shared/shared.module';
 import { Role } from '../../../models/role/role.model';
 import { RoleService } from '../../../services/rol/rol.service';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-roles',
   standalone: true,
-  imports: [      
-        CommonModule,
-        RouterLink,
-        SharedModule,
-        MatTableModule,      // ✅ ESTO ERA LO QUE FALTABA
-        MatPaginatorModule],
+  imports: [
+    CommonModule,
+    RouterLink,
+    SharedModule,
+    AngularDualListBoxModule, // ✅ IMPORTANTE
+    MatTableModule,
+    MatPaginatorModule
+  ],
   templateUrl: './roles.component.html',
   styleUrl: './roles.component.scss'
 })
-export class RolesComponent{
+export class RolesComponent implements OnInit, OnDestroy {
 
+  private destroy$ = new Subject<void>();
+
+  // ======== TABLA ========
   displayedColumns: string[] = [
     'id',
     'name',
@@ -34,11 +42,28 @@ export class RolesComponent{
   ];
 
   dataSource = new MatTableDataSource<Role>([]);
-
   loading = false;
-  constructor(private RoleService: RoleService, public i18n: I18nService) {}
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+  // ======== DUAL LIST (roles-permision) ========
+  keepSorted = true;
+  filter = false;
+  disabled = false;
+
+  key = 'id';
+  format: any = DualListComponent.DEFAULT_FORMAT;
+
+  source: any[] = [];
+  confirmed: any[] = [];
+
+  display = (item: any) => `${item.name}`;
+
+  constructor(private roleService: RoleService, public i18n: I18nService) {}
+
   ngOnInit(): void {
     this.loadRoles();
+
     this.dataSource.filterPredicate = (data: Role, filter: string) => {
       const dataStr = `
         ${data.id}
@@ -47,22 +72,40 @@ export class RolesComponent{
         ${data.is_system ? 'true' : 'false'}
         ${data.is_active ? 'active' : 'inactive'}
       `.toLowerCase();
-
       return dataStr.includes(filter);
     };
+
+    // ✅ Dual list init
+    this.loadVisualData();
+    this.refreshDualListFormat();
+
+    // ✅ Cambios de idioma para dual list
+    this.i18n.languageChanged$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(() => this.refreshDualListFormat());
   }
 
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+
+  // ======== SEARCH ========
   applyFilter(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+  // ======== CARGA ROLES ========
   loadRoles(): void {
     this.loading = true;
 
-    this.RoleService.getAllRoles().subscribe({
+    this.roleService.getAllRoles().subscribe({
       next: (res) => {
-        console.log(res);
         this.dataSource.data = res.data.map((u: Role) => ({
           id: u.id,
           name: u.name,
@@ -79,18 +122,29 @@ export class RolesComponent{
     });
   }
 
-  toggleStatus(role: Role): void {
-    // Lógica para activar/desactivar el rol
+  // ======== DUAL LIST HELPERS ========
+  private refreshDualListFormat(): void {
+    this.format = {
+      add: this.i18n.translate('roles.duallist.add'),
+      remove: this.i18n.translate('roles.duallist.remove'),
+      all: this.i18n.translate('roles.duallist.all'),
+      none: this.i18n.translate('roles.duallist.none'),
+      direction: 'left-to-right',
+      draggable: true,
+      locale: undefined
+    };
   }
 
-  editRole(role: Role): void {
-    // Lógica para editar el rol
+  private loadVisualData() {
+    this.source = [
+      { id: 1, name: 'Usuarios' },
+      { id: 2, name: 'Roles' },
+      { id: 3, name: 'Permisos' },
+      { id: 4, name: 'Organizaciones' },
+      { id: 5, name: 'Planes' },
+      { id: 6, name: 'Suscripciones' }
+    ];
+
+    this.confirmed = [this.source[1], this.source[2]];
   }
-
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-  }
-
 }
