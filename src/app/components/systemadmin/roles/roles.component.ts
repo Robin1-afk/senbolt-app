@@ -20,7 +20,7 @@ import { RoleService } from '../../../services/rol/rol.service';
     CommonModule,
     RouterLink,
     SharedModule,
-    AngularDualListBoxModule, // ✅ IMPORTANTE
+    AngularDualListBoxModule, // IMPORTANTE
     MatTableModule,
     MatPaginatorModule
   ],
@@ -30,6 +30,11 @@ import { RoleService } from '../../../services/rol/rol.service';
 export class RolesComponent implements OnInit, OnDestroy {
 
   private destroy$ = new Subject<void>();
+
+  // ======== PERMISSIONS PANEL STATE ========
+  selectedRoleId: number | null = null;
+  selectedRoleName: string | null = null;
+  permissionsLoading = false;
 
   // ======== TABLA ========
   displayedColumns: string[] = [
@@ -75,11 +80,10 @@ export class RolesComponent implements OnInit, OnDestroy {
       return dataStr.includes(filter);
     };
 
-    // ✅ Dual list init
-    this.loadVisualData();
+    // Dual list init
     this.refreshDualListFormat();
 
-    // ✅ Cambios de idioma para dual list
+    // Cambios de idioma para dual list
     this.i18n.languageChanged$
       .pipe(takeUntil(this.destroy$))
       .subscribe(() => this.refreshDualListFormat());
@@ -134,17 +138,49 @@ export class RolesComponent implements OnInit, OnDestroy {
       locale: undefined
     };
   }
+  // ======== PERMISSIONS HELPERS ========
+  private mapPermissionsToDualList(data: any[]): void {
+    // Source: SIEMPRE todos los permisos (1 sola vez por visual)
+    this.source = data.map((p: any, idx: number) => ({
+      id: idx + 1,
+      name: p.objeto_view,  // muestra description o nombre del VIEW
+      value: p.objeto_view                  // por si luego lo usas para guardar
+    }));
 
-  private loadVisualData() {
-    this.source = [
-      { id: 1, name: 'Usuarios' },
-      { id: 2, name: 'Roles' },
-      { id: 3, name: 'Permisos' },
-      { id: 4, name: 'Organizaciones' },
-      { id: 5, name: 'Planes' },
-      { id: 6, name: 'Suscripciones' }
-    ];
+    // Confirmed: solo los has_permission = 1
+    this.confirmed = this.source.filter((_, i) => !!data[i]?.has_permission);
+  }
 
-    this.confirmed = [this.source[1], this.source[2]];
+  onEditRole(role: Role): void {
+    this.selectedRoleId = role.id;
+    this.selectedRoleName = role.name;
+    
+
+    this.permissionsLoading = true;
+
+    // si SOLO quieres visualizar, ponlo en true (bloquea mover permisos)
+    // si quieres que se pueda mover, ponlo en false
+    this.disabled = false;
+
+    this.roleService.getRolesObjectId(role.id).subscribe({
+      next: (res) => {
+        const data = res?.data ?? [];
+        this.mapPermissionsToDualList(data);
+        this.permissionsLoading = false;
+      },
+      error: () => {
+        this.source = [];
+        this.confirmed = [];
+        this.permissionsLoading = false;
+      }
+    });
+  }
+
+  closePermissionsPanel(): void {
+    this.selectedRoleId = null;
+    this.selectedRoleName = null;
+    this.source = [];
+    this.confirmed = [];
+    this.permissionsLoading = false;
   }
 }

@@ -81,8 +81,11 @@
             <ng-container matColumnDef="actions">    
                 <th mat-header-cell *matHeaderCellDef>{{ i18n.translate('roles.columns.actions') }}</th>
                 <td mat-cell *matCellDef="let role">
-                    <button class="ti-btn ti-btn-sm ti-btn-soft-success !rounded-full">
-                        <i class="ri-edit-line"></i>
+                    <button
+                    class="ti-btn ti-btn-sm ti-btn-soft-success !rounded-full"
+                    (click)="onEditRole(role)"
+                    >
+                    <i class="ri-edit-line"></i>
                     </button>
                     <button class="ti-btn ti-btn-sm ti-btn-soft-danger !rounded-full">
                         <i class="ri-delete-bin-line"></i>
@@ -107,17 +110,36 @@
     </div>
 </div>
 
-<div class="box">
-    <!-- ✅ SECCIÓN PERMISOS (DUAL LIST) -->
-    <div class="grid grid-cols-12 gap-6 mt-6">
+<div class="box" *ngIf="selectedRoleId !== null">
+  <div class="grid grid-cols-12 gap-6 mt-6">
     <div class="col-span-12">
-        <div class="box">
-        <div class="box-header">
-            <h5 class="box-title">{{ i18n.translate('roles.title_table') }}</h5>
+      <div class="box">
+        <div class="box-header flex items-center justify-between">
+          <h5 class="box-title">
+            {{ i18n.translate('roles.title_table') }}
+            <span class="text-xs text-gray-400 ml-2">
+              ({{ selectedRoleName }})
+            </span>
+          </h5>
+
+          <button
+            class="ti-btn ti-btn-sm !rounded-full"
+            (click)="closePermissionsPanel()"
+            title="Cerrar"
+          >
+            <i class="ri-close-line" style="font-size: 2em;"></i>
+          </button>
         </div>
 
-        <div class="box-body">
-            <dual-list
+        <div class="box-body relative">
+          <!-- OVERLAY LOADING SOLO PARA PERMISOS -->
+          <div *ngIf="permissionsLoading" class="table-overlay">
+            <div class="ti-spinner" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+
+          <dual-list
             [source]="source"
             [(destination)]="confirmed"
             [key]="key"
@@ -127,9 +149,9 @@
             [disabled]="disabled"
             height="300px"
             [format]="format">
-            </dual-list>
+          </dual-list>
         </div>
-        </div>
+      </div>
     </div>
-    </div>
+  </div>
 </div>
