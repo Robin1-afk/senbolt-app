@@ -23,12 +23,13 @@
                     placeholder="Search roles..."
                     (keyup)="applyFilter($event)"
                 />
-                <a
+              <button
+                type="button"
                 class="nuew-role ti-btn ti-btn-sm ti-btn-soft-success !rounded-full"
-                [routerLink]="['/systemadmin/roles-permision']"
-                >
+                (click)="startCreateRole()"
+              >
                 <i class="add-role ri-add-line"></i>
-                </a>
+              </button>
         </div>
         <!--  TABLA -->
         <table
@@ -110,7 +111,7 @@
     </div>
 </div>
 
-<div class="box" *ngIf="selectedRoleId !== null">
+<div class="box" *ngIf="selectedRoleId !== null || isCreatingRole">
   <div class="grid grid-cols-12 gap-6 mt-6">
     <div class="col-span-12">
       <div class="box">
@@ -118,20 +119,116 @@
           <h5 class="box-title">
             {{ i18n.translate('roles.title_table') }}
             <span class="text-xs text-gray-400 ml-2">
-              ({{ selectedRoleName }})
+              <ng-container *ngIf="isCreatingRole && !selectedRoleId">
+                (Nuevo rol)
+              </ng-container>
+              <ng-container *ngIf="selectedRoleId !== null">
+                ({{ selectedRoleName }})
+              </ng-container>
             </span>
           </h5>
 
-          <button
-            class="ti-btn ti-btn-sm !rounded-full"
-            (click)="closePermissionsPanel()"
-            title="Cerrar"
-          >
-            <i class="ri-close-line" style="font-size: 2em;"></i>
-          </button>
+          <div class="flex items-center gap-2">
+            <button
+              *ngIf="selectedRoleId !== null"
+              class="ti-btn ti-btn-sm ti-btn-soft-success"
+              (click)="savePermissions()"
+              [disabled]="permissionsLoading || savingPermissions"
+            >
+              <span *ngIf="!savingPermissions">Guardar</span>
+              <span *ngIf="savingPermissions">Guardando...</span>
+            </button>
+
+            <button
+              class="ti-btn ti-btn-sm !rounded-full"
+              (click)="closePermissionsPanel()"
+              title="Cerrar"
+            >
+              <i class="ri-close-line" style="font-size: 2em;"></i>
+            </button>
+          </div>
         </div>
 
         <div class="box-body relative">
+          <!-- FORMULARIO CREAR ROL -->
+          <div *ngIf="isCreatingRole && selectedRoleId === null" class="grid grid-cols-12 gap-4">
+            <div class="col-span-12 md:col-span-6">
+              <label class="form-label">Nombre del rol</label>
+              <input
+                type="text"
+                class="form-input w-full"
+                [(ngModel)]="newRoleName"
+                placeholder="Ej: Marketing"
+              />
+            </div>
+
+            <div class="col-span-12 md:col-span-6">
+              <label class="form-label">Descripción</label>
+              <input
+                type="text"
+                class="form-input w-full"
+                [(ngModel)]="newRoleDescription"
+                placeholder="Ej: Rol de marketing"
+              />
+            </div>
+
+            <!-- TOGGLE ROL DE SISTEMA -->
+            <div class="col-span-12 md:col-span-6">
+              <label class="form-label block mb-2">¿Rol de sistema?</label>
+
+              <div class="flex items-center gap-3">
+                <div
+                  appToggleBtn
+                  class="toggle mb-0 cursor-pointer"
+                  [ngClass]="newRoleIsSystem === 1 ? 'toggle-success on' : 'toggle-off'"
+                  (click)="toggleNewRoleSystem()"
+                >
+                  <span></span>
+                </div>
+
+                <span class="text-sm font-medium">
+                  {{ newRoleIsSystem === 1 ? 'Sí' : 'No' }}
+                </span>
+              </div>
+
+              <p class="text-xs text-gray-400 mt-2">
+                Si está activo, el rol podrá utilizarse globalmente en el sistema.
+                Si está inactivo, pertenecerá solo a la organización actual.
+              </p>
+            </div>
+
+            <!-- OPCIONAL: estado activo -->
+            <div class="col-span-12 md:col-span-6">
+              <label class="form-label block mb-2">Estado del rol</label>
+
+              <div class="flex items-center gap-3">
+                <div
+                  appToggleBtn
+                  class="toggle mb-0 cursor-pointer"
+                  [ngClass]="newRoleIsActive === 1 ? 'toggle-success on' : 'toggle-off'"
+                  (click)="newRoleIsActive = newRoleIsActive === 1 ? 0 : 1"
+                >
+                  <span></span>
+                </div>
+
+                <span class="text-sm font-medium">
+                  {{ newRoleIsActive === 1 ? 'Activo' : 'Inactivo' }}
+                </span>
+              </div>
+            </div>
+
+            <div class="col-span-12 flex justify-end">
+              <button
+                class="ti-btn ti-btn-sm ti-btn-soft-success"
+                (click)="createRole()"
+                [disabled]="creatingRole || !newRoleName.trim()"
+              >
+                <span *ngIf="!creatingRole">Agregar</span>
+                <span *ngIf="creatingRole">Agregando...</span>
+              </button>
+            </div>
+          </div>
+
           <!-- OVERLAY LOADING SOLO PARA PERMISOS -->
           <div *ngIf="permissionsLoading" class="table-overlay">
             <div class="ti-spinner" role="status">
@@ -139,17 +236,20 @@
             </div>
           </div>
 
-          <dual-list
-            [source]="source"
-            [(destination)]="confirmed"
-            [key]="key"
-            [display]="display"
-            [sort]="keepSorted"
-            [filter]="filter"
-            [disabled]="disabled"
-            height="300px"
-            [format]="format">
-          </dual-list>
+          <!-- DUAL LIST SOLO CUANDO EL ROL YA EXISTA -->
+          <div *ngIf="selectedRoleId !== null">
+            <dual-list
+              [source]="source"
+              [(destination)]="confirmed"
+              [key]="key"
+              [display]="display"
+              [sort]="keepSorted"
+              [filter]="filter"
+              [disabled]="disabled"
+              height="300px"
+              [format]="format">
+            </dual-list>
+          </div>
         </div>
       </div>
     </div>
