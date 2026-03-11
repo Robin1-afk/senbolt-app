@@ -2,113 +2,119 @@
   [title]="i18n.translate('roles.pageTitle')"
   [title1]="[i18n.translate('roles.pageBreadcrumb')]"
   [activeitem]="i18n.translate('roles.pageBreadcrumb')"
-  >
+>
 </app-page-header>
 
 <div class="box">
   <div class="box-header">
     <h5 class="box-title">{{ i18n.translate('roles.title') }}</h5>
   </div>
-      <div class="box-body relative overflow-x-auto">
-        <!-- OVERLAY DE LOADING -->
-        <div *ngIf="loading" class="table-overlay">
-            <div class="ti-spinner" role="status">
-            <span class="sr-only">Loading...</span>
-            </div>
-        </div>
-        <div class="mb-3 flex items-center justify-between">
-            <input
-                    type="text"
-                    class="search-roles form-input w-full"
-                    placeholder="Search roles..."
-                    (keyup)="applyFilter($event)"
-                />
-              <button
-                type="button"
-                class="nuew-role ti-btn ti-btn-sm ti-btn-soft-success !rounded-full"
-                (click)="startCreateRole()"
-              >
-                <i class="add-role ri-add-line"></i>
-              </button>
-        </div>
-        <!--  TABLA -->
-        <table
-            mat-table
-            [dataSource]="dataSource"
-            class="w-full"
-            [class.pointer-events-none]="loading"
-            [class.opacity-50]="loading"
-        >
 
-            <!-- ID -->
-            <ng-container matColumnDef="id">
-                <th mat-header-cell *matHeaderCellDef>{{ i18n.translate('roles.columns.id') }}</th>
-                <td mat-cell *matCellDef="let role">{{ role.id }}</td>
-            </ng-container>
-
-            <!-- Name -->
-            <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef>{{ i18n.translate('roles.columns.name') }}</th>
-                <td mat-cell *matCellDef="let role">{{ role.name }}</td>
-            </ng-container>
-
-            <!-- Organization Name -->
-            <ng-container matColumnDef="organization_name">
-                <th mat-header-cell *matHeaderCellDef>{{ i18n.translate('roles.columns.organization_name') }}</th>
-                <td mat-cell *matCellDef="let role">{{ role.organization_name }}</td>
-            </ng-container> 
-
-            <ng-container matColumnDef="is_system">
-                <th mat-header-cell *matHeaderCellDef>{{ i18n.translate('roles.columns.is_system') }}</th>
-                <td mat-cell *matCellDef="let role">
-                    <span
-                        class="system-role px-2 py-1 rounded text-xs table-border"
-                        [ngClass]="role.is_system ? 'bg-green-600 text-white' : 'bg-red-600 text-white'">
-                    </span>
-                </td>
-            </ng-container>
-            
-            <!-- Status -->
-            <ng-container matColumnDef="status">    
-                <th mat-header-cell *matHeaderCellDef>{{ i18n.translate('roles.columns.status') }}</th>
-                <td mat-cell *matCellDef="let role">
-                    <span
-                        class="system-role px-2 py-1 rounded text-xs table-border"
-                        [ngClass]="role.is_active ? 'bg-green-600 text-white' : 'bg-red-600 text-white'">
-                    </span>
-                </td>
-            </ng-container>
-
-            <ng-container matColumnDef="actions">    
-                <th mat-header-cell *matHeaderCellDef>{{ i18n.translate('roles.columns.actions') }}</th>
-                <td mat-cell *matCellDef="let role">
-                    <button
-                    class="ti-btn ti-btn-sm ti-btn-soft-success !rounded-full"
-                    (click)="onEditRole(role)"
-                    >
-                    <i class="ri-edit-line"></i>
-                    </button>
-                    <button class="ti-btn ti-btn-sm ti-btn-soft-danger !rounded-full">
-                        <i class="ri-delete-bin-line"></i>
-                    </button>
-                </td>
-            </ng-container>
-
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-
-        </table>
-        <mat-paginator
-            [pageSize]="5"
-            [pageSizeOptions]="[5, 10, 20]"
-            showFirstLastButtons>
-        </mat-paginator>
-
-        <div *ngIf="!dataSource.data.length && !loading" class="text-center py-6 text-gray-400">
-            No organization found
-        </div>
-
+  <div class="box-body relative overflow-x-auto">
+    <!-- OVERLAY DE LOADING -->
+    <div *ngIf="loading" class="table-overlay">
+      <div class="ti-spinner" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
     </div>
+
+    <div class="mb-3 flex items-center justify-between">
+      <input
+        type="text"
+        class="search-roles form-input w-full"
+        placeholder="Search roles..."
+        (keyup)="applyFilter($event)"
+      />
+
+      <button
+        type="button"
+        class="nuew-role ti-btn ti-btn-sm ti-btn-soft-success !rounded-full"
+        (click)="startCreateRole()"
+      >
+        <i class="add-role ri-add-line"></i>
+      </button>
+    </div>
+
+    <!-- TABLA -->
+    <table
+      mat-table
+      [dataSource]="dataSource"
+      class="w-full"
+      [class.pointer-events-none]="loading"
+      [class.opacity-50]="loading"
+    >
+
+      <!-- ID -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>{{ i18n.translate('roles.columns.id') }}</th>
+        <td mat-cell *matCellDef="let role">{{ role.id }}</td>
+      </ng-container>
+
+      <!-- Name -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>{{ i18n.translate('roles.columns.name') }}</th>
+        <td mat-cell *matCellDef="let role">{{ role.name }}</td>
+      </ng-container>
+
+      <!-- Organization Name -->
+      <ng-container matColumnDef="organization_name">
+        <th mat-header-cell *matHeaderCellDef>{{ i18n.translate('roles.columns.organization_name') }}</th>
+        <td mat-cell *matCellDef="let role">{{ role.organization_name }}</td>
+      </ng-container>
+
+      <!-- Is System -->
+      <ng-container matColumnDef="is_system">
+        <th mat-header-cell *matHeaderCellDef>{{ i18n.translate('roles.columns.is_system') }}</th>
+        <td mat-cell *matCellDef="let role">
+          <span
+            class="system-role px-2 py-1 rounded text-xs table-border"
+                        [ngClass]="role.is_system ? 'bg-green-600 text-white' : 'bg-red-600 text-white'">
+          </span>
+        </td>
+      </ng-container>
+
+      <!-- Status -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef>{{ i18n.translate('roles.columns.status') }}</th>
+        <td mat-cell *matCellDef="let role">
+          <span
+            class="system-role px-2 py-1 rounded text-xs table-border"
+                        [ngClass]="role.is_active ? 'bg-green-600 text-white' : 'bg-red-600 text-white'">
+          </span>
+        </td>
+      </ng-container>
+
+      <!-- Actions -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>{{ i18n.translate('roles.columns.actions') }}</th>
+        <td mat-cell *matCellDef="let role">
+          <button
+            class="ti-btn ti-btn-sm ti-btn-soft-success !rounded-full"
+            (click)="onEditRole(role)"
+          >
+            <i class="ri-edit-line"></i>
+          </button>
+
+          <button class="ti-btn ti-btn-sm ti-btn-soft-danger !rounded-full">
+            <i class="ri-delete-bin-line"></i>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <mat-paginator
+      [pageSize]="5"
+      [pageSizeOptions]="[5, 10, 20]"
+      showFirstLastButtons>
+    </mat-paginator>
+
+    <div *ngIf="!dataSource.data.length && !loading" class="text-center py-6 text-gray-400">
+      No organization found
+    </div>
+  </div>
 </div>
 
 <div class="box" *ngIf="selectedRoleId !== null || isCreatingRole">
@@ -122,6 +128,7 @@
               <ng-container *ngIf="isCreatingRole && !selectedRoleId">
                 (Nuevo rol)
               </ng-container>
+
               <ng-container *ngIf="selectedRoleId !== null">
                 ({{ selectedRoleName }})
               </ng-container>
@@ -151,7 +158,7 @@
 
         <div class="box-body relative">
           <!-- FORMULARIO CREAR ROL -->
-          <div *ngIf="isCreatingRole && selectedRoleId === null" class="grid grid-cols-12 gap-4">
+          <div *ngIf="isCreatingRole && selectedRoleId === null" class="grid grid-cols-12 gap-4 mb-6">
             <div class="col-span-12 md:col-span-6">
               <label class="form-label">Nombre del rol</label>
               <input
@@ -197,7 +204,7 @@
               </p>
             </div>
 
-            <!-- OPCIONAL: estado activo -->
+            <!-- ESTADO ACTIVO -->
             <div class="col-span-12 md:col-span-6">
               <label class="form-label block mb-2">Estado del rol</label>
 
@@ -226,6 +233,72 @@
                 <span *ngIf="!creatingRole">Agregar</span>
                 <span *ngIf="creatingRole">Agregando...</span>
               </button>
+            </div>
+          </div>
+
+          <!-- FORMULARIO EDITAR ROL -->
+          <div *ngIf="selectedRoleId !== null && !isCreatingRole" class="grid grid-cols-12 gap-4 mb-6">
+            <div class="col-span-12 md:col-span-6">
+              <label class="form-label">Nombre del rol</label>
+              <input
+                type="text"
+                class="form-input w-full"
+                [(ngModel)]="editRoleName"
+                placeholder="Ej: Marketing"
+              />
+            </div>
+
+            <div class="col-span-12 md:col-span-6">
+              <label class="form-label">Descripción</label>
+              <input
+                type="text"
+                class="form-input w-full"
+                [(ngModel)]="editRoleDescription"
+                placeholder="Ej: Rol de marketing"
+              />
+            </div>
+
+            <div class="col-span-12 md:col-span-6">
+              <label class="form-label block mb-2">¿Rol de sistema?</label>
+
+              <div class="flex items-center gap-3">
+                <div
+                  appToggleBtn
+                  class="toggle mb-0 cursor-pointer"
+                  [ngClass]="editRoleIsSystem === 1 ? 'toggle-success on' : 'toggle-off'"
+                  (click)="toggleEditRoleSystem()"
+                >
+                  <span></span>
+                </div>
+
+                <span class="text-sm font-medium">
+                  {{ editRoleIsSystem === 1 ? 'Sí' : 'No' }}
+                </span>
+              </div>
+
+              <p class="text-xs text-gray-400 mt-2">
+                Si está activo, el rol podrá utilizarse globalmente en el sistema.
+                Si está inactivo, pertenecerá solo a la organización actual.
+              </p>
+            </div>
+
+            <div class="col-span-12 md:col-span-6">
+              <label class="form-label block mb-2">Estado del rol</label>
+
+              <div class="flex items-center gap-3">
+                <div
+                  appToggleBtn
+                  class="toggle mb-0 cursor-pointer"
+                  [ngClass]="editRoleIsActive === 1 ? 'toggle-success on' : 'toggle-off'"
+                  (click)="toggleEditRoleActive()"
+                >
+                  <span></span>
+                </div>
+
+                <span class="text-sm font-medium">
+                  {{ editRoleIsActive === 1 ? 'Activo' : 'Inactivo' }}
+                </span>
+              </div>
             </div>
           </div>
 

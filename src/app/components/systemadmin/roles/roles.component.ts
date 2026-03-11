@@ -44,6 +44,12 @@ export class RolesComponent implements OnInit, OnDestroy, AfterViewInit {
   newRoleIsActive = 1;
   newRoleIsSystem = 0;
 
+  // ======== EDIT ROLE STATE ========
+  editRoleName = '';
+  editRoleDescription = '';
+  editRoleIsActive = 1;
+  editRoleIsSystem = 0;
+
   // ======== TABLA ========
   displayedColumns: string[] = [
     'id',
@@ -148,23 +154,40 @@ export class RolesComponent implements OnInit, OnDestroy, AfterViewInit {
     };
   }
 
+  private resetCreateState(): void {
+    this.newRoleName = '';
+    this.newRoleDescription = '';
+    this.newRoleIsActive = 1;
+    this.newRoleIsSystem = 0;
+    this.creatingRole = false;
+  }
+
+  private resetEditState(): void {
+    this.editRoleName = '';
+    this.editRoleDescription = '';
+    this.editRoleIsActive = 1;
+    this.editRoleIsSystem = 0;
+  }
+
+  private resetPermissionsState(): void {
+    this.source = [];
+    this.confirmed = [];
+    this.permissionsLoading = false;
+    this.savingPermissions = false;
+    this.disabled = false;
+  }
+
   // ======== CREATE ROLE FLOW ========
   startCreateRole(): void {
     // Limpia panel actual y abre en modo creación
     this.selectedRoleId = null;
     this.selectedRoleName = null;
-    this.source = [];
-    this.confirmed = [];
-    this.permissionsLoading = false;
-    this.savingPermissions = false;
+
+    this.resetPermissionsState();
+    this.resetEditState();
+    this.resetCreateState();
 
     this.isCreatingRole = true;
-    this.creatingRole = false;
-
-    this.newRoleName = '';
-    this.newRoleDescription = '';
-    this.newRoleIsActive = 1;
-    this.newRoleIsSystem = 0;
   }
 
   createRole(): void {
@@ -183,22 +206,22 @@ export class RolesComponent implements OnInit, OnDestroy, AfterViewInit {
 
     this.roleService.registerRole(payload).subscribe({
       next: (res) => {
-        /**
-         * Aquí asumimos que el backend devuelve el rol creado
-         * o al menos su id y name.
-         * Ajusta estas líneas según la respuesta real.
-         */
         const createdRole = res?.data;
 
         this.isCreatingRole = false;
         this.creatingRole = false;
 
-        this.selectedRoleId = createdRole?.id ?? createdRole?.rol_id ?? null;
+        this.selectedRoleId = createdRole?.id ?? createdRole?.rol_id ?? createdRole?.role_id ?? null;
         this.selectedRoleName = createdRole?.name ?? payload.name;
+
+        // Pasamos los valores creados al bloque de edición
+        this.editRoleName = payload.name;
+        this.editRoleDescription = payload.description;
+        this.editRoleIsActive = payload.is_active;
+        this.editRoleIsSystem = payload.is_system;
 
         this.loadRoles();
 
-        // Si ya tenemos id del rol, cargamos sus permisos y habilitamos dual-list
         if (this.selectedRoleId) {
           this.permissionsLoading = true;
           this.disabled = false;
@@ -248,13 +271,38 @@ export class RolesComponent implements OnInit, OnDestroy, AfterViewInit {
     this.permissionsLoading = true;
     this.disabled = false;
 
+    // Limpiamos antes de cargar nueva información
+    this.resetEditState();
+    this.source = [];
+    this.confirmed = [];
+
+    // 1. Cargar información del rol
+    this.roleService.getRolById(role.id).subscribe({
+      next: (res) => {
+        const rol = res?.data;
+
+        this.editRoleName = rol?.name ?? '';
+        this.editRoleDescription = rol?.description ?? '';
+        this.editRoleIsActive = Number(rol?.is_active) === 1 ? 1 : 0;
+        this.editRoleIsSystem = Number(rol?.is_system) === 1 ? 1 : 0;
+
+        this.selectedRoleName = this.editRoleName || role.name;
+      },
+      error: (err) => {
+        console.error('Error al cargar información del rol', err);
+        this.resetEditState();
+      }
+    });
+
+    // 2. Cargar permisos del rol
     this.roleService.getRolesObjectId(role.id).subscribe({
       next: (res) => {
         const data = res?.data ?? [];
         this.mapPermissionsToDualList(data);
         this.permissionsLoading = false;
       },
-      error: () => {
+      error: (err) => {
+        console.error('Error al cargar permisos del rol', err);
         this.source = [];
         this.confirmed = [];
         this.permissionsLoading = false;
@@ -322,16 +370,20 @@ export class RolesComponent implements OnInit, OnDestroy, AfterViewInit {
     this.isCreatingRole = false;
     this.creatingRole = false;
 
-    this.newRoleName = '';
-    this.newRoleDescription = '';
-
-    this.source = [];
-    this.confirmed = [];
-    this.permissionsLoading = false;
-    this.savingPermissions = false;
+    this.resetCreateState();
+    this.resetEditState();
+    this.resetPermissionsState();
   }
 
   toggleNewRoleSystem(): void {
     this.newRoleIsSystem = this.newRoleIsSystem === 1 ? 0 : 1;
+  }
+
+  toggleEditRoleSystem(): void {
+    this.editRoleIsSystem = this.editRoleIsSystem === 1 ? 0 : 1;
+  }
+
+  toggleEditRoleActive(): void {
+    this.editRoleIsActive = this.editRoleIsActive === 1 ? 0 : 1;
   }
 }
