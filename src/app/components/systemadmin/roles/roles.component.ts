@@ -49,6 +49,7 @@ export class RolesComponent implements OnInit, OnDestroy, AfterViewInit {
   editRoleDescription = '';
   editRoleIsActive = 1;
   editRoleIsSystem = 0;
+  updatingRole = false;
 
   // ======== TABLA ========
   displayedColumns: string[] = [
@@ -113,13 +114,11 @@ export class RolesComponent implements OnInit, OnDestroy, AfterViewInit {
     this.destroy$.complete();
   }
 
-  // ======== SEARCH ========
   applyFilter(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  // ======== CARGA ROLES ========
   loadRoles(): void {
     this.loading = true;
 
@@ -141,7 +140,6 @@ export class RolesComponent implements OnInit, OnDestroy, AfterViewInit {
     });
   }
 
-  // ======== DUAL LIST HELPERS ========
   private refreshDualListFormat(): void {
     this.format = {
       add: this.i18n.translate('roles.duallist.add'),
@@ -167,6 +165,7 @@ export class RolesComponent implements OnInit, OnDestroy, AfterViewInit {
     this.editRoleDescription = '';
     this.editRoleIsActive = 1;
     this.editRoleIsSystem = 0;
+    this.updatingRole = false;
   }
 
   private resetPermissionsState(): void {
@@ -177,9 +176,7 @@ export class RolesComponent implements OnInit, OnDestroy, AfterViewInit {
     this.disabled = false;
   }
 
-  // ======== CREATE ROLE FLOW ========
   startCreateRole(): void {
-    // Limpia panel actual y abre en modo creación
     this.selectedRoleId = null;
     this.selectedRoleName = null;
 
@@ -214,7 +211,6 @@ export class RolesComponent implements OnInit, OnDestroy, AfterViewInit {
         this.selectedRoleId = createdRole?.id ?? createdRole?.rol_id ?? createdRole?.role_id ?? null;
         this.selectedRoleName = createdRole?.name ?? payload.name;
 
-        // Pasamos los valores creados al bloque de edición
         this.editRoleName = payload.name;
         this.editRoleDescription = payload.description;
         this.editRoleIsActive = payload.is_active;
@@ -247,7 +243,41 @@ export class RolesComponent implements OnInit, OnDestroy, AfterViewInit {
     });
   }
 
-  // ======== PERMISSIONS HELPERS ========
+  updateRole(): void {
+    if (!this.selectedRoleId) {
+      return;
+    }
+
+    if (!this.editRoleName.trim()) {
+      return;
+    }
+
+    const payload = {
+      id: this.selectedRoleId,
+      name: this.editRoleName.trim(),
+      description: this.editRoleDescription.trim() || 'Sin descripción',
+      is_active: this.editRoleIsActive,
+      is_system: this.editRoleIsSystem
+    };
+
+    this.updatingRole = true;
+
+    this.roleService.updateRole(payload).subscribe({
+      next: (res) => {
+        console.log('Rol actualizado correctamente', res);
+
+        this.selectedRoleName = payload.name;
+        this.loadRoles();
+
+        this.updatingRole = false;
+      },
+      error: (err) => {
+        console.error('Error al actualizar rol', err);
+        this.updatingRole = false;
+      }
+    });
+  }
+
   private mapPermissionsToDualList(data: any[]): void {
     this.source = data.map((p: any, idx: number) => ({
       id: idx + 1,
@@ -271,12 +301,10 @@ export class RolesComponent implements OnInit, OnDestroy, AfterViewInit {
     this.permissionsLoading = true;
     this.disabled = false;
 
-    // Limpiamos antes de cargar nueva información
     this.resetEditState();
     this.source = [];
     this.confirmed = [];
 
-    // 1. Cargar información del rol
     this.roleService.getRolById(role.id).subscribe({
       next: (res) => {
         const rol = res?.data;
@@ -294,7 +322,6 @@ export class RolesComponent implements OnInit, OnDestroy, AfterViewInit {
       }
     });
 
-    // 2. Cargar permisos del rol
     this.roleService.getRolesObjectId(role.id).subscribe({
       next: (res) => {
         const data = res?.data ?? [];

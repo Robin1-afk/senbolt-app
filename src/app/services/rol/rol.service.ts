@@ -35,4 +35,14 @@ export class RoleService {
   }): Observable<any> {
     return this.http.post<any>(`${environment.apiUrl}/rol/registerRol`, data);
   }
+
+  updateRole(data: {
+    id: number;
+    name: string;
+    description: string;
+    is_active: number;
+    is_system: number;
+  }): Observable<any> {
+    return this.http.post<any>(`${environment.apiUrl}/rol/updateRol`, data);
+  }
 }
