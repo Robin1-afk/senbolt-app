@@ -9,6 +9,7 @@ import { Menu, NavService } from '../../services/nav.service';
 import { Subscription, fromEvent } from 'rxjs';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { NavigationEnd, Router } from '@angular/router';
+import { I18nService } from '../../../core/services/i18n.service';
 @Component({
   selector: 'app-sidebar',
   standalone:false,
@@ -28,6 +29,7 @@ export class SidebarComponent {
     public router: Router,
     public renderer: Renderer2,
     private sanitizer: DomSanitizer,
+    public i18n: I18nService
   ) { }
   
   clearNavDropdown() {

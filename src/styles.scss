@@ -423,3 +423,54 @@ ngx-table {
       @apply z-0 #{!important}
   }
 }
+
+/* TABLAS ANGULAR MATERIAL (MDC) – patrón Xintra */
+
+.mat-mdc-table {
+  @apply bg-customwhite dark:bg-bodybg #{!important};
+}
+
+.mat-mdc-header-cell,
+.mat-mdc-cell {
+  @apply text-defaulttextcolor dark:text-white/80 #{!important};
+}
+
+.table-overlay {
+  position: absolute;
+  inset: 0; /* top, right, bottom, left */
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+.table-border{
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0.25rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.45rem;
+  padding-right: 0.45rem;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.app-sidebar .main-sidebar-header img {
+  height: 42px;
+  width: auto;
+}
+
+/* Logo sidebar */
+.app-sidebar .main-sidebar-header .header-logo img {
+  height: 40px; 
+  width: auto;
+  max-height: 40px;
+}
+
+.desktop-white {
+  height: 40px; 
+  width: auto;
+  max-height: 40px;
+}

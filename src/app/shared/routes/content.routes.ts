@@ -12,11 +12,14 @@ import { tablesRoutingModule } from '../../components/tables/tables.route';
 import { formsRoutingModule } from '../../components/forms/forms.route';
 import { advanceduiRoutingModule } from '../../components/advancedui/advancedui.routes';
 import { utilitiesRoutingModule } from '../../components/utilities/utilities.route';
+import { systemadminRoutingModule } from '../../components/systemadmin/systemadmin.route';
+
 
 
 export const content: Routes = [
 
   { path: '', children: [
+   ...systemadminRoutingModule.routes,
    ...dashboardRoutingModule.routes,
    ...advanceduiRoutingModule.routes,
    ...pagesRoutingModule.routes,
@@ -29,7 +32,6 @@ export const content: Routes = [
    ...iconsRoutingModule.routes,
    ...widgetsRoutingModule.routes,
    ...tablesRoutingModule.routes
-   
   ]}
 ];
 @NgModule({

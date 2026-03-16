@@ -452,7 +452,7 @@
                     <spk-reusable-tables [columns]="headerColumn" tableHead="bg-primary/10" tableClass="ti-custom-table ti-custom-table-head ti-head-primary"
                         [showCheckbox]="false" trClass="border-b border-primary/10">
                         @for(table of headerTables;track $index){
-                        <tr>
+                        <tr>    
                             <td scope="row" class="text-start">{{table.name}}</td>
                             <td>{{table.id}}</td>
                             <td>{{table.date}}</td>

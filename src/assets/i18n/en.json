@@ -1,0 +1,128 @@
+{
+  "users": {
+    "pageTitle": "System Administration",
+    "pageBreadcrumb": "Users",
+    "title": "Users",
+    "columns": {
+      "id": "#",
+      "name": "Name",
+      "email": "Email",
+      "role": "Role",
+      "organization": "Organization",
+      "status": "Status"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "empty": "No users found"
+  },
+
+  "organizations": {
+    "pageTitle": "System Administration",
+    "pageBreadcrumb": "Organizations",
+    "title": "Organizations",
+    "columns": {
+      "id": "#",
+      "name": "Name",
+      "email": "Email",
+      "max_users": "Max Users",
+      "owner_user_id": "Owner",
+      "type": "Type",
+      "status": "Status"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "empty": "No organizations found"
+  },
+  "plans": {
+    "pageTitle": "System Administration",
+    "pageBreadcrumb": "Plans",
+    "title": "Plans",
+    "columns": {
+      "id": "#",
+      "name": "Name",
+      "description": "Description",
+      "emails_per_month": "Emails/Month",
+      "price": "Price",
+      "subscription": "Subscriptions",
+      "button-subscription": "Open",
+      "status": "Status"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "empty": "No plans found"
+  },
+
+  "subscription": {
+    "pageTitle": "System Administration",
+    "pageBreadcrumb": "Subscriptions",
+    "title": "Subscriptions",
+    "columns": {
+      "id": "#",
+      "organization": "Organization",
+      "plan": "Plan",
+      "start_date": "Start Date",
+      "end_date": "End Date",
+      "status": "Status"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "empty": "No subscriptions found"
+  },
+
+  "roles": {
+    "pageTitle": "System Administration",
+    "pageBreadcrumb": "Roles",
+    "title": "Roles",
+    "title_table": "Permissions Assignment to Role",
+    "duallist": {
+        "add": "Add",
+        "remove": "Remove",
+        "all": "All",
+        "none": "None"
+    },
+    "columns": {
+      "id": "#",
+      "name": "Name",
+      "organization_name": "Organization Name",
+      "is_system": "Role of System",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "is_system": {
+      "true": "Yes",
+      "false": "No"
+    },
+    "actions": {
+      "edit": "Edit",
+      "delete": "Delete"
+    },
+    "empty": "No roles found"
+  },
+
+  "nav": {
+    "control_panel":{
+      "title": "Control Panel",
+      "users": "Users",
+      "organizations": "Organizations",
+      "plans": "Plans",
+      "headTitle": "Admin",
+      "subscription": "Subscriptions"
+    },
+    "roles_permissions":{
+      "title": "Roles and Permissions",
+      "roles": "Roles"
+    }
+  }
+}

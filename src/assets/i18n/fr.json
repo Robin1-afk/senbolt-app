@@ -1,0 +1,129 @@
+{
+    "users": {
+        "pageTitle": "Administration du Système",
+        "pageBreadcrumb": "Utilisateurs",
+        "title": "Utilisateurs",
+        "columns": {
+            "id": "#",
+            "name": "Nom",
+            "email": "Courriel",
+            "role": "Rôle",
+            "organization": "Organisation",
+            "status": "Statut"
+        },
+        "status": {
+            "active": "Actif",
+            "inactive": "Inactif"
+        },
+        "empty": "Aucun utilisateur trouvé"
+    },
+
+    "organizations": {
+        "pageTitle": "Administration du Système",
+        "pageBreadcrumb": "Organisations",
+        "title": "Organisations",
+        "columns": {
+            "id": "#",
+            "name": "Nom",
+            "email": "Courriel",
+            "max_users": "Utilisateurs Max",
+            "type": "Type",
+            "owner_user_id": "Propriétaire",
+            "status": "Statut"
+        },
+        "status": {
+            "active": "Actif",
+            "inactive": "Inactif"
+        },
+        "empty": "Aucune organisation trouvée"
+    },
+    "plans": {
+        "pageTitle": "Administration du Système",
+        "pageBreadcrumb": "Plans",
+        "title": "Plans",
+        "columns": {
+            "id": "#",
+            "name": "Nom",
+            "description": "Description",
+            "emails_per_month": "Emails/Mois",
+            "price": "Prix",
+            "subscription": "Abonnements",
+            "button-subscription": "Ouvrir",
+            "status": "Statut"
+        },
+        "status": {
+            "active": "Actif",
+            "inactive": "Inactif"
+        },
+        "empty": "Aucun plan trouvée"
+    },
+
+    "subscription": {
+        "pageTitle": "Administration du Système",
+        "pageBreadcrumb": "Abonnements",
+        "title": "Abonnements",
+        "columns": {
+            "id": "#",
+            "organization": "Organisation",
+            "plan": "Plan",
+            "start_date": "Date de Démarrage",
+            "end_date": "Date de Fin",
+            "status": "Statut"
+        },
+        "status": {
+            "active": "Actif",
+            "inactive": "Inactif"
+        },
+        "empty": "Aucun abonnement trouvé"
+    },
+
+    "roles": {
+        "pageTitle": "Administration du Système",
+        "pageBreadcrumb": "Rôles",
+        "title": "Rôles",
+        "title_table": "Assignation des Permissions au Rôles",
+        "duallist": {
+            "add": "Ajouter",
+            "remove": "Supprimer",
+            "all": "Tous",
+            "none": "Aucun"
+        },
+        "columns": {
+            "id": "#",
+            "name": "Nom",
+            "organization_name": "Nom de l'Organisation",
+            "is_system": "Est Système",
+            "status": "Statut",
+            "actions": "Actions"
+        },
+        "status": {
+            "active": "Actif",
+            "inactive": "Inactif"
+        },
+        "is_system": {
+            "true": "Oui",
+            "false": "Non"
+        },
+        "actions": {
+            "edit": "Éditer",
+            "delete": "Supprimer"
+        },
+        "empty": "Aucun rôle trouvé"
+    },
+
+    "nav": {
+        "control_panel":{
+            "title": "Panneau de Controle",
+            "users": "Utilisateurs",
+            "organizations": "Organisations",
+            "plans": "Plans",
+            "headTitle": "Panneau de Controle",
+            "subscription": "Abonnements"
+        },
+        "roles_permissions":{
+            "title": "Rôles et Permissions",
+            "roles": "Rôles"
+        }
+    }
+    
+}
