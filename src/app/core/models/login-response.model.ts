@@ -1,10 +1,11 @@
 export interface LoginResponse {
+  status: string;
   message: string;
   data: {
-    token: string;
-    user: string;
-    rol_id: number;
-    id: number;
+    access_token: string;
+    refresh_token: string;
     expires_at: string;
+    rol_id: number;
+    email: string;
   };
 }

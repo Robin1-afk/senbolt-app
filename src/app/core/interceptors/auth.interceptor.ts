@@ -34,7 +34,7 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
     token &&
     !NO_AUTH_HEADER_ROUTES.some(url => req.url.includes(url));
 
-  // 🔐 REQUEST BASE (SIEMPRE CON CREDENTIALS)
+  // REQUEST BASE (SIEMPRE CON CREDENTIALS)
   const authReq = shouldAttachToken
     ? req.clone({
         setHeaders: { Authorization: `Bearer ${token}` },
@@ -49,21 +49,21 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
         return throwError(() => error);
       }
 
-      // 🚫 No refresh para endpoints de auth
+      // No refresh para endpoints de auth
       if (NO_AUTH_HEADER_ROUTES.some(url => req.url.includes(url))) {
         storage.clear();
         router.navigate(['auth/login']);
         return throwError(() => error);
       }
 
-      // 🚫 No hay token → logout local
+      // No hay token → logout local
       if (!token) {
         storage.clear();
         router.navigate(['auth/login']);
         return throwError(() => error);
       }
 
-      // 🔁 Refresh en curso
+      //Refresh en curso
       if (isRefreshing) {
         return refreshSubject.pipe(
           filter(t => t !== null),
@@ -79,7 +79,7 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
         );
       }
 
-      // 🔄 Iniciar refresh
+      // Iniciar refresh
       isRefreshing = true;
       refreshSubject.next(null);
 

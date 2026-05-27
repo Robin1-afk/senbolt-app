@@ -62,6 +62,9 @@ export class NavService implements OnDestroy {
   constructor(private router: Router,
   private permissionService: PermissionService, public i18n: I18nService) {
     this.filterMenu();
+    this.permissionService.permissionsLoaded$
+      .pipe(takeUntil(this.unsubscriber))
+      .subscribe(() => this.filterMenu());
     this.setScreenWidth(window.innerWidth);
     fromEvent(window, 'resize')
       .pipe(debounceTime(1000), takeUntil(this.unsubscriber))

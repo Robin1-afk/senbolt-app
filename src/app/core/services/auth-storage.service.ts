@@ -4,14 +4,16 @@ import { Injectable } from '@angular/core';
 export class AuthStorageService {
 
   saveSession(data: {
-    token: string;
+    access_token: string;
+    refresh_token: string;
     rol_id: number;
-    user: any;
+    email: string;
     expires_at: string;
   }) {
-    localStorage.setItem('token', data.token);
+    localStorage.setItem('token', data.access_token);
+    localStorage.setItem('refresh_token', data.refresh_token);
     localStorage.setItem('rol_id', data.rol_id.toString());
-    localStorage.setItem('user', JSON.stringify(data.user));
+    localStorage.setItem('user', data.email);
     localStorage.setItem('expires_at', data.expires_at);
   }
 
@@ -40,8 +42,10 @@ export class AuthStorageService {
     localStorage.setItem('token', token);
   }
 
+  getRefreshToken(): string | null {
+    return localStorage.getItem('refresh_token');
+  }
 
-  // 🆕 (opcional pero PRO)
   isTokenExpired(): boolean {
     const expiresAt = localStorage.getItem('expires_at');
     if (!expiresAt) return true;

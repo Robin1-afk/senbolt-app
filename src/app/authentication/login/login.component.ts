@@ -13,6 +13,7 @@ import { ApiTestService } from '../../core/services/api-test.service';
 import { PermissionApiService } from '../../core/services/permission-api.service';
 import { PermissionService } from '../../core/services/permission.service';
 import { AuthStorageService } from '../../core/services/auth-storage.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -85,31 +86,49 @@ clearErrorMessage() {
   this._error = { name: '', message: '' };
 }
 
-login(): void  {
+login(force: boolean = false): void {
 
   if (this.loginForm.invalid) {
     this.toastr.error('Formulario inválido', 'Xintra');
     return;
   }
 
-  const payload = this.loginForm.value;
+  const payload = { ...this.loginForm.value, force };
 
   this.authservice.login(payload).subscribe({
-  next: (res) => {
-    //Guardas sesión
-    this.authStorage.saveSession(res.data);
-    //Pides permisos
-    this.permissionApi.getMyPermissions().subscribe(perms => {
-    //Guardas permisos en memoria 
-    this.permissionService.setPermissions(perms);
-    //Navegas
-    this.router.navigate(['/systemadmin/users']);
-    });
-  },
+    next: (res) => {
+      this.authStorage.saveSession(res.data);
+      this.permissionApi.getMyPermissions().subscribe({
+        next: (perms) => {
+          this.permissionService.setPermissions(perms);
+          this.router.navigate(['/systemadmin/users']);
+        },
+        error: () => {
+          this.router.navigate(['/systemadmin/users']);
+        }
+      });
+    },
     error: (err) => {
-      
-      this.toastr.error(err.error?.message || 'Login error', 'Xintra');
-      return;
+      const msg: string = err.error?.message || '';
+
+      if (err.status === 409 && msg === 'Sesión activa en otro dispositivo.') {
+        Swal.fire({
+          title: 'Sesión activa',
+          text: 'Ya tienes una sesión iniciada en otro dispositivo. ¿Deseas cerrarla y continuar aquí?',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonText: 'Sí, cerrar y continuar',
+          cancelButtonText: 'Cancelar',
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            this.login(true);
+          }
+        });
+      } else {
+        this.toastr.error(msg || 'Error al iniciar sesión', 'Xintra');
+      }
     }
   });
 }

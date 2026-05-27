@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class PermissionService {
 
-  // Store the user's permissions
   private permissions: string[] = [];
-  // Set permissions based on API response
+  readonly permissionsLoaded$ = new Subject<void>();
   setPermissions(apiResponse: any) {
-    this.permissions = apiResponse.data.has_permission.map((p: any) => p.value);
-        console.log('[PermissionService] permisos guardados:', this.permissions);
-
+    this.permissions = (apiResponse.data as any[]).map((p: any) => p.value);
+    console.log('[PermissionService] permisos guardados:', this.permissions);
+    this.permissionsLoaded$.next();
   }
-  // Check if a specific permission exists
+
   has(permission: string): boolean {
     return this.permissions.includes(permission);
   }
